@@ -4,3 +4,29 @@
 # Unignore the specific files we want to keep
 !/NLP_FinalProject_Team2.html
 !.gitignore
+
+# Unignore team member directories
+!/01_HuynhTrang_PM/
+!/01_HuynhTrang_PM/**
+!/02_BachNhan_Baseline/
+!/02_BachNhan_Baseline/**
+!/03_MinhQuan_GPT/
+!/03_MinhQuan_GPT/**
+!/04_BaHoc_Gemini/
+!/04_BaHoc_Gemini/**
+!/05_MaiAnh_ViT5/
+!/05_MaiAnh_ViT5/**
+!/06_HuuHieu_PhoBERT/
+!/06_HuuHieu_PhoBERT/**
+
+# Ignore heavy data, serialized models, and checkpoints inside member folders
+**/*.pdf
+**/*.csv
+**/*.p
+**/*.pkl
+**/*.h5
+**/__pycache__/
+**/*.pyc
+**/.ipynb_checkpoints/
+**/.DS_Store
+**/Thumbs.db
