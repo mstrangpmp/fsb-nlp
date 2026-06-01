@@ -1,0 +1,869 @@
+[
+  {
+    "id": 10001,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Tô Hiến Thành dt 47.7m2 kc 2 lầu dt 3.7x12.9 Quận 10 giá chốt 16.7 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS4811K. Bán gấp nhà đẹp . Diện tích công nhận 47.7m2, kích thước lý tưởng 3.7x12.9m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Tô Hiến Thành Quận 10 47.7m2 2 lầu 3.7x12.9 - 16.7 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Tô Hiến Thành, Phường 12, Quận 10. Diện tích công nhận 47.7m2, kích thước lý tưởng 3.7x12.9m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Tô Hiến Thành",
+      "phuong": "Phường 12",
+      "quan": "Quận 10",
+      "gia_ty": 16.7,
+      "dien_tich_m2": 47.7,
+      "so_tang": 2,
+      "mat_tien_m": 3.7,
+      "rong_hem_m": 5.6,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10002,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 66.7m2 kc 6 lầu dt 4.8x13.9 Phú Nhuận giá chốt 12.4 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS3547K. Bán gấp nhà đẹp . Diện tích công nhận 66.7m2, kích thước lý tưởng 4.8x13.9m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 66.7m2 6 lầu 4.8x13.9 - 12.4 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 1, Phú Nhuận. Diện tích công nhận 66.7m2, kích thước lý tưởng 4.8x13.9m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 1",
+      "quan": "Phú Nhuận",
+      "gia_ty": 12.4,
+      "dien_tich_m2": 66.7,
+      "so_tang": 6,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 4.1,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10003,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Võ Văn Tần dt 36.0m2 kc 4 lầu dt 3.4x10.6 Quận 3 giá chốt 15.5 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS6925K. Bán gấp nhà đẹp . Diện tích công nhận 36.0m2, kích thước lý tưởng 3.4x10.6m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Võ Văn Tần Quận 3 36.0m2 4 lầu 3.4x10.6 - 15.5 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Võ Văn Tần, Phường 2, Quận 3. Diện tích công nhận 36.0m2, kích thước lý tưởng 3.4x10.6m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Võ Văn Tần",
+      "phuong": "Phường 2",
+      "quan": "Quận 3",
+      "gia_ty": 15.5,
+      "dien_tich_m2": 36.0,
+      "so_tang": 4,
+      "mat_tien_m": 3.4,
+      "rong_hem_m": 5.3,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10004,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Huỳnh Văn Bánh dt 34.3m2 kc 4 lầu dt 4.7x7.3 Phú Nhuận giá chốt 21.8 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS3664K. Bán gấp nhà đẹp . Diện tích công nhận 34.3m2, kích thước lý tưởng 4.7x7.3m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Huỳnh Văn Bánh Phú Nhuận 34.3m2 4 lầu 4.7x7.3 - 21.8 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Huỳnh Văn Bánh, Phường 12, Phú Nhuận. Diện tích công nhận 34.3m2, kích thước lý tưởng 4.7x7.3m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Huỳnh Văn Bánh",
+      "phuong": "Phường 12",
+      "quan": "Phú Nhuận",
+      "gia_ty": 21.8,
+      "dien_tich_m2": 34.3,
+      "so_tang": 4,
+      "mat_tien_m": 4.7,
+      "rong_hem_m": 5.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10005,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cộng Hòa dt 73.4m2 kc 2 lầu dt 4.8x15.3 Tân Bình giá chốt 15.6 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS6313K. Bán gấp nhà đẹp . Diện tích công nhận 73.4m2, kích thước lý tưởng 4.8x15.3m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cộng Hòa Tân Bình 73.4m2 2 lầu 4.8x15.3 - 15.6 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cộng Hòa, Phường 4, Tân Bình. Diện tích công nhận 73.4m2, kích thước lý tưởng 4.8x15.3m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cộng Hòa",
+      "phuong": "Phường 4",
+      "quan": "Tân Bình",
+      "gia_ty": 15.6,
+      "dien_tich_m2": 73.4,
+      "so_tang": 2,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 3.1,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10006,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Thành Thái dt 32.0m2 kc 4 lầu dt 3.9x8.2 Quận 10 giá chốt 6.6 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS3340K. Bán gấp nhà đẹp . Diện tích công nhận 32.0m2, kích thước lý tưởng 3.9x8.2m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Thành Thái Quận 10 32.0m2 4 lầu 3.9x8.2 - 6.6 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Thành Thái, Phường 14, Quận 10. Diện tích công nhận 32.0m2, kích thước lý tưởng 3.9x8.2m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Thành Thái",
+      "phuong": "Phường 14",
+      "quan": "Quận 10",
+      "gia_ty": 6.6,
+      "dien_tich_m2": 32.0,
+      "so_tang": 4,
+      "mat_tien_m": 3.9,
+      "rong_hem_m": 5.7,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10007,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phổ Quang dt 78.3m2 kc 6 lầu dt 4.4x17.8 Tân Bình giá chốt 12.6 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS2796K. Bán gấp nhà đẹp . Diện tích công nhận 78.3m2, kích thước lý tưởng 4.4x17.8m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phổ Quang Tân Bình 78.3m2 6 lầu 4.4x17.8 - 12.6 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phổ Quang, Phường 4, Tân Bình. Diện tích công nhận 78.3m2, kích thước lý tưởng 4.4x17.8m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phổ Quang",
+      "phuong": "Phường 4",
+      "quan": "Tân Bình",
+      "gia_ty": 12.6,
+      "dien_tich_m2": 78.3,
+      "so_tang": 6,
+      "mat_tien_m": 4.4,
+      "rong_hem_m": 4.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10008,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cách Mạng Tháng Tám dt 81.5m2 kc 2 lầu dt 4.2x19.4 Quận 3 giá chốt 11.8 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS9797K. Bán gấp nhà đẹp . Diện tích công nhận 81.5m2, kích thước lý tưởng 4.2x19.4m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 11.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cách Mạng Tháng Tám Quận 3 81.5m2 2 lầu 4.2x19.4 - 11.8 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cách Mạng Tháng Tám, Phường 3, Quận 3. Diện tích công nhận 81.5m2, kích thước lý tưởng 4.2x19.4m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 11.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cách Mạng Tháng Tám",
+      "phuong": "Phường 3",
+      "quan": "Quận 3",
+      "gia_ty": 11.8,
+      "dien_tich_m2": 81.5,
+      "so_tang": 2,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 4.6,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10009,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Bạch Đằng dt 37.4m2 kc 5 lầu dt 4.2x8.9 Tân Bình giá chốt 5.6 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS5889K. Bán gấp nhà đẹp . Diện tích công nhận 37.4m2, kích thước lý tưởng 4.2x8.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 5.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Bạch Đằng Tân Bình 37.4m2 5 lầu 4.2x8.9 - 5.6 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Bạch Đằng, Phường 6, Tân Bình. Diện tích công nhận 37.4m2, kích thước lý tưởng 4.2x8.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 5.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bạch Đằng",
+      "phuong": "Phường 6",
+      "quan": "Tân Bình",
+      "gia_ty": 5.6,
+      "dien_tich_m2": 37.4,
+      "so_tang": 5,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 5.0,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10010,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 40.0m2 kc 6 lầu dt 5.0x8.0 Phú Nhuận giá chốt 21.2 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS6947K. Bán gấp nhà đẹp . Diện tích công nhận 40.0m2, kích thước lý tưởng 5.0x8.0m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 40.0m2 6 lầu 5.0x8.0 - 21.2 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 4, Phú Nhuận. Diện tích công nhận 40.0m2, kích thước lý tưởng 5.0x8.0m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 4",
+      "quan": "Phú Nhuận",
+      "gia_ty": 21.2,
+      "dien_tich_m2": 40.0,
+      "so_tang": 6,
+      "mat_tien_m": 5.0,
+      "rong_hem_m": 5.7,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10011,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phổ Quang dt 45.9m2 kc 2 lầu dt 4.5x10.2 Tân Bình giá chốt 6.9 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS5342K. Bán gấp nhà đẹp . Diện tích công nhận 45.9m2, kích thước lý tưởng 4.5x10.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phổ Quang Tân Bình 45.9m2 2 lầu 4.5x10.2 - 6.9 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phổ Quang, Phường 1, Tân Bình. Diện tích công nhận 45.9m2, kích thước lý tưởng 4.5x10.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phổ Quang",
+      "phuong": "Phường 1",
+      "quan": "Tân Bình",
+      "gia_ty": 6.9,
+      "dien_tich_m2": 45.9,
+      "so_tang": 2,
+      "mat_tien_m": 4.5,
+      "rong_hem_m": 4.2,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10012,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 92.8m2 kc 3 lầu dt 5.3x17.5 Phú Nhuận giá chốt 17.3 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS5061K. Bán gấp nhà đẹp . Diện tích công nhận 92.8m2, kích thước lý tưởng 5.3x17.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 17.3 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 92.8m2 3 lầu 5.3x17.5 - 17.3 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 7, Phú Nhuận. Diện tích công nhận 92.8m2, kích thước lý tưởng 5.3x17.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 17.3 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 7",
+      "quan": "Phú Nhuận",
+      "gia_ty": 17.3,
+      "dien_tich_m2": 92.8,
+      "so_tang": 3,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 3.9,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10013,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Thiện Thuật dt 31.5m2 kc 6 lầu dt 4.5x7.0 Quận 3 giá chốt 9.1 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS9423K. Bán gấp nhà đẹp . Diện tích công nhận 31.5m2, kích thước lý tưởng 4.5x7.0m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 9.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Thiện Thuật Quận 3 31.5m2 6 lầu 4.5x7.0 - 9.1 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Thiện Thuật, Phường 6, Quận 3. Diện tích công nhận 31.5m2, kích thước lý tưởng 4.5x7.0m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 9.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Thiện Thuật",
+      "phuong": "Phường 6",
+      "quan": "Quận 3",
+      "gia_ty": 9.1,
+      "dien_tich_m2": 31.5,
+      "so_tang": 6,
+      "mat_tien_m": 4.5,
+      "rong_hem_m": 2.7,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10014,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Võ Văn Tần dt 61.6m2 kc 6 lầu dt 4.4x14.0 Quận 3 giá chốt 15.0 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS6804K. Bán gấp nhà đẹp . Diện tích công nhận 61.6m2, kích thước lý tưởng 4.4x14.0m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.4m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Võ Văn Tần Quận 3 61.6m2 6 lầu 4.4x14.0 - 15.0 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Võ Văn Tần, Phường 11, Quận 3. Diện tích công nhận 61.6m2, kích thước lý tưởng 4.4x14.0m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.4m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Võ Văn Tần",
+      "phuong": "Phường 11",
+      "quan": "Quận 3",
+      "gia_ty": 15.0,
+      "dien_tich_m2": 61.6,
+      "so_tang": 6,
+      "mat_tien_m": 4.4,
+      "rong_hem_m": 3.4,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10015,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Gia Trí dt 86.1m2 kc 2 lầu dt 3.3x26.1 Bình Thạnh giá chốt 6.5 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS3296K. Bán gấp nhà đẹp . Diện tích công nhận 86.1m2, kích thước lý tưởng 3.3x26.1m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Gia Trí Bình Thạnh 86.1m2 2 lầu 3.3x26.1 - 6.5 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Gia Trí, Phường 8, Bình Thạnh. Diện tích công nhận 86.1m2, kích thước lý tưởng 3.3x26.1m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Gia Trí",
+      "phuong": "Phường 8",
+      "quan": "Bình Thạnh",
+      "gia_ty": 6.5,
+      "dien_tich_m2": 86.1,
+      "so_tang": 2,
+      "mat_tien_m": 3.3,
+      "rong_hem_m": 5.0,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10016,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nơ Trang Long dt 60.3m2 kc 2 lầu dt 5.2x11.6 Bình Thạnh giá chốt 12.8 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS4872K. Bán gấp nhà đẹp . Diện tích công nhận 60.3m2, kích thước lý tưởng 5.2x11.6m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nơ Trang Long Bình Thạnh 60.3m2 2 lầu 5.2x11.6 - 12.8 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nơ Trang Long, Phường 5, Bình Thạnh. Diện tích công nhận 60.3m2, kích thước lý tưởng 5.2x11.6m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nơ Trang Long",
+      "phuong": "Phường 5",
+      "quan": "Bình Thạnh",
+      "gia_ty": 12.8,
+      "dien_tich_m2": 60.3,
+      "so_tang": 2,
+      "mat_tien_m": 5.2,
+      "rong_hem_m": 5.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10017,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Bàn Cờ dt 61.4m2 kc 2 lầu dt 5.2x11.8 Quận 3 giá chốt 8.2 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS3536K. Bán gấp nhà đẹp . Diện tích công nhận 61.4m2, kích thước lý tưởng 5.2x11.8m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 8.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Bàn Cờ Quận 3 61.4m2 2 lầu 5.2x11.8 - 8.2 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Bàn Cờ, Phường 8, Quận 3. Diện tích công nhận 61.4m2, kích thước lý tưởng 5.2x11.8m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 8.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bàn Cờ",
+      "phuong": "Phường 8",
+      "quan": "Quận 3",
+      "gia_ty": 8.2,
+      "dien_tich_m2": 61.4,
+      "so_tang": 2,
+      "mat_tien_m": 5.2,
+      "rong_hem_m": 2.5,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10018,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Võ Văn Tần dt 93.1m2 kc 6 lầu dt 4.5x20.7 Quận 3 giá chốt 6.5 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS1931K. Bán gấp nhà đẹp . Diện tích công nhận 93.1m2, kích thước lý tưởng 4.5x20.7m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Võ Văn Tần Quận 3 93.1m2 6 lầu 4.5x20.7 - 6.5 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Võ Văn Tần, Phường 4, Quận 3. Diện tích công nhận 93.1m2, kích thước lý tưởng 4.5x20.7m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 6.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Võ Văn Tần",
+      "phuong": "Phường 4",
+      "quan": "Quận 3",
+      "gia_ty": 6.5,
+      "dien_tich_m2": 93.1,
+      "so_tang": 6,
+      "mat_tien_m": 4.5,
+      "rong_hem_m": 3.6,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10019,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Xích Long dt 42.3m2 kc 3 lầu dt 4.6x9.2 Phú Nhuận giá chốt 12.2 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS7868K. Bán gấp nhà đẹp . Diện tích công nhận 42.3m2, kích thước lý tưởng 4.6x9.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Xích Long Phú Nhuận 42.3m2 3 lầu 4.6x9.2 - 12.2 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Xích Long, Phường 14, Phú Nhuận. Diện tích công nhận 42.3m2, kích thước lý tưởng 4.6x9.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Xích Long",
+      "phuong": "Phường 14",
+      "quan": "Phú Nhuận",
+      "gia_ty": 12.2,
+      "dien_tich_m2": 42.3,
+      "so_tang": 3,
+      "mat_tien_m": 4.6,
+      "rong_hem_m": 5.8,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10020,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 50.5m2 kc 4 lầu dt 3.8x13.3 Phú Nhuận giá chốt 9.4 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS8508K. Bán gấp nhà đẹp . Diện tích công nhận 50.5m2, kích thước lý tưởng 3.8x13.3m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 9.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 50.5m2 4 lầu 3.8x13.3 - 9.4 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 9, Phú Nhuận. Diện tích công nhận 50.5m2, kích thước lý tưởng 3.8x13.3m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 9.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 9",
+      "quan": "Phú Nhuận",
+      "gia_ty": 9.4,
+      "dien_tich_m2": 50.5,
+      "so_tang": 4,
+      "mat_tien_m": 3.8,
+      "rong_hem_m": 3.9,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10021,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 34.8m2 kc 4 lầu dt 3.7x9.4 Phú Nhuận giá chốt 7.7 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS9666K. Bán gấp nhà đẹp . Diện tích công nhận 34.8m2, kích thước lý tưởng 3.7x9.4m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 34.8m2 4 lầu 3.7x9.4 - 7.7 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 2, Phú Nhuận. Diện tích công nhận 34.8m2, kích thước lý tưởng 3.7x9.4m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 2",
+      "quan": "Phú Nhuận",
+      "gia_ty": 7.7,
+      "dien_tich_m2": 34.8,
+      "so_tang": 4,
+      "mat_tien_m": 3.7,
+      "rong_hem_m": 3.7,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10022,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Tri Phương dt 66.2m2 kc 2 lầu dt 5.3x12.5 Quận 10 giá chốt 21.0 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS6617K. Bán gấp nhà đẹp . Diện tích công nhận 66.2m2, kích thước lý tưởng 5.3x12.5m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Tri Phương Quận 10 66.2m2 2 lầu 5.3x12.5 - 21.0 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Tri Phương, Phường 14, Quận 10. Diện tích công nhận 66.2m2, kích thước lý tưởng 5.3x12.5m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Tri Phương",
+      "phuong": "Phường 14",
+      "quan": "Quận 10",
+      "gia_ty": 21.0,
+      "dien_tich_m2": 66.2,
+      "so_tang": 2,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 3.0,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10023,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cách Mạng Tháng Tám dt 85.4m2 kc 4 lầu dt 4.4x19.4 Quận 3 giá chốt 20.4 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS6464K. Bán gấp nhà đẹp . Diện tích công nhận 85.4m2, kích thước lý tưởng 4.4x19.4m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 20.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cách Mạng Tháng Tám Quận 3 85.4m2 4 lầu 4.4x19.4 - 20.4 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cách Mạng Tháng Tám, Phường 11, Quận 3. Diện tích công nhận 85.4m2, kích thước lý tưởng 4.4x19.4m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 20.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cách Mạng Tháng Tám",
+      "phuong": "Phường 11",
+      "quan": "Quận 3",
+      "gia_ty": 20.4,
+      "dien_tich_m2": 85.4,
+      "so_tang": 4,
+      "mat_tien_m": 4.4,
+      "rong_hem_m": 5.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10024,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cách Mạng Tháng Tám dt 40.3m2 kc 5 lầu dt 4.2x9.6 Quận 3 giá chốt 14.8 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS8041K. Bán gấp nhà đẹp . Diện tích công nhận 40.3m2, kích thước lý tưởng 4.2x9.6m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 14.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cách Mạng Tháng Tám Quận 3 40.3m2 5 lầu 4.2x9.6 - 14.8 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cách Mạng Tháng Tám, Phường 5, Quận 3. Diện tích công nhận 40.3m2, kích thước lý tưởng 4.2x9.6m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 14.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cách Mạng Tháng Tám",
+      "phuong": "Phường 5",
+      "quan": "Quận 3",
+      "gia_ty": 14.8,
+      "dien_tich_m2": 40.3,
+      "so_tang": 5,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 2.9,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10025,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Thiện Thuật dt 53.5m2 kc 2 lầu dt 5.3x10.1 Quận 3 giá chốt 20.3 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS3532K. Bán gấp nhà đẹp . Diện tích công nhận 53.5m2, kích thước lý tưởng 5.3x10.1m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 20.3 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Thiện Thuật Quận 3 53.5m2 2 lầu 5.3x10.1 - 20.3 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Thiện Thuật, Phường 5, Quận 3. Diện tích công nhận 53.5m2, kích thước lý tưởng 5.3x10.1m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 20.3 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Thiện Thuật",
+      "phuong": "Phường 5",
+      "quan": "Quận 3",
+      "gia_ty": 20.3,
+      "dien_tich_m2": 53.5,
+      "so_tang": 2,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 3.2,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10026,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Điện Biên Phủ dt 82.7m2 kc 2 lầu dt 5.2x15.9 Quận 3 giá chốt 8.5 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Chị Thảo xem nhà ngay. Mã nguồn MS3608K. Bán gấp nhà đẹp . Diện tích công nhận 82.7m2, kích thước lý tưởng 5.2x15.9m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 8.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Điện Biên Phủ Quận 3 82.7m2 2 lầu 5.2x15.9 - 8.5 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Điện Biên Phủ, Phường 13, Quận 3. Diện tích công nhận 82.7m2, kích thước lý tưởng 5.2x15.9m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 8.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Điện Biên Phủ",
+      "phuong": "Phường 13",
+      "quan": "Quận 3",
+      "gia_ty": 8.5,
+      "dien_tich_m2": 82.7,
+      "so_tang": 2,
+      "mat_tien_m": 5.2,
+      "rong_hem_m": 5.7,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10027,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Lý Thường Kiệt dt 32.7m2 kc 3 lầu dt 4.3x7.6 Quận 10 giá chốt 19.0 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Chị Thảo xem nhà ngay. Mã nguồn MS6378K. Bán gấp nhà đẹp . Diện tích công nhận 32.7m2, kích thước lý tưởng 4.3x7.6m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Lý Thường Kiệt Quận 10 32.7m2 3 lầu 4.3x7.6 - 19.0 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Lý Thường Kiệt, Phường 14, Quận 10. Diện tích công nhận 32.7m2, kích thước lý tưởng 4.3x7.6m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Lý Thường Kiệt",
+      "phuong": "Phường 14",
+      "quan": "Quận 10",
+      "gia_ty": 19.0,
+      "dien_tich_m2": 32.7,
+      "so_tang": 3,
+      "mat_tien_m": 4.3,
+      "rong_hem_m": 4.1,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10028,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Lê Văn Sỹ dt 47.9m2 kc 5 lầu dt 4.7x10.2 Tân Bình giá chốt 16.7 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Chị Thảo xem nhà ngay. Mã nguồn MS1626K. Bán gấp nhà đẹp . Diện tích công nhận 47.9m2, kích thước lý tưởng 4.7x10.2m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Lê Văn Sỹ Tân Bình 47.9m2 5 lầu 4.7x10.2 - 16.7 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Lê Văn Sỹ, Phường 13, Tân Bình. Diện tích công nhận 47.9m2, kích thước lý tưởng 4.7x10.2m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Lê Văn Sỹ",
+      "phuong": "Phường 13",
+      "quan": "Tân Bình",
+      "gia_ty": 16.7,
+      "dien_tich_m2": 47.9,
+      "so_tang": 5,
+      "mat_tien_m": 4.7,
+      "rong_hem_m": 5.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10029,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Sư Vạn Hạnh dt 52.5m2 kc 5 lầu dt 5.0x10.5 Quận 10 giá chốt 15.5 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS1027K. Bán gấp nhà đẹp . Diện tích công nhận 52.5m2, kích thước lý tưởng 5.0x10.5m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Sư Vạn Hạnh Quận 10 52.5m2 5 lầu 5.0x10.5 - 15.5 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Sư Vạn Hạnh, Phường 7, Quận 10. Diện tích công nhận 52.5m2, kích thước lý tưởng 5.0x10.5m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Sư Vạn Hạnh",
+      "phuong": "Phường 7",
+      "quan": "Quận 10",
+      "gia_ty": 15.5,
+      "dien_tich_m2": 52.5,
+      "so_tang": 5,
+      "mat_tien_m": 5.0,
+      "rong_hem_m": 4.3,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10030,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 76.9m2 kc 3 lầu dt 4.9x15.7 Phú Nhuận giá chốt 11.5 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS9308K. Bán gấp nhà đẹp . Diện tích công nhận 76.9m2, kích thước lý tưởng 4.9x15.7m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 11.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 76.9m2 3 lầu 4.9x15.7 - 11.5 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 11, Phú Nhuận. Diện tích công nhận 76.9m2, kích thước lý tưởng 4.9x15.7m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 11.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 11",
+      "quan": "Phú Nhuận",
+      "gia_ty": 11.5,
+      "dien_tich_m2": 76.9,
+      "so_tang": 3,
+      "mat_tien_m": 4.9,
+      "rong_hem_m": 2.7,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10031,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Bạch Đằng dt 51.4m2 kc 6 lầu dt 4.8x10.7 Tân Bình giá chốt 7.6 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS7653K. Bán gấp nhà đẹp . Diện tích công nhận 51.4m2, kích thước lý tưởng 4.8x10.7m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Bạch Đằng Tân Bình 51.4m2 6 lầu 4.8x10.7 - 7.6 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Bạch Đằng, Phường 7, Tân Bình. Diện tích công nhận 51.4m2, kích thước lý tưởng 4.8x10.7m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bạch Đằng",
+      "phuong": "Phường 7",
+      "quan": "Tân Bình",
+      "gia_ty": 7.6,
+      "dien_tich_m2": 51.4,
+      "so_tang": 6,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 4.0,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10032,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Xích Long dt 48.7m2 kc 6 lầu dt 4.2x11.6 Phú Nhuận giá chốt 15.5 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS2389K. Bán gấp nhà đẹp . Diện tích công nhận 48.7m2, kích thước lý tưởng 4.2x11.6m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Xích Long Phú Nhuận 48.7m2 6 lầu 4.2x11.6 - 15.5 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Xích Long, Phường 5, Phú Nhuận. Diện tích công nhận 48.7m2, kích thước lý tưởng 4.2x11.6m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Xích Long",
+      "phuong": "Phường 5",
+      "quan": "Phú Nhuận",
+      "gia_ty": 15.5,
+      "dien_tich_m2": 48.7,
+      "so_tang": 6,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 3.6,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10033,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Út Tịch dt 71.2m2 kc 3 lầu dt 4.0x17.8 Tân Bình giá chốt 16.6 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS8461K. Bán gấp nhà đẹp . Diện tích công nhận 71.2m2, kích thước lý tưởng 4.0x17.8m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Út Tịch Tân Bình 71.2m2 3 lầu 4.0x17.8 - 16.6 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Út Tịch, Phường 11, Tân Bình. Diện tích công nhận 71.2m2, kích thước lý tưởng 4.0x17.8m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Út Tịch",
+      "phuong": "Phường 11",
+      "quan": "Tân Bình",
+      "gia_ty": 16.6,
+      "dien_tich_m2": 71.2,
+      "so_tang": 3,
+      "mat_tien_m": 4.0,
+      "rong_hem_m": 3.3,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10034,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Xô Viết Nghệ Tĩnh dt 42.7m2 kc 5 lầu dt 4.8x8.9 Bình Thạnh giá chốt 12.1 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Chị Thảo xem nhà ngay. Mã nguồn MS9486K. Bán gấp nhà đẹp . Diện tích công nhận 42.7m2, kích thước lý tưởng 4.8x8.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Xô Viết Nghệ Tĩnh Bình Thạnh 42.7m2 5 lầu 4.8x8.9 - 12.1 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Xô Viết Nghệ Tĩnh, Phường 10, Bình Thạnh. Diện tích công nhận 42.7m2, kích thước lý tưởng 4.8x8.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Xô Viết Nghệ Tĩnh",
+      "phuong": "Phường 10",
+      "quan": "Bình Thạnh",
+      "gia_ty": 12.1,
+      "dien_tich_m2": 42.7,
+      "so_tang": 5,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 3.0,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10035,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Lê Quang Định dt 46.3m2 kc 5 lầu dt 5.2x8.9 Bình Thạnh giá chốt 7.7 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS9976K. Bán gấp nhà đẹp . Diện tích công nhận 46.3m2, kích thước lý tưởng 5.2x8.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Lê Quang Định Bình Thạnh 46.3m2 5 lầu 5.2x8.9 - 7.7 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Lê Quang Định, Phường 9, Bình Thạnh. Diện tích công nhận 46.3m2, kích thước lý tưởng 5.2x8.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Lê Quang Định",
+      "phuong": "Phường 9",
+      "quan": "Bình Thạnh",
+      "gia_ty": 7.7,
+      "dien_tich_m2": 46.3,
+      "so_tang": 5,
+      "mat_tien_m": 5.2,
+      "rong_hem_m": 4.1,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10036,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nơ Trang Long dt 86.1m2 kc 3 lầu dt 4.2x20.5 Bình Thạnh giá chốt 19.4 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS2269K. Bán gấp nhà đẹp . Diện tích công nhận 86.1m2, kích thước lý tưởng 4.2x20.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nơ Trang Long Bình Thạnh 86.1m2 3 lầu 4.2x20.5 - 19.4 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nơ Trang Long, Phường 12, Bình Thạnh. Diện tích công nhận 86.1m2, kích thước lý tưởng 4.2x20.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nơ Trang Long",
+      "phuong": "Phường 12",
+      "quan": "Bình Thạnh",
+      "gia_ty": 19.4,
+      "dien_tich_m2": 86.1,
+      "so_tang": 3,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 3.5,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10037,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phổ Quang dt 51.9m2 kc 2 lầu dt 5.3x9.8 Tân Bình giá chốt 7.8 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS9890K. Bán gấp nhà đẹp . Diện tích công nhận 51.9m2, kích thước lý tưởng 5.3x9.8m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phổ Quang Tân Bình 51.9m2 2 lầu 5.3x9.8 - 7.8 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phổ Quang, Phường 5, Tân Bình. Diện tích công nhận 51.9m2, kích thước lý tưởng 5.3x9.8m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phổ Quang",
+      "phuong": "Phường 5",
+      "quan": "Tân Bình",
+      "gia_ty": 7.8,
+      "dien_tich_m2": 51.9,
+      "so_tang": 2,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 3.3,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10038,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Gia Trí dt 43.3m2 kc 6 lầu dt 4.2x10.3 Bình Thạnh giá chốt 21.1 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS7389K. Bán gấp nhà đẹp . Diện tích công nhận 43.3m2, kích thước lý tưởng 4.2x10.3m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Gia Trí Bình Thạnh 43.3m2 6 lầu 4.2x10.3 - 21.1 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Gia Trí, Phường 1, Bình Thạnh. Diện tích công nhận 43.3m2, kích thước lý tưởng 4.2x10.3m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Gia Trí",
+      "phuong": "Phường 1",
+      "quan": "Bình Thạnh",
+      "gia_ty": 21.1,
+      "dien_tich_m2": 43.3,
+      "so_tang": 6,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 2.6,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10039,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: D2 dt 78.0m2 kc 3 lầu dt 5.0x15.6 Bình Thạnh giá chốt 13.6 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS3704K. Bán gấp nhà đẹp . Diện tích công nhận 78.0m2, kích thước lý tưởng 5.0x15.6m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 13.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "D2 Bình Thạnh 78.0m2 3 lầu 5.0x15.6 - 13.6 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường D2, Phường 12, Bình Thạnh. Diện tích công nhận 78.0m2, kích thước lý tưởng 5.0x15.6m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 13.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "D2",
+      "phuong": "Phường 12",
+      "quan": "Bình Thạnh",
+      "gia_ty": 13.6,
+      "dien_tich_m2": 78.0,
+      "so_tang": 3,
+      "mat_tien_m": 5.0,
+      "rong_hem_m": 3.5,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10040,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nơ Trang Long dt 64.7m2 kc 6 lầu dt 5.3x12.2 Bình Thạnh giá chốt 14.8 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Chị Thảo xem nhà ngay. Mã nguồn MS5262K. Bán gấp nhà đẹp . Diện tích công nhận 64.7m2, kích thước lý tưởng 5.3x12.2m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 14.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nơ Trang Long Bình Thạnh 64.7m2 6 lầu 5.3x12.2 - 14.8 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nơ Trang Long, Phường 10, Bình Thạnh. Diện tích công nhận 64.7m2, kích thước lý tưởng 5.3x12.2m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 2.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 14.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nơ Trang Long",
+      "phuong": "Phường 10",
+      "quan": "Bình Thạnh",
+      "gia_ty": 14.8,
+      "dien_tich_m2": 64.7,
+      "so_tang": 6,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 2.6,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10041,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Bạch Đằng dt 59.6m2 kc 5 lầu dt 4.0x14.9 Bình Thạnh giá chốt 10.1 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS6733K. Bán gấp nhà đẹp . Diện tích công nhận 59.6m2, kích thước lý tưởng 4.0x14.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Bạch Đằng Bình Thạnh 59.6m2 5 lầu 4.0x14.9 - 10.1 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Bạch Đằng, Phường 4, Bình Thạnh. Diện tích công nhận 59.6m2, kích thước lý tưởng 4.0x14.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bạch Đằng",
+      "phuong": "Phường 4",
+      "quan": "Bình Thạnh",
+      "gia_ty": 10.1,
+      "dien_tich_m2": 59.6,
+      "so_tang": 5,
+      "mat_tien_m": 4.0,
+      "rong_hem_m": 5.8,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10042,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cách Mạng Tháng Tám dt 80.8m2 kc 2 lầu dt 4.7x17.2 Quận 3 giá chốt 21.2 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS4571K. Bán gấp nhà đẹp . Diện tích công nhận 80.8m2, kích thước lý tưởng 4.7x17.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cách Mạng Tháng Tám Quận 3 80.8m2 2 lầu 4.7x17.2 - 21.2 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cách Mạng Tháng Tám, Phường 2, Quận 3. Diện tích công nhận 80.8m2, kích thước lý tưởng 4.7x17.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cách Mạng Tháng Tám",
+      "phuong": "Phường 2",
+      "quan": "Quận 3",
+      "gia_ty": 21.2,
+      "dien_tich_m2": 80.8,
+      "so_tang": 2,
+      "mat_tien_m": 4.7,
+      "rong_hem_m": 3.2,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10043,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Xô Viết Nghệ Tĩnh dt 79.9m2 kc 6 lầu dt 3.6x22.2 Bình Thạnh giá chốt 21.4 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS7149K. Bán gấp nhà đẹp . Diện tích công nhận 79.9m2, kích thước lý tưởng 3.6x22.2m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Xô Viết Nghệ Tĩnh Bình Thạnh 79.9m2 6 lầu 3.6x22.2 - 21.4 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Xô Viết Nghệ Tĩnh, Phường 5, Bình Thạnh. Diện tích công nhận 79.9m2, kích thước lý tưởng 3.6x22.2m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Xô Viết Nghệ Tĩnh",
+      "phuong": "Phường 5",
+      "quan": "Bình Thạnh",
+      "gia_ty": 21.4,
+      "dien_tich_m2": 79.9,
+      "so_tang": 6,
+      "mat_tien_m": 3.6,
+      "rong_hem_m": 5.0,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10044,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Xô Viết Nghệ Tĩnh dt 35.0m2 kc 3 lầu dt 4.8x7.3 Bình Thạnh giá chốt 7.2 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS6688K. Bán gấp nhà đẹp . Diện tích công nhận 35.0m2, kích thước lý tưởng 4.8x7.3m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Xô Viết Nghệ Tĩnh Bình Thạnh 35.0m2 3 lầu 4.8x7.3 - 7.2 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Xô Viết Nghệ Tĩnh, Phường 4, Bình Thạnh. Diện tích công nhận 35.0m2, kích thước lý tưởng 4.8x7.3m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.2 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Xô Viết Nghệ Tĩnh",
+      "phuong": "Phường 4",
+      "quan": "Bình Thạnh",
+      "gia_ty": 7.2,
+      "dien_tich_m2": 35.0,
+      "so_tang": 3,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 5.2,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10045,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Thích Quảng Đức dt 54.1m2 kc 4 lầu dt 4.4x12.3 Phú Nhuận giá chốt 5.7 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS8135K. Bán gấp nhà đẹp . Diện tích công nhận 54.1m2, kích thước lý tưởng 4.4x12.3m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 5.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Thích Quảng Đức Phú Nhuận 54.1m2 4 lầu 4.4x12.3 - 5.7 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Thích Quảng Đức, Phường 11, Phú Nhuận. Diện tích công nhận 54.1m2, kích thước lý tưởng 4.4x12.3m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 5.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Thích Quảng Đức",
+      "phuong": "Phường 11",
+      "quan": "Phú Nhuận",
+      "gia_ty": 5.7,
+      "dien_tich_m2": 54.1,
+      "so_tang": 4,
+      "mat_tien_m": 4.4,
+      "rong_hem_m": 4.0,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10046,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cách Mạng Tháng Tám dt 92.7m2 kc 6 lầu dt 3.8x24.4 Quận 3 giá chốt 18.3 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Chị Thảo xem nhà ngay. Mã nguồn MS5569K. Bán gấp nhà đẹp . Diện tích công nhận 92.7m2, kích thước lý tưởng 3.8x24.4m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 18.3 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cách Mạng Tháng Tám Quận 3 92.7m2 6 lầu 3.8x24.4 - 18.3 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cách Mạng Tháng Tám, Phường 9, Quận 3. Diện tích công nhận 92.7m2, kích thước lý tưởng 3.8x24.4m. Kết cấu 6 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 7 phòng ngủ và 6 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 18.3 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cách Mạng Tháng Tám",
+      "phuong": "Phường 9",
+      "quan": "Quận 3",
+      "gia_ty": 18.3,
+      "dien_tich_m2": 92.7,
+      "so_tang": 6,
+      "mat_tien_m": 3.8,
+      "rong_hem_m": 4.1,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10047,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nơ Trang Long dt 60.3m2 kc 5 lầu dt 4.6x13.1 Bình Thạnh giá chốt 11.1 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS5581K. Bán gấp nhà đẹp . Diện tích công nhận 60.3m2, kích thước lý tưởng 4.6x13.1m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 11.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nơ Trang Long Bình Thạnh 60.3m2 5 lầu 4.6x13.1 - 11.1 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nơ Trang Long, Phường 13, Bình Thạnh. Diện tích công nhận 60.3m2, kích thước lý tưởng 4.6x13.1m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 11.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nơ Trang Long",
+      "phuong": "Phường 13",
+      "quan": "Bình Thạnh",
+      "gia_ty": 11.1,
+      "dien_tich_m2": 60.3,
+      "so_tang": 5,
+      "mat_tien_m": 4.6,
+      "rong_hem_m": 4.2,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10048,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Văn Trỗi dt 30.8m2 kc 2 lầu dt 5.4x5.7 Phú Nhuận giá chốt 9.5 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS8342K. Bán gấp nhà đẹp . Diện tích công nhận 30.8m2, kích thước lý tưởng 5.4x5.7m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 9.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Văn Trỗi Phú Nhuận 30.8m2 2 lầu 5.4x5.7 - 9.5 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Văn Trỗi, Phường 9, Phú Nhuận. Diện tích công nhận 30.8m2, kích thước lý tưởng 5.4x5.7m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 9.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Văn Trỗi",
+      "phuong": "Phường 9",
+      "quan": "Phú Nhuận",
+      "gia_ty": 9.5,
+      "dien_tich_m2": 30.8,
+      "so_tang": 2,
+      "mat_tien_m": 5.4,
+      "rong_hem_m": 3.9,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10049,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Tô Hiến Thành dt 44.2m2 kc 4 lầu dt 4.8x9.2 Quận 10 giá chốt 16.5 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Đầu chủ Minh xem nhà ngay. Mã nguồn MS6764K. Bán gấp nhà đẹp . Diện tích công nhận 44.2m2, kích thước lý tưởng 4.8x9.2m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Tô Hiến Thành Quận 10 44.2m2 4 lầu 4.8x9.2 - 16.5 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Tô Hiến Thành, Phường 5, Quận 10. Diện tích công nhận 44.2m2, kích thước lý tưởng 4.8x9.2m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Tô Hiến Thành",
+      "phuong": "Phường 5",
+      "quan": "Quận 10",
+      "gia_ty": 16.5,
+      "dien_tich_m2": 44.2,
+      "so_tang": 4,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 3.8,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10050,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Bạch Đằng dt 46.2m2 kc 3 lầu dt 3.5x13.2 Bình Thạnh giá chốt 10.7 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS5530K. Bán gấp nhà đẹp . Diện tích công nhận 46.2m2, kích thước lý tưởng 3.5x13.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Bạch Đằng Bình Thạnh 46.2m2 3 lầu 3.5x13.2 - 10.7 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Bạch Đằng, Phường 5, Bình Thạnh. Diện tích công nhận 46.2m2, kích thước lý tưởng 3.5x13.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bạch Đằng",
+      "phuong": "Phường 5",
+      "quan": "Bình Thạnh",
+      "gia_ty": 10.7,
+      "dien_tich_m2": 46.2,
+      "so_tang": 3,
+      "mat_tien_m": 3.5,
+      "rong_hem_m": 5.1,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10051,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Đăng Lưu dt 48.3m2 kc 3 lầu dt 3.4x14.2 Phú Nhuận giá chốt 10.4 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS5786K. Bán gấp nhà đẹp . Diện tích công nhận 48.3m2, kích thước lý tưởng 3.4x14.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Đăng Lưu Phú Nhuận 48.3m2 3 lầu 3.4x14.2 - 10.4 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Đăng Lưu, Phường 10, Phú Nhuận. Diện tích công nhận 48.3m2, kích thước lý tưởng 3.4x14.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.8m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.4 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Đăng Lưu",
+      "phuong": "Phường 10",
+      "quan": "Phú Nhuận",
+      "gia_ty": 10.4,
+      "dien_tich_m2": 48.3,
+      "so_tang": 3,
+      "mat_tien_m": 3.4,
+      "rong_hem_m": 3.8,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  }
+]

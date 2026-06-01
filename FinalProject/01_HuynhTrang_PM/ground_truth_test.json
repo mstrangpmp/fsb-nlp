@@ -1,0 +1,137 @@
+[
+  {
+    "id": 10060,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Thành Thái, Phường 6, Quận 10. Diện tích công nhận 56.8m2, kích thước lý tưởng 4.3x13.2m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.4m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 18.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Thành Thái",
+      "phuong": "Phường 6",
+      "quan": "Quận 10",
+      "gia_ty": 18.9,
+      "dien_tich_m2": 56.8,
+      "so_tang": 5,
+      "mat_tien_m": 4.3,
+      "rong_hem_m": 4.4,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10061,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Nguyễn Tri Phương, Phường 14, Quận 10. Diện tích công nhận 65.1m2, kích thước lý tưởng 4.2x15.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 14.1 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Tri Phương",
+      "phuong": "Phường 14",
+      "quan": "Quận 10",
+      "gia_ty": 14.1,
+      "dien_tich_m2": 65.1,
+      "so_tang": 3,
+      "mat_tien_m": 4.2,
+      "rong_hem_m": 4.7,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10062,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Võ Văn Tần, Phường 8, Quận 3. Diện tích công nhận 87.3m2, kích thước lý tưởng 4.3x20.3m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Võ Văn Tần",
+      "phuong": "Phường 8",
+      "quan": "Quận 3",
+      "gia_ty": 21.6,
+      "dien_tich_m2": 87.3,
+      "so_tang": 2,
+      "mat_tien_m": 4.3,
+      "rong_hem_m": 4.6,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10063,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Nguyễn Thiện Thuật, Phường 8, Quận 3. Diện tích công nhận 91.7m2, kích thước lý tưởng 4.7x19.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 13.7 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Thiện Thuật",
+      "phuong": "Phường 8",
+      "quan": "Quận 3",
+      "gia_ty": 13.7,
+      "dien_tich_m2": 91.7,
+      "so_tang": 3,
+      "mat_tien_m": 4.7,
+      "rong_hem_m": 5.0,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10064,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Huỳnh Văn Bánh, Phường 7, Phú Nhuận. Diện tích công nhận 42.3m2, kích thước lý tưởng 4.6x9.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Huỳnh Văn Bánh",
+      "phuong": "Phường 7",
+      "quan": "Phú Nhuận",
+      "gia_ty": 19.8,
+      "dien_tich_m2": 42.3,
+      "so_tang": 3,
+      "mat_tien_m": 4.6,
+      "rong_hem_m": 3.5,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10065,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Út Tịch, Phường 10, Tân Bình. Diện tích công nhận 95.0m2, kích thước lý tưởng 4.3x22.1m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Út Tịch",
+      "phuong": "Phường 10",
+      "quan": "Tân Bình",
+      "gia_ty": 12.9,
+      "dien_tich_m2": 95.0,
+      "so_tang": 3,
+      "mat_tien_m": 4.3,
+      "rong_hem_m": 4.2,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10066,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Thích Quảng Đức, Phường 4, Phú Nhuận. Diện tích công nhận 85.7m2, kích thước lý tưởng 4.1x20.9m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 17.8 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Thích Quảng Đức",
+      "phuong": "Phường 4",
+      "quan": "Phú Nhuận",
+      "gia_ty": 17.8,
+      "dien_tich_m2": 85.7,
+      "so_tang": 4,
+      "mat_tien_m": 4.1,
+      "rong_hem_m": 5.0,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10067,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Thành Thái, Phường 9, Quận 10. Diện tích công nhận 92.8m2, kích thước lý tưởng 4.0x23.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Thành Thái",
+      "phuong": "Phường 9",
+      "quan": "Quận 10",
+      "gia_ty": 19.9,
+      "dien_tich_m2": 92.8,
+      "so_tang": 2,
+      "mat_tien_m": 4.0,
+      "rong_hem_m": 4.0,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10068,
+    "ground_truth_desc": "Bán gấp nhà đẹp đường Bạch Đằng, Phường 6, Bình Thạnh. Diện tích công nhận 70.5m2, kích thước lý tưởng 4.1x17.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bạch Đằng",
+      "phuong": "Phường 6",
+      "quan": "Bình Thạnh",
+      "gia_ty": 19.6,
+      "dien_tich_m2": 70.5,
+      "so_tang": 2,
+      "mat_tien_m": 4.1,
+      "rong_hem_m": 5.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  }
+]

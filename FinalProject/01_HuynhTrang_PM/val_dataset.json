@@ -1,0 +1,138 @@
+[
+  {
+    "id": 10052,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Cách Mạng Tháng Tám dt 78.9m2 kc 2 lầu dt 3.4x23.2 Quận 3 giá chốt 15.0 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS2070K. Bán gấp nhà đẹp . Diện tích công nhận 78.9m2, kích thước lý tưởng 3.4x23.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Cách Mạng Tháng Tám Quận 3 78.9m2 2 lầu 3.4x23.2 - 15.0 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Cách Mạng Tháng Tám, Phường 14, Quận 3. Diện tích công nhận 78.9m2, kích thước lý tưởng 3.4x23.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 15.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Cách Mạng Tháng Tám",
+      "phuong": "Phường 14",
+      "quan": "Quận 3",
+      "gia_ty": 15.0,
+      "dien_tich_m2": 78.9,
+      "so_tang": 2,
+      "mat_tien_m": 3.4,
+      "rong_hem_m": 4.1,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10053,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Gia Trí dt 67.7m2 kc 3 lầu dt 4.8x14.1 Bình Thạnh giá chốt 8.0 tỷ HH 2% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS9561K. Bán gấp nhà đẹp . Diện tích công nhận 67.7m2, kích thước lý tưởng 4.8x14.1m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 8.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Gia Trí Bình Thạnh 67.7m2 3 lầu 4.8x14.1 - 8.0 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Gia Trí, Phường 2, Bình Thạnh. Diện tích công nhận 67.7m2, kích thước lý tưởng 4.8x14.1m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 8.0 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Gia Trí",
+      "phuong": "Phường 2",
+      "quan": "Bình Thạnh",
+      "gia_ty": 8.0,
+      "dien_tich_m2": 67.7,
+      "so_tang": 3,
+      "mat_tien_m": 4.8,
+      "rong_hem_m": 4.5,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10054,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Nguyễn Gia Trí dt 58.8m2 kc 5 lầu dt 5.2x11.3 Bình Thạnh giá chốt 10.5 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Hùng xem nhà ngay. Mã nguồn MS3573K. Bán gấp nhà đẹp . Diện tích công nhận 58.8m2, kích thước lý tưởng 5.2x11.3m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Nguyễn Gia Trí Bình Thạnh 58.8m2 5 lầu 5.2x11.3 - 10.5 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Nguyễn Gia Trí, Phường 15, Bình Thạnh. Diện tích công nhận 58.8m2, kích thước lý tưởng 5.2x11.3m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 10.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Nguyễn Gia Trí",
+      "phuong": "Phường 15",
+      "quan": "Bình Thạnh",
+      "gia_ty": 10.5,
+      "dien_tich_m2": 58.8,
+      "so_tang": 5,
+      "mat_tien_m": 5.2,
+      "rong_hem_m": 4.7,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10055,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Điện Biên Phủ dt 34.9m2 kc 5 lầu dt 3.2x10.9 Quận 3 giá chốt 16.9 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS2166K. Bán gấp nhà đẹp . Diện tích công nhận 34.9m2, kích thước lý tưởng 3.2x10.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Điện Biên Phủ Quận 3 34.9m2 5 lầu 3.2x10.9 - 16.9 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Điện Biên Phủ, Phường 9, Quận 3. Diện tích công nhận 34.9m2, kích thước lý tưởng 3.2x10.9m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.1m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 16.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Điện Biên Phủ",
+      "phuong": "Phường 9",
+      "quan": "Quận 3",
+      "gia_ty": 16.9,
+      "dien_tich_m2": 34.9,
+      "so_tang": 5,
+      "mat_tien_m": 3.2,
+      "rong_hem_m": 4.1,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10056,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Võ Văn Tần dt 81.4m2 kc 3 lầu dt 4.6x17.7 Quận 3 giá chốt 12.5 tỷ HH 1% liên hệ gấp [SĐT đã ẩn] gặp Anh Nam xem nhà ngay. Mã nguồn MS3718K. Bán gấp nhà đẹp . Diện tích công nhận 81.4m2, kích thước lý tưởng 4.6x17.7m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.4m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Võ Văn Tần Quận 3 81.4m2 3 lầu 4.6x17.7 - 12.5 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Võ Văn Tần, Phường 13, Quận 3. Diện tích công nhận 81.4m2, kích thước lý tưởng 4.6x17.7m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.4m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.5 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Võ Văn Tần",
+      "phuong": "Phường 13",
+      "quan": "Quận 3",
+      "gia_ty": 12.5,
+      "dien_tich_m2": 81.4,
+      "so_tang": 3,
+      "mat_tien_m": 4.6,
+      "rong_hem_m": 4.4,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": 10057,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Út Tịch dt 83.7m2 kc 5 lầu dt 5.3x15.8 Tân Bình giá chốt 7.6 tỷ Nguồn Thiên Khôi liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS2317K. Bán gấp nhà đẹp . Diện tích công nhận 83.7m2, kích thước lý tưởng 5.3x15.8m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Út Tịch Tân Bình 83.7m2 5 lầu 5.3x15.8 - 7.6 tỷ Hẻm xe tải",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Út Tịch, Phường 12, Tân Bình. Diện tích công nhận 83.7m2, kích thước lý tưởng 5.3x15.8m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.9m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 7.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Út Tịch",
+      "phuong": "Phường 12",
+      "quan": "Tân Bình",
+      "gia_ty": 7.6,
+      "dien_tich_m2": 83.7,
+      "so_tang": 5,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 4.9,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": 10058,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Phan Xích Long dt 58.1m2 kc 4 lầu dt 3.9x14.9 Phú Nhuận giá chốt 5.9 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Anh Hải xem nhà ngay. Mã nguồn MS1659K. Bán gấp nhà đẹp . Diện tích công nhận 58.1m2, kích thước lý tưởng 3.9x14.9m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 5.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Phan Xích Long Phú Nhuận 58.1m2 4 lầu 3.9x14.9 - 5.9 tỷ Hẻm ba gác",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Phan Xích Long, Phường 15, Phú Nhuận. Diện tích công nhận 58.1m2, kích thước lý tưởng 3.9x14.9m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm ba gác rộng 3.3m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 5.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Phan Xích Long",
+      "phuong": "Phường 15",
+      "quan": "Phú Nhuận",
+      "gia_ty": 5.9,
+      "dien_tich_m2": 58.1,
+      "so_tang": 4,
+      "mat_tien_m": 3.9,
+      "rong_hem_m": 3.3,
+      "phan_loai_hem": "Hẻm ba gác"
+    }
+  },
+  {
+    "id": 10059,
+    "raw_input_cleaned": "[Đã ẩn địa chỉ cụ thể & SĐT] Mô tả thô tin đăng: Bàn Cờ dt 72.1m2 kc 3 lầu dt 5.3x13.6 Quận 3 giá chốt 21.9 tỷ Hoa hồng 1.5% liên hệ gấp [SĐT đã ẩn] gặp Cô Mai xem nhà ngay. Mã nguồn MS6260K. Bán gấp nhà đẹp . Diện tích công nhận 72.1m2, kích thước lý tưởng 5.3x13.6m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "ground_truth_title": "Bàn Cờ Quận 3 72.1m2 3 lầu 5.3x13.6 - 21.9 tỷ Hẻm xe hơi",
+    "ground_truth_description": "Bán gấp nhà đẹp đường Bàn Cờ, Phường 9, Quận 3. Diện tích công nhận 72.1m2, kích thước lý tưởng 5.3x13.6m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "extracted_specs": {
+      "duong": "Bàn Cờ",
+      "phuong": "Phường 9",
+      "quan": "Quận 3",
+      "gia_ty": 21.9,
+      "dien_tich_m2": 72.1,
+      "so_tang": 3,
+      "mat_tien_m": 5.3,
+      "rong_hem_m": 4.0,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  }
+]
