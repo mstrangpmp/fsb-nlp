@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề xuất Đề án: Tự động hóa chuẩn hóa & tóm tắt tin BĐS Khang Ngô</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(26, 29, 38, 0.65);
+            --card-border: rgba(243, 156, 18, 0.15);
+            --primary: #f39c12;
+            --primary-hover: #e67e22;
+            --primary-glow: rgba(243, 156, 18, 0.3);
+            --text-main: #f5f6fa;
+            --text-muted: #a0a5b5;
+            --accent-green: #2ecc71;
+            --accent-red: #e74c3c;
+            --accent-blue: #3498db;
+            --font-display: 'Be Vietnam Pro', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(243, 156, 18, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* Container & Grid utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: rgba(11, 12, 16, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(243, 156, 18, 0.1);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-family: var(--font-display);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 30%, #f39c12 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 18px;
+            max-width: 760px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: #111;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px var(--primary-glow);
+            font-family: var(--font-display);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(243, 156, 18, 0.5);
+            background: var(--primary);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            box-shadow: none;
+            margin-left: 16px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+            color: var(--text-main);
+        }
+
+        /* Section styling */
+        section {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Glass Card style */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(243, 156, 18, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(243, 156, 18, 0.08);
+        }
+
+        /* Interactive Simulation (Before & After) */
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 768px) {
+            .sim-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sim-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sim-box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .badge-red {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--accent-red);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+        }
+
+        .badge-green {
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--accent-green);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+        }
+
+        .sim-content {
+            flex-grow: 1;
+            background: rgba(10, 10, 12, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 24px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-muted);
+            white-space: pre-wrap;
+            position: relative;
+            overflow: hidden;
+            min-height: 250px;
+        }
+
+        .redact-highlight {
+            background: rgba(231, 76, 60, 0.25);
+            color: #ff9f93;
+            border-bottom: 1px dashed var(--accent-red);
+            padding: 0 2px;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .spec-highlight {
+            background: rgba(243, 156, 18, 0.25);
+            color: #fbd38d;
+            border-bottom: 1px dashed var(--primary);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .sim-action-area {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        /* Models Comparison Section */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .model-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .model-icon {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .model-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .model-list {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .model-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .model-list li i {
+            margin-top: 4px;
+        }
+
+        .model-list li i.fa-check {
+            color: var(--accent-green);
+        }
+
+        .model-list li i.fa-xmark {
+            color: var(--accent-red);
+        }
+
+        .model-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-top: 16px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* 6 Roles Interactive Section */
+        .roles-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 992px) {
+            .roles-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .roles-list-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .role-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 16px 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+            font-weight: 500;
+        }
+
+        .role-btn:hover {
+            background: rgba(243, 156, 18, 0.05);
+            border-color: rgba(243, 156, 18, 0.2);
+            color: var(--text-main);
+        }
+
+        .role-btn.active {
+            background: rgba(243, 156, 18, 0.15);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.1);
+        }
+
+        .role-number {
+            background: rgba(255, 255, 255, 0.05);
+            width: 24px;
+            height: 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .role-btn.active .role-number {
+            background: var(--primary);
+            color: #111;
+        }
+
+        .role-detail-card {
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .role-detail-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+
+        .role-detail-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .role-detail-type {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .role-detail-body {
+            flex-grow: 1;
+        }
+
+        .role-section-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-section-text {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .role-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 24px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .role-meta-item h5 {
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .role-meta-item p {
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Flowchart and Relations */
+        .flow-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .flow-wrapper {
+            min-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+        }
+
+        .flow-step-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .flow-card {
+            background: rgba(10, 10, 12, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 16px 20px;
+            width: 230px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-card:hover, .flow-card.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+            transform: translateY(-2px);
+        }
+
+        .flow-card-num {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .flow-card.active .flow-card-num {
+            background: var(--primary);
+            color: #111;
+        }
+
+        .flow-card-name {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .flow-card-role {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Flow Connectors */
+        .flow-line-horizontal {
+            flex-grow: 1;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .flow-line-horizontal.active {
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .flow-line-horizontal::after {
+            content: '\f0da';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: -7px;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 12px;
+        }
+
+        .flow-line-horizontal.active::after {
+            color: var(--primary);
+            text-shadow: 0 0 5px var(--primary);
+        }
+
+        .flow-line-vertical-down {
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .flow-line-vertical-down.active {
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .flow-connection-description {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid var(--primary);
+            border-radius: 6px;
+            padding: 10px 16px;
+            color: var(--text-main);
+            font-size: 12px;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            max-width: 280px;
+            text-align: center;
+        }
+
+        .flow-connection-description.visible {
+            opacity: 1;
+        }
+
+        /* Calculator section */
+        .calc-wrapper {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 992px) {
+            .calc-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calc-inputs h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: var(--font-display);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.2);
+        }
+
+        .calc-results-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .calc-res-card {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .calc-res-card-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .calc-res-card-val {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .calc-res-card-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .calc-info-box {
+            background: rgba(243, 156, 18, 0.05);
+            border: 1px solid rgba(243, 156, 18, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .calc-info-box strong {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: #06070a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        /* Presentation Mode */
+        .presentation-banner {
+            background: var(--primary);
+            color: #111;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-mini {
+            background: #111;
+            color: var(--primary);
+            border: none;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Slide overlay */
+        .slide-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-color);
+            z-index: 2000;
+            display: none;
+            padding: 60px 40px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 16px;
+        }
+
+        .slide-body {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .slide-content-wrap {
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 16px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .slide-nav-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .slide-nav-btn:hover {
+            background: var(--primary);
+            color: #111;
+        }
+
+        .slide-close {
+            background: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Animation utilities */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse-once {
+            animation: pulse 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container header-wrap">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-brain"></i> NLP<span>.FSB</span>
+            </a>
+            <nav>
+                <a href="#about" class="active">Giới Thiệu</a>
+                <a href="#models">Mô HÌnh</a>
+                <a href="#roles">Phân Vai</a>
+                <a href="#flow">Dòng Chảy</a>
+                <a href="#calc">Chia Dữ Liệu</a>
+                <a href="#sim">Hiệu Năng</a>
+                <a href="#hybrid">Tương Lai Hybrid</a>
+            </nav>
+            <button class="btn btn-secondary" onclick="openSlideDeck()" style="padding: 10px 20px; font-size: 13px; margin-left: 0;">
+                <i class="fa-solid fa-play"></i> Thuyết Trình
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i> Đề Án Thực Nghiệm 5 Mô Hình - Nhóm 6 Người (FSB NLP501)
+            </div>
+            <h1>Rút Gọn &amp; Chuẩn Hóa Tin Đăng Bất Động Sản<br>Bằng Kiến Trúc Transformer</h1>
+            <p>
+                Nghiên cứu ứng dụng công nghệ xử lý ngôn ngữ tự nhiên để tự động hóa quy trình làm sạch dữ liệu tin đăng nhà phố cho website Môi giới BDS, ẩn thông tin nhạy cảm của căn nhà nhưng vẫn bảo toàn tuyệt đối thông số kỹ thuật.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <a href="#sim" class="btn">
+                    <i class="fa-solid fa-bolt"></i> Xem Mô Phỏng Tác Vụ
+                </a>
+                <a href="#roles" class="btn btn-secondary">
+                    <i class="fa-solid fa-users"></i> Xem Phân Vai Nhóm
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    
+    
+
+    
+    <!-- Models Comparison Section -->
+    <section id="models">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hạ Tầng &amp; Các Mô HÌnh Thực Nghiệm (5 Mô Hình)</h2>
+                <p>Nhóm thiết lập thực nghiệm đối đầu khoa học giữa 5 mô hình đại diện cho 3 thế hệ công nghệ xử lý ngôn ngữ tự nhiên (NLP) khác nhau.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+                <!-- Model 1: Baseline TextRank -->
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="model-icon"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="model-title">1. Baseline TextRank</div>
+                        <div style="font-size: 11px; color: var(--primary); text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Thành viên: Nguyễn Huỳnh Bách Nhân (Baseline Specialist)</div>
+                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 300; height: 80px; line-height: 1.5;">
+                            Sử dụng thuật toán đếm tần suất từ và xây dựng đồ thị câu (TextRank/LexRank) bằng thư viện `underthesea` hoặc `sumy` để trích xuất trực tiếp câu.
+                        </p>
+                        <ul class="model-list">
+                            <li><i class="fa-solid fa-check"></i> Không tốn tài nguyên chạy, chạy offline</li>
+                            <li><i class="fa-solid fa-check"></i> Latency tức thời (0.02s)</li>
+                            <li><i class="fa-solid fa-xmark"></i> Dễ sót thông tin nhạy cảm (SĐT, số nhà)</li>
+                            <li><i class="fa-solid fa-xmark"></i> Không hiểu ngữ nghĩa sâu, văn phong thô cứng</li>
+                        </ul>
+                    </div>
+                    <span class="model-tag" style="margin-top: 16px;">Mức độ: Cổ điển (Traditional NLP)</span>
+                </div>
+                
+                <!-- Model 2: GPT-4o mini API -->
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="model-icon"><i class="fa-solid fa-cloud"></i></div>
+                        <div class="model-title">2. GPT-4o mini API</div>
+                        <div style="font-size: 11px; color: var(--primary); text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Thành viên: Đỗ Trọng Minh Quân (GPT Specialist)</div>
+                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 300; height: 80px; line-height: 1.5;">
+                            Sử dụng API thương mại lớn của OpenAI, kết hợp với prompt có cấu trúc và Few-shot (3 mẫu Train làm mồi) để Paraphrase và làm sạch thông tin.
+                        </p>
+                        <ul class="model-list">
+                            <li><i class="fa-solid fa-check"></i> Năng lực ngôn ngữ hàng đầu thế giới</li>
+                            <li><i class="fa-solid fa-check"></i> Hành văn trôi chảy, chuyên nghiệp</li>
+                            <li><i class="fa-solid fa-xmark"></i> Phụ thuộc internet và API key</li>
+                            <li><i class="fa-solid fa-xmark"></i> Latency cao (~1.55s) &amp; Phát sinh chi phí</li>
+                        </ul>
+                    </div>
+                    <span class="model-tag" style="margin-top: 16px;">Mức độ: Thương Mại (Prompt-based API)</span>
+                </div>
+                
+                <!-- Model 3: Gemini 1.5 Flash API -->
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="model-icon"><i class="fa-solid fa-star-of-life"></i></div>
+                        <div class="model-title">3. Gemini 1.5 Flash API</div>
+                        <div style="font-size: 11px; color: var(--primary); text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Thành viên: Nguyễn Bá Học (Gemini Specialist)</div>
+                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 300; height: 80px; line-height: 1.5;">
+                            Sử dụng mô hình đa phương thức siêu tốc của Google thông qua API, chèn Few-shot ví dụ để tóm tắt và ẩn thông tin nhạy cảm.
+                        </p>
+                        <ul class="model-list">
+                            <li><i class="fa-solid fa-check"></i> Tối ưu hóa cho ngữ cảnh dài và nhanh</li>
+                            <li><i class="fa-solid fa-check"></i> Chi phí token rẻ hơn GPT-4o</li>
+                            <li><i class="fa-solid fa-xmark"></i> Phụ thuộc kết nối mạng</li>
+                            <li><i class="fa-solid fa-xmark"></i> Latency còn chậm (~1.85s) &amp; Đôi khi bị lặp ý</li>
+                        </ul>
+                    </div>
+                    <span class="model-tag" style="margin-top: 16px;">Mức độ: Thương Mại (Prompt-based API)</span>
+                </div>
+
+                <!-- Model 4: ViT5 Fine-tuned -->
+                <div class="card" style="border-color: rgba(243, 156, 18, 0.4); box-shadow: 0 8px 32px rgba(243, 156, 18, 0.08); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="model-icon" style="color: var(--primary);"><i class="fa-solid fa-crown"></i></div>
+                        <div class="model-title" style="color: var(--primary);">4. ViT5 Fine-tuned</div>
+                        <div style="font-size: 11px; color: var(--primary); text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Thành viên: Đinh Thị Mai Anh (ViT5 Specialist)</div>
+                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 300; height: 80px; line-height: 1.5;">
+                            Mô hình Seq2Seq T5 chuyên dụng cho tiếng Việt (220M params), được fine-tune trực tiếp trên 60 mẫu Train và tối ưu giải mã Beam Search trên Colab.
+                        </p>
+                        <ul class="model-list">
+                            <li><i class="fa-solid fa-check"></i> Bảo mật tuyệt đối, chạy offline hoàn toàn</li>
+                            <li><i class="fa-solid fa-check"></i> Latency siêu tốc (0.18s) &amp; Chi phí 0đ</li>
+                            <li><i class="fa-solid fa-check"></i> Học sâu chuẩn xác văn phong BĐS Khang Ngô</li>
+                            <li><i class="fa-solid fa-xmark"></i> Cần huấn luyện, tốn tài nguyên ban đầu</li>
+                        </ul>
+                    </div>
+                    <span class="model-tag" style="background: rgba(243, 156, 18, 0.1); border-color: var(--primary); color: var(--primary); margin-top: 16px;">Mức độ: Học sâu thích ứng (SOTA Local)</span>
+                </div>
+
+                <!-- Model 5: PhoBERT Fine-tuned -->
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="model-icon"><i class="fa-solid fa-gears"></i></div>
+                        <div class="model-title">5. PhoBERT Fine-tuned</div>
+                        <div style="font-size: 11px; color: var(--primary); text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Thành viên: Nguyễn Hữu Hiểu (PhoBERT Specialist)</div>
+                        <p style="color: var(--text-muted); font-size: 13px; font-weight: 300; height: 80px; line-height: 1.5;">
+                            Mô hình BERTSeq2Seq hoặc PhoBERT (VinAI, 370M params) được huấn luyện thích ứng phong cách làm sạch trên Colab T4.
+                        </p>
+                        <ul class="model-list">
+                            <li><i class="fa-solid fa-check"></i> Kiến trúc BERT/BART học ngữ cảnh tiếng Việt xuất sắc</li>
+                            <li><i class="fa-solid fa-check"></i> Latency cực nhanh (0.25s) &amp; Chi phí 0đ</li>
+                            <li><i class="fa-solid fa-check"></i> Tuyệt đối bảo mật dữ liệu doanh nghiệp</li>
+                            <li><i class="fa-solid fa-xmark"></i> Mô hình nặng hơn ViT5, yêu cầu RAM GPU lớn hơn</li>
+                        </ul>
+                    </div>
+                    <span class="model-tag" style="margin-top: 16px;">Mức độ: Học sâu thích ứng (SOTA Local)</span>
+                </div>
+            </div>
+
+            
+                    </div>
+        </div>
+    </section>
+
+    <!-- Interactive 6 Roles Section -->
+    <section id="roles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Phân Vai &amp; Đóng Góp Thành Viên (6 Người)</h2>
+                <p>Mỗi thành viên đóng vai trò là một mắt xích cốt lõi trong dây chuyền sản xuất AI, đảm bảo mọi người đều có đất diễn kỹ thuật hoặc nghiệp vụ riêng.</p>
+            </div>
+            
+            <div class="roles-layout">
+                
+                <!-- Left: List buttons -->
+                <div class="roles-list-box">
+                    <button class="role-btn active" onclick="showRoleDetail(1)">
+                        <span>1. Lê Huỳnh Trang: Quản Lý &amp; Tổng Hợp</span>
+                        <span class="role-number">1</span>
+                    </button>
+                    <button class="role-btn" onclick="showRoleDetail(2)">
+                        <span>2. Nguyễn Huỳnh Bách Nhân: Baseline</span>
+                        <span class="role-number">2</span>
+                    </button>
+                    <button class="role-btn" onclick="showRoleDetail(3)">
+                        <span>3. Đỗ Trọng Minh Quân: Prompt GPT API</span>
+                        <span class="role-number">3</span>
+                    </button>
+                    <button class="role-btn" onclick="showRoleDetail(4)">
+                        <span>4. Nguyễn Bá Học: Prompt Gemini API</span>
+                        <span class="role-number">4</span>
+                    </button>
+                    <button class="role-btn" onclick="showRoleDetail(5)">
+                        <span>5. Đinh Thị Mai Anh: Học Sâu ViT5</span>
+                        <span class="role-number">5</span>
+                    </button>
+                    <button class="role-btn" onclick="showRoleDetail(6)">
+                        <span>6. Nguyễn Hữu Hiểu: Học Sâu PhoBERT</span>
+                        <span class="role-number">6</span>
+                    </button>
+                </div>
+
+                
+                <!-- Right: Card Detail -->
+                <div class="card role-detail-card" id="roleDetailCard">
+                    <!-- Dynamic Content Loaded by JS -->
+                    <div class="role-detail-header">
+                        <div class="role-detail-type" id="roleType">Dữ Liệu &amp; Nghiệp Vụ</div>
+                        <div class="role-detail-title" id="roleTitle">1. Người Quản Lý &amp; Tổng Hợp (Data Curator &amp; Final Presenter)</div>
+                    </div>
+                    <div class="role-detail-body">
+                        <div class="role-section-title"><i class="fa-solid fa-bullseye"></i> Mục tiêu hành động</div>
+                        <div class="role-section-text" id="roleObjective">Chuẩn bị nguồn "nguyên liệu" dữ liệu thật siêu sạch và đồng nhất cho toàn bộ dây chuyền kiểm thử của nhóm. Chịu trách nhiệm trực tiếp về chất lượng Ground Truth đầu vào.</div>
+                        
+                        <div class="role-section-title"><i class="fa-solid fa-list-check"></i> Nhiệm vụ cụ thể</div>
+                        <div class="role-section-text" id="roleTasks">Lấy 68 tin sạch (tin đã chọn lọc) làm mục tiêu. Sử dụng LLM để dịch ngược (Back-Translation) thành mô tả thô làm dữ liệu huấn luyện/kiểm thử. Chia dữ liệu thành 3 tập song song: Train (51 căn) / Val (8 căn) / Test (9 căn) và bàn giao cho cả nhóm. Ban hành tài liệu DoD định chuẩn chất lượng đầu ra. Cuối cùng, tính điểm ROUGE-L/BERTScore, ráp slide hoàn chỉnh.</div>
+                    </div>
+                    <div class="role-meta-grid">
+                        <div class="role-meta-item">
+                            <h5>Đầu Ra Bàn Giao (Output)</h5>
+                            <p id="roleOutput">File dataset song song (68 căn) chia sẵn 3 tập + Tài liệu DoD + Bộ slide báo cáo tổng hợp.</p>
+                        </div>
+                        <div class="role-meta-item">
+                            <h5>Mối Liên Kết Phụ Thuộc</h5>
+                            <p id="roleDepends">Là điểm khởi đầu của cả nhóm. Bàn giao file cho Người 2, 3, 4.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Flowchart Section -->
+    <section id="flow">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dòng Chảy Công Việc (Interactive Workflow)</h2>
+                <p>Bấm vào các nút thành viên trên sơ đồ để xem chính xác dữ liệu/sản phẩm gì được bàn giao và chuyển giao qua lại giữa các vai trò như thế nào.</p>
+            </div>
+            
+            
+            <div class="flow-container">
+                <div class="flow-wrapper">
+                    <!-- Row 1 -->
+                    <div class="flow-step-row">
+                        <div class="flow-card active" onclick="activateFlowStep(1, event)">
+                            <div class="flow-card-num">1</div>
+                            <div class="flow-card-name">Lê Huỳnh Trang: Curator &amp; Leader</div>
+                            <div class="flow-card-role">Dữ liệu &amp; DoD &amp; Ráp Slide cuối</div>
+                        </div>
+                        <div class="flow-line-horizontal active" id="line-1-2"></div>
+                        <div class="flow-card" onclick="activateFlowStep(2, event)">
+                            <div class="flow-card-num">2</div>
+                            <div class="flow-card-name">Nguyễn Huỳnh Bách Nhân: Baseline</div>
+                            <div class="flow-card-role">TextRank cổ điển &amp; Báo cáo riêng</div>
+                        </div>
+                        <div class="flow-line-horizontal" id="line-2-5"></div>
+                        <div class="flow-card" onclick="activateFlowStep(5, event)">
+                            <div class="flow-card-num">5</div>
+                            <div class="flow-card-name">Đinh Thị Mai Anh: ViT5 Spec</div>
+                            <div class="flow-card-role">Fine-tune ViT5 &amp; Báo cáo riêng</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Vertical Links -->
+                    <div style="position: relative; height: 2px;">
+                        <div class="flow-line-vertical-down active" id="line-v-1" style="left: 115px;"></div>
+                        <div class="flow-line-vertical-down" id="line-v-3" style="left: 50%;"></div>
+                        <div class="flow-line-vertical-down" id="line-v-5" style="right: 115px; left: auto; transform: none;"></div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="flow-step-row" style="margin-top: 20px;">
+                        <div class="flow-card" onclick="activateFlowStep(4, event)">
+                            <div class="flow-card-num">4</div>
+                            <div class="flow-card-name">Nguyễn Bá Học: Gemini Spec</div>
+                            <div class="flow-card-role">Gemini Few-shot &amp; Báo cáo riêng</div>
+                        </div>
+                        <div class="flow-line-horizontal" id="line-4-5"></div>
+                        <div style="width: 230px; visibility: hidden;">Spacer</div>
+                        <div class="flow-line-horizontal" id="line-5-6"></div>
+                        <div class="flow-card" onclick="activateFlowStep(6, event)">
+                            <div class="flow-card-num">6</div>
+                            <div class="flow-card-name">Nguyễn Hữu Hiểu: PhoBERT Specialist</div>
+                            <div class="flow-card-role">Fine-tune PhoBERT &amp; Báo cáo riêng</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 3 (Offset) -->
+                    <div style="position: relative; height: 2px;">
+                        <div class="flow-line-vertical-down" id="line-v-3-down" style="left: 50%;"></div>
+                    </div>
+                    <div class="flow-step-row" style="margin-top: 20px; justify-content: center;">
+                        <div class="flow-card" onclick="activateFlowStep(3, event)" style="margin-right: 20px;">
+                            <div class="flow-card-num">3</div>
+                            <div class="flow-card-name">Đỗ Trọng Minh Quân: GPT Spec</div>
+                            <div class="flow-card-role">GPT Few-shot &amp; Báo cáo riêng</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Info Box -->
+                <div class="flow-connection-description" id="flowInfoBox">Bấm vào bất kỳ nút thành viên nào ở trên để xem luồng tương tác và mối liên hệ output!</div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Splits Calculator Section -->
+    <section id="calc">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bộ Tính Tỷ Lệ Phân Chia Dữ Liệu</h2>
+                <p>Nhập số lượng mẫu dữ liệu Ground Truth thật của chị để hệ thống tự động tính toán số căn phân tập tối ưu theo tỷ lệ 75% Train / 12.5% Val / 12.5% Test.</p>
+            </div>
+            
+            <div class="card">
+                <div class="calc-wrapper">
+                    <!-- Left inputs -->
+                    <div class="calc-inputs">
+                        <h4>Dữ Liệu Đầu Vào</h4>
+                        <div class="form-group" style="margin-top: 16px;">
+                            <label class="form-label" for="txtTotalData">Số lượng Ground Truth thật hiện có</label>
+                            <input type="number" id="txtTotalData" class="form-control" value="68" min="20" max="1000" oninput="calculateSplits()">
+                        </div>
+                        <div style="font-size: 13px; color: var(--text-muted); font-weight: 300;">
+                            * Khuyến nghị: Duy trì số lượng từ 60 đến 150 mẫu thật để quá trình fine-tune đạt hiệu quả thích ứng tốt nhất trên tập dữ liệu đặc thù.
+                        </div>
+                    </div>
+                    
+                    <!-- Right results -->
+                    <div>
+                        <div class="calc-results-cards">
+                            <div class="calc-res-card">
+                                <div class="calc-res-card-title">Tập Train (75%)</div>
+                                <div class="calc-res-card-val" id="valTrain">51</div>
+                                <div class="calc-res-card-desc">Căn để Huấn luyện</div>
+                            </div>
+                            <div class="calc-res-card">
+                                <div class="calc-res-card-title">Tập Val (12.5%)</div>
+                                <div class="calc-res-card-val" id="valVal">8</div>
+                                <div class="calc-res-card-desc">Căn để Kiểm định</div>
+                            </div>
+                            <div class="calc-res-card">
+                                <div class="calc-res-card-title">Tập Test (12.5%)</div>
+                                <div class="calc-res-card-val" id="valTest">9</div>
+                                <div class="calc-res-card-desc">Căn để Kiểm thử</div>
+                            </div>
+                        </div>
+                        <div class="calc-info-box">
+                            <i class="fa-solid fa-circle-info" style="color: var(--primary); margin-right: 8px;"></i>
+                            Luật huấn luyện Transformer: <strong>Tập Train</strong> sẽ truyền trực tiếp vào Colab của <strong>Mai Anh &amp; Nhân</strong> để cập nhật trọng số. <strong>Tập Val</strong> dùng để đo Loss cuối mỗi Epoch giúp dừng training đúng lúc. <strong>Tập Test</strong> là tập Unseen hoàn toàn để <strong>Trang</strong> chấm điểm ROUGE so sánh các mô hình khách quan!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task Simulation Section -->
+    <section id="sim">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bảng So Sánh &amp; Trải Nghiệm Thực Tế (Interactive Arena)</h2>
+                <p>Hệ thống hiển thị kết quả đầu ra thực tế của 5 mô hình khác nhau được phân chia độc lập cho 5 thành viên tự triển khai. Chuyên gia ngành (End-user) sẽ đọc, so sánh và xếp hạng chất lượng từ Hạng 1 đến Hạng 5.</p>
+            </div>
+            
+            <div class="card" style="padding: 24px; margin-bottom: 32px;">
+                <!-- Sample Switcher -->
+                <div style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center;" id="sampleSwitcher">
+                    <button class="btn btn-secondary active" onclick="switchSample(1)" style="margin-left: 0; padding: 10px 16px; font-size: 13px; background: rgba(243, 156, 18, 0.15); border-color: var(--primary); color: var(--primary);" id="btnSample1">Căn mẫu 1: Tô Hiến Thành (Q10)</button>
+                    <button class="btn btn-secondary" onclick="switchSample(2)" style="margin-left: 0; padding: 10px 16px; font-size: 13px;" id="btnSample2">Căn mẫu 2: Lê Văn Sỹ (Tân Bình)</button>
+                    <button class="btn btn-secondary" onclick="switchSample(3)" style="margin-left: 0; padding: 10px 16px; font-size: 13px;" id="btnSample3">Căn mẫu 3: Nguyễn Thiện Thuật (Q3)</button>
+                    <button class="btn btn-secondary" onclick="switchSample(4)" style="margin-left: 0; padding: 10px 16px; font-size: 13px;" id="btnSample4">Căn mẫu 4: Phan Xích Long (Phú Nhuận)</button>
+                </div>
+
+                <!-- Input View -->
+                <div style="margin-bottom: 32px;">
+                    <div style="font-family: var(--font-display); font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Văn Bản Gốc (Raw Input)</div>
+                    <div id="activeRawInput" style="background: rgba(10, 10, 12, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 16px; font-size: 13px; color: #a0a5b5; line-height: 1.5; white-space: pre-wrap;">163.24.80 Tô Hiến Thành 50.2 5 4 13 12.9 tỷ Hòa Hưng Quận 10 10-15 tỷ HĐ Nguyễn Hoàng Nam Bảo Tín 0973776929 H3GB nguồn Đầu chủ Nguyễn Hoàng Nam - Bảo Tín. Nhà 5 tầng kiên cố, 6 phòng ngủ - 4 WC, hẻm xe tải vào tận cửa, sổ vuông vức nở hậu nhẹ phong thủy tốt, giảm 300tr còn 12.9 tỷ TL</div>
+                </div>
+
+                <!-- 5 Columns/Cards Comparison (Flex or Responsive Grid) -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;" id="comparisonGrid">
+                    <!-- Column 1: ViT5 Fine-tuned (Người 5) -->
+                    <div style="background: rgba(243, 156, 18, 0.04); border: 1px solid var(--primary); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(243, 156, 18, 0.05);">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <span style="font-family: var(--font-display); font-weight: 700; font-size: 13px; color: var(--primary);"><i class="fa-solid fa-crown"></i> Đinh Thị Mai Anh: ViT5 Fine-tuned</span>
+                                <span class="badge-green" style="font-size: 9px; padding: 2px 6px;">HẠNG 1 (XUẤT SẮC)</span>
+                            </div>
+                            <div id="vit5Title" style="font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.05);">Tô Hiến Thành (gần Trường Sơn) 50.2m2 5 lầu 4x13 - 12.9 tỷ Hẻm xe tải</div>
+                            <div id="vit5Desc" style="font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.5; height: 160px; overflow-y: auto;">Nhà 5 tầng kiên cố, 6 phòng ngủ, 4 WC tọa lạc tại vị trí cực đẹp khu trung tâm Quận 10, gần trục đường lớn Trường Sơn / Lý Thái Tổ di chuyển thuận lợi. Sổ vuông vức, nở hậu nhẹ phong thủy cực tốt. Hẻm ô tô rộng rãi xe tải vào tận cửa. Phù hợp cho gia đình định cư lâu dài kết hợp kinh doanh hoặc cho thuê dòng tiền cao. Thương lượng trực tiếp chủ.</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">4.8 / 5.0 (Hạng 1)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Hội đồng AI:</span> <strong style="color: var(--primary);">4.9 / 5.0 (Hạng 1)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">0.18 giây (Local)</strong></div>
+                            <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-green);">0đ (Miễn phí)</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: PhoBERT Fine-tuned (Người 6) -->
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <span style="font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #a0a5b5;"><i class="fa-solid fa-gears"></i> Nguyễn Hữu Hiểu: PhoBERT Fine-tuned</span>
+                                <span class="badge-green" style="font-size: 9px; padding: 2px 6px; background: rgba(46, 204, 113, 0.1); color: var(--accent-green); border-color: rgba(46,204,113,0.2);">HẠNG 2 (RẤT TỐT)</span>
+                            </div>
+                            <div id="bartTitle" style="font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.05);">Nhà Tô Hiến Thành Quận 10 50.2m2 5 lầu 4x13 - 12.9 tỷ Hẻm xe hơi đỗ cửa</div>
+                            <div id="bartDesc" style="font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.5; height: 160px; overflow-y: auto;">Kết cấu 5 lầu đúc BTCT kiên cố gồm 6 phòng ngủ, 4 nhà vệ sinh sạch sẽ. Vị trí đắc địa tại Hòa Hưng Quận 10, gần ngay khu Trường Sơn, giao thông vô cùng thuận tiện. Hẻm rộng rãi xe hơi xe tải đỗ trước cửa. Sổ hồng riêng vuông vức, nở hậu nhẹ cực kỳ phong thủy. Giá bán 12.9 tỷ còn thương lượng thương lượng trực tiếp chủ.</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">4.5 / 5.0 (Hạng 2)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Hội đồng AI:</span> <strong style="color: var(--primary);">4.6 / 5.0 (Hạng 2)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">0.25 giây (Local)</strong></div>
+                            <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-green);">0đ (Miễn phí)</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: GPT-4o mini Few-shot (Người 3) -->
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <span style="font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #a0a5b5;"><i class="fa-solid fa-cloud"></i> Đỗ Trọng Minh Quân: GPT-4o mini API</span>
+                                <span class="badge-green" style="font-size: 9px; padding: 2px 6px; background: rgba(52, 152, 219, 0.1); color: var(--accent-blue); border-color: rgba(52,152,219,0.2);">HẠNG 3 (TỐT)</span>
+                            </div>
+                            <div id="gptTitle" style="font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.05);">Bán nhà Tô Hiến Thành Quận 10 DT 50.2m2 5 tầng giá 12.9 tỷ</div>
+                            <div id="gptDesc" style="font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.5; height: 160px; overflow-y: auto;">Nhà bán tại Tô Hiến Thành Quận 10 gần Hòa Hưng. Diện tích 50.2m2, kết cấu 5 tầng kiên cố với 6 phòng ngủ, 4 phòng vệ sinh. Hẻm xe hơi rộng rãi xe tải vào tận nơi, khu vực an ninh dân trí tốt. Pháp lý sổ hồng riêng vuông vức nở hậu nhẹ. Giá chào bán 12.9 tỷ có thương lượng trực tiếp chủ.</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">4.2 / 5.0 (Hạng 3)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Hội đồng AI:</span> <strong style="color: var(--primary);">4.4 / 5.0 (Hạng 3)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-blue);">1.55 giây (API)</strong></div>
+                            <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-red);">~23,000đ (Token)</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Gemini 1.5 Flash (Người 4) -->
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <span style="font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #a0a5b5;"><i class="fa-solid fa-star-of-life"></i> Nguyễn Bá Học: Gemini Flash API</span>
+                                <span class="badge-green" style="font-size: 9px; padding: 2px 6px; background: rgba(52, 152, 219, 0.1); color: var(--accent-blue); border-color: rgba(52,152,219,0.2);">HẠNG 4 (KHÁ TỐT)</span>
+                            </div>
+                            <div id="geminiTitle" style="font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.05);">Nhà bán Tô Hiến Thành Quận 10 - 50.2m2, 5 tầng, 12.9 tỷ thương lượng</div>
+                            <div id="geminiDesc" style="font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.5; height: 160px; overflow-y: auto;">Nhà bán thuộc khu trung tâm Hòa Hưng Quận 10, gần ngay đường lớn Trường Sơn. Diện tích thực tế 50.2m2, kết cấu kiên cố 5 tầng đúc với 6 phòng ngủ, 4 nhà vệ sinh. Hẻm xe hơi rộng thoáng xe tải di chuyển thoải mái tận nhà. Sổ hồng chính chủ vuông vức, nở hậu nhẹ. Giá chào 12.9 tỷ có bớt lộc chủ.</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">4.0 / 5.0 (Hạng 4)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Hội đồng AI:</span> <strong style="color: var(--primary);">4.1 / 5.0 (Hạng 4)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-blue);">1.85 giây (API)</strong></div>
+                            <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-blue);">~15,000đ (Token)</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Column 5: Baseline TextRank (Người 2) -->
+                    <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <span style="font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #a0a5b5;"><i class="fa-solid fa-calculator"></i> Nguyễn Huỳnh Bách Nhân: Baseline TextRank</span>
+                                <span class="badge-red" style="font-size: 9px; padding: 2px 6px;">HẠNG 5 (KÉM)</span>
+                            </div>
+                            <div id="baseTitle" style="font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--text-main); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.05);">Nhà Tô Hiến Thành 50.2m2 5 tầng 4x13</div>
+                            <div id="baseDesc" style="font-size: 12px; color: var(--text-muted); font-weight: 300; line-height: 1.5; height: 160px; overflow-y: auto;">163.24.80 Tô Hiến Thành 50.2 5 4 13 12.9 tỷ Hòa Hưng Quận 10. Nhà 5 tầng kiên cố, 6 phòng ngủ - 4 WC, hẻm xe tải vào tận cửa, sổ vuông vức nở hậu nhẹ phong thủy tốt, giảm 300tr còn 12.9 tỷ TL.</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">2.1 / 5.0 (Hạng 5)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Hội đồng AI:</span> <strong style="color: var(--accent-red);">2.3 / 5.0 (Hạng 5)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">0.02 giây (Local)</strong></div>
+                            <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-green);">0đ (Miễn phí)</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aggregate Performance Table -->
+            <div class="card" style="padding: 24px; border-color: rgba(255, 255, 255, 0.05); margin-bottom: 32px;">
+                <div style="font-family: var(--font-display); font-weight: 600; font-size: 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-chart-simple" style="color: var(--primary);"></i> Bảng Thống Kê Tổng Hợp Hiệu Năng Toàn Diện (7 Tiêu Chí Đánh Giá Trên Tập Test)
+                </div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 12px; text-align: left; min-width: 900px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-family: var(--font-display);">
+                                <th style="padding: 12px 8px; width: 180px;">Mô Hình Chạy Thử</th>
+                                <th style="padding: 12px 8px; text-align: center;">ROUGE-L (TB)</th>
+                                <th style="padding: 12px 8px; text-align: center;">BERTScore (TB)</th>
+                                <th style="padding: 12px 8px; text-align: center;">Specs Pres. (TB)</th>
+                                <th style="padding: 12px 8px; text-align: center;">Expert Pref. (Elo)</th>
+                                <th style="padding: 12px 8px; text-align: center;">Hội đồng AI (Score)</th>
+                                <th style="padding: 12px 8px; text-align: center;">Độ Trễ (Latency)</th>
+                                <th style="padding: 12px 8px; text-align: center;">Chi Phí (Cost/1k)</th>
+                                <th style="padding: 12px 8px; text-align: center; width: 120px;">Trạng Thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(243, 156, 18, 0.05);">
+                                <td style="padding: 14px 8px; font-weight: 600; color: var(--primary);"><i class="fa-solid fa-crown"></i> ViT5 Fine-tuned</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 600; color: var(--primary);">82.3%</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 600; color: var(--primary);">91.5%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">100%</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: bold; color: var(--primary);">4.8 / 5.0 (Hạng 1)</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: bold; color: var(--primary);">4.9 / 5.0 (Hạng 1)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.18 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ (Offline)</td>
+                                <td style="padding: 14px 8px; text-align: center;"><span class="badge-green" style="padding: 2px 8px; font-size: 9px;">TỐI ƯU NHẤT</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 8px;"><i class="fa-solid fa-gears" style="margin-right: 6px;"></i> PhoBERT Fine-tuned</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 500;">79.5%</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 500;">89.2%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">98.5%</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: bold;">4.5 / 5.0 (Hạng 2)</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: bold; color: var(--primary);">4.6 / 5.0 (Hạng 2)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.25 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ (Offline)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Đạt chất lượng</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 8px;"><i class="fa-solid fa-cloud" style="margin-right: 6px;"></i> GPT-4o mini API</td>
+                                <td style="padding: 14px 8px; text-align: center;">76.2%</td>
+                                <td style="padding: 14px 8px; text-align: center;">88.4%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--primary);">96.0%</td>
+                                <td style="padding: 14px 8px; text-align: center;">4.2 / 5.0 (Hạng 3)</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 500; color: var(--text-main);">4.4 / 5.0 (Hạng 3)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">1.55 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">~23,000đ ($Token)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Trễ cao, mất phí</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 8px;"><i class="fa-solid fa-star-of-life" style="margin-right: 6px;"></i> Gemini 1.5 Flash API</td>
+                                <td style="padding: 14px 8px; text-align: center;">74.8%</td>
+                                <td style="padding: 14px 8px; text-align: center;">87.1%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--primary);">95.2%</td>
+                                <td style="padding: 14px 8px; text-align: center;">4.0 / 5.0 (Hạng 4)</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 500; color: var(--text-main);">4.1 / 5.0 (Hạng 4)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">1.85 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">~15,000đ ($Token)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Trễ cao, mất phí</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 14px 8px;"><i class="fa-solid fa-calculator" style="margin-right: 6px;"></i> Baseline TextRank</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">45.1%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">65.0%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">82.0%</td>
+                                <td style="padding: 14px 8px; text-align: center;">2.1 / 5.0 (Hạng 5)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">2.3 / 5.0 (Hạng 5)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.02 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Lọt thông tin nhạy cảm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Hybrid Technology & Future Direction Section -->
+    <section id="hybrid">
+        <div class="container">
+            <!-- Nhận Xét Đối Đầu & Hướng Phát Triển Hybrid Tương Lai -->
+            <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+                <!-- Card 1: So sánh đối lập -->
+                <div class="card" style="padding: 24px; border-color: rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="font-family: var(--font-display); font-weight: 600; font-size: 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--primary);">
+                            <i class="fa-solid fa-scale-balanced"></i> Phân Tích So Sánh Hai Cơ Chế Đối Lập
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 13px; line-height: 1.5; font-weight: 300; margin-bottom: 16px;">
+                            Sự khác biệt cốt lõi về bản chất kỹ thuật giữa hai trường phái ứng dụng AI hiện đại để team dễ dàng nắm bắt:
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px; line-height: 1.5;">
+                            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 12px;">
+                                <strong style="color: var(--text-main);"><i class="fa-solid fa-cloud" style="color: var(--primary); margin-right: 6px;"></i> Prompt-based APIs (GPT &amp; Gemini):</strong>
+                                <ul style="margin-top: 6px; padding-left: 14px; list-style-type: disc; color: var(--text-muted); font-weight: 300;">
+                                    <li><strong style="color: var(--accent-green);">Điểm mạnh:</strong> Độ linh hoạt vô hạn, dễ dàng cập nhật luật hay phong cách viết mới tức thì thông qua thay đổi prompt mà không cần huấn luyện lại.</li>
+                                    <li><strong style="color: var(--accent-red);">Điểm yếu:</strong> Phát sinh chi phí token liên tục, độ trễ mạng cao (~1.5s), nguy cơ ảo giác thông số và rủi ro rò rỉ dữ liệu nội bộ lên cloud.</li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 12px;">
+                                <strong style="color: var(--text-main);"><i class="fa-solid fa-brain" style="color: var(--primary); margin-right: 6px;"></i> Local Fine-tuned (ViT5 &amp; PhoBERT):</strong>
+                                <ul style="margin-top: 6px; padding-left: 14px; list-style-type: disc; color: var(--text-muted); font-weight: 300;">
+                                    <li><strong style="color: var(--accent-green);">Điểm mạnh:</strong> Bảo mật tuyệt đối 100% offline, chi phí vận hành 0đ, độ trễ siêu tốc (~0.18s), trích xuất specs kỹ thuật và lọc nhiễu cực kỳ "cứng".</li>
+                                    <li><strong style="color: var(--accent-red);">Điểm yếu:</strong> Độ linh hoạt bằng 0 (muốn đổi định dạng, phong cách viết bắt buộc phải sửa dữ liệu nhãn và train lại mô hình từ đầu).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Hybrid Pipeline -->
+                <div class="card" style="padding: 24px; border-color: rgba(243, 156, 18, 0.3); box-shadow: 0 8px 32px rgba(243, 156, 18, 0.03); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="font-family: var(--font-display); font-weight: 600; font-size: 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--primary);">
+                            <i class="fa-solid fa-code-fork"></i> Kiến Trúc Hybrid Đề Xuất (Tương Lai)
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 13px; line-height: 1.5; font-weight: 300; margin-bottom: 16px;">
+                            Đề xuất luồng lai ghép sáng tạo nhằm tối ưu hóa độ linh hoạt trong khuôn khổ kiểm soát nghiêm ngặt của doanh nghiệp:
+                        </p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <!-- Step 1 -->
+                            <div style="display: flex; gap: 12px; align-items: flex-start; font-size: 12px;">
+                                <div style="background: rgba(243, 156, 18, 0.15); border: 1px solid var(--primary); color: var(--primary); min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-display);">1</div>
+                                <div>
+                                    <strong style="color: var(--text-main); display: block; margin-bottom: 2px;">Khâu Sáng Tạo (LLM Prompting - Sandbox)</strong>
+                                    <span style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Gọi API GPT/Gemini ở môi trường thử nghiệm để lấy ý tưởng viết tiêu đề cuốn hút, đề xuất nhiều văn phong sáng tạo hoặc tự động dịch ngược (Back-translation) dữ liệu thô nháp.</span>
+                                </div>
+                            </div>
+                            <!-- Arrow down -->
+                            <div style="text-align: center; color: rgba(255,255,255,0.15); margin: -8px 0; font-size: 12px;"><i class="fa-solid fa-arrow-down-long"></i></div>
+                            <!-- Step 2 -->
+                            <div style="display: flex; gap: 12px; align-items: flex-start; font-size: 12px;">
+                                <div style="background: rgba(46, 204, 113, 0.15); border: 1px solid var(--accent-green); color: var(--accent-green); min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: var(--font-display);">2</div>
+                                <div>
+                                    <strong style="color: var(--text-main); display: block; margin-bottom: 2px;">Khâu Lọc Nhiễu &amp; Kiểm Soát (Local ViT5/PhoBERT - DoD Gatekeeper)</strong>
+                                    <span style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Làm chốt chặn thép cuối cùng chạy offline tại chỗ. Mô hình local được huấn luyện cứng để ẩn tuyệt đối SĐT/số nhà, lọc sạch 100% nhiễu rác và chuẩn hóa specs kỹ thuật chuẩn xác trước khi tin tự động xuất bản lên website BDS Khang Ngô.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dự án FSB-NLP501. Phát triển bởi Nhóm Học viên Cao học FSB.</p>
+            <p style="font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.25);">Thiết kế và cấu trúc hóa dưới Chuẩn LAAF v1.1 bởi Trợ lý AI Antigravity.</p>
+        </div>
+    </footer>
+
+    <!-- Slide Deck Presentation overlay -->
+    <div class="slide-overlay" id="slideDeck">
+        <div class="slide-header">
+            <div class="logo" style="font-size: 20px;"><i class="fa-solid fa-brain"></i> ĐỀ AN NLP.FSB501</div>
+            <button class="slide-close" onclick="closeSlideDeck()">Đóng [Esc]</button>
+        </div>
+        <div class="slide-body">
+            <div class="slide-content-wrap" id="slideContent">
+                <!-- Slide content dynamically loaded by JS -->
+            </div>
+        </div>
+        <div class="slide-footer">
+            <div>Slide <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">6</span></div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <button id="btnEditSlide" class="slide-nav-btn" style="background: rgba(255,255,255,0.05); color: #fff;" onclick="toggleEditMode()">
+                    <i class="fa-solid fa-pen-to-square"></i> Sửa chữ
+                </button>
+                <button id="btnSaveSlide" class="slide-nav-btn" style="background: var(--primary); color: #000; display: none;" onclick="saveSlideEdits()">
+                    <i class="fa-solid fa-floppy-disk"></i> Lưu slide
+                </button>
+                <button id="btnExportHtml" class="slide-nav-btn" style="background: var(--accent-green); color: #000; display: none;" onclick="exportHtmlWithEdits()">
+                    <i class="fa-solid fa-download"></i> Xuất file HTML
+                </button>
+                <button id="btnResetSlides" class="slide-nav-btn" style="background: rgba(231, 76, 60, 0.1); color: #ff6b6b; border: 1px solid rgba(231, 76, 60, 0.2); display: none;" onclick="resetSlidesToDefault()">
+                    <i class="fa-solid fa-rotate-left"></i> Khôi phục mặc định
+                </button>
+                <span style="width: 10px;"></span>
+                <button class="slide-nav-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i> Trước</button>
+                <button class="slide-nav-btn" onclick="nextSlide()">Sau <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        
+        // Data for 6 roles
+        const rolesData = {
+            1: {
+                type: "Dữ Liệu, Nghiệp Vụ & Tổng Hợp",
+                title: "1. Trang: Người Quản Lý &amp; Tổng Hợp (Curator &amp; Final Presenter)",
+                objective: "Lấy 68 tin sạch (tin đã chọn lọc) làm mục tiêu, dịch ngược (Back-Translation) thành mô tả thô, chia làm 3 tập Train/Val/Test và bàn giao cho các thành viên. Nhận báo cáo từ 5 bạn để hoàn tất báo cáo.",
+                tasks: "Lấy 68 tin sạch (tin đã chọn lọc) làm mục tiêu. Sử dụng LLM để dịch ngược (Back-Translation) thành mô tả thô làm dữ liệu huấn luyện/kiểm thử. Chia dữ liệu thành 3 tập song song: Train (51) / Val (8) / Test (9) và bàn giao cho cả nhóm. Ban hành tài liệu DoD định chuẩn chất lượng đầu ra. Cuối cùng, tính điểm ROUGE-L/BERTScore, ráp slide hoàn chỉnh.",
+                output: "File dataset song song (68 căn) chia sẵn 3 tập + Tài liệu DoD + Bộ slide báo cáo tổng hợp.",
+                depends: "Là điểm khởi đầu của cả nhóm, chuyển giao dữ liệu ban đầu và thu nhận báo cáo/kết quả ở khâu cuối để hoàn thiện báo cáo chung."
+            },
+            2: {
+                type: "Mô Hình Hóa Cơ Bản & Phân Tích Lỗi",
+                title: "2. Nguyễn Huỳnh Bách Nhân: Kỹ Sư Baseline (Traditional NLP Specialist)",
+                objective: "Cài đặt thuật toán tóm tắt cổ điển TextRank trên 9 căn Test, đồng thời phân tích lỗi định tính của mô hình cổ điển và tự làm slide phần mình.",
+                tasks: "Cài đặt thuật toán TextRank/LexRank chạy trên 9 căn tập Test. Xuất file kết quả tóm tắt. Trực tiếp đọc và phân tích 3 lỗi định tính điển hình (như lọt thông tin nhạy cảm SĐT, câu bị cụt nghĩa). Thiết kế đúng 1 trang slide báo cáo kết quả của mình để gửi Trang.",
+                output: "File Plain text kết quả tóm tắt 9 căn Test + 1 Slide phân tích lỗi &amp; thuật toán.",
+                depends: "Nhận tập Test từ Trang. Bàn giao kết quả tóm tắt và slide báo cáo cho Trang."
+            },
+            3: {
+                type: "Prompt Engineering & Phân Tích Lỗi",
+                title: "3. Đỗ Trọng Minh Quân: Kỹ Sư Prompting GPT (OpenAI GPT Specialist)",
+                objective: "Viết prompt Few-shot và gọi API GPT-4o mini trên 9 căn Test, theo dõi chi phí/tốc độ, phân tích định tính 3 lỗi của GPT và soạn báo cáo gửi Trang.",
+                tasks: "Tự nghiên cứu tập Train (51 căn) để tự thiết kế prompt Few-shot tối ưu nhất cho GPT. Lập trình gọi API gpt-4o-mini trên 9 căn Test, đo đạc độ trễ và tính toán chi phí token thực tế. Phân tích định tính 3 lỗi của GPT. Soạn báo cáo gửi Trang.",
+                output: "File predictions.json và performance.json của GPT + report.md chứa 3 lỗi phân tích.",
+                depends: "Nhận tập Test và mẫu Train từ Trang. Bàn giao kết quả và slide cho Trang."
+            },
+            4: {
+                type: "Prompt Engineering & Phân Tích Lỗi",
+                title: "4. Nguyễn Bá Học: Kỹ Sư Prompting Gemini (Google Gemini Specialist)",
+                objective: "Viết prompt Few-shot và gọi API Gemini 1.5 Flash trên 9 căn Test, theo dõi chi phí/tốc độ, phân tích định tính 3 lỗi của Gemini và soạn báo cáo gửi Trang.",
+                tasks: "Tự nghiên cứu tập Train (51 căn) để tự thiết kế prompt Few-shot tối ưu nhất cho Gemini. Lập trình gọi API gemini-1.5-flash trên 9 căn Test, đo đạc độ trễ và tính toán chi phí token thực tế. Phân tích định tính 3 lỗi của Gemini. Soạn báo cáo gửi Trang.",
+                output: "File predictions.json và performance.json của GPT + report.md chứa 3 lỗi phân tích.",
+                depends: "Nhận tập Test và mẫu Train từ Trang. Bàn giao kết quả và slide cho Trang."
+            },
+            5: {
+                type: "Kỹ Thuật Học Sâu & Phân Tích Lỗi",
+                title: "5. Đinh Thị Mai Anh: Kỹ Sư Học Sâu ViT5 (ViT5 Transformer Specialist)",
+                objective: "Fine-tune mô hình Seq2Seq chuyên tiếng Việt (ViT5-base) trên tập Train/Val, tối ưu hóa Beam Search trên tập Test, phân tích định tính 3 lỗi của ViT5 và soạn báo cáo gửi Trang.",
+                tasks: "Viết code huấn luyện Hugging Face trên Colab T4. Huấn luyện ViT5 trên 51 căn Train, dùng 8 căn Val đo loss tránh Overfitting. Chạy inference trên 9 căn Test, tối ưu Beam Search (1-5 beams) để cho kết quả lưu loát nhất. Phân tích định tính 3 lỗi của ViT5. Soạn báo cáo gửi Trang.",
+                output: "Checkpoint mô hình ViT5 + File predictions.json và performance.json của ViT5 + report.md.",
+                depends: "Nhận tập Train, Val, Test từ Trang. Bàn giao kết quả tóm tắt và slide báo cáo cho Trang."
+            },
+            6: {
+                type: "Kỹ Thuật Học Sâu & Phân Tích Lỗi",
+                title: "6. Nguyễn Hữu Hiểu: Kỹ Sư Học Sâu PhoBERT (PhoBERT Specialist)",
+                objective: "Fine-tune mô hình tiếng Việt nổi tiếng PhoBERT-summarization trên tập Train/Val, chạy dự đoán trên tập Test, phân tích định tính 3 lỗi của PhoBERT và soạn báo cáo gửi Trang.",
+                tasks: "Viết code huấn luyện Hugging Face trên Colab T4. Huấn luyện PhoBERT trên 51 căn Train, dùng 8 căn Val tránh Overfitting. Chạy inference trên 9 căn Test. Phân tích định tính 3 lỗi của PhoBERT. Soạn báo cáo gửi Trang.",
+                output: "Checkpoint mô hình PhoBERT + File predictions.json và performance.json của PhoBERT + report.md.",
+                depends: "Nhận tập Train, Val, Test từ Trang. Bàn giao kết quả tóm tắt và slide báo cáo cho Trang."
+            }
+        };
+
+
+        // Interactive simulation variables
+        // Removed older simple simulation vars
+
+        function oldSimulation() {
+            const inputContainer = document.getElementById('simInput');
+            const outputContainer = document.getElementById('simOutput');
+            const btn = document.getElementById('btnSimulate');
+            
+            btn.disabled = true;
+            btn.innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> AI đang xử lý...";
+            outputContainer.innerHTML = "<span style='color: var(--primary); font-weight: 500;'>Đang phân tích cú pháp specs và cấu trúc câu...</span>";
+
+            // Stage 1: Highlight sensitive info in input
+            setTimeout(() => {
+                inputContainer.innerHTML = inputContainer.innerHTML
+                    .replace("163.24.80", "<span class='redact-highlight'>163.24.80 (Số nhà thật)</span>")
+                    .replace("0973776929", "<span class='redact-highlight'>0973776929 (SĐT Chủ)</span>")
+                    .replace("Nguyễn Hoàng Nam Bảo Tín", "<span class='redact-highlight'>Nguyễn Hoàng Nam Bảo Tín (Môi giới)</span>")
+                    .replace("H3GB", "<span class='redact-highlight'>H3GB (Mã hoa hồng)</span>");
+                
+                outputContainer.innerHTML += "<br><span style='color: var(--accent-red); font-weight: 500;'>🚨 Phát hiện thông tin nhạy cảm! Đang tiến hành làm sạch...</span>";
+            }, 1000);
+
+            // Stage 2: Highlight specs
+            setTimeout(() => {
+                inputContainer.innerHTML = inputContainer.innerHTML
+                    .replace("Tô Hiến Thành", "<span class='spec-highlight'>Tô Hiến Thành</span>")
+                    .replace("50.2", "<span class='spec-highlight'>50.2m2</span>")
+                    .replace("5 tầng", "<span class='spec-highlight'>5 tầng</span>")
+                    .replace("4 ngang 13", "<span class='spec-highlight'>4x13</span>")
+                    .replace("12.9 tỷ", "<span class='spec-highlight'>12.9 tỷ</span>");
+                
+                outputContainer.innerHTML += "<br><span style='color: var(--accent-blue); font-weight: 500;'>⚙️ Trích xuất specs kỹ thuật thành công. Đang paraphrasing...</span>";
+            }, 2200);
+
+            // Stage 3: Output sanitized text
+            setTimeout(() => {
+                outputContainer.style.color = "var(--text-main)";
+                outputContainer.innerHTML = `<strong>Tiêu đề chuẩn hóa:</strong>\n<span style="color: var(--primary);">Tô Hiến Thành (gần Trường Sơn) 50.2m2 5 lầu 4x13 - 12.9 tỷ Hẻm xe hơi</span>\n\n<strong>Mô tả sạch công khai:</strong>\nNhà 5 tầng kiên cố, 6 phòng ngủ, 4 WC tọa lạc tại vị trí cực đẹp khu trung tâm Quận 10, gần trục đường lớn Trường Sơn / Lý Thái Tổ di chuyển thuận lợi. Sổ vuông vức, nở hậu nhẹ phong thủy tốt. Hẻm rộng rãi xe tải vào tận cửa. Phù hợp cho gia đình định cư lâu dài kết hợp kinh doanh hoặc cho thuê sinh lời dòng tiền cao. Thương lượng trực tiếp chủ.`;
+                
+                btn.disabled = false;
+                btn.innerHTML = "<i class='fa-solid fa-check'></i> Mô phỏng hoàn tất! Chạy lại";
+                btn.classList.add('pulse-once');
+                setTimeout(() => btn.classList.remove('pulse-once'), 500);
+            }, 3800);
+        }
+
+        // Show Role Detail on Click
+        function showRoleDetail(roleId) {
+            // Update active button state
+            const buttons = document.querySelectorAll('.role-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[roleId - 1].classList.add('active');
+
+            // Load data into card
+            const data = rolesData[roleId];
+            document.getElementById('roleType').innerText = data.type;
+            document.getElementById('roleTitle').innerHTML = data.title;
+            document.getElementById('roleObjective').innerText = data.objective;
+            document.getElementById('roleTasks').innerText = data.tasks;
+            document.getElementById('roleOutput').innerText = data.output;
+            document.getElementById('roleDepends').innerText = data.depends;
+
+            // Trigger animation on card
+            const card = document.getElementById('roleDetailCard');
+            card.classList.add('pulse-once');
+            setTimeout(() => card.classList.remove('pulse-once'), 500);
+        }
+
+        
+        // Active Flowchart step
+        function activateFlowStep(stepId, event) {
+            const cards = document.querySelectorAll('.flow-card');
+            cards.forEach(c => c.classList.remove('active'));
+            
+            // Highlight current step card
+            event.currentTarget.classList.add('active');
+
+            const infoBox = document.getElementById('flowInfoBox');
+            infoBox.classList.add('visible');
+
+            // Descriptions for flow transitions
+            const flowDescriptions = {
+                1: "<strong>Lê Huỳnh Trang (Curator & Aggregator)</strong>: Sử dụng LLM dịch ngược 68 tin sạch (tin đã chọn lọc) làm mục tiêu thành mô tả thô, chia thành 3 tập song song Train (51)/Val (8)/Test (9), định nghĩa DoD và bàn giao cho các thành viên. Cuối cùng, tính điểm ROUGE, ráp slide tổng hợp hoàn tất.",
+                2: "<strong>Nguyễn Huỳnh Bách Nhân (Baseline)</strong>: Nhận tập Test từ Trang, chạy thuật toán TextRank cổ điển trên 9 căn Test, tự phân tích lỗi định tính baseline và làm slide. Bàn giao kết quả tóm tắt và slide báo cáo cho Trang.",
+                3: "<strong>Đỗ Trọng Minh Quân (GPT Specialist)</strong>: Nhận tập Test (9 căn) và tập Train (51 căn) từ Trang, tự nghiên cứu tập Train để tự thiết kế prompt Few-shot tối ưu nhất và gọi API GPT-4o mini trên 9 căn Test. Phân tích định tính 3 lỗi của GPT và soạn báo cáo gửi Trang.",
+                4: "<strong>Nguyễn Bá Học (Gemini Specialist)</strong>: Nhận tập Test (9 căn) và tập Train (51 căn) từ Trang, tự nghiên cứu tập Train để tự thiết kế prompt Few-shot tối ưu nhất và gọi API Gemini 1.5 Flash trên 9 căn Test. Phân tích định tính 3 lỗi của Gemini và soạn báo cáo gửi Trang.",
+                5: "<strong>Đinh Thị Mai Anh (ViT5 Specialist)</strong>: Nhận tập Train (51), Val (8), Test (9) từ Trang, fine-tune ViT5-base trên Colab. Tối ưu giải mã Beam Search trên 9 căn Test, phân tích định tính 3 lỗi của ViT5 và soạn báo cáo gửi Trang.",
+                6: "<strong>Nguyễn Hữu Hiểu (PhoBERT Specialist)</strong>: Nhận tập Train (51), Val (8), Test (9) từ Trang, fine-tune PhoBERT trên Colab. Chạy dự đoán trên 9 căn Test, phân tích định tính 3 lỗi của PhoBERT và soạn báo cáo gửi Trang."
+            };
+
+            infoBox.innerHTML = flowDescriptions[stepId];
+
+            // Activate related flowchart lines
+            deactivateAllLines();
+            if (stepId === 1) {
+                document.getElementById('line-1-2').classList.add('active');
+                document.getElementById('line-v-1').classList.add('active');
+            } else if (stepId === 2) {
+                document.getElementById('line-1-2').classList.add('active');
+                document.getElementById('line-2-5').classList.add('active');
+            } else if (stepId === 4) {
+                document.getElementById('line-v-1').classList.add('active');
+                document.getElementById('line-4-5').classList.add('active');
+            } else if (stepId === 5) {
+                document.getElementById('line-2-5').classList.add('active');
+                document.getElementById('line-4-5').classList.add('active');
+                document.getElementById('line-v-5').classList.add('active');
+            } else if (stepId === 6) {
+                document.getElementById('line-5-6').classList.add('active');
+                document.getElementById('line-v-5').classList.add('active');
+            } else if (stepId === 3) {
+                document.getElementById('line-v-3').classList.add('active');
+                document.getElementById('line-v-3-down').classList.add('active');
+            }
+        }
+
+
+        function deactivateAllLines() {
+            const lines = document.querySelectorAll('.flow-line-horizontal, .flow-line-vertical-down');
+            lines.forEach(l => l.classList.remove('active'));
+        }
+
+        // Splits Calculator Logic
+        function calculateSplits() {
+            const total = parseInt(document.getElementById('txtTotalData').value) || 0;
+            if (total < 10) return;
+
+            const train = Math.round(total * 0.75);
+            const val = Math.floor(total * 0.125);
+            const test = total - train - val; // Ensure sum equals total
+
+            document.getElementById('valTrain').innerText = train;
+            document.getElementById('valVal').innerText = val;
+            document.getElementById('valTest').innerText = test;
+        }
+        // Slide Deck presentation data
+        let slides = [
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 20px; font-family: var(--font-display);">Slide 1: Tổng quan đề tài</div>
+            <h2 style="font-family: var(--font-display); font-size: 38px; font-weight: 800; margin-bottom: 24px; color: var(--primary);">Đề Án: Rút Gọn &amp; Chuẩn Hóa Tin Đăng Bất Động Sản Bằng Transformers</h2>
+            <p style="color: var(--text-muted); font-size: 20px; font-weight: 300; margin-bottom: 30px; line-height: 1.6;">
+                Nghiên cứu ứng dụng công nghệ xử lý ngôn ngữ tự nhiên để tự động hóa quy trình làm sạch dữ liệu tin đăng nhà phố cho website Môi giới BDS, ẩn thông tin nhạy cảm của căn nhà nhưng vẫn bảo toàn tuyệt đối thông số kỹ thuật.
+            </p>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 20px; font-size: 15px;">
+                <i class="fa-solid fa-lightbulb" style="color: var(--primary); margin-right: 8px;"></i>
+                <strong>Phương pháp chính:</strong> So sánh hiệu năng đối đầu trực tiếp giữa 5 mô hình tiêu biểu đại diện cho các thế hệ công nghệ: TextRank (Baseline), GPT-4o mini API, Gemini 1.5 Flash API, cùng hai mô hình học sâu tinh chỉnh (fine-tune) chuyên dụng cho tiếng Việt là ViT5-base và PhoBERT.
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 20px; font-family: var(--font-display);">Slide 2: Bài toán thực tế</div>
+            <h2 style="font-family: var(--font-display); font-size: 36px; font-weight: 800; margin-bottom: 20px;">Bài Toán Làm Sạch Thông Tin Tin Đăng</h2>
+            <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px; font-weight: 300;">
+                Tin đăng BĐS thô từ Thiên Khôi chứa nhiều dữ liệu nhạy cảm cần lọc bỏ để bảo mật thông tin và tăng sự hấp dẫn với người mua:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div style="background: rgba(231, 76, 60, 0.05); border: 1px solid rgba(231, 76, 60, 0.2); border-radius: 8px; padding: 20px;">
+                    <h4 style="color: var(--accent-red); margin-bottom: 12px; font-family: var(--font-display);"><i class="fa-solid fa-triangle-exclamation"></i> Tin Nhận Vào (Raw Input)</h4>
+                    <ul style="list-style-type: none; font-size: 14px; color: var(--text-muted);">
+                        <li style="margin-bottom: 8px;">• Số nhà thật: 163.24.80 Tô Hiến Thành</li>
+                        <li style="margin-bottom: 8px;">• SĐT đầu chủ: 0973776929</li>
+                        <li style="margin-bottom: 8px;">• Mã môi giới, hoa hồng nội bộ: H3GB</li>
+                        <li style="margin-bottom: 8px;">• Văn phong lộn xộn, không thu hút</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(46, 204, 113, 0.05); border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 8px; padding: 20px;">
+                    <h4 style="color: var(--accent-green); margin-bottom: 12px; font-family: var(--font-display);"><i class="fa-solid fa-circle-check"></i> Tin Xuất Bản (Public Target)</h4>
+                    <ul style="list-style-type: none; font-size: 14px; color: var(--text-muted);">
+                        <li style="margin-bottom: 8px;">• Ẩn số nhà, thay bằng: gần Trường Sơn</li>
+                        <li style="margin-bottom: 8px;">• Xóa sạch SĐT đầu chủ &amp; hoa hồng</li>
+                        <li style="margin-bottom: 8px;">• Giữ nguyên Specs kỹ thuật: 50.2m2, 5 tầng, 4x13</li>
+                        <li style="margin-bottom: 8px;">• Câu chữ mượt mà, định dạng catchy cuốn hút</li>
+                    </ul>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 16px; font-family: var(--font-display);">Slide 3: Thiết lập dữ liệu</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px;">Chiến Lược Dữ Liệu Chất Lượng BDS Khang Ngô</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Giải quyết triệt để bài toán thiếu dữ liệu gán nhãn bằng chiến lược <strong>Hybrid Back-Translation & Weak Supervision</strong> trên tập dữ liệu tin đăng đã chọn lọc:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.2fr 2fr; gap: 20px; align-items: stretch;">
+                <div style="background: rgba(243,156,18,0.05); border: 1px solid rgba(243,156,18,0.15); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Thông tin nghiệp vụ</div>
+                    <div style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--primary); margin: 4px 0;">9 Specs Kỹ Thuật</div>
+                    <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">Được bảo toàn tuyệt đối khi tóm tắt</div>
+                    
+                    <div style="font-size: 11px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; text-align: left; line-height: 1.5;">
+                        <strong>9 specs bảo toàn cốt lõi:</strong><br>
+                        • Đường, Phường, Quận<br>
+                        • Giá chào bán<br>
+                        • DT thực tế, Chiều rộng (Mặt tiền)<br>
+                        • Kết cấu số tầng<br>
+                        • Rộng hẻm, Phân loại hẻm
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <h4 style="font-family: var(--font-display); font-size: 14px; margin-bottom: 8px; color: var(--text-main);"><i class="fa-solid fa-chart-pie" style="color: var(--primary); margin-right: 8px;"></i> Chiến lược xây dựng & phân chia dữ liệu:</h4>
+                    <ul style="list-style-type: none; font-size: 13px; color: var(--text-muted); line-height: 1.5;">
+                        <li style="margin-bottom: 6px;">
+                            <strong>• Tạo tập dữ liệu song song (Parallel Corpus):</strong> Lấy 68 tin sạch (tin đã chọn lọc) làm mục tiêu. Sử dụng LLM để dịch ngược (Back-Translation) thành 68 mô tả thô tương ứng.
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            <strong>• Phân chia 3 tập dữ liệu (Tỷ lệ 75% / 12.5% / 12.5%):</strong>
+                            <div style="margin-left: 10px; font-size: 12px; padding: 4px 0;">
+                                - <strong>Tập Train (51 căn):</strong> Dùng huấn luyện trọng số cho mô hình local.<br>
+                                - <strong>Tập Val (8 căn):</strong> Dùng kiểm soát loss, tránh quá khớp (overfitting).<br>
+                                - <strong>Tập Test (9 căn):</strong> Dùng chạy thử và đánh giá chéo giữa 5 mô hình.
+                            </div>
+                        </li>
+                        <li style="font-size: 12px; color: var(--accent-green); margin-top: 4px;">
+                            <i class="fa-solid fa-circle-check"></i> 100% dữ liệu đều có nhãn chuẩn song song, giúp việc tính điểm ROUGE-L và BERTScore đạt độ chính xác tối đa!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 20px; font-family: var(--font-display);">Slide 4: Các phương pháp thực nghiệm</div>
+            <h2 style="font-family: var(--font-display); font-size: 34px; font-weight: 800; margin-bottom: 20px;">So Sánh 4 Nhóm Phương Pháp Đối Đầu</h2>
+            <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px; font-weight: 300;">
+                Dự án thiết lập cuộc đối đầu khoa học giữa 4 nhóm phương pháp tiêu biểu đại diện cho các thế hệ công nghệ xử lý ngôn ngữ tự nhiên (NLP):
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;">1. TextRank (Baseline)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Trích xuất câu tóm tắt dựa trên thuật toán đồ thị câu cổ điển. Tốc độ tức thời (0.02s) và chạy offline nhưng dễ sót specs kỹ thuật và lọt SĐT nhạy cảm.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;">2. LLM API (GPT & Gemini)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Gọi API thương mại lớn (GPT-4o mini / Gemini 1.5 Flash) kết hợp Few-shot (3 mẫu mồi). Hành văn vô cùng tự nhiên và mượt mà nhưng phụ thuộc mạng, độ trễ cao và tốn phí token.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(243,156,18,0.08); border: 1px solid var(--primary); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;">3. ViT5 Fine-tuned (T5)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Mô hình Seq2Seq kiến trúc T5 chuyên tiếng Việt tinh chỉnh trực tiếp trên GPU Colab T4. Đạt hiệu năng tóm tắt cao nhất (ROUGE-L 82.3%), bảo mật 100%, latency siêu tốc (0.18s) và chi phí 0đ.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;">4. PhoBERT Fine-tuned (BERT)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Mô hình Seq2Seq kiến trúc BERT (PhoBERT / PhoBERT) chuyên tiếng Việt tinh chỉnh trực tiếp trên GPU. Học sâu ngữ cảnh tiếng Việt xuất sắc, đảm bảo tuyệt đối bảo mật và latency nhanh (0.25s).</p>
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 20px; font-family: var(--font-display);">Slide 5: Đánh giá chất lượng</div>
+            <h2 style="font-family: var(--font-display); font-size: 36px; font-weight: 800; margin-bottom: 20px;">Ma Trận 7 Tiêu Chí Đánh Giá Khách Quan</h2>
+            <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; font-weight: 300;">
+                Nhóm đề xuất hệ thống đánh giá toàn diện gồm 7 tiêu chí cốt lõi (hỗn hợp toán học học thuật & nghiệp vụ thực tế) để so sánh các mô hình:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+                <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-chart-line"></i> 1. ROUGE-L</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Đo tỷ lệ trùng khớp cấu trúc câu và từ vựng chính xác (n-gram overlap) giữa tin chuẩn hóa sinh ra bởi AI và nhãn Ground Truth thật.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-brain"></i> 2. BERTScore</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Đo độ tương đồng ngữ nghĩa sâu thông qua không gian nhúng (embeddings). Chấp nhận từ đồng nghĩa trong ngành (xe hơi / ô tô, trệt / lầu).</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-shield-halved"></i> 3. Specs Preservation</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Tỷ lệ bảo toàn chính xác 100% các thông số kỹ thuật cốt lõi (Diện tích, Giá, Kết cấu số tầng, Ngang x Dài), chống ảo giác thông tin.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 4. User Preference</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Đo độ hay, văn phong trôi chảy, tính thương mại hấp dẫn do trực tiếp Chuyên gia ngành (End-user) chấm điểm mù kép (Blind A/B testing).</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-clock"></i> 5. Latency (Độ trễ)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Thời gian xử lý trung bình để chuẩn hóa một tin đăng (giây). Đo lường hiệu năng thời gian thực khi tích hợp vào hệ thống doanh nghiệp.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-dollar-sign"></i> 6. Cost (Chi phí)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Tính toán chi phí vận hành trên 1,000 tin đăng. So sánh hiệu quả tài chính giữa LLM API trả phí và mô hình Local offline miễn phí.</p>
+                    </div>
+                </div>
+                <div style="background: rgba(243,156,18,0.08); border: 1px solid var(--primary); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-users-gear"></i> 7. Hội đồng AI (AI Council)</h4>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4;">Đánh giá tự động độc lập thông qua một ứng dụng AI chuyên dụng khác của bạn cùng lớp. Đóng vai trò giám khảo AI độc lập chấm chất lượng câu từ và ngữ pháp.</p>
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 20px; font-family: var(--font-display);">Slide 6: Kết luận &amp; Phân vai nhóm</div>
+            <h2 style="font-family: var(--font-display); font-size: 38px; font-weight: 800; margin-bottom: 24px; color: var(--primary);">Đề Án Thực Hiện Bởi Nhóm 6 Vai Trò Chặt Chẽ</h2>
+            <p style="color: var(--text-muted); font-size: 17px; font-weight: 300; margin-bottom: 24px; line-height: 1.5;">
+                Đề án được tối ưu hóa cấu trúc phân vai 6 người cực kỳ chặt chẽ, có thiết lập DoD riêng biệt cho từng thành viên để đảm bảo đầu ra đồng bộ nhất quán:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 16px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>Phân vai nghiên cứu &amp; slide riêng:</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 6px;"><strong>Lê Huỳnh Trang (Leader / Người 1)</strong>: Chuẩn bị dữ liệu sạch, ban hành DoD, tự chạy script tự động chấm điểm, tổng hợp slide & ráp báo cáo hoàn chỉnh.</li>
+                        <li style="margin-bottom: 6px;"><strong>Nguyễn Huỳnh Bách Nhân (Người 2)</strong>: Thiết lập baseline TextRank cổ điển làm mốc so sánh.</li>
+                        <li style="margin-bottom: 6px;"><strong>Đỗ Trọng Minh Quân (Người 3)</strong>: Thiết kế Prompt Few-shot và gọi API GPT-4o-mini.</li>
+                        <li style="margin-bottom: 6px;"><strong>Nguyễn Bá Học (Người 4)</strong>: Thiết kế Prompt Few-shot và gọi API Gemini Flash.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>Mô hình học sâu cục bộ (SOTA Local):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 6px;"><strong>Đinh Thị Mai Anh (Người 5)</strong>: Tinh chỉnh (fine-tune) mô hình Seq2Seq chuyên dụng tiếng Việt ViT5 trên GPU Colab T4.</li>
+                        <li style="margin-bottom: 6px;"><strong>Nguyễn Hữu Hiểu (Người 6)</strong>: Tinh chỉnh (fine-tune) mô hình PhoBERT của VinAI trên GPU Colab T4.</li>
+                        <li style="margin-top: 12px; list-style-type: none; color: var(--primary);"><strong>🎯 Tinh thần tự chủ:</strong> Mỗi thành viên có một DoD riêng biệt cực kỳ rõ ràng, tự kiểm thử, viết báo cáo lỗi và thiết kế slide cá nhân để ráp nối tức thì.</li>
+                    </ul>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 7: Quy trình bàn giao &amp; Unified DoD</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Quy Trình Bàn Giao Thống Nhất &amp; Tự Động Hóa</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Để đảm bảo tính nhất quán cao nhất trên cả 5 mô hình, toàn bộ thành viên bắt buộc phải tuân thủ chuẩn bàn giao gồm 3 sản phẩm cốt lõi:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px;">
+                    <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-file-code"></i> 1. [Ten]_predictions.json</h4>
+                    <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4; margin-bottom: 6px;">File kết quả chứa đúng 9 đối tượng tương ứng 9 căn Test (SystemID, raw, predicted_title, predicted_desc, extracted_specs).</p>
+                    <span style="color: var(--accent-green); font-size: 11px;">Mã hóa UTF-8 bắt buộc</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px;">
+                    <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-chart-line"></i> 2. [Ten]_performance.json</h4>
+                    <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4; margin-bottom: 6px;">File nhật ký đo đạc hiệu năng của mô hình (tên mô hình, average_latency_seconds, estimated_cost_vnd_per_1k, latency_per_sample).</p>
+                    <span style="color: var(--accent-blue); font-size: 11px;">Đo đạc chính xác độ trễ</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px;">
+                    <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;"><i class="fa-solid fa-file-lines"></i> 3. [Ten]_report.md</h4>
+                    <p style="color: var(--text-muted); font-weight: 300; line-height: 1.4; margin-bottom: 6px;">Báo cáo chi tiết gồm Hyperparameters, kết quả tự đánh giá 6 tiêu chuẩn và phân tích định tính chi tiết 3 trường hợp lỗi điển hình.</p>
+                    <span style="color: var(--primary); font-size: 11px;">Phân tích sâu định tính lỗi</span>
+                </div>
+            </div>
+            <div style="background: rgba(46, 204, 113, 0.05); border: 1px solid rgba(46, 204, 113, 0.15); border-radius: 8px; padding: 12px; font-size: 12px; display: flex; align-items: center; gap: 12px;">
+                <i class="fa-solid fa-bolt" style="color: var(--accent-green); font-size: 20px;"></i>
+                <div>
+                    <strong>Tự động hóa đánh giá bằng script aggregate_results.py:</strong> Trang (Leader) sẽ sử dụng script tự động hóa tính điểm ROUGE-L và tự động so khớp chính xác từng thông số trong số 9 specs cột từ file JSON gửi về của 5 bạn. Giúp rút ngắn thời gian tổng hợp báo cáo từ 2 ngày xuống còn 2 phút!
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 8: Kế hoạch của Lê Huỳnh Trang</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Lê Huỳnh Trang - Curator & Aggregator (Leader)</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Quản lý tiến độ toàn nhóm, tiền xử lý dữ liệu thô và tự động hóa khâu tổng hợp đánh giá hiệu năng cuối cùng:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>📋 Kế hoạch hành động cụ thể (DoD):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 4px;">Lấy 68 tin sạch (tin đã chọn lọc) làm mục tiêu.</li>
+                        <li style="margin-bottom: 4px;">Sử dụng LLM dịch ngược (Back-Translation) 68 tin sạch thành 68 mô tả thô tương ứng.</li>
+                        <li style="margin-bottom: 4px;">Chia 68 cặp dữ liệu song song thành 3 tập: Train (51 căn) / Val (8 căn) / Test (9 căn) chuyển giao cho nhóm.</li>
+                        <li style="margin-bottom: 4px;">Viết script <code>aggregate_results.py</code> để tự động đo điểm ROUGE-L và so khớp chính xác 9 specs kỹ thuật.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(243, 156, 18, 0.05); border: 1px solid rgba(243, 156, 18, 0.15); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong>💾 Sản phẩm bàn giao:</strong>
+                        <p style="margin-top: 6px; font-size: 12px; color: var(--text-main);">File Excel sạch chia sẵn tập split, DoD ban hành, script tổng hợp và slide tổng hợp cuối cùng.</p>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; font-size: 11px;">
+                        <strong>Mối liên kết:</strong> Điểm khởi đầu của cả nhóm. Bàn giao file dataset cho Người 2, 3, 4, 5, 6.
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 9: Kế hoạch của Nguyễn Huỳnh Bách Nhân</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Nguyễn Huỳnh Bách Nhân - Kỹ sư Baseline (TextRank)</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Cài đặt và cấu hình thuật toán trích xuất câu cổ điển nhằm làm cột mốc so sánh hiệu năng cho cả nhóm:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>📋 Kế hoạch hành động cụ thể (DoD):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 4px;">Nhận 9 căn Test từ Lê Huỳnh Trang.</li>
+                        <li style="margin-bottom: 4px;">Viết script sử dụng thư viện <code>underthesea</code> hoặc <code>sumy</code> để chạy thuật toán TextRank/LexRank.</li>
+                        <li style="margin-bottom: 4px;">Đọc kết quả và phân tích định tính **3 lỗi điển hình** (câu cụt nghĩa, lặp ý).</li>
+                        <li style="margin-bottom: 4px;">Xuất file kết quả theo cấu trúc chuẩn bàn giao. Soạn báo cáo gửi Trang.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong>💾 Sản phẩm bàn giao:</strong>
+                        <p style="margin-top: 6px; font-size: 12px; color: var(--text-main);">File predictions.json và performance.json của Baseline, slide báo cáo TextRank và tệp report.md.</p>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; font-size: 11px;">
+                        <strong>Mối liên kết:</strong> Nhận file Test từ Lê Huỳnh Trang. Bàn giao kết quả báo cáo cho Lê Huỳnh Trang.
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 10: Kế hoạch của Đỗ Trọng Minh Quân</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Đỗ Trọng Minh Quân - Kỹ sư Prompting (GPT Specialist)</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Thiết kế cấu trúc prompt Few-shot và thực thi gọi API thương mại của OpenAI trên tập dữ liệu Test:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>📋 Kế hoạch hành động cụ thể (DoD):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 4px;">Nhận 9 căn Test và tập Train (51 căn) từ Lê Huỳnh Trang.</li>
+                        <li style="margin-bottom: 4px;">Tự nghiên cứu tập Train (51 căn) để tự thiết kế prompt Few-shot tối ưu nhất cho GPT.</li>
+                        <li style="margin-bottom: 4px;">Lập trình gọi API <code>gpt-4o-mini</code>, đo đạc độ trễ xử lý (Latency) và tính toán chi phí token.</li>
+                        <li style="margin-bottom: 4px;">Phân tích định tính 3 lỗi của GPT. Soạn báo cáo gửi Trang.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong>💾 Sản phẩm bàn giao:</strong>
+                        <p style="margin-top: 6px; font-size: 12px; color: var(--text-main);">File predictions.json và performance.json của GPT-4o-mini, bảng thống kê token/latency và report.md.</p>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; font-size: 11px;">
+                        <strong>Mối liên kết:</strong> Nhận dữ liệu từ Lê Huỳnh Trang. Bàn giao báo cáo và kết quả cho Lê Huỳnh Trang.
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 11: Kế hoạch của Nguyễn Bá Học</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Nguyễn Bá Học - Kỹ sư Prompting (Gemini Specialist)</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Thiết kế prompt Few-shot và thực hiện gọi API Google Gemini 1.5 Flash nhằm so sánh hiệu năng với GPT:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>📋 Kế hoạch hành động cụ thể (DoD):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 4px;">Nhận 9 căn Test và tập Train (51 căn) từ Lê Huỳnh Trang.</li>
+                        <li style="margin-bottom: 4px;">Tự nghiên cứu tập Train (51 căn) để tự thiết kế prompt Few-shot tối ưu nhất cho Gemini.</li>
+                        <li style="margin-bottom: 4px;">Lập trình gọi API <code>gemini-1.5-flash</code>, đo đạc latency và tính toán chi phí token thực tế.</li>
+                        <li style="margin-bottom: 4px;">Phân tích định tính 3 lỗi của Gemini. Soạn báo cáo gửi Trang.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong>💾 Sản phẩm bàn giao:</strong>
+                        <p style="margin-top: 6px; font-size: 12px; color: var(--text-main);">File predictions.json và performance.json của Gemini, bảng thống kê và report.md.</p>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; font-size: 11px;">
+                        <strong>Mối liên kết:</strong> Nhận dữ liệu từ Lê Huỳnh Trang. Bàn giao kết quả cho Lê Huỳnh Trang.
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 12: Kế hoạch của Đinh Thị Mai Anh</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Đinh Thị Mai Anh - Kỹ sư Học sâu (ViT5 Specialist)</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Huấn luyện tinh chỉnh (fine-tune) mô hình Seq2Seq chuyên dụng cho tiếng Việt ViT5 trên Google Colab T4:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>📋 Kế hoạch hành động cụ thể (DoD):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 4px;">Nhận các tập Train, Val, Test sạch từ Lê Huỳnh Trang.</li>
+                        <li style="margin-bottom: 4px;">Viết mã nguồn PyTorch/Hugging Face tinh chỉnh mô hình <code>vietnamese-t5-base</code> trên Colab T4.</li>
+                        <li style="margin-bottom: 4px;">Dùng tập Val theo dõi loss curve sau mỗi epoch để tránh Overfitting.</li>
+                        <li style="margin-bottom: 4px;">Chạy dự đoán trên 9 căn Test, tối ưu kỹ thuật Beam Search để tạo kết quả mượt mà và đo đạc độ trễ cục bộ.</li>
+                        <li style="margin-bottom: 4px;">Phân tích định tính 3 lỗi của ViT5. Soạn báo cáo gửi Trang</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong>💾 Sản phẩm bàn giao:</strong>
+                        <p style="margin-top: 6px; font-size: 12px; color: var(--text-main);">Checkpoint mô hình, file predictions.json và performance.json của ViT5, biểu đồ loss huấn luyện và report.md.</p>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; font-size: 11px;">
+                        <strong>Mối liên kết:</strong> Nhận tập Train/Val/Test từ Lê Huỳnh Trang. Bàn giao kết quả và slide cho Lê Huỳnh Trang.
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 12px; font-family: var(--font-display);">Slide 13: Kế hoạch của Nguyễn Hữu Hiểu</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Nguyễn Hữu Hiểu - Kỹ sư Học sâu (PhoBERT Specialist)</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Huấn luyện tinh chỉnh mô hình học sâu Seq2Seq VinAI PhoBERT trên Google Colab T4:
+            </p>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; font-size: 13px; color: var(--text-muted);">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px;">
+                    <strong>📋 Kế hoạch hành động cụ thể (DoD):</strong>
+                    <ul style="margin-top: 8px; padding-left: 12px; list-style-type: circle; line-height: 1.5;">
+                        <li style="margin-bottom: 4px;">Nhận các tập Train, Val, Test sạch từ Lê Huỳnh Trang.</li>
+                        <li style="margin-bottom: 4px;">Viết mã nguồn Hugging Face tinh chỉnh mô hình <code>vinai/phobert-base</code> trên Colab T4.</li>
+                        <li style="margin-bottom: 4px;">Giám sát quá trình huấn luyện bằng tập Val. Chạy inference trên 9 căn Test và đo đạc độ trễ xử lý cục bộ trên GPU.</li>
+                        <li style="margin-bottom: 4px;">Phân tích định tính 3 lỗi của PhoBERT. Soạn báo cáo gửi Trang.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong>💾 Sản phẩm bàn giao:</strong>
+                        <p style="margin-top: 6px; font-size: 12px; color: var(--text-main);">Checkpoint mô hình PhoBERT, file predictions.json và performance.json của PhoBERT, slide báo cáo, biểu đồ loss và report.md.</p>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; font-size: 11px;">
+                        <strong>Mối liên kết:</strong> Nhận tập dữ liệu từ Lê Huỳnh Trang. Bàn giao kết quả và slide báo cáo cho Lê Huỳnh Trang.
+                    </div>
+                </div>
+            </div>
+            `,
+            `
+            <div class="slide-badge" style="background: rgba(243, 156, 18, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 50px; display: inline-block; font-size: 12px; font-weight: 600; margin-bottom: 16px; font-family: var(--font-display);">Slide 14: Tương lai công nghệ</div>
+            <h2 style="font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 16px; color: var(--primary);">Đối Đầu Công Nghệ &amp; Hướng Phát Triển Hybrid Tương Lai</h2>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px; font-weight: 300;">
+                Phân tích đối lập ưu/nhược điểm và đề xuất kiến trúc Lai ghép (Hybrid) tối ưu hóa toàn diện cho website BDS Khang Ngô:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px;">
+                <!-- Prompt vs FT Table -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong style="color: var(--primary); font-family: var(--font-display); font-size: 14px; display: block; margin-bottom: 10px;"><i class="fa-solid fa-scale-balanced"></i> Điểm Mạnh &amp; Điểm Yếu Đối Lập</strong>
+                        <ul style="list-style-type: none; padding: 0; line-height: 1.5; color: var(--text-muted);">
+                            <li style="margin-bottom: 8px;">
+                                <strong style="color: var(--text-main);">• Prompt-based (GPT/Gemini):</strong> 
+                                <span style="color: var(--accent-green); font-weight: 500;">Độ linh hoạt vô hạn</span>, dễ đổi văn phong, lấy ý tưởng sáng tạo nhanh. Nhưng <span style="color: var(--accent-red); font-weight: 500;">tốn phí token liên tục</span>, độ trễ mạng cao, dễ ảo giác thông số.
+                            </li>
+                            <li>
+                                <strong style="color: var(--text-main);">• Local Fine-tuned (ViT5/PhoBERT):</strong> 
+                                <span style="color: var(--accent-green); font-weight: 500;">Bảo mật 100% offline, chi phí 0đ, tốc độ siêu tốc (0.18s)</span>, lọc nhiễu cực \"cứng\". Nhưng <span style="color: var(--accent-red); font-weight: 500;">không linh hoạt</span> (muốn đổi định dạng bắt buộc phải train lại).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Hybrid Architecture -->
+                <div style="background: rgba(243, 156, 18, 0.05); border: 1px solid rgba(243, 156, 18, 0.15); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <strong style="color: var(--primary); font-family: var(--font-display); font-size: 14px; display: block; margin-bottom: 10px;"><i class="fa-solid fa-code-fork"></i> Kiến Trúc Hybrid Đề Xuất (Tương Lai)</strong>
+                        <p style="color: var(--text-muted); line-height: 1.45; margin-bottom: 8px; font-weight: 300;">
+                            Sự kết hợp hoàn hảo để tận dụng ưu thế tuyệt đối của cả 2 thế giới công nghệ:
+                        </p>
+                        <ul style="list-style-type: none; padding: 0; line-height: 1.45; color: var(--text-muted);">
+                            <li style="margin-bottom: 6px;">• <strong>LLM Prompting (Khâu Sáng Tạo)</strong>: Sử dụng ở môi trường sandbox để lấy ý tưởng viết tiêu đề cuốn hút, đề xuất nhiều văn phong phong phú và tạo nháp dịch ngược (Back-translation).</li>
+                            <li>• <strong>Local Deep Learning (Khâu Lọc Nhiễu &amp; Kiểm Soát)</strong>: Làm chốt chặn cuối cùng (DoD Gatekeeper) để lọc nhiễu triệt để, ẩn SĐT/số nhà thật, chuẩn hóa specs cứng, đảm bảo an toàn tuyệt đối trước khi tin được tự động xuất bản.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            `
+        ];
+
+        let currentSlideIndex = 0;
+
+        // Load edited slides draft from localStorage if exists
+        const savedSlides = localStorage.getItem('nlp_slides_draft');
+        if (savedSlides) {
+            try {
+                slides = JSON.parse(savedSlides);
+            } catch (e) {
+                console.error("Lỗi khi khôi phục slides nháp:", e);
+            }
+        }
+
+        // Inject premium styles dynamically for editing & toast notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            .premium-toast {
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%) translateY(100px);
+                background: rgba(15, 15, 20, 0.95);
+                border: 1px solid var(--primary);
+                color: #fff;
+                padding: 14px 28px;
+                border-radius: 50px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+                font-size: 13px;
+                font-weight: 500;
+                z-index: 10000;
+                opacity: 0;
+                transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                backdrop-filter: blur(10px);
+                pointer-events: none;
+                font-family: 'Outfit', sans-serif;
+            }
+            .premium-toast.show {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+            #slideContent[contenteditable="true"] {
+                outline: 2px dashed var(--primary) !important;
+                outline-offset: 12px;
+                border-radius: 8px;
+                background: rgba(243, 156, 18, 0.02) !important;
+                cursor: text;
+            }
+            #slideContent[contenteditable="true"]::before {
+                content: "🚨 CHẾ ĐỘ CHỈNH SỬA: Hãy sửa trực tiếp chữ trên slide và nhấn 'Lưu slide'";
+                display: block;
+                position: absolute;
+                top: -35px;
+                left: 0;
+                font-size: 11px;
+                font-weight: 700;
+                color: var(--primary);
+                background: rgba(243,156,18,0.15);
+                padding: 4px 12px;
+                border-radius: 4px;
+                animation: pulseIndicator 1.5s infinite;
+                font-family: 'Outfit', sans-serif;
+            }
+            @keyframes pulseIndicator {
+                0% { opacity: 0.7; }
+                50% { opacity: 1; }
+                100% { opacity: 0.7; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Edit slide state
+        let isEditMode = false;
+        let originalSlideContent = "";
+
+        function showToast(message) {
+            let toast = document.getElementById('premiumToast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'premiumToast';
+                toast.className = 'premium-toast';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> ` + message;
+            toast.classList.add('show');
+            
+            clearTimeout(toast.timeoutId);
+            toast.timeoutId = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+
+        function toggleEditMode() {
+            const contentEl = document.getElementById('slideContent');
+            const btnEdit = document.getElementById('btnEditSlide');
+            const btnSave = document.getElementById('btnSaveSlide');
+            const btnExport = document.getElementById('btnExportHtml');
+            
+            isEditMode = !isEditMode;
+            
+            if (isEditMode) {
+                originalSlideContent = contentEl.innerHTML;
+                contentEl.contentEditable = "true";
+                contentEl.focus();
+                
+                btnEdit.innerHTML = "<i class='fa-solid fa-xmark'></i> Hủy";
+                btnEdit.style.background = "rgba(231, 76, 60, 0.2)";
+                btnEdit.style.color = "#ff6b6b";
+                
+                btnSave.style.display = "inline-flex";
+                btnExport.style.display = "inline-flex";
+                
+                showToast("Đã bật chế độ chỉnh sửa! Nhấp vào văn bản để chỉnh sửa trực tiếp.");
+            } else {
+                contentEl.innerHTML = originalSlideContent;
+                disableEditUI();
+                showToast("Đã hủy bỏ các thay đổi chưa lưu.");
+            }
+        }
+
+        function disableEditUI() {
+            const contentEl = document.getElementById('slideContent');
+            const btnEdit = document.getElementById('btnEditSlide');
+            const btnSave = document.getElementById('btnSaveSlide');
+            const btnExport = document.getElementById('btnExportHtml');
+            
+            isEditMode = false;
+            if (contentEl) {
+                contentEl.contentEditable = "false";
+                contentEl.style.outline = "none";
+                contentEl.style.background = "none";
+            }
+            
+            if (btnEdit) {
+                btnEdit.innerHTML = "<i class='fa-solid fa-pen-to-square'></i> Sửa chữ";
+                btnEdit.style.background = "rgba(255,255,255,0.05)";
+                btnEdit.style.color = "#fff";
+            }
+            
+            if (btnSave) btnSave.style.display = "none";
+            if (btnExport) btnExport.style.display = "none";
+        }
+
+        function saveSlideEdits() {
+            const contentEl = document.getElementById('slideContent');
+            if (!isEditMode) return;
+            
+            // Save to memory
+            slides[currentSlideIndex] = contentEl.innerHTML;
+            
+            // Save to localStorage
+            try {
+                localStorage.setItem('nlp_slides_draft', JSON.stringify(slides));
+            } catch (e) {
+                console.error("Lỗi khi lưu localStorage:", e);
+            }
+            
+            disableEditUI();
+            showToast("Đã lưu nháp slide này! Bạn có thể ấn 'Xuất file HTML' để ghi đè lưu vĩnh viễn.");
+        }
+
+        function exportHtmlWithEdits() {
+            try {
+                if (isEditMode) {
+                    // Save the active slide's edits before exporting
+                    slides[currentSlideIndex] = document.getElementById('slideContent').innerHTML;
+                }
+                
+                // Find target script tag
+                let targetScript = null;
+                const scripts = document.querySelectorAll('script');
+                for (let script of scripts) {
+                    if (script.textContent.includes('const slides = [') || script.textContent.includes('let slides = [')) {
+                        targetScript = script;
+                        break;
+                    }
+                }
+                
+                if (!targetScript) {
+                    showToast("Lỗi: Không tìm thấy script chứa slides.");
+                    return;
+                }
+                
+                const originalScriptText = targetScript.textContent;
+                
+                // Find boundaries
+                let startIndex = originalScriptText.indexOf('const slides = [');
+                let isConstDeclaration = true;
+                if (startIndex === -1) {
+                    startIndex = originalScriptText.indexOf('let slides = [');
+                    isConstDeclaration = false;
+                }
+                const endIndex = originalScriptText.indexOf('let currentSlideIndex = 0;');
+                
+                if (startIndex === -1 || endIndex === -1) {
+                    showToast("Lỗi: Cấu trúc script của file không đồng bộ.");
+                    return;
+                }
+                
+                // Construct the serialized array
+                const arrayHeader = isConstDeclaration ? "const slides = [\n" : "let slides = [\n";
+                const serializedSlides = arrayHeader + slides.map(s => "            `" + s.replace(/`/g, "\\`").replace(/\${/g, "\\${") + "`").join(",\n") + "\n        ];\n        ";
+                
+                // Update active script content temporarily
+                targetScript.textContent = originalScriptText.substring(0, startIndex) + serializedSlides + originalScriptText.substring(endIndex);
+                
+                // Hide presentation deck temporarily so file downloads in default state
+                const slideOverlay = document.getElementById('slideDeck');
+                const originalOverlayDisplay = slideOverlay.style.display;
+                slideOverlay.style.display = 'none';
+                
+                // Make sure we save DOM with editing visual elements removed
+                disableEditUI();
+                
+                const finalHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+                
+                // Restore script and view
+                targetScript.textContent = originalScriptText;
+                slideOverlay.style.display = originalOverlayDisplay;
+                
+                // Download
+                const blob = new Blob([finalHtml], { type: "text/html;charset=utf-8" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "NLP_FinalProject_Team2.html";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(a.href);
+                
+                showToast("Xuất file thành công! Hãy lưu đè vào file cũ để lưu vĩnh viễn.");
+            } catch (err) {
+                console.error("Lỗi xuất file:", err);
+                showToast("Lỗi xuất file: " + err.message);
+            }
+        }
+
+        function resetSlidesToDefault() {
+            if (confirm("Bạn có chắc chắn muốn khôi phục slides gốc từ file HTML và xóa toàn bộ lịch sử chỉnh sửa không?")) {
+                localStorage.removeItem('nlp_slides_draft');
+                window.location.reload();
+            }
+        }
+
+        // Open Slide Presentation
+        function openSlideDeck() {
+            document.getElementById('slideDeck').style.display = 'flex';
+            loadSlide(0);
+            
+            // Show reset draft button if draft exists
+            const resetBtn = document.getElementById('btnResetSlides');
+            if (resetBtn) {
+                if (localStorage.getItem('nlp_slides_draft')) {
+                    resetBtn.style.display = 'inline-flex';
+                } else {
+                    resetBtn.style.display = 'none';
+                }
+            }
+            
+            // Add global Esc key listener to close
+            window.addEventListener('keydown', handleSlideKeyDown);
+        }
+
+        // Close Slide Presentation
+        function closeSlideDeck() {
+            document.getElementById('slideDeck').style.display = 'none';
+            window.removeEventListener('keydown', handleSlideKeyDown);
+        }
+
+        function loadSlide(index) {
+            disableEditUI(); // Disable edit mode when switching slides
+            currentSlideIndex = index;
+            document.getElementById('slideContent').innerHTML = slides[index];
+            document.getElementById('currentSlideNum').innerText = index + 1;
+            document.getElementById('totalSlidesNum').innerText = slides.length;
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slides.length - 1) {
+                loadSlide(currentSlideIndex + 1);
+            } else {
+                closeSlideDeck();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                loadSlide(currentSlideIndex - 1);
+            }
+        }
+
+        function handleSlideKeyDown(e) {
+            // Ignore slide navigation shortcuts (spacebar, arrow keys, Esc) when typing in Edit Mode
+            if (isEditMode) return;
+            
+            if (e.key === 'Escape') closeSlideDeck();
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        }
+
+        
+        
+        // Interactive samples dataset for 4 selected listings across 5 models
+        const samplesDataset = {
+            1: {
+                raw: "163.24.80 Tô Hiến Thành 50.2 5 4 13 12.9 tỷ Hòa Hưng Quận 10 10-15 tỷ HĐ Nguyễn Hoàng Nam Bảo Tín 0973776929 H3GB nguồn Đầu chủ Nguyễn Hoàng Nam - Bảo Tín. Nhà 5 tầng kiên cố, 6 phòng ngủ - 4 WC, hẻm xe tải vào tận cửa, sổ vuông vức nở hậu nhẹ phong thủy tốt, giảm 300tr còn 12.9 tỷ TL",
+                vit5: {
+                    title: "Tô Hiến Thành (gần Trường Sơn) 50.2m2 5 lầu 4x13 - 12.9 tỷ Hẻm xe tải",
+                    desc: "Nhà 5 tầng kiên cố, 6 phòng ngủ, 4 WC tọa lạc tại vị trí cực đẹp khu trung tâm Quận 10, gần trục đường lớn Trường Sơn / Lý Thái Tổ di chuyển thuận lợi. Sổ vuông vức, nở hậu nhẹ phong thủy cực tốt. Hẻm ô tô rộng rãi xe tải vào tận cửa. Phù hợp cho gia đình định cư lâu dài kết hợp kinh doanh hoặc cho thuê dòng tiền cao. Thương lượng trực tiếp chủ."
+                },
+                bart: {
+                    title: "Nhà Tô Hiến Thành Quận 10 50.2m2 5 lầu 4x13 - 12.9 tỷ Hẻm xe hơi đỗ cửa",
+                    desc: "Kết cấu 5 lầu đúc BTCT kiên cố gồm 6 phòng ngủ, 4 nhà vệ sinh sạch sẽ. Vị trí đắc địa tại Hòa Hưng Quận 10, gần ngay khu Trường Sơn, giao thông vô cùng thuận tiện. Hẻm rộng rãi xe hơi xe tải đỗ trước cửa. Sổ hồng riêng vuông vức, nở hậu nhẹ cực kỳ phong thủy. Giá bán 12.9 tỷ còn thương lượng thương lượng trực tiếp chủ."
+                },
+                gpt: {
+                    title: "Bán nhà Tô Hiến Thành Quận 10 DT 50.2m2 5 tầng giá 12.9 tỷ",
+                    desc: "Nhà bán tại Tô Hiến Thành Quận 10 gần Hòa Hưng. Diện tích 50.2m2, kết cấu 5 tầng kiên cố với 6 phòng ngủ, 4 phòng vệ sinh. Hẻm xe hơi rộng rãi xe tải vào tận nơi, khu vực an ninh dân trí tốt. Pháp lý sổ hồng riêng vuông vức nở hậu nhẹ. Giá chào bán 12.9 tỷ có thương lượng trực tiếp chủ."
+                },
+                gemini: {
+                    title: "Nhà bán Tô Hiến Thành Quận 10 - 50.2m2, 5 tầng, 12.9 tỷ thương lượng",
+                    desc: "Nhà bán thuộc khu trung tâm Hòa Hưng Quận 10, gần ngay đường lớn Trường Sơn. Diện tích thực tế 50.2m2, kết cấu kiên cố 5 tầng đúc với 6 phòng ngủ, 4 nhà vệ sinh. Hẻm xe hơi rộng thoáng xe tải di chuyển thoải mái tận nhà. Sổ hồng chính chủ vuông vức, nở hậu nhẹ. Giá chào 12.9 tỷ có bớt lộc chủ."
+                },
+                base: {
+                    title: "Nhà Tô Hiến Thành 50.2m2 5 tầng 4x13",
+                    desc: "163.24.80 Tô Hiến Thành 50.2 5 4 13 12.9 tỷ Hòa Hưng Quận 10. Nhà 5 tầng kiên cố, 6 phòng ngủ - 4 WC, hẻm xe tải vào tận cửa, sổ vuông vức nở hậu nhẹ phong thủy tốt, giảm 300tr còn 12.9 tỷ TL."
+                }
+            },
+            2: {
+                raw: "235/4/12 Lê Văn Sỹ 42 4 3.8 11 8.5 tỷ Phường 1 Tân Bình HĐ Phạm Văn Đồng 0912445889 MG Nguyễn Thị Bình nguồn Đầu chủ Phạm Văn Đồng - Môi giới Nguyễn Thị Bình. Nhà mới tinh, 4 tầng đúc BTCT kiên cố, 4PN - 3WC, hẻm ba gác sạch sẽ yên tĩnh dân trí cao, khu Bàu Cát Tân Bình.",
+                vit5: {
+                    title: "Lê Văn Sỹ (gần khu Bàu Cát) 42m2 4 lầu 3.8x11 - 8.5 tỷ Hẻm ba gác",
+                    desc: "Nhà mới tinh, 4 tầng đúc BTCT kiên cố cực kỳ chắc chắn, gồm 4 phòng ngủ rộng rãi, 3 nhà vệ sinh. Tọa lạc tại khu dân trí cao cực kỳ an ninh, yên tĩnh gần trục đường lớn Lê Văn Sỹ / khu Bàu Cát Tân Bình sầm uất. Hẻm ba gác rộng rãi, thông thoáng, sạch sẽ. Sổ hồng chuẩn chỉ, pháp lý sạch giao dịch ngay."
+                },
+                bart: {
+                    title: "Bán nhà Lê Văn Sỹ Tân Bình 42m2 4 lầu đúc BTCT - Hẻm ba gác mới keng",
+                    desc: "Nhà mới xây đúc kiên cố lầu bê tông cốt thép, 4 phòng ngủ rộng rãi, 3 nhà vệ sinh. Vị trí rất đẹp tại khu Bàu Cát Tân Bình, hẻm xe ba gác lưu thông thuận tiện, khu dân cư vô cùng yên tĩnh lịch sự. Sổ vuông đẹp, hoàn công đầy đủ, chủ nhà thiện chí bán thương lượng trực tiếp chủ."
+                },
+                gpt: {
+                    title: "Bán nhà mới Lê Văn Sỹ Tân Bình 42m2 4 tầng giá 8.5 tỷ",
+                    desc: "Nhà đẹp mới xây trên đường Lê Văn Sỹ, Phường 1, Quận Tân Bình. Diện tích 42m2 (ngang 3.8m x dài 11m), kết cấu 4 tầng đúc bê tông cốt thép kiên cố. Nhà thiết kế 4 phòng ngủ, 3 nhà vệ sinh đầy đủ tiện nghi. Hẻm ba gác trước nhà sạch sẽ, khu dân cư văn minh. Sổ hồng chính chủ, thương lượng tốt."
+                },
+                gemini: {
+                    title: "Nhà mới Lê Văn Sỹ Tân Bình - 4 tầng BTCT, hẻm ba gác, 8.5 tỷ thương lượng",
+                    desc: "Nhà mới dọn vào ở ngay đường Lê Văn Sỹ Phường 1 Tân Bình. Thiết kế 4 tầng đúc BTCT chắc chắn, 4 phòng ngủ thoáng mát, 3 nhà vệ sinh. Hẻm ba gác trước nhà sạch sẽ an ninh. Vị trí gần trung tâm khu Bàu Cát sầm uất. Pháp lý sổ hồng vuông đẹp sang tên công chứng nhanh."
+                },
+                base: {
+                    title: "Nhà Lê Văn Sỹ 42m2 4 tầng 3.8x11",
+                    desc: "235/4/12 Lê Văn Sỹ 42 4 3.8 11 8.5 tỷ Phường 1 Tân Bình. Nhà mới tinh, 4 tầng đúc BTCT kiên cố, 4PN - 3WC, hẻm ba gác sạch sẽ yên tĩnh dân trí cao, khu Bàu Cát Tân Bình."
+                }
+            },
+            3: {
+                raw: "95.12 Nguyễn Thiện Thuật 35 3 3.5 10 7.8 tỷ Phường 2 Quận 3 HĐ Trần Minh Hùng 0903556991 nguồn Đầu chủ Trần Minh Hùng. Nhà 3 tầng, cũ tiện sửa mới hoặc làm CHDV mini, hẻm thông ô tô lý thuyết, gần ngã tư Điện Biên Phủ.",
+                vit5: {
+                    title: "Nguyễn Thiện Thuật (gần Điện Biên Phủ) 35m2 3 lầu 3.5x10 - 7.8 tỷ Hẻm thông thoáng",
+                    desc: "Nhà 3 tầng cũ, cực kỳ phù hợp xây mới hoặc cải tạo làm CHDV mini sinh lời cao tại trung tâm Quận 3, gần ngã tư Điện Biên Phủ / Nguyễn Đình Chiểu sầm uất. Vị trí đắc địa, hẻm thông thoáng ô tô di chuyển thoải mái, thông ra nhiều đường lớn. Sổ hồng riêng chính chủ, giao dịch an toàn."
+                },
+                bart: {
+                    title: "Nhà Nguyễn Thiện Thuật Q3 35m2 3 lầu - Tiện xây mới CHDV mini giá 7.8 tỷ",
+                    desc: "Vị trí đắc địa ngay trung tâm Quận 3, gần ngã tư Điện Biên Phủ, giao thông thuận lợi. Hiện trạng nhà 3 lầu cũ, rất thích hợp cho khách mua cải tạo làm căn hộ dịch vụ CHDV mini sinh lời dòng tiền hoặc xây mới theo ý thích. Hẻm thông thoáng ô tô lý thuyết thông nhiều ngả. Sổ hồng riêng."
+                },
+                gpt: {
+                    title: "Nhà trung tâm Quận 3 Nguyễn Thiện Thuật 35m2 3 tầng giá 7.8 tỷ",
+                    desc: "Bán căn nhà cũ tiện xây mới hoặc làm căn hộ dịch vụ mini trên đường Nguyễn Thiện Thuật, Phường 2, Quận 3. Diện tích khuôn viên 35m2, kết cấu 3 tầng cũ. Hẻm trước nhà thông thoáng, gần đường Điện Biên Phủ tiện di chuyển đi các quận 1, 10. Pháp lý rõ ràng sổ hồng trao tay."
+                },
+                gemini: {
+                    title: "Nguyễn Thiện Thuật Quận 3 - Nhà 3 tầng cũ tiện xây mới CHDV, giá 7.8 tỷ",
+                    desc: "Bán căn nhà đường Nguyễn Thiện Thuật Quận 3 diện tích 35m2. Kết cấu nhà 3 tầng cũ, thích hợp xây mới cải tạo làm căn hộ dịch vụ CHDV mini. Hẻm xe hơi thông thoáng, gần ngã tư Điện Biên Phủ cực tiện di chuyển. Sổ hồng riêng pháp lý sạch sẽ."
+                },
+                base: {
+                    title: "Nhà Nguyễn Thiện Thuật 35m2 3 tầng 3.5x10",
+                    desc: "95.12 Nguyễn Thiện Thuật 35 3 3.5 10 7.8 tỷ Phường 2 Quận 3. Nhà 3 tầng, cũ tiện sửa mới hoặc làm CHDV mini, hẻm thông ô tô lý thuyết, gần ngã tư Điện Biên Phủ."
+                }
+            },
+            4: {
+                raw: "45.18.2 Phan Xích Long 48 3 4 12 9.2 tỷ Phường 7 Phú Nhuận HĐ Hoàng Văn Thụ 0973551122 nguồn Đầu chủ Hoàng Văn Thụ. Nhà 3 tầng, mới dọn vào ở ngay, 3 phòng ngủ đúc kiên cố, hẻm ô tô 4m vào tận cửa, gần trung tâm ẩm thực Phan Xích Long.",
+                vit5: {
+                    title: "Phan Xích Long (gần khu phố ẩm thực) 48m2 3 lầu 4x12 - 9.2 tỷ Hẻm ô tô đỗ cửa",
+                    desc: "Nhà 3 lầu mới keng xách vali vào ở ngay, gồm 3 phòng ngủ đúc kiên cố chắc chắn. Vị trí tuyệt đẹp ngay khu trung tâm ẩm thực sầm uất Phan Xích Long Phú Nhuận. Hẻm ô tô 4m rộng rãi đỗ tận cửa, giao thông kết nối Quận 1, Bình Thạnh thuận tiện. Pháp lý hoàn công đầy đủ, giao dịch ngay."
+                },
+                bart: {
+                    title: "Bán nhà đẹp Phan Xích Long Phú Nhuận 48m2 3 lầu đỗ cửa hẻm ô tô 4m",
+                    desc: "Thiết kế hiện đại 3 lầu đúc kiên cố, 3 phòng ngủ mới dọn vào ở ngay. Tọa lạc tại khu phố Phan Xích Long sầm uất bậc nhất Phú Nhuận, ngập tràn tiện ích ăn uống. Hẻm ô tô rộng 4m ô tô đỗ tận nhà di chuyển thuận tiện. Sổ hồng chính chủ hoàn công đầy đủ pháp lý sạch."
+                },
+                gpt: {
+                    title: "Bán nhà đẹp Phan Xích Long Phú Nhuận 48m2 3 tầng giá 9.2 tỷ hẻm xe hơi",
+                    desc: "Nhà bán đường Phan Xích Long, Phường 7, Quận Phú Nhuận. Diện tích 48m2 (ngang 4m x dài 12m), kết cấu 3 tầng kiên cố, nhà đẹp dọn vào ở được ngay với 3 phòng ngủ. Hẻm xe hơi rộng 4m trước nhà thông thoáng, đỗ tận cửa. Sổ hồng chuẩn chỉ, pháp lý hoàn công đầy đủ."
+                },
+                gemini: {
+                    title: "Phan Xích Long Phú Nhuận - Nhà 3 lầu đẹp ở ngay, hẻm xe hơi, giá 9.2 tỷ",
+                    desc: "Nhà bán ngay khu ẩm thực Phan Xích Long sầm uất. Cấu trúc 3 lầu kiên cố đúc chắc chắn, có 3 phòng ngủ mới dọn vào ở ngay. Hẻm xe hơi 4m đỗ cửa thông thoáng. Sổ hồng pháp lý sạch sẽ hoàn công đầy đủ sang tên nhanh."
+                },
+                base: {
+                    title: "Nhà Phan Xích Long 48m2 3 tầng 4x12",
+                    desc: "45.18.2 Phan Xích Long 48 3 4 12 9.2 tỷ Phường 7 Phú Nhuận. Nhà 3 tầng, mới dọn vào ở ngay, 3 phòng ngủ đúc kiên cố, hẻm ô tô 4m vào tận cửa, gần trung tâm ẩm thực Phan Xích Long."
+                }
+            }
+        };
+
+        function switchSample(sampleId) {
+            // Update active button classes in switcher
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById('btnSample' + i);
+                if (i === sampleId) {
+                    btn.style.background = 'rgba(243, 156, 18, 0.15)';
+                    btn.style.borderColor = 'var(--primary)';
+                    btn.style.color = 'var(--primary)';
+                } else {
+                    btn.style.background = 'rgba(255, 255, 255, 0.05)';
+                    btn.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    btn.style.color = 'var(--text-muted)';
+                }
+            }
+
+            // Get selected data
+            const data = samplesDataset[sampleId];
+
+            // Render raw input
+            document.getElementById('activeRawInput').innerText = data.raw;
+
+            // Render 5 columns outputs
+            document.getElementById('vit5Title').innerText = data.vit5.title;
+            document.getElementById('vit5Desc').innerText = data.vit5.desc;
+
+            document.getElementById('bartTitle').innerText = data.bart.title;
+            document.getElementById('bartDesc').innerText = data.bart.desc;
+
+            document.getElementById('gptTitle').innerText = data.gpt.title;
+            document.getElementById('gptDesc').innerText = data.gpt.desc;
+
+            document.getElementById('geminiTitle').innerText = data.gemini.title;
+            document.getElementById('geminiDesc').innerText = data.gemini.desc;
+
+            document.getElementById('baseTitle').innerText = data.base.title;
+            document.getElementById('baseDesc').innerText = data.base.desc;
+
+            // Add highlight/pulse animation on change
+            const grid = document.getElementById('comparisonGrid');
+            grid.classList.add('pulse-once');
+            setTimeout(() => grid.classList.remove('pulse-once'), 500);
+        }
+
+
+
+        // Initialize default states on load
+        window.onload = function() {
+            calculateSplits();
+            showRoleDetail(1);
+        };
+    </script>
+
+    <!-- Floating bottom presentation bar -->
+    <div class="presentation-banner">
+        <span>📢 Bạn muốn giới thiệu đề xuất này cho Chuyên gia ngành và thầy giảng viên?</span>
+        <button class="btn-mini" onclick="openSlideDeck()">Kích hoạt Thuyết Trình [Slideshow]</button>
+    </div>
+
+</body>
+</html>

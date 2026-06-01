@@ -1,0 +1,28 @@
+# Ignore everything by default
+*
+
+# Unignore the directories we want to keep
+!/ASSIGNMENT/
+!/ASSIGNMENT/**
+
+# Unignore the specific files we want to keep
+!/NLP_FinalProject_Team2.html
+!.gitignore
+
+# Ignore course study materials (tài liệu học)
+/ASSIGNMENT/W1/
+/ASSIGNMENT/W2/
+/ASSIGNMENT/W3/
+/ASSIGNMENT/W3-Onclass/
+
+# Inside ASSIGNMENT, ignore heavy data, serialized models, and checkpoints
+/ASSIGNMENT/**/*.pdf
+/ASSIGNMENT/**/*.csv
+/ASSIGNMENT/**/*.p
+/ASSIGNMENT/**/*.pkl
+/ASSIGNMENT/**/*.h5
+/ASSIGNMENT/**/__pycache__/
+/ASSIGNMENT/**/*.pyc
+/ASSIGNMENT/**/.ipynb_checkpoints/
+/ASSIGNMENT/**/.DS_Store
+/ASSIGNMENT/**/Thumbs.db
