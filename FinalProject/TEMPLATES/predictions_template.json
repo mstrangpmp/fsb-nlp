@@ -1,0 +1,19 @@
+[
+  {
+    "id": 10543,
+    "raw_input_cleaned": "Mô tả thô lấy từ cột Mô tả chi tiết của đầu chủ Trà Mi (đã được Trang tiền xử lý sạch địa chỉ và SĐT)...",
+    "predicted_title": "Tô Hiến Thành (gần Trường Sơn) 50.2m2 5 lầu 4x13 - 12.9 tỷ Hẻm xe tải",
+    "predicted_description": "Nhà 5 tầng kiên cố, 6 phòng ngủ, 4 WC tọa lạc tại vị trí cực đẹp khu trung tâm Quận 10, gần trục đường lớn Trường Sơn. Sổ nở hậu nhẹ cực kỳ phong thủy...",
+    "extracted_specs": {
+      "duong": "Tô Hiến Thành",
+      "phuong": "Phường 15",
+      "quan": "Quận 10",
+      "gia_ty": 12.9,
+      "dien_tich_m2": 50.2,
+      "so_tang": 5,
+      "mat_tien_m": 4.0,
+      "rong_hem_m": 4.0,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  }
+]

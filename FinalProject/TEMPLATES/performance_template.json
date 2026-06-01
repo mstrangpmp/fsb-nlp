@@ -1,0 +1,6 @@
+{
+  "model_name": "ViT5-base / GPT-4o-mini / PhoBERT / TextRank",
+  "average_latency_seconds": 0.18,
+  "estimated_cost_vnd_per_1k": 0,
+  "latency_per_sample": [0.15, 0.22, 0.17, 0.19, 0.20, 0.16, 0.18, 0.17, 0.19]
+}
