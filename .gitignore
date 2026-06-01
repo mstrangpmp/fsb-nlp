@@ -3,6 +3,7 @@
 
 # Unignore the specific files we want to keep
 !.gitignore
+!index.html
 !/FinalProject/
 !/FinalProject/**
 
