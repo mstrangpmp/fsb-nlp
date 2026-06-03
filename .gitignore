@@ -16,5 +16,8 @@
 /FinalProject/**/__pycache__/
 /FinalProject/**/*.pyc
 /FinalProject/**/.ipynb_checkpoints/
+# Ignore system / configuration files
 /FinalProject/**/.DS_Store
 /FinalProject/**/Thumbs.db
+.env
+**/.env
