@@ -10,6 +10,7 @@
 # Ignore heavy data, serialized models, and checkpoints inside FinalProject
 /FinalProject/**/*.pdf
 /FinalProject/**/*.csv
+!/FinalProject/**/*Expert_Evaluation_Form.csv
 /FinalProject/**/*.p
 /FinalProject/**/*.pkl
 /FinalProject/**/*.h5

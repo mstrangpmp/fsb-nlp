@@ -17,9 +17,11 @@ import pandas as pd
 
 # Thêm đường dẫn để nhận diện gói evaluation
 sys.path.append(str(Path(__file__).parent.parent))
+sys.path.append(str(Path(__file__).parent / "TextRank_TFIDF"))
+sys.path.append(str(Path(__file__).parent / "LexRank_TFIDF"))
 from evaluation import RealEstateEvaluator
-import baseline_textrank
-import baseline_lexrank
+from TextRank_TFIDF import baseline_textrank
+from LexRank_TFIDF import baseline_lexrank
 
 def run_model_pipeline(model_name: str, inference_rows: list, train_rows: list):
     print(f"\n🔮 Đang tiến hành rút gọn {len(inference_rows)} tin đăng bằng {model_name}...")
@@ -66,12 +68,13 @@ def run_model_pipeline(model_name: str, inference_rows: list, train_rows: list):
             p["llm_evaluation"] = eval_dict[sid]
 
     # 5. Lưu kết quả dự đoán và hiệu năng dạng JSON
-    pred_path = Path(__file__).parent / f"Nhan_{model_name}_Inference_predictions.json"
+    subfolder_path = Path(__file__).parent / f"{model_name}_TFIDF"
+    pred_path = subfolder_path / f"Nhan_{model_name}_Inference_predictions.json"
     with open(pred_path, "w", encoding="utf-8") as f:
         json.dump(predictions, f, ensure_ascii=False, indent=2)
     print(f"💾 Đã lưu dự đoán của 26 dòng tại: {pred_path}")
     
-    perf_path = Path(__file__).parent / f"Nhan_{model_name}_Inference_performance.json"
+    perf_path = subfolder_path / f"Nhan_{model_name}_Inference_performance.json"
     performance = {
         "model_name": f"{model_name} (Vietnamese Real-Estate Baseline)",
         "n_inference_records": len(predictions),
@@ -121,7 +124,7 @@ def run_model_pipeline(model_name: str, inference_rows: list, train_rows: list):
         })
         
     df_expert = pd.DataFrame(csv_rows)
-    csv_path = Path(__file__).parent / f"Nhan_{model_name}_Expert_Evaluation_Form.csv"
+    csv_path = subfolder_path / f"Nhan_{model_name}_Expert_Evaluation_Form.csv"
     df_expert.to_csv(csv_path, index=False, encoding="utf-8-sig")
     print(f"📊 Đã tạo biểu mẫu đánh giá của chuyên gia tại: {csv_path}")
 

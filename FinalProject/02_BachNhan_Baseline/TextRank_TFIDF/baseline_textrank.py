@@ -524,7 +524,7 @@ def run_pipeline():
 
     # ── Step 3: Comprehensive Evaluation (ROUGE-L, BERTScore, LLM Judge) ────
     import sys
-    sys.path.append(str(Path(__file__).parent.parent))
+    sys.path.append(str(Path(__file__).parent.parent.parent))
     from evaluation import RealEstateEvaluator
 
     evaluator = RealEstateEvaluator()

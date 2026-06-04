@@ -1,20 +1,20 @@
 """
 ==============================================================================
-02 - Bách Nhân Baseline: LexRank for Vietnamese Real-Estate Summarization
+02 - Bách Nhân Baseline: LexRank with Local LLM Embeddings for Viet. Real-Estate
 ==============================================================================
 Pipeline:
   1. Pull newest data from Google Sheets (public CSV export)
-  2. Run Vietnamese LexRank on raw descriptions
-  3. Extract specs (price, area, floors, alley type, …) via regex directly from raw input text (not from the summarized description)
+  2. Run Vietnamese LexRank using dense sentence embeddings from LM Studio (BGE-M3)
+  3. Extract specs (price, area, floors, alley type, …) via regex from raw input text
   4. Generate standardised title
   5. Evaluate ROUGE-L against ground truth (when available)
   6. Save:
-       - Nhan_LexRank_predictions.json
-       - Nhan_LexRank_performance.json
+       - Nhan_LexRank_Embedding_predictions.json
+       - Nhan_LexRank_Embedding_performance.json
 
 Usage:
-    pip install underthesea scikit-learn rouge-score numpy requests tqdm
-    python baseline_lexrank.py
+    Start LM Studio with an embedding model (e.g. BGE-M3) loaded on port 1234.
+    python baseline_lexrank_embedding.py
 ==============================================================================
 """
 
@@ -30,7 +30,6 @@ import numpy as np
 import requests
 from tqdm import tqdm
 
-# ── Optional: underthesea for Vietnamese word-tokenization ────────────────────
 try:
     from underthesea import word_tokenize, sent_tokenize as vi_sent_tokenize
     HAS_UNDERTHESEA = True
@@ -39,7 +38,6 @@ except ImportError:
     HAS_UNDERTHESEA = False
     print("⚠️  underthesea not found — falling back to simple sentence splitter")
 
-# ── Optional: rouge-score for evaluation ──────────────────────────────────────
 try:
     from rouge_score import rouge_scorer as rs_module
     HAS_ROUGE = True
@@ -47,7 +45,6 @@ except ImportError:
     HAS_ROUGE = False
     print("⚠️  rouge-score not found — skipping ROUGE-L evaluation")
 
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
@@ -63,22 +60,18 @@ OUTPUT_DIR = Path(__file__).parent        # same folder as this script
 N_SUMMARY_SENTENCES = 3                   # how many sentences to extract per listing
 LEXRANK_THRESHOLD = 0.1                    # Cosine similarity threshold for LexRank graph edges
 
+LM_STUDIO_API_URL = "http://127.0.0.1:1234"
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # 1. FETCH DATA FROM GOOGLE SHEETS
 # ══════════════════════════════════════════════════════════════════════════════
 
 def fetch_sheet(url: str) -> list:
-    """
-    Download the public Google Sheet as CSV and return list of row dicts.
-    Expected columns (Vietnamese):
-        Mô tả thô | ID | Tiêu đề chuẩn | Mô tả chuẩn
-    """
     print(f"\n📥 Fetching data from Google Sheets …")
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
 
-    # Google returns UTF-8 with BOM sometimes
     content = resp.content.decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(content))
 
@@ -104,53 +97,68 @@ def fetch_sheet(url: str) -> list:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 2. VIETNAMESE LEXRANK SUMMARIZER
+# 2. LOCAL EMBEDDING HELPER FUNCTIONS
 # ══════════════════════════════════════════════════════════════════════════════
 
-VI_STOPWORDS = {
-    "và","hoặc","hay","nhưng","mà","vì","nên","thì","là","có","được","cho",
-    "với","của","trong","trên","tại","ở","đến","từ","bởi","theo","để","về",
-    "ra","vào","lên","xuống","đã","đang","sẽ","rất","cũng","đều","chỉ",
-    "này","đó","kia","nào","gì","bán","mua","cần","liên","hệ","ẩn","sđt",
-    "anh","chị","em","ace","khách","dẫn","báo","trước","phút","chốt","nhà",
-    "chúc","bùng","nổ","thu","bông","gửi","hình","lấy","sổ","quy","trình",
-    "cty","chuẩn","hỗ","trợ","tốt","nhất","mong","kết","duyên","cùng",
-}
+def get_loaded_model_name() -> str:
+    """Query LM Studio to detect the name of the currently loaded model."""
+    try:
+        resp = requests.get(f"{LM_STUDIO_API_URL}/v1/models", timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            if "data" in data and len(data["data"]) > 0:
+                model_id = data["data"][0]["id"]
+                print(f"🤖 Detected loaded model in LM Studio: {model_id}")
+                return model_id
+    except Exception as e:
+        print(f"⚠️ Could not auto-detect model from LM Studio /v1/models: {e}")
+    print("ℹ️ Using default model ID: 'bge-m3'")
+    return "bge-m3"
 
+
+def get_embeddings_batch(sentences: list[str], model_name: str) -> list[list[float]]:
+    """Fetch dense embedding vectors in batch from LM Studio."""
+    try:
+        payload = {
+            "input": sentences,
+            "model": model_name
+        }
+        resp = requests.post(f"{LM_STUDIO_API_URL}/v1/embeddings", json=payload, timeout=60)
+        resp.raise_for_status()
+        data = resp.json()
+        
+        results = data.get("data", [])
+        # Sort by index to preserve order of input sentences
+        results_sorted = sorted(results, key=lambda x: x.get("index", 0))
+        return [item["embedding"] for item in results_sorted]
+    except Exception as e:
+        print(f"❌ Error fetching embeddings from LM Studio: {e}")
+        return []
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 3. SEMANTIC LEXRANK WITH EMBEDDINGS
+# ══════════════════════════════════════════════════════════════════════════════
 
 def _extract_sentences(text: str) -> list[str]:
-    # First split by newlines as they are natural boundaries in real-estate ads
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     sents = []
     for line in lines:
         if HAS_UNDERTHESEA:
             sents.extend(vi_sent_tokenize(line))
         else:
-            # split by punctuation
             parts = re.split(r'(?<=[.!?])\s+', line)
             sents.extend(parts)
     return [s.strip() for s in sents if len(s.strip()) > 12]
 
 
-def _vi_tokenize(text: str) -> str:
-    """Return space-joined tokens for TF-IDF; uses underthesea if available."""
-    if HAS_UNDERTHESEA:
-        tokens = word_tokenize(text, format="text").lower().split()
-    else:
-        tokens = re.sub(r'[^\w\s]', ' ', text.lower()).split()
-    return " ".join(t for t in tokens if t not in VI_STOPWORDS and len(t) > 1)
-
-
 def _pagerank(adj: np.ndarray, d: float = 0.85, max_iter: int = 100) -> np.ndarray:
-    """Power-iteration PageRank on an adjacency matrix."""
     n = adj.shape[0]
     row_sum = adj.sum(axis=1, keepdims=True)
     
-    # Handle sink/isolated nodes by assigning uniform transitions
     row_sum[row_sum == 0] = 1
     trans = adj / row_sum
     
-    # If a row was all zeros, distribute uniform probability across all nodes
     for i in range(n):
         if adj[i].sum() == 0:
             trans[i] = np.ones(n) / n
@@ -164,7 +172,6 @@ def _pagerank(adj: np.ndarray, d: float = 0.85, max_iter: int = 100) -> np.ndarr
     return scores
 
 
-# Blacklist patterns — sentences containing these are excluded from ranking
 _BLACKLIST_RE = re.compile(
     r'(liên hệ|sđt|alo|zalo|facebook|inbox|báo trước|dẫn khách'
     r'|ký phiếu|quy trình|đầu chủ|thiên khôi|hoa hồng|chúc ace'
@@ -172,7 +179,6 @@ _BLACKLIST_RE = re.compile(
     re.IGNORECASE
 )
 
-# Sentences containing these terms get a PageRank score boost
 _PRIORITY_TERMS = (
     "diện tích", "kết cấu", "hẻm", "mặt tiền", "sổ hồng",
     "pháp lý", "hoàn công", "giá", "tầng", "phòng ngủ",
@@ -180,11 +186,10 @@ _PRIORITY_TERMS = (
 )
 
 
-def lexrank_summarize(text: str, n_sentences: int = 3, threshold: float = LEXRANK_THRESHOLD) -> str:
+def lexrank_summarize_embedding(text: str, model_name: str, n_sentences: int = 3, threshold: float = LEXRANK_THRESHOLD) -> str:
     """
-    Vietnamese LexRank extractive summarization.
-    Computes cosine similarity of TF-IDF vectors, applies a threshold,
-    and runs PageRank. Returns top-N sentences in original order.
+    Vietnamese LexRank using dense sentence embeddings from LM Studio.
+    Returns top-N sentences in original order.
     """
     sentences = _extract_sentences(text)
 
@@ -196,19 +201,19 @@ def lexrank_summarize(text: str, n_sentences: int = 3, threshold: float = LEXRAN
     if len(sentences) <= n_sentences:
         return " ".join(sentences)
 
-    tokenized = [_vi_tokenize(s) for s in sentences]
-
-    try:
-        vec = TfidfVectorizer(min_df=1)
-        tfidf = vec.fit_transform(tokenized)
-    except ValueError:
+    # Get dense embeddings from local model
+    embeddings = get_embeddings_batch(sentences, model_name)
+    if not embeddings or len(embeddings) != len(sentences):
+        print("⚠️ Embedding retrieval failed or mismatched length. Falling back to default top sentences.")
         return " ".join(sentences[:n_sentences])
 
-    sim = cosine_similarity(tfidf, tfidf).astype(float)
+    embeddings_arr = np.array(embeddings)
+    
+    # Compute similarity using cosine similarity on embeddings
+    sim = cosine_similarity(embeddings_arr, embeddings_arr).astype(float)
     np.fill_diagonal(sim, 0)
 
-    # Thresholding: Keep only edges with similarity above the threshold
-    # Binary LexRank: Adjacency matrix has 1 if similarity > threshold, else 0
+    # Thresholding: keep only edges with similarity above threshold to make it binary LexRank
     adj = (sim > threshold).astype(float)
 
     scores = _pagerank(adj)
@@ -224,7 +229,7 @@ def lexrank_summarize(text: str, n_sentences: int = 3, threshold: float = LEXRAN
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 3. REGEX SPEC EXTRACTION
+# 4. REGEX SPEC EXTRACTION & TITLE GENERATION
 # ══════════════════════════════════════════════════════════════════════════════
 
 def extract_specs_from_header(line: str) -> dict:
@@ -233,7 +238,6 @@ def extract_specs_from_header(line: str) -> dict:
     street_name = None
     rest = line
 
-    # Match CMT8 / 3 Tháng 2
     if lower_line.startswith("cách mạng tháng 8") or lower_line.startswith("cmt8") or lower_line.startswith("cách mạng tháng tám"):
         street_name = "Cách Mạng Tháng 8"
         m = re.match(r'^(cách mạng tháng 8|cmt8|cách mạng tháng tám)', line, re.IGNORECASE)
@@ -245,7 +249,6 @@ def extract_specs_from_header(line: str) -> dict:
         if m:
             rest = line[m.end():]
     else:
-        # Match capitalized words at the start
         m = re.match(r'^([A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝĂĐƠƯẠẶẤẦẨẪẬẮẰẲẴẶẸẼẾỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴỶỸ][a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝĂĐƠƯẠẶẤẦẨẪẬẮẰẲẴẶẸẼẾỀỂỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪỬỮỰỲỴỶỸa-zàáâãèéêìíòóôõùúýăđơưạặấầẩẫậắằẳẵặẹẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ\s\-\,\.]+?)(?=\s+\d)', line)
         if m:
             street_name = m.group(1).strip().rstrip(',')
@@ -254,11 +257,9 @@ def extract_specs_from_header(line: str) -> dict:
     if street_name:
         specs["duong"] = street_name
 
-    # Extract all numbers from the rest of the line
     num_matches = re.findall(r'\d+(?:[.,/]\d+)*', rest)
     if len(num_matches) >= 5:
         if "tỷ" in lower_line or "ty" in lower_line or "tỷ" in rest.lower() or "ty" in rest.lower():
-            # Parse area
             area_str = num_matches[0]
             if "/" in area_str:
                 area_str = area_str.split("/")[0]
@@ -267,13 +268,11 @@ def extract_specs_from_header(line: str) -> dict:
             except ValueError:
                 pass
 
-            # Parse floors
             try:
                 specs["so_tang"] = int(num_matches[1])
             except ValueError:
                 pass
 
-            # Parse width
             width_str = num_matches[2]
             if "/" in width_str:
                 width_str = width_str.split("/")[0]
@@ -282,13 +281,11 @@ def extract_specs_from_header(line: str) -> dict:
             except ValueError:
                 pass
 
-            # Parse length
             try:
                 specs["chieu_sau_m"] = float(num_matches[3].replace(',', '.'))
             except ValueError:
                 pass
 
-            # Parse price
             try:
                 specs["gia_ty"] = float(num_matches[4].replace(',', '.'))
             except ValueError:
@@ -298,15 +295,9 @@ def extract_specs_from_header(line: str) -> dict:
 
 
 def extract_specs(text: str) -> dict:
-    """
-    Extract specifications directly from the RAW input text using regular expressions (Regex).
-    Note: Regex is run on the RAW input text, not the summarized description, to ensure
-    no critical property dimensions/specs are missed due to sentence extraction/summarization.
-    """
     t = text.lower()
     first_line = text.strip().splitlines()[0] if text.strip() else ""
 
-    # 1. Fallback / general regex extraction
     dt_matches = re.findall(r'(\d+\.?\d*)\s*m2', t)
     dien_tich = float(dt_matches[0]) if dt_matches else None
 
@@ -374,7 +365,6 @@ def extract_specs(text: str) -> dict:
 
     duong = _extract_street_name(text)
 
-    # 2. Merge / overwrite with header-extracted specs
     header_specs = extract_specs_from_header(first_line)
 
     return {
@@ -405,41 +395,31 @@ def _extract_street_name(text: str) -> Optional[str]:
     return None
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# 4. TITLE GENERATION
-# ══════════════════════════════════════════════════════════════════════════════
-
 def generate_title(specs: dict) -> str:
     parts = []
-
-    # Location
     loc = " ".join(filter(None, [specs.get("duong"), specs.get("quan")]))
     if loc:
         parts.append(loc)
 
-    # Area
     dt = specs.get("dien_tich_m2")
     ngang = specs.get("mat_tien_m")
-    custom_sau = specs.get("chieu_sau_m")
+    sau = specs.get("chieu_sau_m")
     if dt:
         dim = f"{dt}m2"
-        if ngang and custom_sau:
-            dim += f" ({ngang}x{custom_sau})"
+        if ngang and sau:
+            dim += f" ({ngang}x{sau})"
         elif ngang:
             dim += f" ({ngang}m ngang)"
         parts.append(dim)
 
-    # Alley type
     hem = specs.get("phan_loai_hem")
     if hem:
         parts.append(hem)
 
-    # Floors
     tang = specs.get("so_tang")
     if tang:
         parts.append(f"{tang} tầng")
 
-    # Price
     gia = specs.get("gia_ty")
     if gia:
         parts.append(f"{gia} Tỷ")
@@ -447,26 +427,49 @@ def generate_title(specs: dict) -> str:
     return " - ".join(parts) if parts else "Bất động sản cần bán"
 
 
+def compute_rouge(predictions: list) -> Optional[dict]:
+    if not HAS_ROUGE:
+        return None
+
+    scorer = rs_module.RougeScorer(["rougeL"], use_stemmer=False)
+    scores = []
+    for pred in predictions:
+        gt = pred.get("gt_description", "")
+        hyp = pred.get("predicted_description", "")
+        if gt and hyp:
+            s = scorer.score(gt, hyp)["rougeL"].fmeasure
+            scores.append(s)
+
+    if not scores:
+        return None
+    return {
+        "rouge_l_mean":  round(float(np.mean(scores)), 4),
+        "rouge_l_std":   round(float(np.std(scores)),  4),
+        "n_evaluated":   len(scores),
+    }
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # 5. MAIN PIPELINE
 # ══════════════════════════════════════════════════════════════════════════════
 
 def run_pipeline():
-    # ── Step 1: Fetch ──────────────────────────────────────────────────────────
+    # ── Step 1: Detect Model & Fetch Data ──────────────────────────────────────
+    model_name = get_loaded_model_name()
     rows = fetch_sheet(SHEET_URL)
 
     # ── Step 2: Inference ──────────────────────────────────────────────────────
     predictions = []
     latency_log = []
 
-    print(f"\n🚀 Running LexRank on {len(rows)} listings …")
-    for row in tqdm(rows, desc="LexRank"):
+    print(f"\n🚀 Running LexRank with Dense Embeddings (threshold={LEXRANK_THRESHOLD}) on {len(rows)} listings …")
+    for row in tqdm(rows, desc="LexRank-Embedding"):
         raw = row["raw_input"]
         sid = row["id"]
 
         t0 = time.perf_counter()
 
-        description = lexrank_summarize(raw, N_SUMMARY_SENTENCES, LEXRANK_THRESHOLD)
+        description = lexrank_summarize_embedding(raw, model_name, N_SUMMARY_SENTENCES, LEXRANK_THRESHOLD)
         specs       = extract_specs(description)
         title       = generate_title(specs)
 
@@ -486,18 +489,15 @@ def run_pipeline():
     print(f"\n⏱️  Average latency : {np.mean(latency_log):.4f} s/listing")
     print(f"⏱️  Total time      : {sum(latency_log):.3f} s")
 
-    # ── Step 3: Comprehensive Evaluation (ROUGE-L, BERTScore, Local LLM Judge) ─
-    import sys
-    sys.path.append(str(Path(__file__).parent.parent))
-    from evaluation import RealEstateEvaluator
-
-    evaluator = RealEstateEvaluator()
-    eval_results = evaluator.evaluate_dataset(predictions, model_local="google/gemma-4-e4b")
+    # ── Step 3: Compute ROUGE-L locally ─────────────────────────────────────────
+    rouge_results = compute_rouge(predictions)
+    print(f"📊 ROUGE-L score: {rouge_results}")
 
     # ── Step 4: Save predictions ──────────────────────────────────────────────
-    dod_predictions = []
+    # Clean output by removing ground truth fields
+    output_predictions = []
     for p in predictions:
-        dod_predictions.append({
+        output_predictions.append({
             "id":                    p["id"],
             "raw_input_cleaned":     p["raw_input_cleaned"],
             "predicted_title":       p["predicted_title"],
@@ -505,27 +505,29 @@ def run_pipeline():
             "extracted_specs":       p["extracted_specs"],
         })
 
-    pred_path = OUTPUT_DIR / "Nhan_LexRank_predictions.json"
+    pred_path = OUTPUT_DIR / "Nhan_LexRank_Embedding_predictions.json"
     with open(pred_path, "w", encoding="utf-8") as f:
-        json.dump(dod_predictions, f, ensure_ascii=False, indent=2)
-    print(f"\n💾 Saved: {pred_path}  ({len(dod_predictions)} records)")
+        json.dump(output_predictions, f, ensure_ascii=False, indent=2)
+    print(f"\n💾 Saved predictions to: {pred_path}")
 
-    # ── Step 5: Save performance ──────────────────────────────────────────────
+    # ── Step 5: Save performance metadata (skipping LLM judge for now) ────────
     performance = {
-        "model_name":                 "LexRank (Vietnamese TF-IDF + PageRank + Cosine Similarity Thresholding)",
-        "algorithm":                  "Thresholded Graph-based Extractive Summarization",
-        "underthesea_available":      HAS_UNDERTHESEA,
+        "model_name":                 f"LexRank (Semantic Embedding: {model_name})",
+        "algorithm":                  "Thresholded Graph-based Semantic Extractive Summarization",
         "n_listings_processed":       len(predictions),
         "average_latency_seconds":    round(float(np.mean(latency_log)), 5),
         "total_time_seconds":         round(float(sum(latency_log)), 3),
-        "estimated_cost_vnd_per_1k":  0,
-        "latency_per_sample":         latency_log,
-        "evaluation_results":         eval_results,
+        "underthesea_available":      HAS_UNDERTHESEA,
+        "local_evaluation_results":   {
+            "rouge_l": rouge_results
+        },
+        "note":                       "LLM Judge scoring skipped to allow fair scoring using Gemma 4 after script runs completed."
     }
-    perf_path = OUTPUT_DIR / "Nhan_LexRank_performance.json"
+    
+    perf_path = OUTPUT_DIR / "Nhan_LexRank_Embedding_performance.json"
     with open(perf_path, "w", encoding="utf-8") as f:
         json.dump(performance, f, ensure_ascii=False, indent=2)
-    print(f"💾 Saved: {perf_path}")
+    print(f"💾 Saved performance report to: {perf_path}")
 
     # ── Step 6: Preview first 3 results ──────────────────────────────────────
     print("\n" + "═" * 68)
@@ -535,16 +537,12 @@ def run_pipeline():
         print(f"\n🆔  {p['id']}")
         print(f"📌  TITLE : {p['predicted_title']}")
         print(f"📝  DESC  : {p['predicted_description'][:200]}…")
-        specs = p["extracted_specs"]
-        print(f"📊  SPECS : {specs}")
-        if p.get("gt_title"):
-            print(f"✅  GT    : {p['gt_title']}")
+        print(f"📊  SPECS : {p['extracted_specs']}")
         print("─" * 68)
 
     print("\n✅ Pipeline complete!\n")
     return predictions, performance
 
 
-# ══════════════════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
     run_pipeline()

@@ -1,0 +1,665 @@
+{
+  "model_name": "LexRank (Semantic Embedding: text-embedding-bge-m3)",
+  "algorithm": "Thresholded Graph-based Semantic Extractive Summarization",
+  "n_listings_processed": 37,
+  "average_latency_seconds": 0.13893,
+  "total_time_seconds": 5.14,
+  "underthesea_available": true,
+  "local_evaluation_results": {
+    "rouge_l": {
+      "rouge_l_mean": 0.2359,
+      "rouge_l_std": 0.0556,
+      "n_evaluated": 11
+    }
+  },
+  "evaluation_results": {
+    "desc_rouge": {
+      "rouge_l_precision": 68.79,
+      "rouge_l_recall": 14.49,
+      "rouge_l_f1": 23.59,
+      "rouge_l_f1_std": 5.56
+    },
+    "desc_bert_score": {
+      "bert_score_precision": 86.94,
+      "bert_score_recall": 80.99,
+      "bert_score_f1": 83.85,
+      "bert_score_f1_std": 1.58
+    },
+    "llm_judge": {
+      "factual_accuracy_mean": 3.76,
+      "coherence_readability_mean": 3.03,
+      "specs_preservation_mean": 3.68,
+      "sample_evaluations": [
+        {
+          "id": "SYS-20264727-938",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin đầy đủ và còn sót các ký tự rác."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn chứa nhiều thông tin liên hệ và văn phong môi giới rác."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bảo toàn được giá, diện tích nhưng thiếu các chi tiết quan trọng khác."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP75438B-O8",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin giá và diện tích trong mô tả rút gọn."
+            },
+            "coherence_readability": {
+              "score": 5,
+              "reason": "Mô tả mạch lạc, loại bỏ thành công các nội dung rác."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót nhiều thông số quan trọng như giá và diện tích."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP756313-W",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Sai lệch diện tích (11.0m2) và tầng (10 tầng) so với nguồn thô."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn thông tin giao dịch nội bộ như 'Hẻm xe hơi' chưa tối ưu."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót các thông số quan trọng: ngang/dài và diện tích chính xác."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP756P72-9B",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin chủ sở hữu/nguồn gốc (H3GB) nhưng không sai lệch."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn còn các cụm từ rác như 'Ace ks', 'Chúc mn chốt nhà bùng nổ'."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ: Quận 3, Cao Thắng, 32m², 8.5 tỷ."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP757WNV-DN",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin pháp lý (sổ hồng) và tầng nhà trong mô tả rút gọn."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn các cụm từ quảng cáo rác như 'sầm uất' và thiếu tính mạch lạc cao."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin về kết cấu (2 tầng) và pháp lý quan trọng trong mô tả."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP758TA8-AN",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Hầu hết thông tin chính xác; thiếu chi tiết diện tích và ngang."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ được rác nhưng vẫn còn văn phong quảng cáo chưa tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Giữ lại tốt các thông số cốt lõi: Quận, tầng, giá và vị trí hẻm."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP759ESN-94",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin diện tích và tên đường cụ thể trong mô tả rút gọn."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn giữ lại các ký hiệu cảm xúc (emoji) và văn phong quảng cáo chưa tối ưu."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin diện tích và tên đường cụ thể trong phần rút gọn."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP759ZIK-MM",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông số diện tích và tầng; còn sót chữ viết tắt."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Tiêu đề tốt nhưng mô tả vẫn lủng củng, chưa hoàn toàn tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót diện tích và kích thước; chỉ giữ lại các thông tin cơ bản."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP75AKU9-9R",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Giữ nguyên giá và diện tích chính xác; bỏ qua các thông tin quảng cáo."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ được rác nhưng vẫn còn văn phong chưa tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bảo toàn tốt vị trí, diện tích và giá bán cốt lõi."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP75ES0J-9K",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Bỏ sót thông tin quan trọng (Quận/Tên đường) và thiếu tính chính xác."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn còn các cụm từ giao dịch nội bộ chưa được loại bỏ hoàn toàn."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót tên quận/đường và không thể hiện rõ diện tích ngang x dài."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP75GT4Y-GN",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Sai diện tích (5.0m2) và giá trị bị làm tròn/thay đổi."
+            },
+            "coherence_readability": {
+              "score": 4,
+              "reason": "Loại bỏ tốt thông tin rác nhưng tiêu đề còn thiếu tính tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót các thông số quan trọng như diện tích và tên đường chính xác."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP75Z7G0-H3",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Giá và diện tích được giữ nguyên; bỏ sót thông tin giảm giá."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ tốt rác nội bộ nhưng vẫn còn câu văn lủng củng."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bảo toàn các thông số cốt lõi (địa chỉ, diện tích, tầng) khá đầy đủ."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP75ZR8R-C4",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Có thông tin nội bộ (hoa hồng, báo trước) và giá bị rút gọn thiếu ngữ cảnh."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn còn nhiều từ rác, lời kêu gọi hành động không chuyên nghiệp."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Giữ được các thông số cốt lõi (vị trí, diện tích, giá) nhưng thiếu tính hệ thống."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP760LYQ-AC",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin thuê nhà và hẻm rộng rãi quan trọng."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn các cụm từ nội bộ như 'HĐ GĐ Thư', cần tinh chỉnh hơn."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin hẻm rộng và giá thuê nhà quan trọng."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP760YOH-BW",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin giá và diện tích quan trọng."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn giữ lại các cụm từ rác như 'Pháp lý chuẩn' và thiếu tính mạch lạc."
+            },
+            "specs_preservation": {
+              "score": 2,
+              "reason": "Bỏ sót nhiều thông số cốt lõi: diện tích, giá bán, tầng nhà."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP761FGI-DF",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Sai diện tích (3.0m2) và tầng (36 tầng), nhưng giữ giá chính xác."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn còn thông tin rác như số điện thoại, nguồn nội bộ chưa loại bỏ hết."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót nhiều chi tiết quan trọng (ví dụ: hẻm xe hơi) và sai lệch diện tích."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP762B6J-5",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Giá và diện tích bị sai lệch so với tin thô gốc."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn còn các thông tin giao dịch nội bộ (ví dụ: '1.0 Tỷ')."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót nhiều chi tiết quan trọng như số tầng và khu vực."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP7634YK-9F",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 5,
+              "reason": "Tất cả thông tin trích xuất đều chính xác và có nguồn gốc từ tin thô."
+            },
+            "coherence_readability": {
+              "score": 4,
+              "reason": "Loại bỏ tốt rác nhưng còn giữ lại ký hiệu nội bộ (HKĐC-)."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ các thông số: Quận 3, hẻm xe hơi, diện tích và tầng."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP7635C7-K7",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin giá và khu vực cụ thể."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn các từ ngữ mang tính chất nội bộ của môi giới."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Thiếu tên đường/quận rõ ràng trong phần rút gọn."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP7637OS-RJ",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Sai lệch giá và diện tích giữa tiêu đề/mô tả rút gọn."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn các cụm từ nội bộ (HXH, TL) chưa được loại bỏ hoàn toàn."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông số diện tích và tầng trong tiêu đề dự đoán."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP764K4E-GE",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin giá và tên đường cụ thể trong mô tả rút gọn."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ được số điện thoại nhưng vẫn còn văn phong quảng cáo chưa tối ưu."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin giá và tên đường cụ thể trong mô tả rút gọn."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP764L4R-IF",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Giá và vị trí chính xác; bỏ sót chi tiết nguồn gốc."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ được rác giao dịch nhưng còn câu văn lủng củng."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ các thông số cốt lõi: Quận, đường, tầng, hẻm."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP764LWN-9X",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 5,
+              "reason": "Tất cả thông tin trích xuất đều chính xác từ nguồn thô."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Tiêu đề và mô tả còn lủng củng, chưa loại bỏ hết rác nội bộ."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ các thông số: Quận 3, nhà 5 tầng, DT, WC."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP764N6F-B1",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Sai diện tích (23.5m² thành 3.0m²) và sai tầng (5 tầng thành 4 tầng)."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn các thông tin nội bộ/rác như 'hẻm 629' và thiếu tính tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót số tầng (5) và sai diện tích (23.5m² thành 3.0m²)."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP766HGX-F6",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Giữ nguyên giá và khu vực chính xác; bỏ sót chi tiết phụ."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Tiêu đề ổn nhưng mô tả còn lủng củng, thiếu tính mạch lạc cao."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Giữ được giá và khu vực chính; bỏ sót diện tích cụ thể."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP766I2E-45",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Giá và thông số cơ bản giữ nguyên; tiêu đề bị sai lệch giá."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Mô tả quá dài dòng, lặp lại nhiều chi tiết không cần thiết."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ các thông số: đường, quận, diện tích, giá và tầng."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP766ILH-Q8",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Bỏ sót nhiều thông số quan trọng và có sự nhầm lẫn dữ liệu."
+            },
+            "coherence_readability": {
+              "score": 2,
+              "reason": "Vẫn còn các cụm từ nội bộ (HĐ TP Duy phòng Gia Huy) và thiếu tính tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót thông số diện tích/ngang x dài và làm loãng giá trị cốt lõi."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP766JN2-5",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin giá và vị trí cụ thể (Q3) quan trọng."
+            },
+            "coherence_readability": {
+              "score": 5,
+              "reason": "Mô tả mạch lạc, loại bỏ thành công các nội dung rác giao dịch."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông tin Quận (Q3), Giá và Tên đường quan trọng."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP766L05-NB",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Bỏ sót giá và tên quận/đường quan trọng."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ rác tốt nhưng thiếu tiêu đề hấp dẫn hơn."
+            },
+            "specs_preservation": {
+              "score": 2,
+              "reason": "Bỏ sót giá bán và các thông số cốt lõi khác."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP768E8R-8M",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Sai thông số diện tích tiêu đề (5.0m2) so với mô tả."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Vẫn còn các cụm từ nội bộ và thiếu tính tự nhiên cao."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông số ngang x dài trong tiêu đề dự đoán."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP768F9D-51",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Thiếu thông tin giá và nguồn gốc chủ sở hữu."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ tốt các nội dung rác nhưng còn văn phong chưa tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ và chính xác các thông số kỹ thuật cốt lõi."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP768HEI-4N",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 5,
+              "reason": "Thông tin trích xuất chính xác và không bịa đặt."
+            },
+            "coherence_readability": {
+              "score": 4,
+              "reason": "Mô tả mạch lạc nhưng thiếu tiêu đề đầy đủ hơn."
+            },
+            "specs_preservation": {
+              "score": 3,
+              "reason": "Bỏ sót các thông số quan trọng như Quận, Giá cả."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP769MZL-CW",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 3,
+              "reason": "Tiêu đề sai quận (Phú Nhuận thay vì Quận 3) và diện tích bị làm tròn."
+            },
+            "coherence_readability": {
+              "score": 4,
+              "reason": "Mô tả mạch lạc, nhưng tiêu đề còn hơi cứng nhắc, chưa hoàn toàn tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông số chính xác (ví dụ: hẻm 4m) và làm sai quận trong tiêu đề."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP76BBTD-2W",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 5,
+              "reason": "Tất cả thông tin trích xuất đều chính xác và đầy đủ từ nguồn."
+            },
+            "coherence_readability": {
+              "score": 4,
+              "reason": "Loại bỏ tốt rác nhưng vẫn còn thiếu tính mạch lạc tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 5,
+              "reason": "Bảo toàn đầy đủ các thông số cốt lõi: Quận, đường, diện tích và giá."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP76BCQC-2X",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 4,
+              "reason": "Sai lệch diện tích (3.0m2) và giá trị so với nguồn thô."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Loại bỏ rác tốt nhưng tiêu đề còn thiếu tính tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 4,
+              "reason": "Bỏ sót thông số ngang/dài và làm mất sự liên kết của giá."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP76BDTQ-LY",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 2,
+              "reason": "Sai Quận (Phú Nhuận thay vì Quận 3) và thiếu thông tin quan trọng."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Mô tả còn lủng củng, chưa tối ưu hóa văn phong tự nhiên."
+            },
+            "specs_preservation": {
+              "score": 2,
+              "reason": "Bỏ sót Quận (Quận 3) và thông số diện tích/kết cấu quan trọng."
+            }
+          }
+        },
+        {
+          "id": "SYS-MP76BF5N-B",
+          "evaluation": {
+            "factual_accuracy": {
+              "score": 2,
+              "reason": "Sai giá (7.2 tỷ thành 2.0 Tỷ) và sai diện tích."
+            },
+            "coherence_readability": {
+              "score": 3,
+              "reason": "Tiêu đề thiếu thông tin quan trọng; mô tả còn lủng củng, chưa tối ưu."
+            },
+            "specs_preservation": {
+              "score": 2,
+              "reason": "Bỏ sót giá bán (7.2 tỷ) và diện tích thực tế (42.3m^2)."
+            }
+          }
+        }
+      ]
+    }
+  }
+}
