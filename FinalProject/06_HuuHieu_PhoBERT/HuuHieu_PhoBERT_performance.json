@@ -1,0 +1,40 @@
+{
+  "model_name": "PhoBERT EncoderDecoder (vinai/phobert-base)",
+  "architecture": "EncoderDecoderModel — phobert-base × 2",
+  "dataset_source": "NLP.FSB Pool.xlsx (only)",
+  "target_format": "Full column D: title | use_case + body sections",
+  "train_samples": 9,
+  "val_samples": 2,
+  "test_samples": 9,
+  "hyperparameters": {
+    "epochs": 50,
+    "learning_rate": 3e-05,
+    "batch_size": 2,
+    "grad_accumulation": 4,
+    "effective_batch": 8,
+    "max_input_len": 256,
+    "max_target_len": 256,
+    "num_beams": 4,
+    "weight_decay": 0.01
+  },
+  "training_time_seconds": 1231.39,
+  "average_latency_seconds": 0.8553,
+  "latency_per_sample": [
+    1.2634,
+    0.5232,
+    0.855,
+    0.7481,
+    0.6633,
+    0.6284,
+    0.8904,
+    0.9581,
+    1.1677
+  ],
+  "estimated_cost_vnd_per_1k": 0,
+  "evaluation": {
+    "rouge_l_f1_percent": 17.88,
+    "bert_score_f1_percent": 72.63,
+    "llm_judge": {}
+  },
+  "final_train_loss": 24.9258
+}
