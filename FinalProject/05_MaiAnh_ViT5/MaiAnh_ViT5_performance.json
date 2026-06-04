@@ -1,0 +1,46 @@
+{
+  "model_name": "VietAI/vit5-base",
+  "average_latency_seconds": 5.3794,
+  "estimated_cost_vnd_per_1k": 0,
+  "latency_per_sample": [
+    3.6909,
+    2.7028,
+    10.4649,
+    6.3774,
+    6.536,
+    4.9053,
+    6.7119,
+    3.1663,
+    3.859
+  ],
+  "rouge_l_on_val_2_samples": 46.86,
+  "note": "Val chi co 2 mau co GT. Test 9 mau khong co GT - danh gia dinh tinh.",
+  "training_info": {
+    "train_samples": 9,
+    "val_samples": 2,
+    "test_samples": 9,
+    "augmented_train_total": 18,
+    "final_train_loss": 0.787,
+    "total_steps": 49,
+    "best_epoch": 7,
+    "epochs_run": 22,
+    "early_stopping_patience": 15
+  },
+  "hyperparameters": {
+    "learning_rate": 0.0001,
+    "batch_size": 2,
+    "grad_accumulation": 4,
+    "effective_batch": 8,
+    "max_input_len": 384,
+    "max_target_len": 256,
+    "beam_size": 4,
+    "length_penalty": 1.2,
+    "no_repeat_ngram": 3,
+    "weight_decay": 0.05,
+    "data_augmentation": true,
+    "seed": 42
+  },
+  "hardware": {
+    "gpu_name": "Tesla T4"
+  }
+}
