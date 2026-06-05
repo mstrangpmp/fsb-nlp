@@ -1041,7 +1041,7 @@
                         </p>
                         <ul class="model-list">
                             <li><i class="fa-solid fa-check"></i> Bảo mật tuyệt đối, chạy offline hoàn toàn</li>
-                            <li><i class="fa-solid fa-check"></i> Latency siêu tốc (0.18s) &amp; Chi phí 0đ</li>
+                            <li><i class="fa-solid fa-check"></i> Latency thực tế (~5.38s) &amp; Chi phí 0đ</li>
                             <li><i class="fa-solid fa-check"></i> Học sâu chuẩn xác văn phong BĐS Khang Ngô</li>
                             <li><i class="fa-solid fa-xmark"></i> Cần huấn luyện, tốn tài nguyên ban đầu</li>
                         </ul>
@@ -1060,7 +1060,7 @@
                         </p>
                         <ul class="model-list">
                             <li><i class="fa-solid fa-check"></i> Kiến trúc BERT/BART học ngữ cảnh tiếng Việt xuất sắc</li>
-                            <li><i class="fa-solid fa-check"></i> Latency cực nhanh (0.25s) &amp; Chi phí 0đ</li>
+                            <li><i class="fa-solid fa-check"></i> Latency thực tế (~0.86s) &amp; Chi phí 0đ</li>
                             <li><i class="fa-solid fa-check"></i> Tuyệt đối bảo mật dữ liệu doanh nghiệp</li>
                             <li><i class="fa-solid fa-xmark"></i> Mô hình nặng hơn ViT5, yêu cầu RAM GPU lớn hơn</li>
                         </ul>
@@ -1307,7 +1307,7 @@
                         </div>
                         <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">4.8 / 5.0 (Hạng 1)</strong></div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">0.18 giây (Local)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">5.38 giây (Local GPU)</strong></div>
                             <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-green);">0đ (Miễn phí)</strong></div>
                         </div>
                     </div>
@@ -1324,7 +1324,7 @@
                         </div>
                         <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 11px;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Độ hay (Chuyên gia xếp):</span> <strong style="color: var(--primary);">4.5 / 5.0 (Hạng 2)</strong></div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">0.25 giây (Local)</strong></div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Thời gian chạy:</span> <strong style="color: var(--accent-green);">0.86 giây (Local GPU)</strong></div>
                             <div style="display: flex; justify-content: space-between;"><span>Chi phí (1k căn):</span> <strong style="color: var(--accent-green);">0đ (Miễn phí)</strong></div>
                         </div>
                     </div>
@@ -1403,55 +1403,55 @@
                         <tbody>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(243, 156, 18, 0.05);">
                                 <td style="padding: 14px 8px; font-weight: 600; color: var(--primary);"><i class="fa-solid fa-crown"></i> ViT5 Fine-tuned</td>
-                                <td style="padding: 14px 8px; text-align: center; font-weight: 600; color: var(--primary);">82.3%</td>
-                                <td style="padding: 14px 8px; text-align: center; font-weight: 600; color: var(--primary);">91.5%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">100%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.18 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 600; color: var(--primary);">44.5% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 600; color: var(--primary);">N/A</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">78.0% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">5.38s</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ (Offline)</td>
                                 <td style="padding: 14px 8px; text-align: center;"><span class="badge-green" style="padding: 2px 8px; font-size: 9px;">TỐI ƯU NHẤT</span></td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 14px 8px;"><i class="fa-solid fa-gears" style="margin-right: 6px;"></i> PhoBERT Fine-tuned</td>
-                                <td style="padding: 14px 8px; text-align: center; font-weight: 500;">79.5%</td>
-                                <td style="padding: 14px 8px; text-align: center; font-weight: 500;">89.2%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">98.5%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.25 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 500;">17.9% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; font-weight: 500;">72.6% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">72.6% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">2.43s</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ (Offline)</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Đạt chất lượng</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 14px 8px;"><i class="fa-solid fa-cloud" style="margin-right: 6px;"></i> GPT-4o mini API</td>
-                                <td style="padding: 14px 8px; text-align: center;">76.2%</td>
-                                <td style="padding: 14px 8px; text-align: center;">88.4%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--primary);">96.0%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">1.55 giây</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">~23,000đ ($Token)</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Trễ cao, mất phí</td>
+                                <td style="padding: 14px 8px; text-align: center;">45.0%</td>
+                                <td style="padding: 14px 8px; text-align: center;">80.8%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--primary);">55.6%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">14.84s</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">~14,339đ ($Token)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Độ trễ cao, mất phí</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 14px 8px;"><i class="fa-solid fa-star-of-life" style="margin-right: 6px;"></i> Gemini 1.5 Flash API</td>
-                                <td style="padding: 14px 8px; text-align: center;">74.8%</td>
-                                <td style="padding: 14px 8px; text-align: center;">87.1%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--primary);">95.2%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">1.85 giây</td>
+                                <td style="padding: 14px 8px; text-align: center;">74.8% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center;">87.1% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--primary);">95.2% (Val)</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">1.85s</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--accent-blue);">~15,000đ ($Token)</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Trễ cao, mất phí</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Tốc độ tốt, mất phí</td>
                             </tr>
                             <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
                                 <td style="padding: 14px 8px;"><i class="fa-solid fa-calculator" style="margin-right: 6px;"></i> Baseline TextRank</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">23.17%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">83.98%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">81.0% (4.05/5.0)</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.0073 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">23.2%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">84.0%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">19.2%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.01s</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Hoàn thành</td>
                             </tr>
                             <tr>
                                 <td style="padding: 14px 8px;"><i class="fa-solid fa-calculator" style="margin-right: 6px;"></i> Baseline LexRank</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">23.92%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">83.83%</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">83.8% (4.19/5.0)</td>
-                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.0073 giây</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">23.9%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">83.8%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-red);">20.0%</td>
+                                <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0.01s</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--accent-green);">0đ</td>
                                 <td style="padding: 14px 8px; text-align: center; color: var(--text-muted);">Hoàn thành</td>
                             </tr>
@@ -1487,7 +1487,7 @@
                             <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 12px;">
                                 <strong style="color: var(--text-main);"><i class="fa-solid fa-brain" style="color: var(--primary); margin-right: 6px;"></i> Local Fine-tuned (ViT5 &amp; PhoBERT):</strong>
                                 <ul style="margin-top: 6px; padding-left: 14px; list-style-type: disc; color: var(--text-muted); font-weight: 300;">
-                                    <li><strong style="color: var(--accent-green);">Điểm mạnh:</strong> Bảo mật tuyệt đối 100% offline, chi phí vận hành 0đ, độ trễ siêu tốc (~0.18s), trích xuất specs kỹ thuật và lọc nhiễu cực kỳ "cứng".</li>
+                                    <li><strong style="color: var(--accent-green);">Điểm mạnh:</strong> Bảo mật tuyệt đối 100% offline, chi phí vận hành 0đ, độ trễ thực tế (~0.86s - 5.38s), trích xuất specs kỹ thuật và lọc nhiễu cực kỳ "cứng".</li>
                                     <li><strong style="color: var(--accent-red);">Điểm yếu:</strong> Độ linh hoạt bằng 0 (muốn đổi định dạng, phong cách viết bắt buộc phải sửa dữ liệu nhãn và train lại mô hình từ đầu).</li>
                                 </ul>
                             </div>
@@ -1867,13 +1867,13 @@
                 <div style="background: rgba(243,156,18,0.08); border: 1px solid var(--primary); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;">3. ViT5 Fine-tuned (T5)</h4>
-                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Mô hình Seq2Seq kiến trúc T5 chuyên tiếng Việt tinh chỉnh trực tiếp trên GPU Colab T4. Đạt hiệu năng tóm tắt cao nhất (ROUGE-L 82.3%), bảo mật 100%, latency siêu tốc (0.18s) và chi phí 0đ.</p>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Mô hình Seq2Seq kiến trúc T5 chuyên tiếng Việt tinh chỉnh trực tiếp trên GPU Colab T4. Đạt hiệu năng tóm tắt (ROUGE-L 46.9% trên Val), bảo mật 100%, latency trung bình (5.38s) và chi phí 0đ.</p>
                     </div>
                 </div>
                 <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <h4 style="font-family: var(--font-display); font-size: 14px; color: var(--primary); margin-bottom: 8px;">4. PhoBERT Fine-tuned (BERT)</h4>
-                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Mô hình Seq2Seq kiến trúc BERT (PhoBERT / PhoBERT) chuyên tiếng Việt tinh chỉnh trực tiếp trên GPU. Học sâu ngữ cảnh tiếng Việt xuất sắc, đảm bảo tuyệt đối bảo mật và latency nhanh (0.25s).</p>
+                        <p style="color: var(--text-muted); font-weight: 300; line-height: 1.45;">Mô hình Seq2Seq kiến trúc BERT (PhoBERT / PhoBERT) chuyên tiếng Việt tinh chỉnh trực tiếp trên GPU. Học sâu ngữ cảnh tiếng Việt tốt, đảm bảo tuyệt đối bảo mật và latency trung bình (0.86s).</p>
                     </div>
                 </div>
             </div>
@@ -2160,7 +2160,7 @@
                             </li>
                             <li>
                                 <strong style="color: var(--text-main);">• Local Fine-tuned (ViT5/PhoBERT):</strong> 
-                                <span style="color: var(--accent-green); font-weight: 500;">Bảo mật 100% offline, chi phí 0đ, tốc độ siêu tốc (0.18s)</span>, lọc nhiễu cực \"cứng\". Nhưng <span style="color: var(--accent-red); font-weight: 500;">không linh hoạt</span> (muốn đổi định dạng bắt buộc phải train lại).
+                                <span style="color: var(--accent-green); font-weight: 500;">Bảo mật 100% offline, chi phí 0đ, tốc độ tốt (0.86s - 5.38s)</span>, lọc nhiễu cực \"cứng\". Nhưng <span style="color: var(--accent-red); font-weight: 500;">không linh hoạt</span> (muốn đổi định dạng bắt buộc phải train lại).
                             </li>
                         </ul>
                     </div>

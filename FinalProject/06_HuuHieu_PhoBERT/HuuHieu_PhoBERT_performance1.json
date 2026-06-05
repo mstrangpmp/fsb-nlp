@@ -17,24 +17,24 @@
     "num_beams": 4,
     "weight_decay": 0.01
   },
-  "training_time_seconds": 1104.61,
-  "average_latency_seconds": 2.4322,
+  "training_time_seconds": 1231.39,
+  "average_latency_seconds": 0.8553,
   "latency_per_sample": [
-    1.9831,
-    2.9866,
-    1.9526,
-    1.9913,
-    3.4103,
-    1.9756,
-    3.0757,
-    2.3188,
-    2.1958
+    1.2634,
+    0.5232,
+    0.855,
+    0.7481,
+    0.6633,
+    0.6284,
+    0.8904,
+    0.9581,
+    1.1677
   ],
   "estimated_cost_vnd_per_1k": 0,
   "evaluation": {
-    "rouge_l_f1_percent": 23.43,
-    "bert_score_f1_percent": 76.39,
+    "rouge_l_f1_percent": 17.88,
+    "bert_score_f1_percent": 72.63,
     "llm_judge": {}
   },
-  "final_train_loss": 20.2788
+  "final_train_loss": 24.9258
 }

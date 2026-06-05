@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Trực Quan & Đánh Giá Bất Động Sản NLP - Nhóm 2 - FSB</title>
+    <!-- Nhúng Google Fonts Outfit và Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ══════════════════════════════════════════════════════════════════════════════
+           CSS DESIGN SYSTEM & UTILITIES (GLASSMORPHISM DARK THEME)
+           ══════════════════════════════════════════════════════════════════════════════ */
+        :root {
+            --bg-color: #080B16;
+            --card-bg: rgba(13, 18, 36, 0.7);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --accent-blue: #3B82F6;
+            --accent-blue-hover: #2563EB;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --success-color: #10B981;
+            --success-bg: rgba(16, 185, 129, 0.1);
+            --error-color: #EF4444;
+            --error-bg: rgba(239, 68, 68, 0.1);
+            --gold-color: #FBBF24;
+            --glass-blur: blur(16px);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Container & Grid Layout */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Futuristic Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            backdrop-filter: var(--glass-blur);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #FFF;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Section Layout: Grid 2 Columns */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Glassmorphism Card Style */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: var(--glass-blur);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #FFF;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Form Controls */
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        select, textarea, input[type="text"], input[type="number"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            color: var(--text-primary);
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        select option {
+            background-color: #0D1324;
+            color: var(--text-primary);
+        }
+
+        select:focus, textarea:focus, input:focus {
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        /* Buttons & Actions */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-blue);
+            color: #FFF;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Raw Text display box */
+        .raw-display-box {
+            height: 180px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #D1D5DB;
+            white-space: pre-wrap;
+        }
+
+        /* Live Leaderboard Table */
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .leaderboard-table th {
+            text-align: left;
+            padding: 12px 10px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        .leaderboard-table td {
+            padding: 14px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.92rem;
+        }
+
+        .leaderboard-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .rank-1 { background-color: var(--gold-color); color: #000; }
+        .rank-2 { background-color: #C0C0C0; color: #000; }
+        .rank-3 { background-color: #CD7F32; color: #FFF; }
+        .rank-other { background-color: rgba(255, 255, 255, 0.1); color: var(--text-secondary); }
+
+        /* Ground Truth Editor Row */
+        .gt-section {
+            margin-bottom: 30px;
+        }
+
+        .gt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .specs-input-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        /* 5 Model Comparison Area */
+        .comparison-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .models-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 1500px) {
+            .models-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .models-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .models-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Model Card Detail */
+        .model-card {
+            background: rgba(13, 22, 47, 0.85);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .model-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+        }
+
+        .model-name {
+            font-size: 1.15rem;
+            color: #FFF;
+            font-weight: 700;
+        }
+
+        .model-member {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* Performance Tags inside card */
+        .perf-badge-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .perf-tag {
+            font-size: 0.72rem;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+        }
+
+        .perf-tag.latency {
+            color: #60A5FA;
+            background: rgba(96, 165, 250, 0.08);
+        }
+
+        .perf-tag.cost {
+            color: #FBBF24;
+            background: rgba(251, 191, 36, 0.08);
+        }
+
+        /* Metrics Scores Row */
+        .metric-score-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .metric-score-box {
+            text-align: center;
+        }
+
+        .metric-score-label {
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .metric-score-val {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-top: 2px;
+        }
+
+        /* Text Content display */
+        .model-content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .content-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .model-title-text {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #FFF;
+            line-height: 1.4;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+        }
+
+        .model-desc-text {
+            font-size: 0.85rem;
+            line-height: 1.45;
+            color: #D1D5DB;
+            max-height: 250px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+
+        /* Model Specs Table */
+        .model-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .model-specs-table td {
+            padding: 5px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .spec-lbl {
+            color: var(--text-secondary);
+            width: 80px;
+        }
+
+        .spec-val {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        /* Highlight classes */
+        .spec-match {
+            color: var(--success-color);
+            background: var(--success-bg);
+            border-radius: 3px;
+            padding: 1px 4px;
+        }
+
+        .spec-mismatch {
+            color: var(--error-color);
+            background: var(--error-bg);
+            border-radius: 3px;
+            padding: 1px 4px;
+        }
+
+        /* Rank Panel */
+        .rank-panel {
+            margin-top: 30px;
+            border: 1px dashed var(--accent-blue);
+            background: rgba(59, 130, 246, 0.03);
+        }
+
+        .rank-selector-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .rank-selector-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal Styles (Formula display) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal {
+            background: #0D1324;
+            border: 1px solid var(--card-border);
+            width: 90%;
+            max-width: 700px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: #FFF;
+        }
+
+        .formula-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 14px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #10B981;
+            color: #FFF;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header banner -->
+    <header>
+        <h1>ĐỀ ÁN NLP NHÓM 2 - BẢNG SO SÁNH & ĐÁNH GIÁ 5 MÔ HÌNH</h1>
+        <p>Hệ thống trực quan hóa 9 căn test mẫu, nhập Ground Truth động và ghi nhận xếp hạng Winner của chuyên gia</p>
+    </header>
+
+    <!-- Top Layout: Control Panel & Leaderboard -->
+    <div class="main-grid">
+        <!-- Control Panel (Left) -->
+        <div class="card">
+            <h2 class="card-title">1. Chọn & Nạp Dữ Liệu</h2>
+            <div class="form-group">
+                <label for="sample-select">Danh sách 9 căn nhà mẫu (Tập kiểm thử):</label>
+                <select id="sample-select">
+                    <option value="" disabled selected>Đang tải danh sách mẫu...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Nội dung văn bản tin thô đầu vào:</label>
+                <div id="raw-display" class="raw-display-box">Hãy chọn một căn nhà từ danh sách ở trên để hiển thị tin đăng thô.</div>
+            </div>
+            
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 10px;" onclick="openFormulaModal()">
+                📊 Xem Công Thức & Cách Tính Điểm
+            </button>
+        </div>
+
+        <!-- Leaderboard (Right) -->
+        <div class="card">
+            <h2 class="card-title">
+                🏆 Bảng Xếp Hạng Hiệu Năng Thực Tế (Live Leaderboard)
+            </h2>
+            <div style="overflow-x: auto;">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Hạng</th>
+                            <th>Mô Hình</th>
+                            <th>Điểm Tổng Hợp (Thang 100)</th>
+                            <th>Điểm Chuyên Gia (TC6)</th>
+                            <th>ROUGE-L (TC1)</th>
+                            <th>Specs Acc (TC3)</th>
+                            <th>BERTScore (TC2)</th>
+                            <th>Độ Trễ (TC4)</th>
+                            <th>Chi Phí (TC5)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <tr>
+                            <td colspan="9" style="text-align: center; color: var(--text-secondary); padding: 40px 0;">
+                                Đang tính toán dữ liệu xếp hạng...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ground Truth Editor Section -->
+    <div class="card gt-section">
+        <h2 class="card-title">2. Biên Tập Nhãn Chuẩn (Ground Truth Editor)</h2>
+        <div class="gt-grid">
+            <!-- Left GT Column: Description -->
+            <div class="form-group" style="display: flex; flex-direction: column; height: 100%;">
+                <label for="gt-desc">Mô tả chuẩn nhãn (Văn bản đích):</label>
+                <textarea id="gt-desc" placeholder="Chuyên gia điền mô tả chuẩn tại đây..." style="flex-grow: 1; min-height: 200px; height: 100%; resize: vertical;"></textarea>
+            </div>
+            <!-- Right GT Column: 9 Specs -->
+            <div>
+                <label style="margin-bottom: 10px;">Trích xuất thông số nhãn chuẩn (9 trường cốt lõi):</label>
+                <div class="specs-input-grid">
+                    <div class="form-group">
+                        <label for="gt-spec-duong">Đường</label>
+                        <input type="text" id="gt-spec-duong" placeholder="Tên đường">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-phuong">Phường</label>
+                        <input type="text" id="gt-spec-phuong" placeholder="Phường">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-quan">Quận</label>
+                        <input type="text" id="gt-spec-quan" placeholder="Quận">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-gia">Giá (tỷ)</label>
+                        <input type="number" id="gt-spec-gia" step="0.01" placeholder="Ví dụ: 12.8">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-dientich">Diện tích (m²)</label>
+                        <input type="number" id="gt-spec-dientich" step="0.1" placeholder="Ví dụ: 46.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-sotang">Số tầng</label>
+                        <input type="number" id="gt-spec-sotang" step="1" placeholder="Ví dụ: 4">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-ngang">Mặt tiền (m)</label>
+                        <input type="number" id="gt-spec-ngang" step="0.1" placeholder="Ví dụ: 4.6">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-dai">Chiều sâu (m)</label>
+                        <input type="number" id="gt-spec-dai" step="0.1" placeholder="Ví dụ: 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-hem">Phân loại hẻm</label>
+                        <select id="gt-spec-hem">
+                            <option value="Mặt tiền">Mặt tiền</option>
+                            <option value="Hẻm xe hơi">Hẻm xe hơi</option>
+                            <option value="Hẻm xe tải">Hẻm xe tải</option>
+                            <option value="Hẻm xe máy">Hẻm xe máy</option>
+                            <option value="Hẻm thông">Hẻm thông</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 10px;">
+                    <button id="update-gt-btn" class="btn" onclick="updateGroundTruth()" disabled>
+                        💾 Lưu & Cập Nhật Chỉ Số Tự Động
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Models Result Cards Area -->
+    <div class="comparison-title">
+        <h2>3. So Sánh Kết Quả & Độ Chính Xác Động</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">*Thông số tự động tô xanh lá nếu khớp Ground Truth, tô đỏ nếu sai lệch</span>
+    </div>
+    
+    <div class="models-container" id="models-cards-row">
+        <!-- 5 cards for models will be rendered dynamically -->
+    </div>
+
+    <!-- Expert Judging Ranking Panel -->
+    <div class="card rank-panel">
+        <h2 class="card-title" style="border-color: var(--accent-blue);">
+            🗳️ 4. Xếp Hạng & Chấm Chọn Winner (Anh Khang Chấm)
+        </h2>
+        <div class="rank-selector-row">
+            <div class="form-group">
+                <label for="winner-1">🥇 Hạng 1 (Mô hình tốt nhất - được 3 điểm):</label>
+                <select id="winner-1">
+                    <option value="" disabled selected>-- Chọn mô hình thắng giải Nhất --</option>
+                    <option value="Baseline">Baseline TextRank</option>
+                    <option value="GPT">GPT-4o mini API</option>
+                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="ViT5">ViT5 Fine-tuned</option>
+                    <option value="PhoBERT">PhoBERT Fine-tuned</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="winner-2">🥈 Hạng 2 (Đứng thứ hai - được 2 điểm):</label>
+                <select id="winner-2">
+                    <option value="" disabled selected>-- Chọn mô hình thắng giải Nhì --</option>
+                    <option value="Baseline">Baseline TextRank</option>
+                    <option value="GPT">GPT-4o mini API</option>
+                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="ViT5">ViT5 Fine-tuned</option>
+                    <option value="PhoBERT">PhoBERT Fine-tuned</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="winner-3">🥉 Hạng 3 (Đứng thứ ba - được 1 điểm):</label>
+                <select id="winner-3">
+                    <option value="" disabled selected>-- Chọn mô hình thắng giải Ba --</option>
+                    <option value="Baseline">Baseline TextRank</option>
+                    <option value="GPT">GPT-4o mini API</option>
+                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="ViT5">ViT5 Fine-tuned</option>
+                    <option value="PhoBERT">PhoBERT Fine-tuned</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="review-comment">Nhận xét chi tiết của Chuyên gia:</label>
+            <textarea id="review-comment" placeholder="Điền lý do xếp hạng hoặc nhận xét lỗi cụ thể của từng phiên bản tại đây..." rows="3"></textarea>
+        </div>
+        <div style="text-align: right;">
+            <button id="save-review-btn" class="btn" onclick="saveExpertReview()" disabled>
+                🗳️ Gửi & Tích Lũy Bảng Xếp Hạng
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Formula & Weightings -->
+<div class="modal-overlay" id="formula-modal-overlay" onclick="closeFormulaModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeFormulaModal()">&times;</button>
+        <h2 style="margin-bottom: 15px; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+            📊 Cách Tính Điểm & Tỷ Trọng 6 Tiêu Chí
+        </h2>
+        <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-secondary);">
+            Để xếp hạng tổng hợp hiệu năng của 5 mô hình trên Live Leaderboard, hệ thống chuẩn hóa tất cả tiêu chí về thang điểm 100 và áp dụng tỷ trọng như sau:
+        </p>
+        
+        <table class="leaderboard-table" style="margin: 15px 0;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px 4px;">Tiêu chí</th>
+                    <th style="padding: 8px 4px; text-align: center;">Tỷ trọng</th>
+                    <th style="padding: 8px 4px;">Phương pháp quy đổi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>TC6: Chuyên gia xếp hạng</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold; background: rgba(59, 130, 246, 0.1);">35%</td>
+                    <td>Nhất = 100đ, Nhì = 66đ, Ba = 33đ, còn lại = 0đ (sau đó tính trung bình).</td>
+                </tr>
+                <tr>
+                    <td><b>TC3: Độ chính xác thông số</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold; background: rgba(59, 130, 246, 0.1);">25%</td>
+                    <td>Tỷ lệ % số trường thông số trích xuất đúng so với Ground Truth (9 trường).</td>
+                </tr>
+                <tr>
+                    <td><b>TC2: Độ tương đồng ngữ nghĩa</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">15%</td>
+                    <td>Điểm BERTScore trung bình lịch sử thu được trên tập dữ liệu.</td>
+                </tr>
+                <tr>
+                    <td><b>TC1: Độ chính xác từ vựng</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">15%</td>
+                    <td>Điểm ROUGE-L trung bình giữa mô tả mô hình sinh ra và Ground Truth.</td>
+                </tr>
+                <tr>
+                    <td><b>TC4: Tốc độ xử lý</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">5%</td>
+                    <td>Độ trễ trung bình: 0s = 100đ, tăng lên giảm dần (>=10s = 0đ).</td>
+                </tr>
+                <tr>
+                    <td><b>TC5: Chi phí vận hành</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">5%</td>
+                    <td>Quy đổi: chạy offline local = 100đ, gọi API có phí = 85-90đ.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="formula-card">
+            <b>Công thức tính Điểm Tổng Hợp:</b><br>
+            <code style="display: block; margin-top: 8px; font-size: 0.95rem; color: #60A5FA; font-weight: bold; word-break: break-all;">
+                Điểm = 35%*TC6 + 25%*TC3 + 15%*TC2 + 15%*TC1 + 5%*TC4 + 5%*TC5
+            </code>
+        </div>
+        
+        <div style="text-align: right; margin-top: 20px;">
+            <button class="btn" onclick="closeFormulaModal()">Đóng Cửa Sổ</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Đã thực hiện thao tác!</div>
+
+<script>
+    // ══════════════════════════════════════════════════════════════════════════════
+    // GLOBAL STATE & APIS
+    // ══════════════════════════════════════════════════════════════════════════════
+    let currentSampleId = "";
+    let activeModelsData = {};
+
+    // Khởi tạo giao diện khi tải xong
+    document.addEventListener("DOMContentLoaded", () => {
+        loadDropdown();
+        loadLeaderboard();
+        
+        // Theo dõi sự thay đổi trên dropdown chọn mẫu
+        document.getElementById("sample-select").addEventListener("change", (e) => {
+            currentSampleId = e.target.value;
+            loadSampleData(currentSampleId);
+        });
+    });
+
+    // Hiện thông báo dạng toast
+    function showToast(message, isError = false) {
+        const toast = document.getElementById("toast");
+        toast.innerText = message;
+        toast.style.background = isError ? "var(--error-color)" : "#10B981";
+        toast.classList.add("show");
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2500);
+    }
+
+    // Tải danh sách 9 căn nhà mẫu
+    function loadDropdown() {
+        fetch('/get_test_samples')
+            .then(res => res.json())
+            .then(data => {
+                const select = document.getElementById("sample-select");
+                select.innerHTML = '<option value="" disabled selected>-- Chọn căn nhà mẫu để đánh giá --</option>';
+                data.forEach(item => {
+                    const opt = document.createElement("option");
+                    opt.value = item.id;
+                    opt.innerText = item.label;
+                    select.appendChild(opt);
+                });
+            })
+            .catch(err => {
+                console.error("Lỗi tải dropdown:", err);
+                showToast("Lỗi kết nối tải danh sách mẫu nhà", true);
+            });
+    }
+
+    // Tải bảng xếp hạng trực tuyến
+    function loadLeaderboard() {
+        fetch('/get_reviews_summary')
+            .then(res => res.json())
+            .then(data => {
+                const tbody = document.getElementById("leaderboard-body");
+                tbody.innerHTML = "";
+                
+                if (data.leaderboard.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-secondary);">Chưa có dữ liệu đánh giá nào.</td></tr>';
+                    return;
+                }
+                
+                data.leaderboard.forEach((row, i) => {
+                    let rankBadgeClass = "rank-other";
+                    if (i === 0) rankBadgeClass = "rank-1";
+                    else if (i === 1) rankBadgeClass = "rank-2";
+                    else if (i === 2) rankBadgeClass = "rank-3";
+                    
+                    const tr = document.createElement("tr");
+                    
+                    // Lấy tên mô hình thân thiện
+                    const friendlyName = getFriendlyModelName(row.model_name);
+                    
+                    tr.innerHTML = `
+                        <td><span class="rank-badge ${rankBadgeClass}">${i + 1}</span></td>
+                        <td><strong>${friendlyName}</strong></td>
+                        <td style="color: var(--accent-blue); font-weight: bold; font-size: 1rem;">${row.overall_score}</td>
+                        <td>${row.points} đ (${row.rank_1} Nhất | ${row.rank_2} Nhì | ${row.rank_3} Ba)</td>
+                        <td>${row.avg_rouge.toFixed(1)}%</td>
+                        <td>${row.avg_specs.toFixed(1)}%</td>
+                        <td>${row.avg_bert.toFixed(1)}%</td>
+                        <td>${row.latency}</td>
+                        <td>${getFriendlyCostDisplay(row.model_name)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            })
+            .catch(err => {
+                console.error("Lỗi tải Leaderboard:", err);
+            });
+    }
+
+    // Tải dữ liệu của căn nhà được chọn
+    function loadSampleData(sampleId) {
+        fetch(`/get_sample_data/${sampleId}`)
+            .then(res => res.json())
+            .then(data => {
+                // 1. Hiển thị tin thô
+                document.getElementById("raw-display").innerText = data.raw_input;
+                
+                // 2. Điền Ground Truth
+                const gt = data.ground_truth;
+                document.getElementById("gt-desc").value = gt.ground_truth_desc || "";
+                
+                const specs = gt.extracted_specs || {};
+                document.getElementById("gt-spec-duong").value = specs.duong || "";
+                document.getElementById("gt-spec-phuong").value = specs.phuong || "";
+                document.getElementById("gt-spec-quan").value = specs.quan || "";
+                document.getElementById("gt-spec-gia").value = specs.gia_ty !== undefined && specs.gia_ty !== null ? specs.gia_ty : "";
+                document.getElementById("gt-spec-dientich").value = specs.dien_tich_m2 !== undefined && specs.dien_tich_m2 !== null ? specs.dien_tich_m2 : "";
+                document.getElementById("gt-spec-sotang").value = specs.so_tang !== undefined && specs.so_tang !== null ? specs.so_tang : "";
+                document.getElementById("gt-spec-ngang").value = specs.mat_tien_m !== undefined && specs.mat_tien_m !== null ? specs.mat_tien_m : "";
+                document.getElementById("gt-spec-dai").value = specs.chieu_sau_m !== undefined && specs.chieu_sau_m !== null ? specs.chieu_sau_m : "";
+                document.getElementById("gt-spec-hem").value = specs.phan_loai_hem || "Hẻm thông";
+                
+                // Kích hoạt các nút bấm
+                document.getElementById("update-gt-btn").removeAttribute("disabled");
+                document.getElementById("save-review-btn").removeAttribute("disabled");
+
+                // 3. Lưu giữ liệu models hoạt động hiện tại để đối chiếu
+                activeModelsData = data.models;
+
+                // 4. Render các thẻ mô hình song song
+                renderModelCards(data.models, specs);
+
+                // 5. Điền dữ liệu Xếp hạng đã lưu (nếu có)
+                const rev = data.review;
+                document.getElementById("winner-1").value = rev.winner_1 || "";
+                document.getElementById("winner-2").value = rev.winner_2 || "";
+                document.getElementById("winner-3").value = rev.winner_3 || "";
+                document.getElementById("review-comment").value = rev.comment || "";
+            })
+            .catch(err => {
+                console.error("Lỗi tải thông tin căn nhà:", err);
+                showToast("Lỗi nạp dữ liệu chi tiết căn nhà", true);
+            });
+    }
+
+    // Render các thẻ mô hình so sánh
+    function renderModelCards(models, gtSpecs) {
+        const container = document.getElementById("models-cards-row");
+        container.innerHTML = "";
+
+        const orderedModels = ["Baseline", "GPT", "Gemini", "ViT5", "PhoBERT"];
+
+        orderedModels.forEach(mKey => {
+            const m = models[mKey];
+            if (!m) return;
+
+            const card = document.createElement("div");
+            card.className = "model-card";
+            
+            // Xử lý so khớp thông số (highlight)
+            const specsHtml = renderSpecsTableWithHighlights(m.specs, gtSpecs);
+
+            // Tên thân thiện và tác giả
+            const friendlyName = getFriendlyModelName(mKey);
+            const author = getFriendlyAuthor(mKey);
+
+            card.innerHTML = `
+                <div class="model-header">
+                    <div class="model-name">${friendlyName}</div>
+                    <div class="model-member">Thực hiện: ${author}</div>
+                </div>
+                
+                <div class="perf-badge-row">
+                    <span class="perf-tag latency">⏱️ ${m.latency.toFixed(3)}s</span>
+                    <span class="perf-tag cost">💵 ${m.cost}</span>
+                </div>
+                
+                <div class="metric-score-row">
+                    <div class="metric-score-box">
+                        <div class="metric-score-label">ROUGE-L</div>
+                        <div class="metric-score-val" id="score-rouge-${mKey}">${m.rouge_l > 0 ? m.rouge_l.toFixed(1) + '%' : '0.0%'}</div>
+                    </div>
+                    <div class="metric-score-box">
+                        <div class="metric-score-label">Specs Acc</div>
+                        <div class="metric-score-val" id="score-specs-${mKey}">${m.specs_acc > 0 ? m.specs_acc.toFixed(1) + '%' : '0.0%'}</div>
+                    </div>
+                </div>
+
+                <div class="model-content-section">
+                    <span class="content-label">Tiêu đề xuất bản</span>
+                    <div class="model-title-text">${m.title || '<i>(Không tạo tiêu đề)</i>'}</div>
+                </div>
+
+                <div class="model-content-section">
+                    <span class="content-label">Mô tả chuẩn hóa</span>
+                    <div class="model-desc-text">${m.description}</div>
+                </div>
+
+                <div class="model-content-section">
+                    <span class="content-label">Thông số trích xuất</span>
+                    ${specsHtml}
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // Phân tích đối chiếu thông số và tạo HTML table
+    function renderSpecsTableWithHighlights(modelSpecs, gtSpecs) {
+        const fields = [
+            { key: "duong", label: "Đường" },
+            { key: "phuong", label: "Phường" },
+            { key: "quan", label: "Quận" },
+            { key: "gia_ty", label: "Giá (tỷ)" },
+            { key: "dien_tich_m2", label: "Diện tích" },
+            { key: "so_tang", label: "Số tầng" },
+            { key: "mat_tien_m", label: "Ngang (m)" },
+            { key: "chieu_sau_m", label: "Dài (m)" },
+            { key: "phan_loai_hem", label: "Loại hẻm" }
+        ];
+
+        let html = '<table class="model-specs-table"><tbody>';
+
+        fields.forEach(f => {
+            const mVal = modelSpecs[f.key];
+            const gtVal = gtSpecs[f.key];
+            
+            let displayVal = mVal !== undefined && mVal !== null ? mVal : "-";
+            if (f.key === "dien_tich_m2" && mVal) displayVal += " m²";
+            
+            let highlightClass = "";
+            
+            // Chỉ so khớp và highlight nếu Ground Truth của trường đó đã được chuyên gia điền
+            if (gtVal !== undefined && gtVal !== null && gtVal !== "") {
+                let isMatch = false;
+                if (typeof gtVal === 'string') {
+                    isMatch = String(mVal).trim().toLowerCase() === String(gtVal).trim().toLowerCase();
+                } else {
+                    isMatch = Math.abs(parseFloat(mVal) - parseFloat(gtVal)) < 0.01;
+                }
+                highlightClass = isMatch ? "spec-match" : "spec-mismatch";
+            }
+
+            html += `
+                <tr>
+                    <td class="spec-lbl">${f.label}</td>
+                    <td class="spec-val"><span class="${highlightClass}">${displayVal}</span></td>
+                </tr>
+            `;
+        });
+
+        html += '</tbody></table>';
+        return html;
+    }
+
+    // Cập nhật Ground Truth của người dùng
+    function updateGroundTruth() {
+        if (!currentSampleId) return;
+
+        const gtTitle = ""; // Lược bỏ tiêu đề chuẩn, chỉ lấy mô tả và thông số
+        const gtDesc = document.getElementById("gt-desc").value.trim();
+        
+        // Lấy thông số từ form nhập
+        const specs = {
+            duong: document.getElementById("gt-spec-duong").value.trim() || null,
+            phuong: document.getElementById("gt-spec-phuong").value.trim() || null,
+            quan: document.getElementById("gt-spec-quan").value.trim() || null,
+            gia_ty: getNumericValue("gt-spec-gia"),
+            dien_tich_m2: getNumericValue("gt-spec-dientich"),
+            so_tang: getIntegerValue("gt-spec-sotang"),
+            mat_tien_m: getNumericValue("gt-spec-ngang"),
+            chieu_sau_m: getNumericValue("gt-spec-dai"),
+            phan_loai_hem: document.getElementById("gt-spec-hem").value
+        };
+
+        if (!gtDesc) {
+            showToast("Vui lòng điền mô tả chuẩn nhãn để tính điểm từ vựng!", true);
+            return;
+        }
+
+        const data = {
+            id: currentSampleId,
+            ground_truth_title: gtTitle,
+            ground_truth_desc: gtDesc,
+            extracted_specs: specs
+        };
+
+        // Gửi POST cập nhật
+        fetch('/calculate_metrics', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(resData => {
+            if (resData.status === "success") {
+                showToast("Đã cập nhật Ground Truth & tính lại chỉ số!");
+                
+                // Cập nhật điểm trên các thẻ giao diện ngay lập tức
+                for (const mKey in resData.metrics) {
+                    const met = resData.metrics[mKey];
+                    const rEl = document.getElementById(`score-rouge-${mKey}`);
+                    const sEl = document.getElementById(`score-specs-${mKey}`);
+                    
+                    if (rEl) rEl.innerText = met.rouge_l.toFixed(1) + "%";
+                    if (sEl) sEl.innerText = met.specs_acc.toFixed(1) + "%";
+                }
+
+                // Cập nhật lại các màu sắc thông số trên thẻ mô hình
+                for (const mKey in activeModelsData) {
+                    if (activeModelsData[mKey]) {
+                        activeModelsData[mKey].rouge_l = resData.metrics[mKey].rouge_l;
+                        activeModelsData[mKey].specs_acc = resData.metrics[mKey].specs_acc;
+                    }
+                }
+                renderModelCards(activeModelsData, specs);
+
+                // Cập nhật lại Leaderboard
+                loadLeaderboard();
+            } else {
+                showToast("Lỗi: " + resData.message, true);
+            }
+        })
+        .catch(err => {
+            console.error("Lỗi cập nhật Ground Truth:", err);
+            showToast("Lỗi gửi dữ liệu lên server", true);
+        });
+    }
+
+    // Lưu đánh giá xếp hạng chuyên gia
+    function saveExpertReview() {
+        if (!currentSampleId) return;
+
+        const w1 = document.getElementById("winner-1").value;
+        const w2 = document.getElementById("winner-2").value;
+        const w3 = document.getElementById("winner-3").value;
+        const comment = document.getElementById("review-comment").value.trim();
+
+        if (!w1 || !w2 || !w3) {
+            showToast("Vui lòng chọn đầy đủ xếp hạng Hạng 1, 2 và 3!", true);
+            return;
+        }
+
+        // Kiểm tra xem các lựa chọn có bị trùng lặp không
+        if (w1 === w2 || w1 === w3 || w2 === w3) {
+            showToast("Mô hình được chọn xếp hạng không được trùng nhau!", true);
+            return;
+        }
+
+        const data = {
+            id: currentSampleId,
+            winner_1: w1,
+            winner_2: w2,
+            winner_3: w3,
+            comment: comment
+        };
+
+        fetch('/save_review', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(resData => {
+            if (resData.status === "success") {
+                showToast("Đã lưu xếp hạng của chuyên gia!");
+                loadLeaderboard(); // Cập nhật lại Leaderboard để thay đổi điểm
+            } else {
+                showToast("Lỗi: " + resData.message, true);
+            }
+        })
+        .catch(err => {
+            console.error("Lỗi gửi xếp hạng:", err);
+            showToast("Lỗi gửi dữ liệu xếp hạng lên server", true);
+        });
+    }
+
+    // Helper: Lấy giá trị số hoặc null
+    function getNumericValue(id) {
+        const val = document.getElementById(id).value;
+        return val !== "" ? parseFloat(val) : null;
+    }
+
+    // Helper: Lấy giá trị số nguyên hoặc null
+    function getIntegerValue(id) {
+        const val = document.getElementById(id).value;
+        return val !== "" ? parseInt(val) : null;
+    }
+
+    // Helper: Map tên mô hình thân thiện
+    function getFriendlyModelName(key) {
+        const mapping = {
+            "Baseline": "Baseline TextRank",
+            "GPT": "GPT-4o mini API",
+            "Gemini": "Gemini 1.5 Flash",
+            "ViT5": "ViT5 Fine-tuned",
+            "PhoBERT": "PhoBERT Fine-tuned"
+        };
+        return mapping[key] || key;
+    }
+
+    // Helper: Map tác giả thực hiện
+    function getFriendlyAuthor(key) {
+        const mapping = {
+            "Baseline": "Bách Nhân",
+            "GPT": "Minh Quân",
+            "Gemini": "Ba Học",
+            "ViT5": "Mai Anh",
+            "PhoBERT": "Hữu Hiếu"
+        };
+        return mapping[key] || "N/A";
+    }
+
+    // Helper: Map chi phí cố định để hiện Leaderboard
+    function getFriendlyCostDisplay(key) {
+        const mapping = {
+            "Baseline": "0đ",
+            "GPT": "~15đ/tin",
+            "Gemini": "~15đ/tin",
+            "ViT5": "0đ (Offline)",
+            "PhoBERT": "0đ (Offline)"
+        };
+        return mapping[key] || "-";
+    }
+
+    // Modal control
+    function openFormulaModal() {
+        document.getElementById("formula-modal-overlay").classList.add("active");
+    }
+
+    document.getElementById("formula-modal-overlay").addEventListener("click", () => {
+        closeFormulaModal();
+    });
+
+    function closeFormulaModal() {
+        document.getElementById("formula-modal-overlay").classList.remove("active");
+    }
+</script>
+
+</body>
+</html>

@@ -1,137 +1,167 @@
 [
   {
-    "id": 10060,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Thành Thái, Phường 6, Quận 10. Diện tích công nhận 56.8m2, kích thước lý tưởng 4.3x13.2m. Kết cấu 5 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 6 phòng ngủ và 5 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.4m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 18.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "id": "SYS-20264727-938",
+    "ground_truth_desc": "Mặt tiền Nơ Trang Long Bình Thạnh - 77.7m2 (5.5x20.5) - Ngang khủng - 27.5 Tỷ | Kinh doanh hoặc CHDV\n\nMẶT TIỀN KINH DOANH NƠ TRANG LONG SÁT VÁCH PHAN VĂN TRỊ CHỈ 27.5 TỶ\n\n– Vị trí: Ngay Mặt tiền Nơ Trang Long, Phường 11, Quận Bình Thạnh. Vị trí đắc địa ngay nút giao thông trục Phan Văn Trị và Nguyễn Văn Đậu, kết nối trực tiếp sang trung tâm Quận 1 và Sân bay Tân Sơn Nhất chỉ vài phút di chuyển.\n\n– Mặt tiền: Đường nhựa rộng lớn, vỉa hè thông thoáng, dòng người qua lại nhộn nhịp ngày đêm, thích hợp mở văn phòng công ty, showroom, phòng khám hoặc kinh doanh đa ngành nghề.\n\n– Kết cấu: Nhà 3 tầng khung BTCT kiên cố, thiết kế thông thoáng, gồm 4 phòng ngủ, 5 WC. Hiện đang khai thác dòng tiền cho thuê ổn định 25 triệu/tháng.\n\n– Thông số xây dựng: Khu vực quy hoạch cao tầng. Thích hợp xây mới hầm, trệt, lửng, 4 lầu, sân thượng làm tòa nhà văn phòng hoặc căn hộ dịch vụ quy mô.\n\n– Diện tích: 112.8m2 (5.5m x 20.5m). Chiều ngang 5.5m bề thế cực kỳ hiếm có, khuôn đất vuông vức, phong thủy đẹp.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng chính chủ cất két, công chứng ngay trong ngày.\n\n– GIÁ: 27.5 tỷ (TL).\n\nPHÂN TÍCH TƯ DUY ĐẦU TƯ & DÒNG TIỀN:\n\n• Vị trí vàng trung tâm Bình Thạnh, liền kề các trục đường thương mại lớn và cụm Bệnh viện nhân dân Gia Định, Bệnh viện Ung Bướu, trường Đại học Văn Lang.\n\n• Khu vực tập trung tệp khách thuê cao cấp và nhân sự văn phòng cực kỳ đông đúc.\n\n• Khuôn đất lớn có chiều ngang vượt trội 5.5m là lợi thế tuyệt đối để tối ưu hóa không gian kinh doanh hoặc thiết kế CHDV hiệu suất cao.\n\n• Đầu tư xây mới thành tòa nhà văn phòng hoặc căn hộ dịch vụ cao cấp có thể mang lại nguồn thu nhập thụ động đạt trên 100 triệu/tháng.\n\n• Quỹ đất mặt tiền lõi trung tâm ngày càng khan hiếm, đảm bảo biên độ tăng giá ổn định và là tài sản giữ tiền có tính thanh khoản cực cao.",
     "extracted_specs": {
-      "duong": "Thành Thái",
-      "phuong": "Phường 6",
-      "quan": "Quận 10",
-      "gia_ty": 18.9,
-      "dien_tich_m2": 56.8,
-      "so_tang": 5,
-      "mat_tien_m": 4.3,
-      "rong_hem_m": 4.4,
-      "phan_loai_hem": "Hẻm xe hơi"
-    }
-  },
-  {
-    "id": 10061,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Nguyễn Tri Phương, Phường 14, Quận 10. Diện tích công nhận 65.1m2, kích thước lý tưởng 4.2x15.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.7m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 14.1 tỷ (còn thương lượng nhẹ lộc phát).",
-    "extracted_specs": {
-      "duong": "Nguyễn Tri Phương",
-      "phuong": "Phường 14",
-      "quan": "Quận 10",
-      "gia_ty": 14.1,
-      "dien_tich_m2": 65.1,
+      "duong": "Nhựa Rộng Lớn",
+      "phuong": "Phường 11",
+      "quan": "Quận 1",
+      "gia_ty": 27.5,
+      "dien_tich_m2": 112.8,
       "so_tang": 3,
-      "mat_tien_m": 4.2,
-      "rong_hem_m": 4.7,
-      "phan_loai_hem": "Hẻm xe tải"
+      "mat_tien_m": 5.5,
+      "chieu_sau_m": 20.5,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
-    "id": 10062,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Võ Văn Tần, Phường 8, Quận 3. Diện tích công nhận 87.3m2, kích thước lý tưởng 4.3x20.3m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 4.6m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 21.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "id": "SYS-MP75438B-O8",
+    "ground_truth_desc": "Hẻm xe hơi Lê Văn Sỹ Quận 3 - 46m2 (4.6x10) - Ngang lớn - 12.8 Tỷ | Ở ngay\n\nTRUNG TÂM QUẬN 3 ĐƯỜNG THỜI TRANG LÊ VĂN SỸ HẺM XE HƠI ĐỖ CỬA CHỈ 12.8 TỶ\n\n– Vị trí: Hẻm Lê Văn Sỹ, Phường 13, Quận 3. Vị trí trung tâm ngay lõi đường thời trang sầm uất, sát vách chợ Nguyễn Văn Trỗi, trường Đại học Sư phạm và bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ trong vài phút.\n\n– Hẻm: Hẻm xe hơi đỗ cửa, sạch sẽ, an ninh, sát mặt tiền đường lớn, lưu thông thuận tiện và thông thoáng.\n\n– Kết cấu: Nhà 4 tầng, khung BTCT kiên cố. Thiết kế gồm 4 phòng ngủ, phòng khách, bếp, lô góc nhiều mặt thoáng đón ánh sáng tự nhiên. Nhà mới đẹp, dọn vào ở ngay.\n\n– Diện tích: 46m2 (4.6m x 10m), chiều ngang lớn 4.6m là lợi thế cực kỳ hiếm có tại phân khúc trung tâm Quận 3. Sổ vuông vức, hoàn công đầy đủ.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 12.8 tỷ (TL).",
     "extracted_specs": {
-      "duong": "Võ Văn Tần",
-      "phuong": "Phường 8",
+      "duong": "Thời Trang Lê Văn Sỹ Hẻm Xe Hơi Đỗ Cửa Chỉ 12",
+      "phuong": "Phường 13",
       "quan": "Quận 3",
-      "gia_ty": 21.6,
-      "dien_tich_m2": 87.3,
-      "so_tang": 2,
-      "mat_tien_m": 4.3,
-      "rong_hem_m": 4.6,
-      "phan_loai_hem": "Hẻm xe tải"
-    }
-  },
-  {
-    "id": 10063,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Nguyễn Thiện Thuật, Phường 8, Quận 3. Diện tích công nhận 91.7m2, kích thước lý tưởng 4.7x19.5m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 13.7 tỷ (còn thương lượng nhẹ lộc phát).",
-    "extracted_specs": {
-      "duong": "Nguyễn Thiện Thuật",
-      "phuong": "Phường 8",
-      "quan": "Quận 3",
-      "gia_ty": 13.7,
-      "dien_tich_m2": 91.7,
-      "so_tang": 3,
-      "mat_tien_m": 4.7,
-      "rong_hem_m": 5.0,
-      "phan_loai_hem": "Hẻm xe tải"
-    }
-  },
-  {
-    "id": 10064,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Huỳnh Văn Bánh, Phường 7, Phú Nhuận. Diện tích công nhận 42.3m2, kích thước lý tưởng 4.6x9.2m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 3.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.8 tỷ (còn thương lượng nhẹ lộc phát).",
-    "extracted_specs": {
-      "duong": "Huỳnh Văn Bánh",
-      "phuong": "Phường 7",
-      "quan": "Phú Nhuận",
-      "gia_ty": 19.8,
-      "dien_tich_m2": 42.3,
-      "so_tang": 3,
+      "gia_ty": 12.8,
+      "dien_tich_m2": 46.0,
+      "so_tang": 4,
       "mat_tien_m": 4.6,
-      "rong_hem_m": 3.5,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "chieu_sau_m": 10.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
-    "id": 10065,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Út Tịch, Phường 10, Tân Bình. Diện tích công nhận 95.0m2, kích thước lý tưởng 4.3x22.1m. Kết cấu 3 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 4 phòng ngủ và 3 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.2m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 12.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "id": "SYS-MP756313-W",
+    "ground_truth_desc": "Điện Biên Phủ Quận 10 - 39m2 (4.1x7.5) - Hẻm ô tô sát Mặt tiền - Ngang lớn - 8.5 Tỷ | Ở ngay\n\nHẺM Ô TÔ ĐỖ CỬA SÁT MẶT TIỀN ĐIỆN BIÊN PHỦ QUẬN 10 CHỈ 8.5 TỶ\n\n– Vị trí: Hẻm Điện Biên Phủ, Phường 11, Quận 10. Vị trí trung tâm sát vách Bệnh viện Bình Dân, Nhà hát Hòa Bình, di chuyển sang Quận 1 và Quận 3 chỉ 3 phút.\n\n– Hẻm: Hẻm ô tô rộng 4m sạch sẽ, dân trí cao, an ninh tuyệt đối, nhà cách mặt tiền đường lớn chỉ vài bước chân.\n\n– Kết cấu: Nhà 4 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 3 phòng ngủ, 4 WC, sân thượng thoáng mát. Nhà chính chủ lâu năm, dọn vào ở ngay.\n\n– Diện tích: 39m2 (4.1m x 7.5m), chiều ngang lớn 4.1m cực kỳ bề thế, phom nhà nở hậu tài lộc lên đến 7.2m.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8.5 tỷ (TL).",
     "extracted_specs": {
-      "duong": "Út Tịch",
-      "phuong": "Phường 10",
-      "quan": "Tân Bình",
-      "gia_ty": 12.9,
-      "dien_tich_m2": 95.0,
-      "so_tang": 3,
-      "mat_tien_m": 4.3,
-      "rong_hem_m": 4.2,
-      "phan_loai_hem": "Hẻm xe hơi"
-    }
-  },
-  {
-    "id": 10066,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Thích Quảng Đức, Phường 4, Phú Nhuận. Diện tích công nhận 85.7m2, kích thước lý tưởng 4.1x20.9m. Kết cấu 4 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 5 phòng ngủ và 4 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 17.8 tỷ (còn thương lượng nhẹ lộc phát).",
-    "extracted_specs": {
-      "duong": "Thích Quảng Đức",
-      "phuong": "Phường 4",
-      "quan": "Phú Nhuận",
-      "gia_ty": 17.8,
-      "dien_tich_m2": 85.7,
+      "duong": "Lớn Chỉ Vài Bước Chân",
+      "phuong": "Phường 11",
+      "quan": "Quận 10",
+      "gia_ty": 8.5,
+      "dien_tich_m2": 39.0,
       "so_tang": 4,
       "mat_tien_m": 4.1,
-      "rong_hem_m": 5.0,
-      "phan_loai_hem": "Hẻm xe tải"
+      "chieu_sau_m": 7.5,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
-    "id": 10067,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Thành Thái, Phường 9, Quận 10. Diện tích công nhận 92.8m2, kích thước lý tưởng 4.0x23.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe hơi rộng 4.0m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.9 tỷ (còn thương lượng nhẹ lộc phát).",
+    "id": "SYS-MP756P72-9B",
+    "ground_truth_desc": "Cao Thắng Quận 3 - 32m2 - Hẻm xe hơi thông - 5 Tầng - 8.5 Tỷ | Ở ngay hoặc Dòng tiền\n\nTRUNG TÂM QUẬN 3 NÚT GIAO CAO THẮNG NGUYỄN THIỆN THUẬT HẺM XE HƠI THÔNG CHỈ 8.5 TỶ\n\n– Vị trí: Hẻm Cao Thắng, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ, tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Quận 10 chỉ 2 phút.\n\n– Hẻm: Hẻm rộng 5m thông bàn cờ ra đường Nguyễn Thiện Thuật, xe hơi tới cửa, di chuyển thông thoáng, sạch sẽ và an ninh.\n\n– Kết cấu: Nhà 5 tầng, khung BTCT kiên cố, thiết kế gồm 1 trệt, 1 lửng, 2 lầu, sân thượng với 4 phòng ngủ, 5 WC. Hiện trạng nhà đẹp, đang khai thác cho thuê dòng tiền ổn định 300 triệu/năm.\n\n– Diện tích: 32m2, sổ hồng vuông vức, hoàn công đầy đủ, không lỗi phong thủy.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8.5 tỷ (TL).",
     "extracted_specs": {
-      "duong": "Thành Thái",
-      "phuong": "Phường 9",
-      "quan": "Quận 10",
-      "gia_ty": 19.9,
-      "dien_tich_m2": 92.8,
-      "so_tang": 2,
-      "mat_tien_m": 4.0,
-      "rong_hem_m": 4.0,
+      "duong": "Nguyễn Thiện Thuật",
+      "phuong": "Phường 3",
+      "quan": "Quận 3",
+      "gia_ty": 8.5,
+      "dien_tich_m2": 32.0,
+      "so_tang": 5,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
   {
-    "id": 10068,
-    "ground_truth_desc": "Bán gấp nhà đẹp đường Bạch Đằng, Phường 6, Bình Thạnh. Diện tích công nhận 70.5m2, kích thước lý tưởng 4.1x17.2m. Kết cấu 2 tầng lầu kiên cố đúc BTCT mới tinh, công năng đầy đủ gồm 3 phòng ngủ và 2 nhà vệ sinh. Vị trí cực kỳ đắc địa nằm trong hẻm xe tải rộng 5.5m sạch sẽ, an ninh, dân trí cao. Sổ hồng chính chủ, vuông vức nở hậu tài lộc, giao dịch nhanh chóng. Giá chào bán 19.6 tỷ (còn thương lượng nhẹ lộc phát).",
+    "id": "SYS-MP757WNV-DN",
+    "ground_truth_desc": "Cách Mạng Tháng Tám Quận 10 - 44m2 (3.7x12) - Hẻm xe hơi tới nhà - 7.5 Tỷ | Ở ngay\n\nTRUNG TÂM QUẬN 10 LIỀN KỀ CÔNG VIÊN LÊ THỊ RIÊNG HẺM XE HƠI TỚI CỬA CHỈ 7.5 TỶ\n\n– Vị trí: Hẻm Cách Mạng Tháng Tám, Phường 13, Quận 10. Vị trí vàng ngay trung tâm, sát vách CLB Lan Anh, trường Đại học Huflit, di chuyển sang Quận 1 và Quận 3 chỉ 3 phút.\n\n– Hẻm: Hẻm xe hơi rộng rãi, thông thoáng, xe hơi đỗ tận cửa nhà, cách mặt tiền đường lớn Cách Mạng Tháng Tám chỉ hơn 100m, khu vực dân trí cao và an ninh tuyệt đối.\n\n– Kết cấu: Nhà 2 tầng, khung BTCT kiên cố, công năng tối ưu gồm 3 phòng ngủ, 2 WC. Hiện trạng nhà sạch sẽ, không gian thoáng đãng, khách mua dọn vào ở ngay.\n\n– Diện tích: 44m2 (3.7m x 12m), khuôn đất vuông vức từ đầu đến đuôi, không bị lỗi phong thủy hay lộ giới.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 7.5 tỷ (TL).",
     "extracted_specs": {
-      "duong": "Bạch Đằng",
-      "phuong": "Phường 6",
-      "quan": "Bình Thạnh",
-      "gia_ty": 19.6,
-      "dien_tich_m2": 70.5,
+      "duong": "Lớn Cách Mạng Tháng Tám Chỉ Hơn 100M",
+      "phuong": "Phường 13",
+      "quan": "Quận 10",
+      "gia_ty": 7.5,
+      "dien_tich_m2": 44.0,
       "so_tang": 2,
-      "mat_tien_m": 4.1,
-      "rong_hem_m": 5.5,
+      "mat_tien_m": 3.7,
+      "chieu_sau_m": 12.0,
+      "phan_loai_hem": "Mặt tiền"
+    }
+  },
+  {
+    "id": "SYS-MP758TA8-AN",
+    "ground_truth_desc": "Lê Văn Sỹ Quận 3 - 33m2 (4.3x10) - Hẻm xe hơi thông - Ngang lớn - 8.3 Tỷ | Ở ngay\n\nKINH ĐÔ THỜI TRANG LÊ VĂN SỸ TRUNG TÂM QUẬN 3 HẺM XE HƠI THÔNG CHỈ 8.3 TỶ\n\n– Vị trí: Hẻm Lê Văn Sỹ, Phường 13, Quận 3. Vị trí lõi trung tâm sát vách trường Đại học Sư phạm và bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ trong vài phút.\n\n– Hẻm: Hẻm xe hơi thông thoáng sang đường Trần Quang Diệu, xe hơi đỗ tận cửa, khu đồng bộ cao tầng, dân trí cao, không gian sạch sẽ và an ninh tuyệt đối.\n\n– Kết cấu: Nhà 4 tầng, khung BTCT kiên cố hoàn công đủ. Thiết kế hiện đại gồm phòng khách, bếp, 3 phòng ngủ lớn, 4 WC, ban công và sân thượng rộng thoáng. Nhà mới đẹp, khách dọn vào ở ngay.\n\n– Diện tích: 32.5m2 (4.25m x 10m), chiều ngang lớn 4.25m bề thế, thế đất nở hậu tài lộc cực kỳ đắc địa.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8.3 tỷ (TL).",
+    "extracted_specs": {
+      "duong": "Trần Quang Diệu",
+      "phuong": "Phường 13",
+      "quan": "Quận 3",
+      "gia_ty": 8.3,
+      "dien_tich_m2": 32.5,
+      "so_tang": 4,
+      "mat_tien_m": 4.3,
+      "chieu_sau_m": 10.0,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": "SYS-MP759ESN-94",
+    "ground_truth_desc": "Hẻm xe tải Lê Văn Sỹ Quận 3 - 40m2 - 2 Mặt hẻm thông - 3 Tầng - 8 Tỷ | Ở ngay hoặc Văn phòng\n\nKHU VIP DÂN TRÍ LÊ VĂN SỸ QUẬN 3 HẺM NHỰA XE TẢI THÔNG TỨ TUNG CHỈ 8 TỶ\n\n– Vị trí: Hẻm Lê Văn Sỹ, Phường 13, Quận 3. Vị trí đắc địa ngay lõi trung tâm, sát vách Trường Đại học Sư phạm và Bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\n– Hẻm: Hẻm nhựa xe tải rộng thoáng, thông tứ tung, đặc biệt nhà sở hữu 2 mặt hẻm trước sau cực kỳ thông thoáng, hẻm sau rộng 5m có cửa hậu ra vào riêng biệt, phù hợp vừa ở vừa làm văn phòng công ty.\n\n– Kết cấu: Nhà 3 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lửng, 1 lầu. Thiết kế tối ưu công năng với 4 phòng ngủ, 3 WC, hệ thống cửa sổ và ban công trước sau đón ánh sáng tự nhiên, hiện đang cho thuê ổn định 12 triệu/tháng.\n\n– Diện tích: 40m2, thế đất vuông đét, phong thủy đẹp, không lỗi lộ giới.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8 tỷ (TL).",
+    "extracted_specs": {
+      "duong": null,
+      "phuong": "Phường 13",
+      "quan": "Quận 3",
+      "gia_ty": 8.0,
+      "dien_tich_m2": 40.0,
+      "so_tang": 3,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": "SYS-MP759ZIK-MM",
+    "ground_truth_desc": "Nguyễn Thiện Thuật Quận 3 - 31m2 - Hẻm xe tải thông kinh doanh - 8.2 Tỷ | Ở ngay hoặc Kinh doanh\n\nKHU VỰC KINH DOANH SẦM UẤT NGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE TẢI THÔNG TỨ TUNG CHỈ 8.2 TỶ\n\n– Vị trí: Hẻm Nguyễn Thiện Thuật, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ và bệnh viện Bình Dân, di chuyển qua Quận 1 và Quận 10 chỉ trong vài bước chân.\n\n– Hẻm: Hẻm xe tải thông tứ tung, mặt hẻm sạch sẽ, dân trí cao, vị trí đắc địa phù hợp mở văn phòng đại diện, spa hoặc kinh doanh online dòng tiền tốt.\n\n– Kết cấu: Nhà cũ 2 tầng, khung BTCT kiên cố gồm 1 trệt 1 lầu. Công năng cơ bản 2 phòng ngủ, 1 WC, khách mua chỉ cần sơn sửa nhẹ là ở ngay hoặc khai thác kinh doanh được liền.\n\n– Diện tích: 31m2, khuôn đất vuông vức vuông đét, không lỗi phong thủy, phong thủy tốt.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8.2 tỷ (TL).",
+    "extracted_specs": {
+      "duong": null,
+      "phuong": "Phường 3",
+      "quan": "Quận 3",
+      "gia_ty": 8.2,
+      "dien_tich_m2": 31.0,
+      "so_tang": 2,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
+      "phan_loai_hem": "Hẻm xe tải"
+    }
+  },
+  {
+    "id": "SYS-MP75AKU9-9R",
+    "ground_truth_desc": "Cách Mạng Tháng Tám Quận 3 - 65m2 (4.3x15) - Sát hẻm xe hơi - Ngang lớn - 8 Tỷ | Ở ngay hoặc CHDV\n\nTRUNG TÂM QUẬN 3 LIỀN KỀ GA SÀI GÒN KHU VỰC XÂY CAO TẦNG CHỈ 8 TỶ\n\n– Vị trí: Hẻm Cách Mạng Tháng Tám, Phường 9, Quận 3. Vị trí lõi trung tâm sát vách CLB Lan Anh, kết nối thẳng ra Vòng xoay Dân Chủ, di chuyển qua Quận 1 và Quận 10 chỉ 2 phút.\n\n– Hẻm: Hẻm thông thoáng, sạch sẽ, khu dân trí cao và an ninh tuyệt đối, nhà cách hẻm xe hơi đỗ chỉ hơn 10m.\n\n– Kết cấu: Nhà 2 tầng, khung BTCT kiên cố gồm 1 trệt 1 lầu. Thiết kế bố trí 3 phòng ngủ, phòng khách, bếp rộng rãi, có khoảng sân trước sau lấy gió trời thông thoáng, nhà ở tốt sử dụng ngay.\n\n– Thông số xây dựng: Khu vực được phép xây cao tầng: Hầm, trệt, lửng, 4 lầu, sân thượng. Cực kỳ lý tưởng cho khách mua xây mới làm toà nhà văn phòng hoặc căn hộ dịch vụ cao cấp.\n\n– Diện tích: 65m2 (4.3m x 15m), chiều ngang lớn 4.3m bề thế, thế đất vuông vức phong thủy đẹp.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8 tỷ (TL).\n\nPHÂN TÍCH TƯ DUY ĐẦU TƯ & DÒNG TIỀN:\n• Vị trí đắc địa lõi trung tâm Quận 3, sát vách dự án Tuyến Metro số 2 sắp triển khai, mang lại tiềm năng tăng trưởng đột biến và biên độ lãi kép cực cao.\n• Khuôn đất lớn 65m2 với chiều ngang 4.3m lý tưởng, giấy phép xây dựng cho phép cao tầng (lên đến 6 tầng) giúp tối ưu hóa diện tích sàn khai thác kinh doanh.\n• Tọa lạc tại khu vực tập trung lượng lớn giới văn phòng, người nước ngoài và liền kề các trục đường lớn, rất phù hợp để xây dựng mô hình CHDV cao cấp, dòng tiền khai thác dự kiến đạt từ 50 - 60 triệu/tháng.",
+    "extracted_specs": {
+      "duong": "Lớn",
+      "phuong": "Phường 9",
+      "quan": "Quận 3",
+      "gia_ty": 8.0,
+      "dien_tich_m2": 65.0,
+      "so_tang": 2,
+      "mat_tien_m": 4.3,
+      "chieu_sau_m": 15.0,
+      "phan_loai_hem": "Hẻm xe hơi"
+    }
+  },
+  {
+    "id": "SYS-MP75ES0J-9K",
+    "ground_truth_desc": "Huỳnh Văn Bánh Phú Nhuận - 38m2 (4.8x8) - Hẻm xe hơi đỗ cửa - Ngang lớn - 8.95 Tỷ | Ở ngay\n\nTRUNG TÂM PHÚ NHUẬN LIỀN KỀ TRỤC NGUYỄN VĂN TRỖI HẺM XE HƠI ĐỖ CỬA CHỈ 8.95 TỶ\n\n– Vị trí: Hẻm Huỳnh Văn Bánh, Phường 13, Quận Phú Nhuận. Vị trí vàng sát vách trục ngoại giao Nguyễn Văn Trỗi, di chuyển sang Quận 1 và Sân bay Tân Sơn Nhất chỉ 5 phút.\n\n– Hẻm: Hẻm xe hơi rộng rãi, đỗ tận cửa nhà, cách mặt tiền đường lớn Huỳnh Văn Bánh 100m, khu vực dân trí cao, yên tĩnh và an ninh tuyệt đối.\n\n– Kết cấu: Nhà 5 tầng, khung BTCT kiên cố hoàn công đủ, công năng gồm phòng khách, bếp, 4 phòng ngủ, 5 WC. Nhà mới đẹp, kiến trúc hiện đại, dọn vào ở ngay.\n\n– Diện tích: 38m2 (4.8m x 8m), chiều ngang lớn 4.8m bề thế, phom nhà vuông vức cân đối, bố trí không gian cực thoáng.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8.95 tỷ (TL).",
+    "extracted_specs": {
+      "duong": "Lớn Huỳnh Văn Bánh 100M",
+      "phuong": "Phường 13",
+      "quan": "Quận 1",
+      "gia_ty": 8.95,
+      "dien_tich_m2": 38.0,
+      "so_tang": 5,
+      "mat_tien_m": 4.8,
+      "chieu_sau_m": 8.0,
+      "phan_loai_hem": "Mặt tiền"
+    }
+  },
+  {
+    "id": "SYS-MP75GT4Y-GN",
+    "ground_truth_desc": "Huỳnh Văn Bánh Phú Nhuận - 30m2 (3.7x8) - Hẻm xe hơi VIP - 8.9 Tỷ | Full nội thất xịn\n\nKHU VIP PHÚ NHUẬN ĐƯỜNG LÊ VĂN SỸ HẺM XE HƠI LÔ GÓC CHỈ 8.9 TỶ\n\n– Vị trí: Hẻm Huỳnh Văn Bánh, Phường 13, Quận Phú Nhuận. Vị trí vàng ngay đoạn giao trục Lê Văn Sỹ sầm uất, di chuyển sang Quận 1, Quận 3 và Sân bay Tân Sơn Nhất chỉ 5 phút.\n\n– Hẻm: Hẻm xe hơi rộng rãi, sạch sẽ, dân trí cao, xe hơi lưu thông thuận tiện, sát mặt tiền đường lớn.\n\n– Kết cấu: Nhà lô góc 5 tầng BTCT kiên cố. Thiết kế hiện đại gồm phòng khách, bếp, phòng làm việc, 3 phòng ngủ, 4 WC, sân thượng thoáng mát, tặng Full nội thất xịn vào ở ngay.\n\n– Diện tích: 30m2 (3.7m x 8m), khuôn đất vuông vức, kết cấu cao tầng tối ưu không gian sử dụng.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 8.9 tỷ (TL).",
+    "extracted_specs": {
+      "duong": "Lê Văn Sỹ Hẻm Xe Hơi Lô Góc Chỉ 8",
+      "phuong": "Phường 13",
+      "quan": "Quận 1",
+      "gia_ty": 8.9,
+      "dien_tich_m2": 30.0,
+      "so_tang": 5,
+      "mat_tien_m": 3.7,
+      "chieu_sau_m": 8.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   }
 ]
