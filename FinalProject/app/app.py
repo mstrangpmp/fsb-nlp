@@ -388,7 +388,7 @@ def get_sample_data(sample_id):
             if pred_idx != -1 and pred_idx < len(latencies):
                 latency = latencies[pred_idx]
             cost_val = perf.get("estimated_cost_vnd_per_1k", 0)
-            cost = f"~{cost_val / 1000:.2f}đ"
+            cost = f"~{int(cost_val / 1000)}đ"
         elif model_name in ["ViT5", "PhoBERT"]:
             latencies = perf.get("latency_per_sample", [])
             if pred_idx != -1 and pred_idx < len(latencies):
