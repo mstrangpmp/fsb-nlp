@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id": "SYS-MP75Z7G0-H3",
+        "winner_1": "GPT",
+        "winner_2": "Gemini",
+        "winner_3": "Baseline",
+        "comment": "GPT có văn phong tự nhiên nhất và đầy đủ thông số nhất. Gemini cũng rất tốt nhưng hơi ngắn. Baseline chỉ tóm tắt thô.",
+        "timestamp": "2026-06-06 01:05:40"
+    }
+]

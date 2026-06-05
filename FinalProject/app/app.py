@@ -204,6 +204,21 @@ def calculate_rouge_l(pred_text: str, ref_text: str) -> float:
     return scores['rougeL'].fmeasure * 100
 
 
+def normalize_vietnamese(s):
+    if not s or not isinstance(s, str):
+        return ""
+    import unicodedata
+    s = unicodedata.normalize("NFC", s.lower().strip())
+    replacements = {
+        "òe": "oè", "óe": "oé", "ỏe": "oẻ", "õe": "oẽ", "ọe": "oẹ",
+        "òa": "oà", "óa": "oá", "ỏa": "oả", "õa": "oã", "ọa": "oạ",
+        "ùy": "uỳ", "úy": "uý", "ủy": "uỷ", "ũy": "uỹ", "ụy": "uỵ"
+    }
+    for k, v in replacements.items():
+        s = s.replace(k, v)
+    return s
+
+
 def calculate_specs_accuracy(pred_specs: dict, ref_specs: dict) -> float:
     """Tính điểm Specs Accuracy bằng cách so khớp chính xác 9 thông số kỹ thuật"""
     if not ref_specs or not pred_specs:
@@ -224,7 +239,7 @@ def calculate_specs_accuracy(pred_specs: dict, ref_specs: dict) -> float:
             
         if p_val is not None and r_val is not None:
             if isinstance(r_val, str):
-                if str(p_val).strip().lower() == str(r_val).strip().lower():
+                if normalize_vietnamese(str(p_val)) == normalize_vietnamese(str(r_val)):
                     match_count += 1
             else:
                 try:

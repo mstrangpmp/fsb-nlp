@@ -1,1 +1,17 @@
-{}
+{
+    "SYS-MP75Z7G0-H3": {
+        "ground_truth_title": "Cao Thắng Quận 10 - 44.7m2 - 5 Tầng - 11.9 Tỷ | Hẻm xe hơi",
+        "ground_truth_desc": "NHÀ ĐẸP TRUNG TÂM QUẬN 10 – HẺM XE HƠI CAO THẮNG – KHU DÂN TRÍ CAO\n\n– Diện tích đất: 44.7m²\n– Kết cấu: 1 trệt + lửng + 3 lầu (5 tầng)\n– Vị trí: Đường Cao Thắng, Phường 12, Quận 10.\n– Pháp lý: Sổ hồng riêng chính chủ.\n– GIÁ: 11.9 tỷ (TL).",
+        "extracted_specs": {
+            "duong": "Cao Thắng",
+            "phuong": "Phường 12",
+            "quan": "Quận 10",
+            "gia_ty": 11.9,
+            "dien_tich_m2": 44.7,
+            "so_tang": 5,
+            "mat_tien_m": 4.5,
+            "chieu_sau_m": 11.0,
+            "phan_loai_hem": "Hẻm xe hơi"
+        }
+    }
+}

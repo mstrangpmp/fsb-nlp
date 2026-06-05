@@ -934,6 +934,21 @@
         }, 2500);
     }
 
+    // Chuẩn hóa dấu tiếng Việt để đối chiếu chính xác (ví dụ: "Hoà" vs "Hòa")
+    function normalizeVietnamese(s) {
+        if (!s || typeof s !== 'string') return "";
+        s = s.normalize("NFC").toLowerCase().trim();
+        const replacements = {
+            "òe": "oè", "óe": "oé", "ỏe": "oẻ", "õe": "oẽ", "ọe": "oẹ",
+            "òa": "oà", "óa": "oá", "ỏa": "oả", "õa": "oã", "ọa": "oạ",
+            "ùy": "uỳ", "úy": "uý", "ủy": "uỷ", "ũy": "uỹ", "ụy": "uỵ"
+        };
+        for (const k in replacements) {
+            s = s.split(k).join(replacements[k]);
+        }
+        return s;
+    }
+
     // Tải danh sách 9 căn nhà mẫu
     function loadDropdown() {
         fetch(`/get_test_samples?t=${Date.now()}`)
@@ -1135,7 +1150,7 @@
             if (gtVal !== undefined && gtVal !== null && gtVal !== "") {
                 let isMatch = false;
                 if (typeof gtVal === 'string') {
-                    isMatch = String(mVal).trim().toLowerCase() === String(gtVal).trim().toLowerCase();
+                    isMatch = normalizeVietnamese(String(mVal)) === normalizeVietnamese(String(gtVal));
                 } else {
                     isMatch = Math.abs(parseFloat(mVal) - parseFloat(gtVal)) < 0.01;
                 }
