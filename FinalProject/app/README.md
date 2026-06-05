@@ -49,3 +49,20 @@ git branch -M main
 git push -u origin main
 ```
 *(File `.gitignore` đã được cấu hình sẵn để tránh push các file cache `__pycache__` lên repo).*
+
+## 🔄 Cập Nhật Hệ Thống Gần Đây (System Updates)
+
+Hệ thống ứng dụng đánh giá (`app/`) đã được tối ưu hóa và cập nhật các tính năng quan trọng sau:
+1. **Đồng bộ hóa Chuẩn hóa Tiếng Việt (Unicode Tone Normalization)**:
+   - Tích hợp hàm `normalize_vietnamese` (ở backend Python) và `normalizeVietnamese` (ở frontend JS) để tự động quy đổi và thống nhất các nguyên âm ghép có cách đặt dấu thanh khác nhau (ví dụ: `Hòa` kiểu mới và `Hoà` kiểu cũ đều được chuẩn hóa về cùng một chuỗi).
+   - Khắc phục triệt để lỗi so khớp thông số trích xuất (`Specs Accuracy`), giúp giao diện chuyển sang **màu xanh lá cây** chính xác khi người dùng chỉnh sửa specs trùng khớp ngữ nghĩa.
+2. **Biên tập Tiêu đề chuẩn nhãn**:
+   - Bổ sung trường nhập liệu `Tiêu đề chuẩn nhãn` (Title) trong Ground Truth Editor và đồng bộ lưu trữ/tính điểm.
+3. **Sửa lỗi Layout Overlap & Đè nút**:
+   - Chuyển cấu trúc Header từ tuyệt đối sang Flexbox responsive, sửa hoàn toàn lỗi các nút chức năng bị đè lên tiêu đề trang trên các màn hình có độ phân giải nhỏ.
+   - Thêm nút liên kết trực tiếp để quay trở lại trang Đề xuất Đề án nhóm (`📄 Đề Xuất Đề Án`).
+4. **Định dạng Chi phí Gemini**:
+   - Điều chỉnh hiển thị chi phí sử dụng mô hình Gemini Flash từ số thực (`~15.00đ`) thành số nguyên (`~15đ`) để tối ưu giao diện trực quan và tránh gây nhầm lẫn hiển thị cho người dùng.
+5. **Generator trang tĩnh (`generate_static_index.py`)**:
+   - Đồng bộ hóa toàn bộ các cải tiến giao diện, chức năng và chuẩn hóa tiếng Việt vào generator tĩnh để sinh lại tệp tĩnh `app/index.html` tự động mà không gặp lỗi giật lùi giao diện.
+
