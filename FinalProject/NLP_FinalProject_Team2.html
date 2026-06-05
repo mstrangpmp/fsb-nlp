@@ -931,10 +931,14 @@
                 <a href="#calc">Chia Dữ Liệu</a>
                 <a href="#sim">Hiệu Năng</a>
                 <a href="#hybrid">Tương Lai Hybrid</a>
+                <a href="app/index.html" style="color: var(--primary); font-weight: 700;"><i class="fa-solid fa-square-poll-vertical"></i> App Đánh Giá</a>
             </nav>
             <button class="btn btn-secondary" onclick="openSlideDeck()" style="padding: 10px 20px; font-size: 13px; margin-left: 0;">
                 <i class="fa-solid fa-play"></i> Thuyết Trình
             </button>
+            <a href="app/index.html" class="btn" style="padding: 10px 20px; font-size: 13px; margin-left: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4); background: linear-gradient(135deg, var(--accent-blue) 0%, #2980b9 100%); color: #FFF;">
+                <i class="fa-solid fa-chart-simple"></i> Đánh Giá 5 Mô Hình
+            </a>
         </div>
     </header>
 
@@ -948,11 +952,14 @@
             <p>
                 Nghiên cứu ứng dụng công nghệ xử lý ngôn ngữ tự nhiên để tự động hóa quy trình làm sạch dữ liệu tin đăng nhà phố cho website Môi giới BDS, ẩn thông tin nhạy cảm của căn nhà nhưng vẫn bảo toàn tuyệt đối thông số kỹ thuật.
             </p>
-            <div style="display: flex; justify-content: center; gap: 16px;">
-                <a href="#sim" class="btn">
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="app/index.html" class="btn" style="background: linear-gradient(135deg, var(--accent-blue) 0%, #2980b9 100%); box-shadow: 0 4px 20px rgba(52, 152, 219, 0.4); color: #fff;">
+                    <i class="fa-solid fa-chart-simple"></i> Đi Đến App Đánh Giá &amp; So Sánh
+                </a>
+                <a href="#sim" class="btn btn-secondary" style="margin-left: 0;">
                     <i class="fa-solid fa-bolt"></i> Xem Mô Phỏng Tác Vụ
                 </a>
-                <a href="#roles" class="btn btn-secondary">
+                <a href="#roles" class="btn btn-secondary" style="margin-left: 0;">
                     <i class="fa-solid fa-users"></i> Xem Phân Vai Nhóm
                 </a>
             </div>
@@ -1278,6 +1285,17 @@
                 <p>Hệ thống hiển thị kết quả đầu ra thực tế của 5 mô hình khác nhau được phân chia độc lập cho 5 thành viên tự triển khai. Chuyên gia ngành (End-user) sẽ đọc, so sánh và xếp hạng chất lượng từ Hạng 1 đến Hạng 5.</p>
             </div>
             
+            <!-- Prominent App Redirection Link -->
+            <div style="background: rgba(52, 152, 219, 0.1); border: 1px solid rgba(52, 152, 219, 0.3); border-radius: 12px; padding: 20px; margin-bottom: 30px; text-align: center; backdrop-filter: blur(8px);">
+                <h3 style="color: var(--accent-blue); font-size: 1.3rem; margin-bottom: 8px; font-family: var(--font-display);">🚀 Hệ Thống Đánh Giá &amp; Leaderboard Tương Tác Trực Tuyến</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 800px; margin: 0 auto 16px auto;">
+                    Chúng tôi đã phát triển một ứng dụng tương tác đầy đủ với tính năng chỉnh sửa Ground Truth động, tự động tính ROUGE-L, Specs Accuracy và cập nhật Live Leaderboard khi các chuyên gia chấm điểm.
+                </p>
+                <a href="app/index.html" class="btn" style="background: linear-gradient(135deg, var(--accent-blue) 0%, #2980b9 100%); box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4); color: #fff; text-decoration: none;">
+                    <i class="fa-solid fa-square-poll-vertical"></i> Mở Bảng Đánh Giá &amp; Leaderboard Tương Tác
+                </a>
+            </div>
+
             <div class="card" style="padding: 24px; margin-bottom: 32px;">
                 <!-- Sample Switcher -->
                 <div style="display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center;" id="sampleSwitcher">
