@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Trực Quan & Đánh Giá Bất Động Sản NLP - Nhóm 2 - FSB</title>
+    <!-- Nhúng Google Fonts Outfit và Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ══════════════════════════════════════════════════════════════════════════════
+           CSS DESIGN SYSTEM & UTILITIES (GLASSMORPHISM DARK THEME)
+           ══════════════════════════════════════════════════════════════════════════════ */
+        :root {
+            --bg-color: #080B16;
+            --card-bg: rgba(13, 18, 36, 0.7);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --accent-blue: #3B82F6;
+            --accent-blue-hover: #2563EB;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --success-color: #10B981;
+            --success-bg: rgba(16, 185, 129, 0.1);
+            --error-color: #EF4444;
+            --error-bg: rgba(239, 68, 68, 0.1);
+            --gold-color: #FBBF24;
+            --glass-blur: blur(16px);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Container & Grid Layout */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Futuristic Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            backdrop-filter: var(--glass-blur);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #FFF;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* Section Layout: Grid 2 Columns */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Glassmorphism Card Style */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: var(--glass-blur);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #FFF;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Form Controls */
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        select, textarea, input[type="text"], input[type="number"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            color: var(--text-primary);
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        select option {
+            background-color: #0D1324;
+            color: var(--text-primary);
+        }
+
+        select:focus, textarea:focus, input:focus {
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        /* Buttons & Actions */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-blue);
+            color: #FFF;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--accent-blue-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Raw Text display box */
+        .raw-display-box {
+            height: 180px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #D1D5DB;
+            white-space: pre-wrap;
+        }
+
+        /* Live Leaderboard Table */
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .leaderboard-table th {
+            text-align: left;
+            padding: 12px 10px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        .leaderboard-table td {
+            padding: 14px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.92rem;
+        }
+
+        .leaderboard-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .rank-1 { background-color: var(--gold-color); color: #000; }
+        .rank-2 { background-color: #C0C0C0; color: #000; }
+        .rank-3 { background-color: #CD7F32; color: #FFF; }
+        .rank-other { background-color: rgba(255, 255, 255, 0.1); color: var(--text-secondary); }
+
+        /* Ground Truth Editor Row */
+        .gt-section {
+            margin-bottom: 30px;
+        }
+
+        .gt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .specs-input-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        /* 5 Model Comparison Area */
+        .comparison-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .models-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 1500px) {
+            .models-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .models-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .models-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Model Card Detail */
+        .model-card {
+            background: rgba(13, 22, 47, 0.85);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .model-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+        }
+
+        .model-name {
+            font-size: 1.15rem;
+            color: #FFF;
+            font-weight: 700;
+        }
+
+        .model-member {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        /* Performance Tags inside card */
+        .perf-badge-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .perf-tag {
+            font-size: 0.72rem;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+        }
+
+        .perf-tag.latency {
+            color: #60A5FA;
+            background: rgba(96, 165, 250, 0.08);
+        }
+
+        .perf-tag.cost {
+            color: #FBBF24;
+            background: rgba(251, 191, 36, 0.08);
+        }
+
+        /* Metrics Scores Row */
+        .metric-score-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .metric-score-box {
+            text-align: center;
+        }
+
+        .metric-score-label {
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .metric-score-val {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-top: 2px;
+        }
+
+        /* Text Content display */
+        .model-content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .content-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .model-title-text {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #FFF;
+            line-height: 1.4;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+        }
+
+        .model-desc-text {
+            font-size: 0.85rem;
+            line-height: 1.45;
+            color: #D1D5DB;
+            max-height: 250px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+
+        /* Model Specs Table */
+        .model-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .model-specs-table td {
+            padding: 5px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .spec-lbl {
+            color: var(--text-secondary);
+            width: 80px;
+        }
+
+        .spec-val {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        /* Highlight classes */
+        .spec-match {
+            color: var(--success-color);
+            background: var(--success-bg);
+            border-radius: 3px;
+            padding: 1px 4px;
+        }
+
+        .spec-mismatch {
+            color: var(--error-color);
+            background: var(--error-bg);
+            border-radius: 3px;
+            padding: 1px 4px;
+        }
+
+        /* Rank Panel */
+        .rank-panel {
+            margin-top: 30px;
+            border: 1px dashed var(--accent-blue);
+            background: rgba(59, 130, 246, 0.03);
+        }
+
+        .rank-selector-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .rank-selector-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal Styles (Formula display) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal {
+            background: #0D1324;
+            border: 1px solid var(--card-border);
+            width: 90%;
+            max-width: 700px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: #FFF;
+        }
+
+        .formula-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 14px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #10B981;
+            color: #FFF;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header banner -->
+    <header style="position: relative;">
+        <h1>ĐỀ ÁN NLP NHÓM 2 - BẢNG SO SÁNH & ĐÁNH GIÁ 5 MÔ HÌNH</h1>
+        <p>Hệ thống trực quan hóa 9 căn test mẫu, nhập Ground Truth động và ghi nhận xếp hạng Winner của chuyên gia</p>
+        
+        <!-- Import/Export buttons in header -->
+        <div style="position: absolute; top: 20px; right: 20px; display: flex; gap: 8px;">
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem;" onclick="exportLocalStorageData()">
+                📥 Xuất File Đánh Giá (Backup JSON)
+            </button>
+            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.8rem; position: relative; overflow: hidden;">
+                📤 Nhập File Đánh Giá (Import)
+                <input type="file" id="import-file-input" style="position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;" onchange="importLocalStorageData(event)">
+            </button>
+        </div>
+    </header>
+
+    <!-- Top Layout: Control Panel & Leaderboard -->
+    <div class="main-grid">
+        <!-- Control Panel (Left) -->
+        <div class="card">
+            <h2 class="card-title">1. Chọn & Nạp Dữ Liệu</h2>
+            <div class="form-group">
+                <label for="sample-select">Danh sách 9 căn nhà mẫu (Tập kiểm thử):</label>
+                <select id="sample-select">
+                    <option value="" disabled selected>Chọn căn mẫu...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Nội dung văn bản tin thô đầu vào:</label>
+                <div id="raw-display" class="raw-display-box">Hãy chọn một căn nhà từ danh sách ở trên để hiển thị tin đăng thô.</div>
+            </div>
+            
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 10px;" onclick="openFormulaModal()">
+                📊 Xem Công Thức & Cách Tính Điểm
+            </button>
+        </div>
+
+        <!-- Leaderboard (Right) -->
+        <div class="card">
+            <h2 class="card-title">
+                🏆 Bảng Xếp Hạng Hiệu Năng Thực Tế (Live Leaderboard)
+            </h2>
+            <div style="overflow-x: auto;">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Hạng</th>
+                            <th>Mô Hình</th>
+                            <th>Điểm Tổng Hợp (Thang 100)</th>
+                            <th>Điểm Chuyên Gia (TC6)</th>
+                            <th>ROUGE-L (TC1)</th>
+                            <th>Specs Acc (TC3)</th>
+                            <th>BERTScore (TC2)</th>
+                            <th>Độ Trễ (TC4)</th>
+                            <th>Chi Phí (TC5)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <tr>
+                            <td colspan="9" style="text-align: center; color: var(--text-secondary); padding: 40px 0;">
+                                Đang tính toán dữ liệu xếp hạng...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ground Truth Editor Section -->
+    <div class="card gt-section">
+        <h2 class="card-title">2. Biên Tập Nhãn Chuẩn (Ground Truth Editor)</h2>
+        <div class="gt-grid">
+            <!-- Left GT Column: Description -->
+            <div class="form-group" style="display: flex; flex-direction: column; height: 100%;">
+                <label for="gt-desc">Mô tả chuẩn nhãn (Văn bản đích):</label>
+                <textarea id="gt-desc" placeholder="Chuyên gia điền mô tả chuẩn tại đây..." style="flex-grow: 1; min-height: 200px; height: 100%; resize: vertical;"></textarea>
+            </div>
+            <!-- Right GT Column: 9 Specs -->
+            <div>
+                <label style="margin-bottom: 10px;">Trích xuất thông số nhãn chuẩn (9 trường cốt lõi):</label>
+                <div class="specs-input-grid">
+                    <div class="form-group">
+                        <label for="gt-spec-duong">Đường</label>
+                        <input type="text" id="gt-spec-duong" placeholder="Tên đường">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-phuong">Phường</label>
+                        <input type="text" id="gt-spec-phuong" placeholder="Phường">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-quan">Quận</label>
+                        <input type="text" id="gt-spec-quan" placeholder="Quận">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-gia">Giá (tỷ)</label>
+                        <input type="number" id="gt-spec-gia" step="0.01" placeholder="Ví dụ: 12.8">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-dientich">Diện tích (m²)</label>
+                        <input type="number" id="gt-spec-dientich" step="0.1" placeholder="Ví dụ: 46.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-sotang">Số tầng</label>
+                        <input type="number" id="gt-spec-sotang" step="1" placeholder="Ví dụ: 4">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-ngang">Mặt tiền (m)</label>
+                        <input type="number" id="gt-spec-ngang" step="0.1" placeholder="Ví dụ: 4.6">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-dai">Chiều sâu (m)</label>
+                        <input type="number" id="gt-spec-dai" step="0.1" placeholder="Ví dụ: 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="gt-spec-hem">Phân loại hẻm</label>
+                        <select id="gt-spec-hem">
+                            <option value="Mặt tiền">Mặt tiền</option>
+                            <option value="Hẻm xe hơi">Hẻm xe hơi</option>
+                            <option value="Hẻm xe tải">Hẻm xe tải</option>
+                            <option value="Hẻm xe máy">Hẻm xe máy</option>
+                            <option value="Hẻm thông">Hẻm thông</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 10px;">
+                    <button id="update-gt-btn" class="btn" onclick="updateGroundTruth()" disabled>
+                        💾 Lưu & Cập Nhật Chỉ Số Tự Động
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Models Result Cards Area -->
+    <div class="comparison-title">
+        <h2>3. So Sánh Kết Quả & Độ Chính Xác Động</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">*Thông số tự động tô xanh lá nếu khớp Ground Truth, tô đỏ nếu sai lệch</span>
+    </div>
+    
+    <div class="models-container" id="models-cards-row">
+        <!-- 5 cards for models will be rendered dynamically -->
+    </div>
+
+    <!-- Expert Judging Ranking Panel -->
+    <div class="card rank-panel">
+        <h2 class="card-title" style="border-color: var(--accent-blue);">
+            🗳️ 4. Xếp Hạng & Chấm Chọn Winner (Anh Khang Chấm)
+        </h2>
+        <div class="rank-selector-row">
+            <div class="form-group">
+                <label for="winner-1">🥇 Hạng 1 (Mô hình tốt nhất - được 3 điểm):</label>
+                <select id="winner-1">
+                    <option value="" disabled selected>-- Chọn mô hình thắng giải Nhất --</option>
+                    <option value="Baseline">Baseline TextRank</option>
+                    <option value="GPT">GPT-4o mini API</option>
+                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="ViT5">ViT5 Fine-tuned</option>
+                    <option value="PhoBERT">PhoBERT Fine-tuned</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="winner-2">🥈 Hạng 2 (Đứng thứ hai - được 2 điểm):</label>
+                <select id="winner-2">
+                    <option value="" disabled selected>-- Chọn mô hình thắng giải Nhì --</option>
+                    <option value="Baseline">Baseline TextRank</option>
+                    <option value="GPT">GPT-4o mini API</option>
+                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="ViT5">ViT5 Fine-tuned</option>
+                    <option value="PhoBERT">PhoBERT Fine-tuned</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="winner-3">🥉 Hạng 3 (Đứng thứ ba - được 1 điểm):</label>
+                <select id="winner-3">
+                    <option value="" disabled selected>-- Chọn mô hình thắng giải Ba --</option>
+                    <option value="Baseline">Baseline TextRank</option>
+                    <option value="GPT">GPT-4o mini API</option>
+                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="ViT5">ViT5 Fine-tuned</option>
+                    <option value="PhoBERT">PhoBERT Fine-tuned</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="review-comment">Nhận xét chi tiết của Chuyên gia:</label>
+            <textarea id="review-comment" placeholder="Điền lý do xếp hạng hoặc nhận xét lỗi cụ thể của từng phiên bản tại đây..." rows="3"></textarea>
+        </div>
+        <div style="text-align: right;">
+            <button id="save-review-btn" class="btn" onclick="saveExpertReview()" disabled>
+                🗳️ Gửi & Tích Lũy Bảng Xếp Hạng
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Formula & Weightings -->
+<div class="modal-overlay" id="formula-modal-overlay" onclick="closeFormulaModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeFormulaModal()">&times;</button>
+        <h2 style="margin-bottom: 15px; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+            📊 Cách Tính Điểm & Tỷ Trọng 6 Tiêu Chí
+        </h2>
+        <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-secondary);">
+            Để xếp hạng tổng hợp hiệu năng của 5 mô hình trên Live Leaderboard, hệ thống chuẩn hóa tất cả tiêu chí về thang điểm 100 và áp dụng tỷ trọng như sau:
+        </p>
+        
+        <table class="leaderboard-table" style="margin: 15px 0;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px 4px;">Tiêu chí</th>
+                    <th style="padding: 8px 4px; text-align: center;">Tỷ trọng</th>
+                    <th style="padding: 8px 4px;">Phương pháp quy đổi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>TC6: Chuyên gia xếp hạng</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold; background: rgba(59, 130, 246, 0.1);">35%</td>
+                    <td>Nhất = 100đ, Nhì = 66đ, Ba = 33đ, còn lại = 0đ (sau đó tính trung bình).</td>
+                </tr>
+                <tr>
+                    <td><b>TC3: Độ chính xác thông số</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold; background: rgba(59, 130, 246, 0.1);">25%</td>
+                    <td>Tỷ lệ % số trường thông số trích xuất đúng so với Ground Truth (9 trường).</td>
+                </tr>
+                <tr>
+                    <td><b>TC2: Độ tương đồng ngữ nghĩa</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">15%</td>
+                    <td>Điểm BERTScore trung bình lịch sử thu được trên tập dữ liệu.</td>
+                </tr>
+                <tr>
+                    <td><b>TC1: Độ chính xác từ vựng</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">15%</td>
+                    <td>Điểm ROUGE-L trung bình giữa mô tả mô hình sinh ra và Ground Truth.</td>
+                </tr>
+                <tr>
+                    <td><b>TC4: Tốc độ xử lý</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">5%</td>
+                    <td>Độ trễ trung bình: 0s = 100đ, tăng lên giảm dần (>=10s = 0đ).</td>
+                </tr>
+                <tr>
+                    <td><b>TC5: Chi phí vận hành</b></td>
+                    <td style="text-align: center; color: #FFF; font-weight: bold;">5%</td>
+                    <td>Quy đổi: chạy offline local = 100đ, gọi API có phí = 85-90đ.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="formula-card">
+            <b>Công thức tính Điểm Tổng Hợp:</b><br>
+            <code style="display: block; margin-top: 8px; font-size: 0.95rem; color: #60A5FA; font-weight: bold; word-break: break-all;">
+                Điểm = 35%*TC6 + 25%*TC3 + 15%*TC2 + 15%*TC1 + 5%*TC4 + 5%*TC5
+            </code>
+        </div>
+        
+        <div style="text-align: right; margin-top: 20px;">
+            <button class="btn" onclick="closeFormulaModal()">Đóng Cửa Sổ</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">Đã thực hiện thao tác!</div>
+
+<script>
+    // ══════════════════════════════════════════════════════════════════════════════
+    // EMBEDDED DATABASES FOR PURE STATIC RUN
+    // ══════════════════════════════════════════════════════════════════════════════
+    const DATABASE = {"samples": {"SYS-MP75Z7G0-H3": {"id": "SYS-MP75Z7G0-H3", "label": "SYS-MP75Z7G0-H3 - Cao Thắng 44.7/50 5 4.5 11 11.9 tỷ Hòa Hưng Quận 10 10-...", "raw_input": "Cao Thắng 44.7/50 5 4.5 11 11.9 tỷ Hòa Hưng Quận 10 10-15 tỷ HĐ Nguyễn Duy Bảo Thiên Địa  H3GB nguồn Đầu chủ Nguyễn Duy Bảo - Thiên Địa\n✨ 4/5/2026 Chủ đã đồng ý giảm 600tr 👉 Giá mới 11.9 Tỷ. Chốt 🤝\n\n👉 Chú ý: ACE đi khảo sát vui lòng chụp 1 ảnh selfie 🤳 gửi ĐC để nhận sổ nhé. Chốt 🤝\n\nNHÀ ĐẸP TRUNG TÂM QUẬN 10 – HẺM XE HƠI CAO THẮNG – KHU DÂN TRÍ CAO - AN NINH ĐỈNH\n\nMột căn nhà hiếm ở trung tâm Cao Thắng – Quận 10, nơi vừa đủ yên tĩnh để ở nhưng chỉ vài phút là chạm đến nhịp sống sôi động của trung tâm thành phố.\n\nThông tin chi tiết:\n\nĐịa chỉ: Cao Thắng, Phường 12, Quận 10\n\n📍Vị trí: Tọa lạc tại khu Cao Thắng – Ba Tháng Hai – Nguyễn Tri Phương, khu vực trung tâm Quận 10 với đầy đủ tiện ích:\n\nTrường học – bệnh viện – trung tâm thương mại – nhà hàng – quán cà phê – tất cả trong bán kính vài phút di chuyển.\n\n• Diện tích đất: 44.7m²\n\n• Diện tích sàn: 186.4m²\n\n• Kết cấu: 1 trệt + lửng + 3 lầu (5 tầng)\n\n• Nhà xây kiên cố, sàn BTCT – mái BTCT, móng đóng cọc, chính chủ xây dựng tâm huyết trong 6 tháng.\n\n+ Trệt: Phòng khách rộng, trần cao thoáng đãng, có 1 PN phía sau, 1 WC.\n\n+ Lửng: Bếp và phòng ăn thiết kế gọn gàng, tiện nghi.\n\n+ Lầu 1 - 2: mỗi tầng 2 phòng ngủ thoáng sáng, có ban công, cửa sổ, 2 WC khép kín.\n\n👉 Tổng: 5 PN 5 WC\n\n• Pháp lý: Sổ hồng riêng – đất ở đô thị – sở hữu lâu dài\n\n• Nhà được chăm chút kỹ lưỡng, có thể vào ở ngay\n\n✨ Phù hợp:\n\n• Gia đình ở lâu dài\n\n• Mua giữ tài sản trung tâm\n\n• Kết hợp ở và làm văn phòng\n\n💰 Giá bán: 12.5 tỷ (TL)\n\n---\n\nACE khảo sát dẫn khách theo qui trình Cty. Alô PP Bảo 24/7 để được hỗ trợ kịp thời. Chúc ACE hái🌹rực rỡ.\n\nBBK\n\nChuẩn mực từng giao dịch"}, "SYS-MP75ZR8R-C4": {"id": "SYS-MP75ZR8R-C4", "label": "SYS-MP75ZR8R-C4 - Cao Thắng 39 4 5.3 8 14.58 tỷ Hòa Hưng Quận 10 10-15 tỷ...", "raw_input": "Cao Thắng 39 4 5.3 8 14.58 tỷ Hòa Hưng Quận 10 10-15 tỷ HĐ Phạm Văn Hà (Đầu chủ) Thiên Quân  H3GB nguồn Hội đồng thẩm định\nHẠ 220tr - Giá mới 14.58 tỷ chốt nhanh Anh chị em ơi \n\nHÀNG HIẾM CAO THẮNG - QUẬN 10 - HOÀ HƯNG \n\n39m2 - 4 tầng - Mới - FULL Nội thất - NGANG 5.32m \n\n\n\n\nCao Thắng 39 4 5.32 7.5 14.8 tỷ Hoà Hưng, HCM ( Quận 10 cũ ) HĐ TP Hà - phòng Thiên Quân - , Hoa Hồng 3GB , Nguồn HĐTĐ \n\n\n\n\nMô tả : \n\n- Nhà mới leng keng THIẾT KẾ HIỆN ĐẠI\n\n- Sân để xe \n\n- Phòng khách bếp LỚN, 2PN khép kín ( có thể thiết kế thành 3pn) 3WC, Sân thượng \n\n- 📍 Tiện ích xung quanh:\n\n        •        Ngay trung tâm Quận 10, gần Cao Thắng\n\n        •        Gần chợ, siêu thị, trường học\n\n        •        Di chuyển nhanh Quận 1, Quận 3, Quận 5\n\n        •        Khu dân cư đông đúc, tiện ở & kinh doanh nhỏ\n\n\n\n\n💣 Điểm nổi bật căn nhà:\n\n        •        Ngang 5.3m hiếm trong khu 🔥\n\n        •        Nhà 4 tầng mới, full nội thất – vào ở ngay\n\n        •        Hẻm ba gác thông, cách xe hơi chỉ 15m\n\n        •        Không lộ giới – giữ giá lâu dài\n\n👉 Vị trí trung tâm + ngang lớn + nhà mới = hàng hiếm dễ chốt\n\n\n\n\n\n\n\n📜 Sổ hồng 2026  chính chủ  – pháp lý chuẩn - hoàn công đủ  – công chứng trong ngày\n\n- - - - 💥💥- - - - GIÁ TỐT - ⚡️⚡️CHỐT BẤT CHẤP ,\n\n- - - - 👉👉👉👉👉BÁN GẤP ,\n\n🌹🌹🌹🌹- - - ANH CHỊ EM CHỐT NHANH,\n\n- ,\n\n✈️✈️✈️Anh chị em khảo sát, dẫn khách đúng quy trình Công ty, báo trước ĐC Hà 60 phút để được hỗ trợ tốt nhất. Anh em dẫn khách nói bên Hà để đảm bảo HOA HỒNG. ,\n\nChúc anh em chốt rực rỡ🌹🌹🌹🌹🌹"}, "SYS-MP760LYQ-AC": {"id": "SYS-MP760LYQ-AC", "label": "SYS-MP760LYQ-AC - Cao Thắng 60 3 5 12 15.5 tỷ Hòa Hưng Quận 10 15-25 tỷ H...", "raw_input": "Cao Thắng 60 3 5 12 15.5 tỷ Hòa Hưng Quận 10 15-25 tỷ HĐ Nguyễn Văn Thư_ĐC Cát Linh  H3GB nguồn Đầu chủ Nguyễn Văn Thư_ĐC - Cát Linh\nHXH 5M ÔTÔ VÀO NHÀ  - KHU HÀ ĐÔ QUẬN 10 - 5 CĂN HỘ MINI (ĐANG CHO THUÊ 65TR/THÁNG)!\n\n\nCao Thắng 60 3 5 12 15.5 tỷ, phường 12 quận 10 (nay là phường Hòa Hưng), 15 đến 25, HĐ GĐ Thư khối Cát Linh, , HH3GB, nguồn GĐ Thư.\nMô tả:\n(ACE dẫn khách đi hẻm 392.20 Cao Thắng) \n+ Kết cấu: Trệt 2 lầu BTCT chắc chắn, gồm 5 căn hộ mini (mỗi căn hộ gồm: 2PN mỗi phòng ngủ đều có máy lạnh riêng, TC 10PN nhỏ, wc, phòng khách, bếp), trang bị đầy đủ nội thất cao cấp gồm giường tủ, bếp, bàn ghế, ... \n+ Nhà hiện tại đang cho thuê 13tr/căn hộ; 65tr/tháng (số chính xác 100% ACE tự tin tư vấn khách), có phòng để xe cho khách rất thoáng.\n+ Nhà 2 mặt hẻm rộng rãi, xe hơi vào nhà, hẻm 5m. Không bị lộ giới, vuông vức.\n+ Vị trí ngay Hà Đô nổi tiếng nhất quận 10, Trung tâm của Trung tâm.\n+ Sổ vuông vức, thông số đẹp. Hoàn công đầy đủ.\n+ Chủ hợp tác, ACE dẫn khách chuẩn quy trình, chúc ACE sớm thu bông rực rỡ."}, "SYS-MP760YOH-BW": {"id": "SYS-MP760YOH-BW", "label": "SYS-MP760YOH-BW - Đồng Nai 71.2 5 4.3 17 22.8 tỷ Hòa Hưng Quận 10 15-25 t...", "raw_input": "Đồng Nai 71.2 5 4.3 17 22.8 tỷ Hòa Hưng Quận 10 15-25 tỷ HĐ Ngô Thiên Vân_ĐC Mạnh Phát  H3GB nguồn Đầu chủ Ngô Thiên Vân_ĐC - Mạnh Phát\n💥💥💥NHÀ SIÊU ĐẸP - 5 TẦNG - CĂN GÓC HẺM 6M - CÓ THANG MÁY - 1/ ĐỒNG NAI TRỤC THẲNG CHỈ 30M KHU VỰC HÓT NHẤT TRUNG TÂM QUẬN 10 - CHỈ HƠN 22 TỶ 😍😍😍\n\n\n\n\n📍Đồng Nai - Phường 15 ( P. Hòa Hưng mới) - Quận 10 - Tp.HCM\n\n\n\n\nDT đất: 71.2 m2 ( 4.3m x 17m )\nDT sử dụng: 341 m2\nKết cấu nhà BTCT hiện đại: 1 trệt + 4 lầu - Có thang máy: 600kg / 8 - 10 người\nNhà hướng: Đông Nam ( mát mẻ quanh năm )\nHiện đang có hợp đồng thuê khoán CHDV: 50tr tháng ( 600tr/ năm ). \nHợp đồng thuê còn hơn 02 năm. Khách mua nhà có quyền lựa chọn: 1/ Duy trì hợp đồng cho thuê CHDV\n2/ Nhận nhà trống giao ngay\nThuận tiện di chuyển nhanh vài phút đến các trục đường chính: Tô Hiến Thành; Sư Vạn Hạnh; Thành Thái; Trường Sơn; CMT8; Bắc Hải; Lý Thường Kiệt...\nKhu vực sầm uất - An ninh - Không ngập nước. Thích hợp kinh doanh đa ngành nghề...\nTiện ích xung quanh: Gần chợ, Siêu thị, Trường học, Bệnh viện, Công viên, Nhà hàng, Quán ăn, Cà phê...\nPháp lý chuẩn - Sổ hồng chính chủ - Công chứng trong ngày - Nhà 1 đời chủ - chủ có hỗ trợ vay NH\n\n👉 Khách xem báo ĐC 30p để được hỗ trợ tốt nhất nhé!"}, "SYS-MP761FGI-DF": {"id": "SYS-MP761FGI-DF", "label": "SYS-MP761FGI-DF - Phạm Ngọc Thạch 36 5 3 12 13.99 tỷ Xuân Hòa Quận 3 10-1...", "raw_input": "Phạm Ngọc Thạch 36 5 3 12 13.99 tỷ Xuân Hòa Quận 3 10-15 tỷ HĐ Nguyễn Tri Phúc Thiên Ân 0909761320 H3GB nguồn Đầu chủ Nguyễn Tri Phúc - Thiên Ân\nKHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN 3 - 36m2 - HẺM XE HƠI THÔNG ĐIỆN BIÊN PHỦ,VÕ THỊ SÁU - 5 TẦNG 8PN ĐANG KINH DOANH SPA - CHỈ 13TY99 TL NHẸ\n\n\n\n\nPhạm Ngọc Thạch 36 5 3 12 13,99 tỷ Phường Xuân Hoà Quận 3  HĐ ĐC Tri Phúc - Khối THIÊN ÂN  HH 3% - Nguồn ĐC Tri Phúc \n\nMô tả : \n\n📐 Diện tích: 3 x 12m\n\n🏢 Kết cấu: 1 trệt 4 lầu – 8 phòng, 4 WC\n\n✨ Ban công thoáng – nhà xây mới, phong cách hiện đại, tông trắng sáng\n\n💼 Phù hợp nhiều mục đích:\n\n• Kinh doanh spa, văn phòng, studio, dịch vụ\n\n• Cho thuê phòng / căn hộ dịch vụ\n\n• Nhà ở trung tâm thành phố\n\n📍 Vị trí cực kỳ thuận tiện:\n\nGần Nhà Thờ Tân Định, Dinh Độc Lập, Chợ Tân Định, Công Viên Lê Văn Tám và nhiều khu vực trung tâm.\n\n🌿 Nằm trong khu vực sầm uất nhưng vẫn đảm bảo sự yên tĩnh và an ninh.\n\n💰 Giá bán: 13Ty99 BL – Sổ đỏ đầy đủ, làm việc chính chủ\n\n\n\n\n🌹🌹Chúc ACE sức khỏe, chốt bùng nổ, xem nhà báo  Đầu chủ  Tri Phúc 59’ \n\nFacebook :  \nVào app ACE tìm từ khóa\n\n💥 Chúc ACE Thiên Khôi chốt nhà bùng nổ ♥"}, "SYS-MP762B6J-5": {"id": "SYS-MP762B6J-5", "label": "SYS-MP762B6J-5 - Đặng Văn Ngữ 98 2 4 26 16 tỷ Phú Nhuận Phú Nhuận 15-25 ...", "raw_input": "Đặng Văn Ngữ 98 2 4 26 16 tỷ Phú Nhuận Phú Nhuận 15-25 tỷ HĐ Huỳnh Công Thạch_ĐC Thiên Thổ  H3GB nguồn Đầu chủ Huỳnh Công Thạch_ĐC - Thiên Thổ\nCHỦ GIẢM MẠNH 2 TỶ 5 GIÁ MỚI 16Tỷ\n\n\n\n\n\n\n\n🎉MẶT TIỀN ĐẶNG VĂN NGỮ PHÚ NHUẬN- GẦN 100M2 - 3 TẦNG 18 TỶ CHÚT🎉\n\n\n\n\nĐặng Văn Ngữ 98 3 4 24 18.5tỷ, Phường Phú Nhuận TPHCM HĐ 15 đến 18 TP Công Thạch -phòng Thiên Thổ, , Hoa hồng 3% giá bán , nguồn TP Công Thạch.\n\n\n\n\n✴️Mô tả :\n\n\n\n\n✅Kết cấu: 1 trệt , lầu , sân thượng giống lửng, 5pn , 3wc ,Nhà mặt tiền Đặng Văn Ngữ đoạn đẹp và sầm uất nhất Phú Nhuận, đang chi thuê kinh doanh Bún Đậu Mắm Tôm \n\n\n\n\n✅ Vị trí :ngay Đặng Văn Ngữ ... , các trục đường lớn, tiện di chuyển khắp nơi, gần chợ , Siu Thị  , trường học...\n\n\n\n\nLink FB -   \n\n\n\n\n✅xem nhà alo trước TP Thạch 30p.\n\n\n\n\n✅ Pháp lý chuẩn, công chứng ngay, sổ chủ cất két rất an toàn.\n\n\n\n\n✴️ĐẶC BIỆT : TƯ VẤN PHÁP LÝ , NHẬN LÀM TẤT CẢ GIẤY TỜ LIÊN QUAN TỚI NHÀ ĐẤT✴️\n\n\n\n\n\n\n\n\n\n🤝ACE khảo sát - để nắm được tất cả điểm mạnh và yếu của căn nhà . TP đã chuẩn bị sẵn giấy cọc chờ ACE đến thu 🌹🌹🌹"}, "SYS-MP7634YK-9F": {"id": "SYS-MP7634YK-9F", "label": "SYS-MP7634YK-9F - Nguyễn Thiện Thuật 31.8 2 3 11 7.8 tỷ Bàn Cờ Quận 3 5-1...", "raw_input": "Nguyễn Thiện Thuật 31.8 2 3 11 7.8 tỷ Bàn Cờ Quận 3 5-10 tỷ HĐ Lê Hữu Thời Như Ý  H3GB nguồn Đầu chủ Lê Hữu Thời - Như Ý\nHKĐC- Ký với mẹ,người quyết định giá.(uỷ quyền).\n\nNhà mới sửa lại , chủ tặng toàn bộ nội thất 100%.Hình nhà mới và video clip anh em cập nhật lại nhé.\n\nNguyễn Thiện Thuật 32 2 3 11 7.8 Tỷ Phường Bàn Cờ TPHCM 5-10 Tỷ HĐ Lê Hữu Thời Phòng Như Ý  Nguồn ĐC Lê Hữu Thời Như Ý Hoa Hồng 3% Giá Bán.\n\nBán nhà hẻm xe hơi thông ngay khu vực trung tâm Quận 3, Diện Tích 3x11x 2 Tầng, hoàn công đủ. Hiện trạng nhà cũ, chủ xác định bán đất tặng nhà. Nhà nằm ngay khu vực chợ Băn Cờ - Nguyễn Thiện Thuật , khãh mua ở tiện kinh doanh buôn bán.\n\nPháp lý : sổ hồng hoàn công đủ, nhà mới xoá thế chấp ngân hàng.\n\nAnh em cần khảo sát theo hẻm 84 Bàn Cờ hoặc 114 Bàn Cờ rất đẹp, chủ nhà đang đi du lịch đến 15/7 mới về nhà nên anh em tư vấn khách xem vị trú và pháp lý sổ. Khi dẫn khách thực hiện theo qui trình chuẩn của Công Ty. Liên hệ trước 60p với ĐC Thời để được hổ trợ tốt nhất. Chúc anh em sớm chốt nhà và bùng nổ."}, "SYS-MP7635C7-K7": {"id": "SYS-MP7635C7-K7", "label": "SYS-MP7635C7-K7 - Võ Văn Tần 25.4/35.5 5 2.9 12 7.5 tỷ Bàn Cờ Quận 3 5-10...", "raw_input": "Võ Văn Tần 25.4/35.5 5 2.9 12 7.5 tỷ Bàn Cờ Quận 3 5-10 tỷ HĐ Nguyễn Trung Hiếu Tây Đô  H3GB nguồn Hội đồng thẩm định\n🌹KHU VIP Q3 - 5 TẦNG - CHỐT NHANH ACE ƠI💥💥\n\n\n\n\n✅ Kết cấu: 1 trệt 1 lửng 2 lầu sân thượng gồm 5pn 4wc. Nhà mới đẹp ở ngay, tặng full nội thất\n\n\n\n\n✅ Diện tích: ngang 2.97m dài 12m. Hẻm thoáng mát sạch sẽ, khu an ninh dân trí, cách mặt tiền 15m\n\n\n\n\n✅ Pháp lý: Chuẩn, Sổ hồng công chứng nhanh\n\n\n\n\n💡LƯU Ý : ,,\n\n\n\n\n💥💥💥 Anh chị em ký phiếu YCDV dẫn khách theo quy trình công ty. Đầu chủ Nguyễn Hiếu đã soạn sẵn HĐ Đặt cọc, chỉ chờ anh em Thiên Khôi đến ký.✍️✍️✍️,,🌹🌹🌹🌹💥💥💥🌹🌹🌹🌹"}, "SYS-MP7637OS-RJ": {"id": "SYS-MP7637OS-RJ", "label": "SYS-MP7637OS-RJ - Nguyễn Thiện Thuật 36/40 2 3.5 11 7.3 tỷ Bàn Cờ Quận 3 ...", "raw_input": "Nguyễn Thiện Thuật 36/40 2 3.5 11 7.3 tỷ Bàn Cờ Quận 3 5-10 tỷ HĐ Trần Nguyễn Phúc Khương_ĐC Hắc Long  H3GB nguồn Đầu chủ Trần Nguyễn Phúc Khương_ĐC - Hắc Long\nNgày 29/04/2026 chủ giảm chào 200tr, giá chào mới 7.3 tỷ.\n\n🔥[QUẬN 3] NGỘP HXH NGUYỄN THIỆN THUẬT NH ĐỊNH GIÁ 10TỶ - 40M2 - 2TẦNG BTCT - 7.3 TỶ TL\n\n\n\n\n\n✔️MÔ TẢ:\n\n✅ Hiện trạng: 1 Trệt, 1 Lầu BTCT, DT: 3.5m x Dài 11m nở hậu 4m (2PN + 2WC) \n\n✅ Vị Trí: Hẻm xe hơi thông, đối diện CC Nguyễn Thiện Thuật, Nguyễn Đình Chiểu. \n\n✅ Pháp lý: Sổ hồng riêng, hoàn công đủ đang vay. Ngân hàng định giá 10Tỷ. \n\n\n\n\n\n👏AE khảo sát báo cáo dẫn khách đúng quy trình Cty ký phiếu YCCCDV, Khách xem báo trước Trưởng phòng Khương 60phút để chuẩn bị hỗ trợ tốt nhất. \n\n💥Chúc ACE chốt nhà bùng nổ. Mong kết duyên cùng AE."}}, "models": {"Baseline": {"SYS-MP75Z7G0-H3": {"title": "Địa chỉ: Cao Thắng, Phường Quận 10 - Hẻm thông", "description": "Địa chỉ: Cao Thắng, Phường 12, Quận 10 📍Vị trí: Tọa lạc tại khu Cao Thắng – Ba Tháng Hai – Nguyễn Tri Phương, khu vực trung tâm Quận 10 với đầy đủ tiện ích: + Lầu 1 - 2: mỗi tầng 2 phòng ngủ thoáng sáng, có ban công, cửa sổ, 2 WC khép kín.", "specs": {"duong": "Địa chỉ: Cao Thắng, Phường", "phuong": null, "quan": "Quận 10", "gia_ty": null, "dien_tich_m2": null, "so_tang": null, "mat_tien_m": null, "chieu_sau_m": null, "phan_loai_hem": "Hẻm thông"}, "latency": 0.00987, "cost": "0đ"}, "SYS-MP75ZR8R-C4": {"title": "HẠ Quận 10 - Hẻm thông - 14.58 Tỷ", "description": "HẠ 220tr - Giá mới 14.58 tỷ chốt nhanh Anh chị em ơi •        Ngay trung tâm Quận 10, gần Cao Thắng 📜 Sổ hồng 2026  chính chủ  – pháp lý chuẩn - hoàn công đủ  – công chứng trong ngày", "specs": {"duong": "HẠ", "phuong": null, "quan": "Quận 10", "gia_ty": 14.58, "dien_tich_m2": null, "so_tang": null, "mat_tien_m": null, "chieu_sau_m": null, "phan_loai_hem": "Hẻm thông"}, "latency": 0.00727, "cost": "0đ"}, "SYS-MP760LYQ-AC": {"title": "HXH Quận 10 - Hẻm xe hơi - 2 tầng", "description": "HXH 5M ÔTÔ VÀO NHÀ  - KHU HÀ ĐÔ QUẬN 10 - 5 CĂN HỘ MINI (ĐANG CHO THUÊ 65TR/THÁNG)! + Kết cấu: Trệt 2 lầu BTCT chắc chắn, gồm 5 căn hộ mini (mỗi căn hộ gồm: 2PN mỗi phòng ngủ đều có máy lạnh riêng, TC 10PN nhỏ, wc, phòng khách, bếp), trang bị đầy đủ nội thất cao cấp gồm giường tủ, bếp, bàn ghế, ... + Vị trí ngay Hà Đô nổi tiếng nhất quận 10, Trung tâm của Trung tâm.", "specs": {"duong": "HXH", "phuong": null, "quan": "Quận 10", "gia_ty": null, "dien_tich_m2": null, "so_tang": 2, "mat_tien_m": null, "chieu_sau_m": null, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.00586, "cost": "0đ"}, "SYS-MP760YOH-BW": {"title": "Quận 10 - 5.0m2 (1.0x30.0) - Hẻm thông - 6 tầng - 10.0 Tỷ", "description": "💥💥💥NHÀ SIÊU ĐẸP - 5 TẦNG - CĂN GÓC HẺM 6M - CÓ THANG MÁY - 1/ ĐỒNG NAI TRỤC THẲNG CHỈ 30M KHU VỰC HÓT NHẤT TRUNG TÂM QUẬN 10 - CHỈ HƠN 22 TỶ 😍😍😍 📍Đồng Nai - Phường 15 ( P. Hòa Hưng mới) - Quận 10 - Tp.HCM Pháp lý chuẩn - Sổ hồng chính chủ - Công chứng trong ngày - Nhà 1 đời chủ - chủ có hỗ trợ vay NH", "specs": {"duong": null, "phuong": null, "quan": "Quận 10", "gia_ty": 10.0, "dien_tich_m2": 5.0, "so_tang": 6, "mat_tien_m": 1.0, "chieu_sau_m": 30.0, "phan_loai_hem": "Hẻm thông"}, "latency": 0.00771, "cost": "0đ"}, "SYS-MP761FGI-DF": {"title": "KHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN Quận 3 - 3.0m2 (2.0x5.0) - Hẻm xe hơi - 36 tầng - 8.0 Tỷ", "description": "KHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN 3 - 36m2 - HẺM XE HƠI THÔNG ĐIỆN BIÊN PHỦ,VÕ THỊ SÁU - 5 TẦNG 8PN ĐANG KINH DOANH SPA - CHỈ 13TY99 TL NHẸ Phạm Ngọc Thạch 36 5 3 12 13,99 tỷ Phường Xuân Hoà Quận 3  HĐ ĐC Tri Phúc - Khối THIÊN ÂN  HH 3% - Nguồn ĐC Tri Phúc Gần Nhà Thờ Tân Định, Dinh Độc Lập, Chợ Tân Định, Công Viên Lê Văn Tám và nhiều khu vực trung tâm.", "specs": {"duong": "KHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN", "phuong": "Phường Xuân Hoà", "quan": "Quận 3", "gia_ty": 8.0, "dien_tich_m2": 3.0, "so_tang": 36, "mat_tien_m": 2.0, "chieu_sau_m": 5.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.00654, "cost": "0đ"}, "SYS-MP762B6J-5": {"title": "Phú Nhuận - 100.0m2 (3.0x18.0) - Mặt tiền - 2 tầng - 1.0 Tỷ", "description": "🎉MẶT TIỀN ĐẶNG VĂN NGỮ PHÚ NHUẬN- GẦN 100M2 - 3 TẦNG 18 TỶ CHÚT🎉 ✅Kết cấu: 1 trệt , lầu , sân thượng giống lửng, 5pn , 3wc ,Nhà mặt tiền Đặng Văn Ngữ đoạn đẹp và sầm uất nhất Phú Nhuận, đang chi thuê kinh doanh Bún Đậu Mắm Tôm ✅ Vị trí :ngay Đặng Văn Ngữ ... , các trục đường lớn, tiện di chuyển khắp nơi, gần chợ , Siu Thị  , trường học...", "specs": {"duong": null, "phuong": null, "quan": "Phú Nhuận", "gia_ty": 1.0, "dien_tich_m2": 100.0, "so_tang": 2, "mat_tien_m": 3.0, "chieu_sau_m": 18.0, "phan_loai_hem": "Mặt tiền"}, "latency": 0.00504, "cost": "0đ"}, "SYS-MP7634YK-9F": {"title": "Nhà mới sửa lại , chủ tặng toàn bộ nội thất Quận 3 - Hẻm xe hơi - 2 tầng", "description": "Nhà mới sửa lại , chủ tặng toàn bộ nội thất 100%.Hình nhà mới và video clip anh em cập nhật lại nhé. Bán nhà hẻm xe hơi thông ngay khu vực trung tâm Quận 3, Diện Tích 3x11x 2 Tầng, hoàn công đủ. Pháp lý : sổ hồng hoàn công đủ, nhà mới xoá thế chấp ngân hàng.", "specs": {"duong": "Nhà mới sửa lại , chủ tặng toàn bộ nội thất", "phuong": null, "quan": "Quận 3", "gia_ty": null, "dien_tich_m2": null, "so_tang": 2, "mat_tien_m": 3.0, "chieu_sau_m": 11.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.00367, "cost": "0đ"}, "SYS-MP7635C7-K7": {"title": "Hẻm thông - 5 tầng", "description": "🌹KHU VIP Q3 - 5 TẦNG - CHỐT NHANH ACE ƠI💥💥 ✅ Diện tích: ngang 2.97m dài 12m. Hẻm thoáng mát sạch sẽ, khu an ninh dân trí, cách mặt tiền 15m", "specs": {"duong": null, "phuong": null, "quan": null, "gia_ty": null, "dien_tich_m2": null, "so_tang": 5, "mat_tien_m": 2.97, "chieu_sau_m": 12.0, "phan_loai_hem": "Hẻm thông"}, "latency": 0.00374, "cost": "0đ"}, "SYS-MP7637OS-RJ": {"title": "Quận 3 - 3.0m2 (40.0x2.0) - Hẻm xe hơi - 10 tầng - 2.0 Tỷ", "description": "🔥[QUẬN 3] NGỘP HXH NGUYỄN THIỆN THUẬT NH ĐỊNH GIÁ 10TỶ - 40M2 - 2TẦNG BTCT - 7.3 TỶ TL ✅ Pháp lý: Sổ hồng riêng, hoàn công đủ đang vay. Ngân hàng định giá 10Tỷ.", "specs": {"duong": null, "phuong": null, "quan": "Quận 3", "gia_ty": 2.0, "dien_tich_m2": 3.0, "so_tang": 10, "mat_tien_m": 40.0, "chieu_sau_m": 2.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.00359, "cost": "0đ"}}, "GPT": {"SYS-MP75Z7G0-H3": {"title": "Nhà đẹp hẻm xe hơi Cao Thắng Quận 10 - 44.7m2 (5 tầng) - 11.9 Tỷ | An ninh, tiện ích đầy đủ", "description": "**CĂN NHÀ HIẾM HOI TẠI TRUNG TÂM QUẬN 10 - GIÁ GIẢM CÒN 11.9 TỶ**\n\n– **Địa chỉ:** Cao Thắng, Phường 12, Quận 10. Vị trí đắc địa, nằm trong khu vực Cao Thắng – Ba Tháng Hai – Nguyễn Tri Phương, gần các tiện ích như trường học, bệnh viện, trung tâm thương mại, nhà hàng và quán cà phê, tất cả chỉ trong bán kính vài phút di chuyển.\n\n– **Diện tích:** 44.7m², diện tích sàn lên đến 186.4m².\n\n– **Kết cấu:** Nhà 1 trệt + lửng + 3 lầu (tổng cộng 5 tầng). Xây dựng kiên cố với móng đóng cọc, sàn và mái BTCT. Thiết kế thông minh, bao gồm:\n  - **Trệt:** Phòng khách rộng rãi, trần cao thoáng đãng, 1 phòng ngủ phía sau và 1 WC.\n  - **Lửng:** Bếp và phòng ăn tiện nghi, gọn gàng.\n  - **Lầu 1 - 2:** Mỗi tầng có 2 phòng ngủ sáng thoáng, ban công, cửa sổ, và 2 WC khép kín.\n\n– **Tổng số phòng:** 5 phòng ngủ, 5 WC.\n\n– **Pháp lý:** Sổ hồng riêng, đất ở đô thị, sở hữu lâu dài, pháp lý rõ ràng.\n\n– **Tình trạng:** Nhà được chăm chút kỹ lưỡng, có thể vào ở ngay.\n\n**Phù hợp cho:**\n- Gia đình ở lâu dài.\n- Đầu tư giữ tài sản tại trung tâm.\n- Kết hợp ở và làm văn phòng.\n\n**GIÁ BÁN:** 11.9 tỷ (thương lượng).\n\n**Lưu ý:** Quý khách vui lòng chụp ảnh selfie khi khảo sát để nhận sổ. Liên hệ ngay với PP Bảo để được hỗ trợ tốt nhất. Chúc quý khách giao dịch thành công! 🌹", "specs": {}, "latency": 7.18, "cost": "~17đ"}, "SYS-MP75ZR8R-C4": {"title": "Bán nhà Cao Thắng, Quận 10 - 39m2 (5.32x7.5) - 14.58 Tỷ | Nhà mới full nội thất", "description": "HÀNG HIẾM TẠI CAO THẮNG, QUẬN 10 - CHỈ 14.58 TỶ\n\n– Vị trí: Nhà nằm trên đường Cao Thắng, Phường Hòa Hưng, Quận 10. Vị trí trung tâm, gần chợ, siêu thị và trường học, thuận tiện di chuyển đến Quận 1, Quận 3, Quận 5.\n\n– Diện tích: 39m2 (5.32m x 7.5m), chiều ngang lớn 5.32m là lợi thế hiếm có trong khu vực.\n\n– Kết cấu: Nhà 4 tầng mới, thiết kế hiện đại, đầy đủ nội thất. Gồm 2 phòng ngủ khép kín (có thể thiết kế thành 3 phòng ngủ), 3 WC, phòng khách và bếp lớn, sân thượng thoáng mát. \n\n– Tiện ích: Sân để xe, hẻm ba gác thông, cách xe hơi chỉ 15m. Khu dân cư đông đúc, phù hợp để ở hoặc kinh doanh nhỏ.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng trong ngày.\n\n– GIÁ: 14.58 tỷ (TL). \n\nĐây là cơ hội hiếm có với vị trí đắc địa, thiết kế hiện đại và pháp lý rõ ràng. Liên hệ ngay để được hỗ trợ tốt nhất và chốt nhanh căn nhà này!", "specs": {}, "latency": 5.2, "cost": "~14đ"}, "SYS-MP760LYQ-AC": {"title": "Cao Thắng Quận 10 - 60m2 (3x12) - 5 Căn Hộ Mini - 15.5 Tỷ | Đầu tư sinh lời cao", "description": "**CƠ HỘI ĐẦU TƯ TẠI KHU HÀ ĐÔ QUẬN 10 - HẺM XE HƠI 5M Ô TÔ VÀO NHÀ**\n\n– **Vị trí:** Hẻm 392.20 Cao Thắng, Phường Hòa Hưng, Quận 10. Nằm trong khu vực trung tâm, gần các tiện ích như chợ, trường học, bệnh viện và các trục đường lớn, thuận tiện di chuyển đến các quận lân cận.\n\n– **Kết cấu:** Nhà 1 trệt, 2 lầu, khung BTCT chắc chắn. Gồm 5 căn hộ mini, mỗi căn hộ được thiết kế với 2 phòng ngủ, phòng khách, bếp và WC riêng biệt, trang bị đầy đủ nội thất cao cấp như giường tủ, bếp, bàn ghế, máy lạnh.\n\n– **Dòng tiền:** Hiện tại, nhà đang cho thuê với giá 65 triệu/tháng (13 triệu/căn), mang lại nguồn thu nhập ổn định cho chủ sở hữu.\n\n– **Diện tích:** 60m2 (3m x 12m), vuông vức, không bị lộ giới, hẻm rộng rãi, xe hơi vào tận nhà, rất thuận tiện cho việc đỗ xe và di chuyển.\n\n– **Pháp lý:** Sổ hồng riêng, hoàn công đầy đủ, pháp lý sạch, sẵn sàng công chứng ngay.\n\n– **GIÁ:** 15.5 tỷ (TL).\n\n**Đây là cơ hội đầu tư hấp dẫn cho những ai đang tìm kiếm một tài sản sinh lời cao tại khu vực trung tâm Quận 10. Liên hệ ngay để được tư vấn và dẫn đi xem nhà!**", "specs": {}, "latency": 6.27, "cost": "~15đ"}, "SYS-MP760YOH-BW": {"title": "Nhà siêu đẹp - Căn góc Đồng Nai Quận 10 - 71.2m2 (4.3x17) - 22.8 Tỷ | Có thang máy", "description": "CĂN GÓC HẺM 6M ĐỒNG NAI - TRUNG TÂM QUẬN 10 CHỈ 22.8 TỶ\n\n– Vị trí: Đồng Nai, Phường 15, Quận 10, TP.HCM. Khu vực sầm uất, chỉ cách mặt tiền 30m, thuận tiện di chuyển đến các trục đường chính như Tô Hiến Thành, Sư Vạn Hạnh, Thành Thái, CMT8, Bắc Hải, Lý Thường Kiệt.\n\n– Diện tích: 71.2m2 (4.3m x 17m), diện tích sử dụng lên đến 341m2. Nhà hướng Đông Nam, mát mẻ quanh năm.\n\n– Kết cấu: Nhà 5 tầng, khung BTCT hiện đại, thiết kế thông minh với thang máy 600kg (8-10 người). Gồm 1 trệt và 4 lầu, không gian rộng rãi, thoáng đãng.\n\n– Hiện trạng: Đang có hợp đồng cho thuê căn hộ dịch vụ với giá 50 triệu/tháng (600 triệu/năm), hợp đồng còn hơn 2 năm. Khách mua có quyền lựa chọn duy trì hợp đồng hoặc nhận nhà trống giao ngay.\n\n– Tiện ích: Khu vực an ninh, không ngập nước, gần chợ, siêu thị, trường học, bệnh viện, công viên, nhà hàng, quán ăn và cà phê.\n\n– Pháp lý: Sổ hồng chính chủ, công chứng trong ngày, nhà 1 đời chủ, hỗ trợ vay ngân hàng cho khách hàng có nhu cầu.\n\n– GIÁ: 22.8 tỷ (TL).\n\n👉 Khách hàng vui lòng báo trước 30 phút để được hỗ trợ tốt nhất khi xem nhà!", "specs": {}, "latency": 7.36, "cost": "~15đ"}, "SYS-MP761FGI-DF": {"title": "Nhà Phạm Ngọc Thạch Quận 3 - 36m2 (3x12) - 5 Tầng - 13.99 Tỷ | Kinh doanh hoặc cho thuê", "description": "KHU HIẾM NHÀ BÁN TẠI PHẠM NGỌC THẠCH - QUẬN 3 CHỈ 13.99 TỶ\n\n– Vị trí: Nhà nằm trên đường Phạm Ngọc Thạch, Phường Xuân Hòa, Quận 3. Khu vực trung tâm, gần Nhà Thờ Tân Định, Dinh Độc Lập, Chợ Tân Định và Công Viên Lê Văn Tám, thuận tiện di chuyển đến các khu vực lân cận.\n\n– Hẻm: Hẻm xe hơi thông thoáng, dễ dàng tiếp cận, đảm bảo an ninh và yên tĩnh.\n\n– Kết cấu: Nhà 5 tầng, thiết kế hiện đại với 8 phòng ngủ và 4 WC. Ban công thoáng mát, nhà mới xây, tông màu trắng sáng tạo cảm giác rộng rãi và thoải mái.\n\n– Diện tích: 36m2 (3m x 12m), phù hợp cho nhiều mục đích sử dụng như kinh doanh spa, văn phòng, studio, dịch vụ cho thuê phòng hoặc căn hộ dịch vụ.\n\n– Pháp lý: Sổ đỏ đầy đủ, chính chủ, công chứng nhanh chóng.\n\n– GIÁ: 13.99 tỷ (TL nhẹ).\n\nĐừng bỏ lỡ cơ hội sở hữu căn nhà lý tưởng này tại trung tâm Quận 3! Liên hệ ngay để được hỗ trợ và xem nhà.", "specs": {}, "latency": 4.79, "cost": "~14đ"}, "SYS-MP762B6J-5": {"title": "Mặt tiền Đặng Văn Ngữ Phú Nhuận - 98m2 (3x24) - 16 Tỷ | Kinh doanh hoặc ở ngay", "description": "CƠ HỘI ĐẦU TƯ TẠI PHÚ NHUẬN - MẶT TIỀN ĐẶNG VĂN NGỮ CHỈ 16 TỶ\n\n– Vị trí: Mặt tiền Đặng Văn Ngữ, Phường 9, Quận Phú Nhuận. Khu vực sầm uất, gần các trục đường lớn, thuận tiện di chuyển đến các quận trung tâm, gần chợ, siêu thị và trường học.\n\n– Kết cấu: Nhà 3 tầng, bao gồm 1 trệt, 2 lầu và sân thượng. Thiết kế gồm 5 phòng ngủ, 3 WC, không gian thoáng đãng, hiện đang cho thuê kinh doanh Bún Đậu Mắm Tôm, mang lại nguồn thu nhập ổn định.\n\n– Diện tích: 98m2 (3m x 24m), mặt tiền lớn, vị trí đẹp, phù hợp cho việc kinh doanh hoặc làm nhà ở.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng ngay, pháp lý sạch sẽ, an toàn.\n\n– GIÁ: 16 tỷ (giảm mạnh 2 tỷ so với giá cũ). \n\nĐẶC BIỆT: Chúng tôi cung cấp dịch vụ tư vấn pháp lý và hỗ trợ làm tất cả giấy tờ liên quan đến nhà đất.\n\nHãy liên hệ ngay để được xem nhà và trải nghiệm không gian sống tuyệt vời này!", "specs": {}, "latency": 5.34, "cost": "~14đ"}, "SYS-MP7634YK-9F": {"title": "Nhà hẻm xe hơi Nguyễn Thiện Thuật Quận 3 - 33m2 (3x11) - 7.8 Tỷ | Kinh doanh hoặc ở ngay", "description": "CĂN NHÀ MỚI SỬA ĐẸP TẠI NGUYỄN THIỆN THUẬT, QUẬN 3 CHỈ 7.8 TỶ\n\n– Vị trí: Hẻm xe hơi Nguyễn Thiện Thuật, Phường Bàn Cờ, Quận 3. Nằm ngay khu vực trung tâm, gần chợ Bàn Cờ, thuận tiện cho việc kinh doanh và sinh hoạt hàng ngày.\n\n– Kết cấu: Nhà 2 tầng, diện tích 33m2 (3m x 11m). Nhà mới được sửa chữa lại, thiết kế hợp lý, không gian thoáng đãng. Chủ tặng toàn bộ nội thất 100%, chỉ việc dọn vào ở ngay.\n\n– Diện tích: 33m2 (3m x 11m), hoàn công đầy đủ, pháp lý rõ ràng. Nhà được xác định bán đất tặng nhà, phù hợp cho khách mua ở hoặc đầu tư.\n\n– Pháp lý: Sổ hồng riêng, hoàn công đủ, không còn thế chấp ngân hàng, công chứng nhanh chóng.\n\n– GIÁ: 7.8 tỷ (TL).\n\n– Lưu ý: Khách hàng vui lòng liên hệ trước 60 phút với ĐC Lê Hữu Thời để được hỗ trợ tốt nhất trong việc khảo sát và xem nhà. Chúc quý khách sớm tìm được ngôi nhà ưng ý!", "specs": {}, "latency": 5.62, "cost": "~13đ"}, "SYS-MP7635C7-K7": {"title": "Nhà 5 tầng Võ Văn Tần Quận 3 - 35.5m2 (2.97x12) - Đẹp ở ngay - 7.5 Tỷ", "description": "KHU VIP QUẬN 3 - NHÀ 5 TẦNG ĐẸP CHỈ 7.5 TỶ\n\n– Vị trí: Nhà nằm trên đường Võ Văn Tần, Phường Bàn Cờ, Quận 3. Khu vực an ninh, dân trí cao, cách mặt tiền chỉ 15m, thuận tiện di chuyển đến các quận trung tâm.\n\n– Kết cấu: Nhà 5 tầng (1 trệt, 1 lửng, 2 lầu và sân thượng) với thiết kế hiện đại, gồm 5 phòng ngủ và 4 WC. Nhà mới đẹp, vào ở ngay và được tặng full nội thất.\n\n– Diện tích: 35.5m2 (2.97m x 12m), hẻm thoáng mát, sạch sẽ, không gian sống yên tĩnh và dễ chịu.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh chóng.\n\n– GIÁ: 7.5 tỷ (TL).\n\nLưu ý: Anh chị em vui lòng ký phiếu YCDV dẫn khách theo quy trình công ty. Đầu chủ Nguyễn Hiếu đã chuẩn bị sẵn hợp đồng đặt cọc, chỉ chờ anh em Thiên Khôi đến ký.", "specs": {}, "latency": 5.32, "cost": "~13đ"}, "SYS-MP7637OS-RJ": {"title": "Hẻm xe hơi Nguyễn Thiện Thuật Quận 3 - 36m2 (3.5x11) - 7.3 Tỷ | Nhà đẹp, giá tốt", "description": "CĂN NHÀ NGỘP HXH NGUYỄN THIỆN THUẬT CHỈ 7.3 TỶ\n\n– Vị trí: Hẻm xe hơi Nguyễn Thiện Thuật, Phường 2, Quận 3. Nằm trong khu vực yên tĩnh, an ninh, gần các trục đường lớn như Nguyễn Đình Chiểu và các tiện ích xung quanh.\n\n– Diện tích: 36m2 (3.5m x 11m), nở hậu 4m, tạo không gian thoáng đãng và dễ dàng bố trí nội thất.\n\n– Kết cấu: Nhà 2 tầng khung BTCT vững chắc, bao gồm 2 phòng ngủ và 2 WC. Thiết kế hợp lý, có thể vào ở ngay mà không cần sửa chữa.\n\n– Pháp lý: Sổ hồng riêng, hoàn công đầy đủ, hiện đang vay ngân hàng. Ngân hàng định giá căn nhà lên đến 10 tỷ, đảm bảo an tâm cho khách hàng.\n\n– GIÁ: 7.3 tỷ (có thương lượng).\n\nĐây là cơ hội tuyệt vời để sở hữu một căn nhà tại trung tâm Quận 3 với giá cả hợp lý. Liên hệ ngay để được hỗ trợ và xem nhà!", "specs": {}, "latency": 4.81, "cost": "~13đ"}}, "Gemini": {"SYS-MP75Z7G0-H3": {"title": "Cao Thắng Quận 10 - 44.7m2 - Hẻm xe hơi - 5 Tầng - 11.9 Tỷ", "description": "TRUNG TÂM QUẬN 10 CAO THẮNG HẺM XE HƠI KHU DÂN TRÍ CAO CHỈ 11.9 TỶ\n\n– Vị trí: Hẻm Cao Thắng, Phường 12, Quận 10. Tọa lạc tại khu vực trung tâm sầm uất Cao Thắng – Ba Tháng Hai – Nguyễn Tri Phương, đầy đủ tiện ích: trường học, bệnh viện, trung tâm thương mại, nhà hàng, quán cà phê, tất cả trong bán kính vài phút di chuyển.\n\n– Hẻm: Hẻm xe hơi rộng rãi, thông thoáng, khu dân trí cao, an ninh tuyệt đối.\n\n– Kết cấu: Nhà 5 tầng, khung BTCT kiên cố, móng đóng cọc, chính chủ xây dựng tâm huyết. Thiết kế gồm 1 trệt, 1 lửng, 3 lầu với tổng 5 phòng ngủ, 5 WC. Nhà được chăm chút kỹ lưỡng, có thể vào ở ngay.\n\n– Diện tích: 44.7m2, diện tích sàn 186.4m2.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 11.9 tỷ (TL).", "specs": {"duong": "Cao Thắng Quận", "phuong": null, "quan": "Quận 10", "gia_ty": 11.9, "dien_tich_m2": 10.0, "so_tang": 2, "mat_tien_m": 2.0, "chieu_sau_m": 5.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 2.1326, "cost": "~15.00đ"}, "SYS-MP75ZR8R-C4": {"title": "Cao Thắng Quận 10 - 39m2 (5.32x7.5) - Ngang khủng 5.32m - 14.58 Tỷ", "description": "TRUNG TÂM QUẬN 10 CAO THẮNG NGANG KHỦNG 5.32M NHÀ MỚI 4 TẦNG CHỈ 14.58 TỶ\n\n– Vị trí: Hẻm Cao Thắng, Phường 12, Quận 10. Vị trí trung tâm sầm uất, gần chợ, siêu thị, trường học, di chuyển nhanh chóng sang Quận 1, Quận 3, Quận 5 chỉ vài phút.\n\n– Hẻm: Hẻm ba gác thông thoáng, cách hẻm xe hơi chỉ 15m, khu vực dân cư đông đúc, an ninh.\n\n– Kết cấu: Nhà mới 4 tầng, khung BTCT kiên cố, thiết kế hiện đại, full nội thất cao cấp. Gồm sân để xe, phòng khách, bếp lớn, 2 phòng ngủ khép kín (có thể thiết kế thành 3PN), 3 WC và sân thượng. Khách mua dọn vào ở ngay.\n\n– Diện tích: 39m2 (ngang 5.32m x dài 7.5m). Chiều ngang 5.32m cực kỳ hiếm có trong khu vực, khuôn đất vuông vức, không lộ giới, giữ giá lâu dài.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 14.58 tỷ (TL).", "specs": {"duong": "Cao Thắng Quận", "phuong": null, "quan": "Quận 10", "gia_ty": 7.5, "dien_tich_m2": 10.0, "so_tang": 39, "mat_tien_m": 2.0, "chieu_sau_m": 5.32, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 1.648, "cost": "~15.00đ"}, "SYS-MP760LYQ-AC": {"title": "Cao Thắng Quận 10 - 60m2 (5x12) - Hẻm xe hơi vào nhà - 15.5 Tỷ", "description": "HẺM XE HƠI 5M KHU HÀ ĐÔ QUẬN 10 - 5 CĂN HỘ MINI DÒNG TIỀN 65 TRIỆU/THÁNG CHỈ 15.5 TỶ\n\n– Vị trí: Hẻm Cao Thắng, Phường Hòa Hưng, Quận 10. Vị trí đắc địa ngay khu Hà Đô nổi tiếng, trung tâm của trung tâm, tiện ích xung quanh đầy đủ, di chuyển thuận tiện.\n\n– Hẻm: Hẻm rộng 5m, xe hơi vào nhà thoải mái, thông thoáng, không bị lộ giới. Nhà có 2 mặt hẻm rộng rãi.\n\n– Kết cấu: Nhà 3 tầng (trệt 2 lầu) khung BTCT chắc chắn, gồm 5 căn hộ mini. Mỗi căn hộ được thiết kế đầy đủ tiện nghi với 2 phòng ngủ (mỗi phòng có máy lạnh riêng), WC, phòng khách, bếp. Tổng cộng 10 phòng ngủ nhỏ. Trang bị đầy đủ nội thất cao cấp (giường tủ, bếp, bàn ghế,...). Có phòng để xe riêng cho khách thuê rất thoáng.\n\n– Diện tích: 60m2 (5m x 12m), khuôn đất vuông vức, thông số đẹp.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 15.5 tỷ (TL).\n\nPHÂN TÍCH TƯ DUY ĐẦU TƯ & DÒNG TIỀN:\n\n• Vị trí vàng ngay khu Hà Đô sầm uất, trung tâm Quận 10, đảm bảo nguồn khách thuê ổn định và chất lượng.\n\n• Hiện tại đang cho thuê 5 căn hộ mini với tổng dòng tiền 65 triệu/tháng (13 triệu/căn), mang lại thu nhập thụ động hấp dẫn và ổn định.\n\n• Khu vực dân cư đông đúc, nhu cầu thuê nhà ở cao, đặc biệt là các căn hộ dịch vụ tiện nghi.\n\n• Hẻm xe hơi rộng rãi, thuận tiện cho việc di chuyển và kinh doanh.\n\n• Tài sản có giá trị tăng trưởng bền vững theo thời gian do vị trí đắc địa và khả năng khai thác dòng tiền hiệu quả.", "specs": {"duong": "Cao Thắng Quận", "phuong": null, "quan": "Quận 10", "gia_ty": 12.0, "dien_tich_m2": 10.0, "so_tang": 60, "mat_tien_m": 2.0, "chieu_sau_m": 5.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 2.0302, "cost": "~15.00đ"}, "SYS-MP760YOH-BW": {"title": "Đồng Nai Quận 10 - 71.2m2 (4.3x17) - Căn góc 5 tầng thang máy - 22.8 Tỷ", "description": "CĂN GÓC 5 TẦNG THANG MÁY HẺM 6M ĐỒNG NAI TRUNG TÂM QUẬN 10 CHỈ 22.8 TỶ\n\n– Vị trí: Hẻm Đồng Nai, Phường 15, Quận 10. Vị trí đắc địa ngay trung tâm, cách mặt tiền đường chỉ 30m, liền kề các trục đường lớn như Tô Hiến Thành, Sư Vạn Hạnh, Thành Thái, kết nối nhanh chóng đến các quận trung tâm.\n\n– Hẻm: Hẻm rộng 6m, thông thoáng, xe hơi ra vào thoải mái, khu vực an ninh, không ngập nước, dân trí cao.\n\n– Kết cấu: Nhà căn góc 5 tầng, khung BTCT kiên cố, thiết kế hiện đại với 1 trệt, 4 lầu và thang máy 600kg (8-10 người). Tổng diện tích sử dụng 341m2. Hiện đang có hợp đồng cho thuê căn hộ dịch vụ (CHDV) với dòng tiền 50 triệu/tháng (600 triệu/năm), hợp đồng còn hơn 2 năm. Khách mua có thể duy trì hợp đồng hoặc nhận nhà trống.\n\n– Diện tích: 71.2m2 (4.3m x 17m), khuôn đất vuông vức, không lỗi phong thủy.\n\n– Hướng nhà: Đông Nam, mát mẻ quanh năm.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng chính chủ cất két, công chứng ngay.\n\n– GIÁ: 22.8 tỷ (TL).\n\nPHÂN TÍCH TƯ DUY ĐẦU TƯ & DÒNG TIỀN:\n\n• Vị trí vàng trung tâm Quận 10, khu vực sầm uất, tập trung nhiều tiện ích như chợ, siêu thị, trường học, bệnh viện, công viên, nhà hàng, quán ăn, cà phê.\n\n• Nhà căn góc với thiết kế 5 tầng và thang máy là lợi thế lớn để khai thác kinh doanh đa ngành nghề hoặc tiếp tục mô hình CHDV hiệu quả.\n\n• Dòng tiền cho thuê CHDV ổn định 50 triệu/tháng đã được kiểm chứng, đảm bảo nguồn thu nhập thụ động ngay lập tức cho nhà đầu tư.\n\n• Khách mua có quyền lựa chọn duy trì hợp đồng thuê hoặc nhận nhà trống để tự khai thác, tạo sự linh hoạt trong chiến lược đầu tư.\n\n• Khu vực trung tâm Quận 10 luôn có nhu cầu thuê cao, đảm bảo tính thanh khoản và tiềm năng tăng giá bền vững cho tài sản.", "specs": {"duong": "Đồng Nai Quận", "phuong": null, "quan": "Quận 10", "gia_ty": 17.0, "dien_tich_m2": 10.0, "so_tang": 5, "mat_tien_m": 2.0, "chieu_sau_m": 4.3, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 1.9058, "cost": "~15.00đ"}, "SYS-MP761FGI-DF": {"title": "Phạm Ngọc Thạch Quận 3 - 36m2 (3x12) - Hẻm xe hơi thông - 5 Tầng - 13.99 Tỷ", "description": "TRUNG TÂM QUẬN 3 HẺM XE HƠI THÔNG PHẠM NGỌC THẠCH - ĐIỆN BIÊN PHỦ - VÕ THỊ SÁU CHỈ 13.99 TỶ\n\n– Vị trí: Hẻm Phạm Ngọc Thạch, Phường Xuân Hòa, Quận 3. Vị trí đắc địa ngay trung tâm, gần Nhà Thờ Tân Định, Dinh Độc Lập, Chợ Tân Định, Công Viên Lê Văn Tám, kết nối thuận tiện đến các khu vực trung tâm khác.\n\n– Hẻm: Hẻm xe hơi thông thoáng ra Điện Biên Phủ và Võ Thị Sáu, khu vực sầm uất nhưng vẫn đảm bảo sự yên tĩnh và an ninh.\n\n– Kết cấu: Nhà 5 tầng, khung BTCT kiên cố, thiết kế hiện đại với tông trắng sáng, gồm 1 trệt, 4 lầu, 8 phòng, 4 WC và ban công thoáng. Hiện đang kinh doanh spa.\n\n– Diện tích: 36m2 (3m x 12m), khuôn đất vuông vức.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 13.99 tỷ (TL).\n\nPHÂN TÍCH TƯ DUY ĐẦU TƯ & DÒNG TIỀN:\n\n• Vị trí vàng trung tâm Quận 3, khu vực hiếm nhà bán, đảm bảo giá trị bất động sản tăng trưởng ổn định.\n\n• Kết cấu nhà 5 tầng với 8 phòng, phù hợp đa dạng mục đích kinh doanh như spa, văn phòng, studio, căn hộ dịch vụ hoặc cho thuê phòng.\n\n• Khu vực tập trung dân cư và văn phòng đông đúc, tiềm năng khai thác dòng tiền cho thuê cao và ổn định.\n\n• Tài sản giữ tiền tốt, tính thanh khoản cao do vị trí đắc địa và nhu cầu thị trường lớn.", "specs": {"duong": "Phạm Ngọc Thạch Quận", "phuong": null, "quan": "Quận 3", "gia_ty": 12.0, "dien_tich_m2": 3.0, "so_tang": 36, "mat_tien_m": 2.0, "chieu_sau_m": 3.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 2.1294, "cost": "~15.00đ"}, "SYS-MP762B6J-5": {"title": "Đặng Văn Ngữ Phú Nhuận - 98m2 (4x24) - Mặt tiền kinh doanh - 16 Tỷ", "description": "MẶT TIỀN ĐẶNG VĂN NGỮ PHÚ NHUẬN GẦN 100M2 CHỈ 16 TỶ\n\n– Vị trí: Mặt tiền Đặng Văn Ngữ, Phường 14, Quận Phú Nhuận. Vị trí đắc địa ngay đoạn đẹp và sầm uất nhất tuyến đường, gần các trục đường lớn, tiện di chuyển khắp nơi, gần chợ, siêu thị, trường học.\n\n– Mặt tiền: Đường nhựa rộng lớn, vỉa hè thông thoáng, dòng người qua lại nhộn nhịp ngày đêm, thích hợp mở văn phòng công ty, showroom, phòng khám hoặc kinh doanh đa ngành nghề.\n\n– Kết cấu: Nhà 3 tầng (1 trệt, 1 lầu, sân thượng giống lửng), gồm 5 phòng ngủ, 3 WC. Hiện đang cho thuê kinh doanh Bún Đậu Mắm Tôm.\n\n– Diện tích: 98m2 (4m x 24m). Khuôn đất vuông vức, phong thủy đẹp.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 16 tỷ (TL).", "specs": {"duong": "Đặng Văn Ngữ Phú Nhuận -", "phuong": null, "quan": "Phú Nhuận", "gia_ty": 16.0, "dien_tich_m2": 98.0, "so_tang": 2, "mat_tien_m": 4.0, "chieu_sau_m": 24.0, "phan_loai_hem": "Mặt tiền"}, "latency": 1.9536, "cost": "~15.00đ"}, "SYS-MP7634YK-9F": {"title": "Nguyễn Thiện Thuật Quận 3 - 31.8m2 (3x11) - Hẻm xe hơi thông - 7.8 Tỷ", "description": "TRUNG TÂM QUẬN 3 SÁT CHỢ BÀN CỜ HẺM XE HƠI THÔNG CHỈ 7.8 TỶ\n\n– Vị trí: Hẻm Nguyễn Thiện Thuật, Phường 1, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ, tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Quận 10 chỉ 2 phút.\n\n– Hẻm: Hẻm rộng rãi thông bàn cờ ra đường Bàn Cờ, xe hơi tới cửa, di chuyển thông thoáng, sạch sẽ và an ninh.\n\n– Kết cấu: Nhà 2 tầng, khung BTCT kiên cố, công năng tối ưu gồm 3 phòng ngủ, 2 WC. Hiện trạng nhà mới sửa lại, chủ tặng toàn bộ nội thất 100%, khách mua dọn vào ở ngay.\n\n– Diện tích: 31.8m2 (3m x 11m), khuôn đất vuông vức, hoàn công đầy đủ, không lỗi phong thủy.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 7.8 tỷ (TL).", "specs": {"duong": "Nguyễn Thiện Thuật Quận", "phuong": null, "quan": "Quận 3", "gia_ty": 11.0, "dien_tich_m2": 3.0, "so_tang": 2, "mat_tien_m": 2.0, "chieu_sau_m": 3.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 2.0214, "cost": "~15.00đ"}, "SYS-MP7635C7-K7": {"title": "Võ Văn Tần Quận 3 - 35.5m2 (2.9x12) - 5 Tầng - 7.5 Tỷ", "description": "TRUNG TÂM QUẬN 3 KHU VIP VÕ VĂN TẦN HẺM THOÁNG MÁT CÁCH MẶT TIỀN 15M CHỈ 7.5 TỶ\n\n– Vị trí: Hẻm Võ Văn Tần, Phường 5, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ, tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Quận 10 chỉ 2 phút.\n\n– Hẻm: Hẻm thông thoáng, sạch sẽ, khu an ninh dân trí cao, cách mặt tiền đường lớn Võ Văn Tần chỉ 15m.\n\n– Kết cấu: Nhà 5 tầng, khung BTCT kiên cố, thiết kế gồm 1 trệt, 1 lửng, 2 lầu, sân thượng với 5 phòng ngủ, 4 WC. Hiện trạng nhà mới đẹp, tặng kèm toàn bộ nội thất cao cấp, khách mua dọn vào ở ngay.\n\n– Diện tích: 35.5m2 (2.97m x 12m), sổ hồng vuông vức, hoàn công đầy đủ, không lỗi phong thủy.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 7.5 tỷ (TL).", "specs": {"duong": "Võ Văn Tần Quận", "phuong": null, "quan": "Quận 3", "gia_ty": 12.0, "dien_tich_m2": 3.0, "so_tang": 2, "mat_tien_m": 2.0, "chieu_sau_m": 2.9, "phan_loai_hem": "Hẻm thông"}, "latency": 1.6703, "cost": "~15.00đ"}, "SYS-MP7637OS-RJ": {"title": "Nguyễn Thiện Thuật Quận 3 - 36m2 (3.5x11) - Hẻm xe hơi thông - 7.3 Tỷ", "description": "TRUNG TÂM QUẬN 3 NÚT GIAO NGUYỄN THIỆN THUẬT NGUYỄN ĐÌNH CHIỂU HẺM XE HƠI THÔNG CHỈ 7.3 TỶ\n\n– Vị trí: Hẻm Nguyễn Thiện Thuật, Phường 1, Quận 3. Vị trí lõi trung tâm đối diện chung cư Nguyễn Thiện Thuật, liền kề chợ Bàn Cờ, di chuyển sang Quận 1 và Quận 10 chỉ 2 phút.\n\n– Hẻm: Hẻm xe hơi rộng rãi, thông thoáng, xe hơi đỗ tận cửa nhà, khu vực dân trí cao và an ninh tuyệt đối.\n\n– Kết cấu: Nhà 2 tầng, khung BTCT kiên cố, công năng tối ưu gồm 2 phòng ngủ, 2 WC. Hiện trạng nhà sạch sẽ, không gian thoáng đãng, khách mua dọn vào ở ngay.\n\n– Diện tích: 36m2 (3.5m x 11m nở hậu 4m), khuôn đất vuông vức từ đầu đến đuôi, không bị lỗi phong thủy hay lộ giới.\n\n– Pháp lý sạch, hoàn công đủ, sổ hồng riêng cất két, công chứng ngay.\n\n– GIÁ: 7.3 tỷ (TL).", "specs": {"duong": "Nguyễn Thiện Thuật Quận", "phuong": null, "quan": "Quận 3", "gia_ty": 11.0, "dien_tich_m2": 3.0, "so_tang": 36, "mat_tien_m": 2.0, "chieu_sau_m": 3.5, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 1.6848, "cost": "~15.00đ"}}, "ViT5": {"SYS-MP75Z7G0-H3": {"title": "*5m2 (5.5x11.9m2)  Vị trí: Hẻm Cao Thắng, Phường 12, Quận 10. Vị trí lõi trung tâm sát vách Bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ vài phút.  Kết cấu: Nhà 3 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lầu.", "description": "", "specs": {}, "latency": 1.9571, "cost": "0đ (Offline/Colab)"}, "SYS-MP75ZR8R-C4": {"title": "* 32m2 (4.3x8.5) - Ngang lớn - 14.58 Tỷ  Ở ngay hoặc Kinh doanh nhỏ.  Diện tích: 39m2  4 tầng  Pháp lý sạch, hoàn công đủ, công chứng ngay", "description": "", "specs": {}, "latency": 1.6057, "cost": "0đ (Offline/Colab)"}, "SYS-MP760LYQ-AC": {"title": "* 15.5 Tỷ  Ở ngay TRUNG TÂM QUẬN 10 CHỈ 65TR/THÁNG  Vị trí: Hẻm Cao Thắng, Phường 12, Quận 10. Vị trí lõi trung tâm sát vách trường Đại học Sư phạm và Bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ trong vài phút.  Hẻm: Hẻm xe hơi rộng rãi, xe hơi đỗ tận cửa nhà, không bị lộ giới.", "description": "", "specs": {}, "latency": 2.7809, "cost": "0đ (Offline/Colab)"}, "SYS-MP760YOH-BW": {"title": "*Ỷ  Vị trí: Hẻm xe tải thông thoáng, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.  Diện tích: 71.2m2 (4.3x17.3m), chiều ngang lớn 6m.", "description": "", "specs": {}, "latency": 2.1299, "cost": "0đ (Offline/Colab)"}, "SYS-MP761FGI-DF": {"title": "*À BÁN PHẠM NGỌC THẠCH QUẬN 3 - 36m2 (5.1x12) - Hẻm xe hơi thông - 13.99 Tỷ  Ở ngay hoặc VĂN PHÒNG CHỈ 8.4 TỶ  Vị trí: Hẻm Phạm Ngọc Thạch, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách Bệnh viện An Sinh, di chuyển sang Quận 1 và Sân bay Tân Sơn Nhất chỉ vài phút.  Hẻm: Hẻm xe tải thông thoáng, khu vực dân trí cao và an ninh tuyệt đối.", "description": "", "specs": {}, "latency": 2.4775, "cost": "0đ (Offline/Colab)"}, "SYS-MP762B6J-5": {"title": "*Ữ PHÚ NHUẬN QUẬN 16 TỶ  Vị trí: Hẻm Đặng Văn Ngữ, Phường 13, Quận Phú Nhuận.  Kết cấu: Nhà 3 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lầu, sân thượng giống lửng, 5 phòng ngủ, 3 WC.", "description": "", "specs": {}, "latency": 1.4075, "cost": "0đ (Offline/Colab)"}, "SYS-MP7634YK-9F": {"title": "* Phường Bàn Cờ Quận 3 - 32m2 (3.1x11) - Hẻm xe hơi thông - 7.8 Tỷ  Ở ngay hoặc Kinh doanh buôn bán.  Hẻm: Hẻm Xe hơi thông, thông thoáng, di chuyển sang Quận 1 và Quận 10 chỉ trong vài phút.", "description": "", "specs": {}, "latency": 1.4438, "cost": "0đ (Offline/Colab)"}, "SYS-MP7635C7-K7": {"title": "*97m2 (3.9x12) - Hẻm: Hẻm rộng thoáng, sạch sẽ, khu vực dân trí cao và an ninh tuyệt đối.  Kết cấu: Nhà 5 tầng, khung BTCT kiên cố gồm 1 trệt 1 lửng, 2 lầu sân thượng gồm 5 phòng ngủ, 4 WC. Hiện trạng nhà mới đẹp ở ngay.", "description": "", "specs": {}, "latency": 1.7459, "cost": "0đ (Offline/Colab)"}, "SYS-MP7637OS-RJ": {"title": "* 40m2 (2.5x11) - 3.5 Tỷ  Ở ngay TRUNG TÂM QUẬN 3 HẺM XE HƠI THÔNG CHỈ 7.3 TỶ  Vị trí: Hẻm xe hơi thông, sát vách Tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Quận 10 chỉ trong vài phút.  Diện tích: 40 m2 (3.5m x 11m), chiều ngang lớn 4m.", "description": "", "specs": {}, "latency": 2.8346, "cost": "0đ (Offline/Colab)"}}, "PhoBERT": {"SYS-MP75Z7G0-H3": {"title": "Cao Thắng Quận 1 - Hẻm xe hơi - 4 Tầng - 11.9 Tỷ", "description": "Cao Thắng Quận 1 - Hẻm xe hơi - 4 Tầng - 11.9 Tỷ | Ở ngay hoặc Đầu tư\n\nCAO THẮNG QUẬN 1 HẺM XE HƠI CHỈ 11.9 TỶ\n\n– Vị trí: Hẻm Cao Thắng, , Quận 1.\n\n– Hẻm: Hẻm xe hơi thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Kết cấu 4 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 11.9 tỷ (TL).", "specs": {"duong": "Cao Thắng", "phuong": null, "quan": "Quận 1", "gia_ty": 11.9, "dien_tich_m2": null, "so_tang": 4, "mat_tien_m": null, "rong_hem_m": null, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 1.2634, "cost": "0đ (Offline/Colab)"}, "SYS-MP75ZR8R-C4": {"title": "Cao Thắng Quận 1 - 39.0m2 - Hẻm xe hơi - 4 Tầng - 14.58 Tỷ", "description": "Cao Thắng Quận 1 - 39.0m2 - Hẻm xe hơi - 4 Tầng - 14.58 Tỷ | Ở ngay hoặc Đầu tư\n\nCAO THẮNG QUẬN 1 HẺM XE HƠI CHỈ 14.58 TỶ\n\n– Vị trí: Hẻm Cao Thắng, , Quận 1.\n\n– Hẻm: Hẻm xe hơi thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Diện tích 39.0m2. Kết cấu 4 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 14.58 tỷ (TL).", "specs": {"duong": "Cao Thắng", "phuong": null, "quan": "Quận 1", "gia_ty": 14.58, "dien_tich_m2": 39.0, "so_tang": 4, "mat_tien_m": 5.32, "rong_hem_m": null, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.5232, "cost": "0đ (Offline/Colab)"}, "SYS-MP760LYQ-AC": {"title": "Cao Thắng Quận 1 - Hẻm xe hơi - 2 Tầng - 15.5 Tỷ", "description": "Cao Thắng Quận 1 - Hẻm xe hơi - 2 Tầng - 15.5 Tỷ | Ở ngay hoặc Đầu tư\n\nCAO THẮNG QUẬN 1 HẺM XE HƠI CHỈ 15.5 TỶ\n\n– Vị trí: Hẻm Cao Thắng, Phường 12, Quận 1.\n\n– Hẻm: Hẻm xe hơi thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Kết cấu 2 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 15.5 tỷ (TL).", "specs": {"duong": "Cao Thắng", "phuong": "Phường 12", "quan": "Quận 1", "gia_ty": 15.5, "dien_tich_m2": null, "so_tang": 2, "mat_tien_m": null, "rong_hem_m": null, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.855, "cost": "0đ (Offline/Colab)"}, "SYS-MP760YOH-BW": {"title": "Đồng Nai Quận 1 - 71.2m2 (4.3x17.0) - Hẻm thông - 5 Tầng - 22.8 Tỷ", "description": "Đồng Nai Quận 1 - 71.2m2 (4.3x17.0) - Hẻm thông - 5 Tầng - 22.8 Tỷ | Ở ngay hoặc Đầu tư\n\nĐỒNG NAI QUẬN 1 HẺM THÔNG CHỈ 22.8 TỶ\n\n– Vị trí: Hẻm Đồng Nai, , Quận 1.\n\n– Hẻm: Hẻm thông thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Diện tích 71.2m2 (4.3m × 17.0m). Kết cấu 5 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 22.8 tỷ (TL).", "specs": {"duong": "Đồng Nai", "phuong": null, "quan": "Quận 1", "gia_ty": 22.8, "dien_tich_m2": 71.2, "so_tang": 5, "mat_tien_m": 4.3, "rong_hem_m": 17.0, "phan_loai_hem": "Hẻm thông"}, "latency": 0.7481, "cost": "0đ (Offline/Colab)"}, "SYS-MP761FGI-DF": {"title": "Phạm Ngọc Thạch Quận 3 - 36.0m2 (3.0x12.0) - Hẻm xe hơi - 5 Tầng - 13.99 Tỷ", "description": "Phạm Ngọc Thạch Quận 3 - 36.0m2 (3.0x12.0) - Hẻm xe hơi - 5 Tầng - 13.99 Tỷ | Ở ngay hoặc Đầu tư\n\nPHẠM NGỌC THẠCH QUẬN 3 HẺM XE HƠI CHỈ 13.99 TỶ\n\n– Vị trí: Hẻm Phạm Ngọc Thạch, Phường Xuân Hoà, Quận 3.\n\n– Hẻm: Hẻm xe hơi thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Diện tích 36.0m2 (3.0m × 12.0m). Kết cấu 5 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 13.99 tỷ (TL).", "specs": {"duong": "Phạm Ngọc Thạch", "phuong": "Phường Xuân Hoà", "quan": "Quận 3", "gia_ty": 13.99, "dien_tich_m2": 36.0, "so_tang": 5, "mat_tien_m": 3.0, "rong_hem_m": 12.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.6633, "cost": "0đ (Offline/Colab)"}, "SYS-MP762B6J-5": {"title": "Đặng Văn Ngữ Phú Nhuận - 100.0m2 - Mặt tiền - 3 Tầng - 16.0 Tỷ", "description": "Đặng Văn Ngữ Phú Nhuận - 100.0m2 - Mặt tiền - 3 Tầng - 16.0 Tỷ | Ở ngay hoặc Đầu tư\n\nĐẶNG VĂN NGỮ PHÚ NHUẬN MẶT TIỀN CHỈ 16.0 TỶ\n\n– Vị trí: Hẻm Đặng Văn Ngữ, , Phú Nhuận.\n\n– Hẻm: Mặt tiền thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Diện tích 100.0m2. Kết cấu 3 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 16.0 tỷ (TL).", "specs": {"duong": "Đặng Văn Ngữ", "phuong": null, "quan": "Phú Nhuận", "gia_ty": 16.0, "dien_tich_m2": 100.0, "so_tang": 3, "mat_tien_m": null, "rong_hem_m": null, "phan_loai_hem": "Mặt tiền"}, "latency": 0.6284, "cost": "0đ (Offline/Colab)"}, "SYS-MP7634YK-9F": {"title": "Nguyễn Thiện Thuật Quận 3 - Hẻm xe hơi - 2 Tầng - 7.8 Tỷ", "description": "Nguyễn Thiện Thuật Quận 3 - Hẻm xe hơi - 2 Tầng - 7.8 Tỷ | Ở ngay hoặc Đầu tư\n\nNGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE HƠI CHỈ 7.8 TỶ\n\n– Vị trí: Hẻm Nguyễn Thiện Thuật, , Quận 3.\n\n– Hẻm: Hẻm xe hơi thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Kết cấu 2 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 7.8 tỷ (TL).", "specs": {"duong": "Nguyễn Thiện Thuật", "phuong": null, "quan": "Quận 3", "gia_ty": 7.8, "dien_tich_m2": null, "so_tang": 2, "mat_tien_m": 3.0, "rong_hem_m": 11.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 0.8904, "cost": "0đ (Offline/Colab)"}, "SYS-MP7635C7-K7": {"title": "Võ Văn Tần Quận 3 - Mặt tiền - 2 Tầng - 7.5 Tỷ", "description": "Võ Văn Tần Quận 3 - Mặt tiền - 2 Tầng - 7.5 Tỷ | Ở ngay hoặc Đầu tư\n\nVÕ VĂN TẦN QUẬN 3 MẶT TIỀN CHỈ 7.5 TỶ\n\n– Vị trí: Hẻm Võ Văn Tần, , Quận 3.\n\n– Hẻm: Mặt tiền thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Kết cấu 2 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 7.5 tỷ (TL).", "specs": {"duong": "Võ Văn Tần", "phuong": null, "quan": "Quận 3", "gia_ty": 7.5, "dien_tich_m2": null, "so_tang": 2, "mat_tien_m": 2.97, "rong_hem_m": 12.0, "phan_loai_hem": "Mặt tiền"}, "latency": 0.9581, "cost": "0đ (Offline/Colab)"}, "SYS-MP7637OS-RJ": {"title": "Nguyễn Thiện Thuật Quận 3 - 40.0m2 - Hẻm xe hơi - 2 Tầng - 7.3 Tỷ", "description": "Nguyễn Thiện Thuật Quận 3 - 40.0m2 - Hẻm xe hơi - 2 Tầng - 7.3 Tỷ | Ở ngay hoặc Đầu tư\n\nNGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE HƠI CHỈ 7.3 TỶ\n\n– Vị trí: Hẻm Nguyễn Thiện Thuật, , Quận 3.\n\n– Hẻm: Hẻm xe hơi thông thoáng, thuận tiện lưu thông.\n\n– Kết cấu & Diện tích: Diện tích 40.0m2. Kết cấu 2 tầng kiên cố.\n\n– Pháp lý: Sổ hồng chính chủ, hoàn công đầy đủ, công chứng nhanh.\n\n– GIÁ: 7.3 tỷ (TL).", "specs": {"duong": "Nguyễn Thiện Thuật", "phuong": null, "quan": "Quận 3", "gia_ty": 7.3, "dien_tich_m2": 40.0, "so_tang": 2, "mat_tien_m": null, "rong_hem_m": 11.0, "phan_loai_hem": "Hẻm xe hơi"}, "latency": 1.1677, "cost": "0đ (Offline/Colab)"}}}, "test_ids": ["SYS-MP75Z7G0-H3", "SYS-MP75ZR8R-C4", "SYS-MP760LYQ-AC", "SYS-MP760YOH-BW", "SYS-MP761FGI-DF", "SYS-MP762B6J-5", "SYS-MP7634YK-9F", "SYS-MP7635C7-K7", "SYS-MP7637OS-RJ"]};
+
+    let currentSampleId = "";
+    let activeModelsData = {};
+
+    // ══════════════════════════════════════════════════════════════════════════════
+    // ROUGE-L & SPECS ACCURACY ALGORITHMS (PORTED FROM PYTHON)
+    // ══════════════════════════════════════════════════════════════════════════════
+    
+    function calculateRougeL(pred, ref) {
+        if (!pred || !ref) return 0.0;
+        
+        let pTokens = pred.toLowerCase().replace(/[^\w\s]/g, ' ').split(/\s+/).filter(Boolean);
+        let rTokens = ref.toLowerCase().replace(/[^\w\s]/g, ' ').split(/\s+/).filter(Boolean);
+        
+        let m = pTokens.length;
+        let n = rTokens.length;
+        if (m === 0 || n === 0) return 0.0;
+        
+        let dp = Array(m + 1).fill(0).map(() => Array(n + 1).fill(0));
+        for (let i = 1; i <= m; i++) {
+            for (let j = 1; j <= n; j++) {
+                if (pTokens[i - 1] === rTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        
+        let lcs = dp[m][n];
+        let recall = lcs / n;
+        let precision = lcs / m;
+        if (recall + precision === 0) return 0.0;
+        
+        let fmeasure = (2 * recall * precision) / (recall + precision);
+        return fmeasure * 100;
+    }
+
+    function calculateSpecsAccuracy(predSpecs, refSpecs) {
+        if (!refSpecs || !predSpecs) return 0.0;
+        
+        const keys = ["duong", "phuong", "quan", "gia_ty", "dien_tich_m2", "so_tang", "mat_tien_m", "chieu_sau_m", "phan_loai_hem"];
+        let matchCount = 0;
+        let totalKeys = keys.length;
+        
+        keys.forEach(k => {
+            let pVal = predSpecs[k];
+            let rVal = refSpecs[k];
+            
+            if (pVal === undefined) pVal = null;
+            if (rVal === undefined) rVal = null;
+            
+            if (pVal === null && rVal === null) {
+                matchCount += 1;
+                return;
+            }
+            
+            if (pVal !== null && rVal !== null) {
+                if (typeof rVal === 'string') {
+                    if (String(pVal).trim().toLowerCase() === String(rVal).trim().toLowerCase()) {
+                        matchCount += 1;
+                    }
+                } else {
+                    let pNum = parseFloat(pVal);
+                    let rNum = parseFloat(rVal);
+                    if (!isNaN(pNum) && !isNaN(rNum)) {
+                        if (Math.abs(pNum - rNum) < 0.01) {
+                            matchCount += 1;
+                        }
+                    } else if (String(pVal).trim() === String(rVal).trim()) {
+                        matchCount += 1;
+                    }
+                }
+            }
+        });
+        
+        return (matchCount / totalKeys) * 100;
+    }
+
+    function robustParseSpecsAgnostic(text) {
+        if (!text || typeof text !== 'string') {
+            return {
+                duong: null, phuong: null, quan: null,
+                gia_ty: null, dien_tich_m2: null, so_tang: null,
+                mat_tien_m: null, chieu_sau_m: null, phan_loai_hem: 'Hẻm thông'
+            };
+        }
+        
+        let t = text.toLowerCase().replace(/\*/g, '').replace(/#/g, '');
+        let specs = {
+            duong: null, phuong: null, quan: null,
+            gia_ty: null, dien_tich_m2: null, so_tang: null,
+            mat_tien_m: null, chieu_sau_m: null, phan_loai_hem: 'Hẻm thông'
+        };
+        
+        // Area
+        let areaMatch = t.match(/(?:diện\s+tích|dt|dt\s+đất|công\s+nhận)\s*(?::|là)?\s*([\d.,]+)\s*(?:m2|m²)/);
+        if (areaMatch) specs.dien_tich_m2 = parseFloat(areaMatch[1].replace(',', '.'));
+        
+        // Kích thước ngang x dài
+        let dimMatch = t.match(/(?:kích\s+thước|ngang|dài)?\s*([\d.,]+)\s*m?\s*[x×]\s*([\d.,]+)\s*m?/);
+        if (dimMatch) {
+            specs.mat_tien_m = parseFloat(dimMatch[1].replace(',', '.'));
+            specs.chieu_sau_m = parseFloat(dimMatch[2].replace(',', '.'));
+        }
+        
+        // Giá bán
+        let priceMatch = t.match(/(?:giá|giá\s+bán|giá\s+chào)\s*(?::|là)?\s*([\d.,]+)\s*(?:tỷ|ty)/);
+        if (priceMatch) {
+            specs.gia_ty = parseFloat(priceMatch[1].replace(',', '.'));
+        } else {
+            let m = t.match(/([\d.,]+)\s*(?:tỷ|ty)\b/);
+            if (m) specs.gia_ty = parseFloat(m[1].replace(',', '.'));
+        }
+        
+        // Số tầng
+        let floorsMatch = t.match(/(?:kết\s+cấu|quy\s+mô|nhà)?\s*(?::|là)?\s*(\d+)\s*(?:tầng|lầu)/);
+        if (floorsMatch) {
+            specs.so_tang = parseInt(floorsMatch[1]);
+        } else {
+            let m = t.match(/(\d+)\s*trệt\s*(?:và|[,+])?\s*(\d+)\s*(?:lầu|lửng)/);
+            if (m) {
+                specs.so_tang = parseInt(m[1]) + parseInt(m[2]);
+            } else {
+                let m2 = t.match(/trệt\s*(?:và|[,+])?\s*(\d+)\s*lầu/);
+                if (m2) specs.so_tang = 1 + parseInt(m2[1]);
+            }
+        }
+        
+        // Hẻm
+        if (t.includes('mặt tiền')) specs.phan_loai_hem = 'Mặt tiền';
+        else if (t.includes('hẻm xe hơi') || t.includes('hxh') || t.includes('ô tô') || t.includes('oto')) specs.phan_loai_hem = 'Hẻm xe hơi';
+        else if (t.includes('hẻm xe tải') || t.includes('hxt')) specs.phan_loai_hem = 'Hẻm xe tải';
+        else if (t.includes('xe máy') || t.includes('ba gác')) specs.phan_loai_hem = 'Hẻm xe máy';
+        
+        // Quận
+        let dtMatch = t.match(/quận\s*(\d+)\b/);
+        if (dtMatch) {
+            specs.quan = 'Quận ' + dtMatch[1];
+        } else {
+            let districts = ['bình thạnh', 'phú nhuận', 'gò vấp', 'tân bình', 'quận 1', 'quận 3', 'quận 10'];
+            for (let d of districts) {
+                if (t.includes(d)) {
+                    specs.quan = d.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                    break;
+                }
+            }
+        }
+        
+        // Phường
+        let wdMatch = t.match(/(?:phường|p\.)\s*([\d\w\s]+?)(?:,|$|\n|\.)/);
+        if (wdMatch) specs.phuong = 'Phường ' + wdMatch[1].trim().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        
+        // Đường
+        let stMatch = t.match(/đường\s+([\w\s]+?)(?:,|$|\n|\.)/);
+        if (stMatch) specs.duong = stMatch[1].trim().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        
+        return specs;
+    }
+
+    // ══════════════════════════════════════════════════════════════════════════════
+    // CONTROL WORKFLOW & STORAGE HANDLERS
+    // ══════════════════════════════════════════════════════════════════════════════
+
+    document.addEventListener("DOMContentLoaded", () => {
+        loadDropdown();
+        loadLeaderboard();
+        
+        document.getElementById("sample-select").addEventListener("change", (e) => {
+            loadSampleData(e.target.value);
+        });
+    });
+
+    function showToast(message, isError = false) {
+        const toast = document.getElementById("toast");
+        toast.innerText = message;
+        toast.style.background = isError ? "var(--error-color)" : "#10B981";
+        toast.classList.add("show");
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2500);
+    }
+
+    function loadDropdown() {
+        const select = document.getElementById("sample-select");
+        select.innerHTML = '<option value="" disabled selected>-- Chọn căn nhà mẫu --</option>';
+        DATABASE.test_ids.forEach(id => {
+            const item = DATABASE.samples[id];
+            const opt = document.createElement("option");
+            opt.value = id;
+            opt.innerText = item.label;
+            select.appendChild(opt);
+        });
+    }
+
+    function loadLeaderboard() {
+        const tbody = document.getElementById("leaderboard-body");
+        tbody.innerHTML = "";
+        
+        let reviews = JSON.parse(localStorage.getItem("expert_reviews") || "[]");
+        let allGt = JSON.parse(localStorage.getItem("user_ground_truth") || "{}");
+        
+        let summary = {
+            "Baseline": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 83.98, latency: 100.0, cost: 100.0 },
+            "GPT": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 92.40, latency: 37.8, cost: 85.0 },
+            "Gemini": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 90.15, latency: 81.5, cost: 90.0 },
+            "ViT5": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 82.50, latency: 76.9, cost: 100.0 },
+            "PhoBERT": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 80.12, latency: 91.2, cost: 100.0 }
+        };
+        
+        reviews.forEach(rev => {
+            if (rev.winner_1 && summary[rev.winner_1]) { summary[rev.winner_1].points += 3; summary[rev.winner_1].rank_1 += 1; }
+            if (rev.winner_2 && summary[rev.winner_2]) { summary[rev.winner_2].points += 2; summary[rev.winner_2].rank_2 += 1; }
+            if (rev.winner_3 && summary[rev.winner_3]) { summary[rev.winner_3].points += 1; summary[rev.winner_3].rank_3 += 1; }
+        });
+        
+        let evaluatedIds = Object.keys(allGt).filter(id => allGt[id] && allGt[id].ground_truth_desc && DATABASE.test_ids.includes(id));
+        let evaluatedCount = evaluatedIds.length;
+        
+        evaluatedIds.forEach(id => {
+            let gt = allGt[id];
+            Object.keys(DATABASE.models).forEach(modelName => {
+                let modelData = DATABASE.models[modelName][id];
+                if (modelData) {
+                    let desc = modelData.description;
+                    let mSpecs = modelData.specs;
+                    if (!mSpecs || Object.keys(mSpecs).length === 0 || Object.values(mSpecs).every(v => v === null || v === 'Hẻm thông')) {
+                        mSpecs = robustParseSpecsAgnostic(desc);
+                    }
+                    let rScore = calculateRougeL(desc, gt.ground_truth_desc);
+                    let sScore = calculateSpecsAccuracy(mSpecs, gt.extracted_specs);
+                    
+                    summary[modelName].rouge_sum += rScore;
+                    summary[modelName].specs_sum += sScore;
+                }
+            });
+        });
+        
+        let report = Object.keys(summary).map(modelName => {
+            let data = summary[modelName];
+            let avgRouge = evaluatedCount > 0 ? data.rouge_sum / evaluatedCount : 0.0;
+            let avgSpecs = evaluatedCount > 0 ? data.specs_sum / evaluatedCount : 0.0;
+            
+            let totalReviews = reviews.length;
+            let pointsDenominator = totalReviews * 3;
+            let sExpert = pointsDenominator > 0 ? (data.points / pointsDenominator * 100) : 0.0;
+            
+            let sSpecs = avgSpecs;
+            let sBert = data.bert;
+            let sRouge = avgRouge;
+            let sLatency = data.latency;
+            let sCost = data.cost;
+            
+            let overallScore = 0.35 * sExpert + 0.25 * sSpecs + 0.15 * sBert + 0.15 * sRouge + 0.05 * sLatency + 0.05 * sCost;
+            
+            let realLatency = 0.0;
+            if (modelName === "Baseline") realLatency = 0.007;
+            else if (modelName === "GPT") realLatency = 6.22;
+            else if (modelName === "Gemini") realLatency = 1.85;
+            else if (modelName === "ViT5") realLatency = 2.31;
+            else if (modelName === "PhoBERT") realLatency = 0.88;
+            
+            return {
+                model_name: modelName,
+                points: data.points,
+                rank_1: data.rank_1,
+                rank_2: data.rank_2,
+                rank_3: data.rank_3,
+                avg_rouge: avgRouge,
+                avg_specs: avgSpecs,
+                avg_bert: sBert,
+                latency: realLatency.toFixed(3) + "s",
+                overall_score: overallScore.toFixed(2)
+            };
+        });
+        
+        report.sort((a, b) => parseFloat(b.overall_score) - parseFloat(a.overall_score));
+        
+        tbody.innerHTML = "";
+        if (report.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-secondary);">Chưa có dữ liệu đánh giá nào.</td></tr>';
+            return;
+        }
+        
+        report.forEach((row, i) => {
+            let rankBadgeClass = "rank-other";
+            if (i === 0) rankBadgeClass = "rank-1";
+            else if (i === 1) rankBadgeClass = "rank-2";
+            else if (i === 2) rankBadgeClass = "rank-3";
+            
+            const tr = document.createElement("tr");
+            const friendlyName = getFriendlyModelName(row.model_name);
+            
+            tr.innerHTML = `
+                <td><span class="rank-badge ${rankBadgeClass}">${i + 1}</span></td>
+                <td><strong>${friendlyName}</strong></td>
+                <td style="color: var(--accent-blue); font-weight: bold; font-size: 1rem;">${row.overall_score}</td>
+                <td>${row.points} đ (${row.rank_1} Nhất | ${row.rank_2} Nhì | ${row.rank_3} Ba)</td>
+                <td>${row.avg_rouge.toFixed(1)}%</td>
+                <td>${row.avg_specs.toFixed(1)}%</td>
+                <td>${row.avg_bert.toFixed(1)}%</td>
+                <td>${row.latency}</td>
+                <td>${getFriendlyCostDisplay(row.model_name)}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    function loadSampleData(sampleId) {
+        currentSampleId = sampleId;
+        let sample = DATABASE.samples[sampleId];
+        document.getElementById("raw-display").innerText = sample.raw_input;
+        
+        let allGt = JSON.parse(localStorage.getItem("user_ground_truth") || "{}");
+        let gt = allGt[sampleId] || {
+            ground_truth_title: "",
+            ground_truth_desc: "",
+            extracted_specs: {
+                duong: null, phuong: null, quan: null,
+                gia_ty: null, dien_tich_m2: null, so_tang: null,
+                mat_tien_m: null, chieu_sau_m: null, phan_loai_hem: "Hẻm thông"
+            }
+        };
+        
+        document.getElementById("gt-desc").value = gt.ground_truth_desc || "";
+        let specs = gt.extracted_specs || {};
+        document.getElementById("gt-spec-duong").value = specs.duong || "";
+        document.getElementById("gt-spec-phuong").value = specs.phuong || "";
+        document.getElementById("gt-spec-quan").value = specs.quan || "";
+        document.getElementById("gt-spec-gia").value = specs.gia_ty !== undefined && specs.gia_ty !== null ? specs.gia_ty : "";
+        document.getElementById("gt-spec-dientich").value = specs.dien_tich_m2 !== undefined && specs.dien_tich_m2 !== null ? specs.dien_tich_m2 : "";
+        document.getElementById("gt-spec-sotang").value = specs.so_tang !== undefined && specs.so_tang !== null ? specs.so_tang : "";
+        document.getElementById("gt-spec-ngang").value = specs.mat_tien_m !== undefined && specs.mat_tien_m !== null ? specs.mat_tien_m : "";
+        document.getElementById("gt-spec-dai").value = specs.chieu_sau_m !== undefined && specs.chieu_sau_m !== null ? specs.chieu_sau_m : "";
+        document.getElementById("gt-spec-hem").value = specs.phan_loai_hem || "Hẻm thông";
+        
+        document.getElementById("update-gt-btn").removeAttribute("disabled");
+        document.getElementById("save-review-btn").removeAttribute("disabled");
+        
+        activeModelsData = {};
+        Object.keys(DATABASE.models).forEach(modelName => {
+            let modelData = DATABASE.models[modelName][sampleId];
+            if (modelData) {
+                let rouge_l = 0.0;
+                let specs_acc = 0.0;
+                
+                let mSpecs = modelData.specs;
+                if (!mSpecs || Object.keys(mSpecs).length === 0 || Object.values(mSpecs).every(v => v === null || v === 'Hẻm thông')) {
+                    mSpecs = robustParseSpecsAgnostic(modelData.description);
+                }
+                
+                if (gt.ground_truth_desc) {
+                    rouge_l = calculateRougeL(modelData.description, gt.ground_truth_desc);
+                    specs_acc = calculateSpecsAccuracy(mSpecs, gt.extracted_specs);
+                }
+                
+                let bertscore = 83.98;
+                if (modelName === "GPT") bertscore = 92.40;
+                else if (modelName === "Gemini") bertscore = 90.15;
+                else if (modelName === "ViT5") bertscore = 82.50;
+                else if (modelName === "PhoBERT") bertscore = 80.12;
+                
+                activeModelsData[modelName] = {
+                    model_name: modelName,
+                    title: modelData.title,
+                    description: modelData.description,
+                    specs: mSpecs,
+                    latency: modelData.latency,
+                    cost: modelData.cost,
+                    bertscore: bertscore,
+                    rouge_l: rouge_l,
+                    specs_acc: specs_acc
+                };
+            }
+        });
+        
+        renderModelCards(activeModelsData, specs);
+        
+        let reviews = JSON.parse(localStorage.getItem("expert_reviews") || "[]");
+        let rev = reviews.find(r => r.id === sampleId) || {};
+        document.getElementById("winner-1").value = rev.winner_1 || "";
+        document.getElementById("winner-2").value = rev.winner_2 || "";
+        document.getElementById("winner-3").value = rev.winner_3 || "";
+        document.getElementById("review-comment").value = rev.comment || "";
+    }
+
+    function renderModelCards(models, gtSpecs) {
+        const container = document.getElementById("models-cards-row");
+        container.innerHTML = "";
+
+        const orderedModels = ["Baseline", "GPT", "Gemini", "ViT5", "PhoBERT"];
+
+        orderedModels.forEach(mKey => {
+            const m = models[mKey];
+            if (!m) return;
+
+            const card = document.createElement("div");
+            card.className = "model-card";
+            
+            const specsHtml = renderSpecsTableWithHighlights(m.specs, gtSpecs);
+            const friendlyName = getFriendlyModelName(mKey);
+            const author = getFriendlyAuthor(mKey);
+
+            card.innerHTML = `
+                <div class="model-header">
+                    <div class="model-name">${friendlyName}</div>
+                    <div class="model-member">Thực hiện: ${author}</div>
+                </div>
+                
+                <div class="perf-badge-row">
+                    <span class="perf-tag latency">⏱️ ${m.latency.toFixed(3)}s</span>
+                    <span class="perf-tag cost">💵 ${m.cost}</span>
+                </div>
+                
+                <div class="metric-score-row">
+                    <div class="metric-score-box">
+                        <div class="metric-score-label">ROUGE-L</div>
+                        <div class="metric-score-val">${m.rouge_l > 0 ? m.rouge_l.toFixed(1) + '%' : '0.0%'}</div>
+                    </div>
+                    <div class="metric-score-box">
+                        <div class="metric-score-label">Specs Acc</div>
+                        <div class="metric-score-val">${m.specs_acc > 0 ? m.specs_acc.toFixed(1) + '%' : '0.0%'}</div>
+                    </div>
+                </div>
+
+                <div class="model-content-section">
+                    <span class="content-label">Tiêu đề xuất bản</span>
+                    <div class="model-title-text">${m.title || '<i>(Không tạo tiêu đề)</i>'}</div>
+                </div>
+
+                <div class="model-content-section">
+                    <span class="content-label">Mô tả chuẩn hóa</span>
+                    <div class="model-desc-text">${m.description}</div>
+                </div>
+
+                <div class="model-content-section">
+                    <span class="content-label">Thông số trích xuất</span>
+                    ${specsHtml}
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function renderSpecsTableWithHighlights(modelSpecs, gtSpecs) {
+        const fields = [
+            { key: "duong", label: "Đường" },
+            { key: "phuong", label: "Phường" },
+            { key: "quan", label: "Quận" },
+            { key: "gia_ty", label: "Giá (tỷ)" },
+            { key: "dien_tich_m2", label: "Diện tích" },
+            { key: "so_tang", label: "Số tầng" },
+            { key: "mat_tien_m", label: "Ngang (m)" },
+            { key: "chieu_sau_m", label: "Dài (m)" },
+            { key: "phan_loai_hem", label: "Loại hẻm" }
+        ];
+
+        let html = '<table class="model-specs-table"><tbody>';
+
+        fields.forEach(f => {
+            const mVal = modelSpecs[f.key];
+            const gtVal = gtSpecs[f.key];
+            
+            let displayVal = mVal !== undefined && mVal !== null ? mVal : "-";
+            if (f.key === "dien_tich_m2" && mVal) displayVal += " m²";
+            
+            let highlightClass = "";
+            if (gtVal !== undefined && gtVal !== null && gtVal !== "") {
+                let isMatch = false;
+                if (typeof gtVal === 'string') {
+                    isMatch = String(mVal).trim().toLowerCase() === String(gtVal).trim().toLowerCase();
+                } else {
+                    isMatch = Math.abs(parseFloat(mVal) - parseFloat(gtVal)) < 0.01;
+                }
+                highlightClass = isMatch ? "spec-match" : "spec-mismatch";
+            }
+
+            html += `
+                <tr>
+                    <td class="spec-lbl">${f.label}</td>
+                    <td class="spec-val"><span class="${highlightClass}">${displayVal}</span></td>
+                </tr>
+            `;
+        });
+
+        html += '</tbody></table>';
+        return html;
+    }
+
+    function updateGroundTruth() {
+        if (!currentSampleId) return;
+
+        const gtDesc = document.getElementById("gt-desc").value.trim();
+        const specs = {
+            duong: document.getElementById("gt-spec-duong").value.trim() || null,
+            phuong: document.getElementById("gt-spec-phuong").value.trim() || null,
+            quan: document.getElementById("gt-spec-quan").value.trim() || null,
+            gia_ty: getNumericValue("gt-spec-gia"),
+            dien_tich_m2: getNumericValue("gt-spec-dientich"),
+            so_tang: getIntegerValue("gt-spec-sotang"),
+            mat_tien_m: getNumericValue("gt-spec-ngang"),
+            chieu_sau_m: getNumericValue("gt-spec-dai"),
+            phan_loai_hem: document.getElementById("gt-spec-hem").value
+        };
+
+        if (!gtDesc) {
+            showToast("Vui lòng điền mô tả chuẩn nhãn để tính điểm từ vựng!", true);
+            return;
+        }
+
+        let allGt = JSON.parse(localStorage.getItem("user_ground_truth") || "{}");
+        allGt[currentSampleId] = {
+            ground_truth_title: "",
+            ground_truth_desc: gtDesc,
+            extracted_specs: specs
+        };
+        
+        localStorage.setItem("user_ground_truth", JSON.stringify(allGt));
+        showToast("Đã cập nhật Ground Truth & tính lại chỉ số!");
+        
+        loadSampleData(currentSampleId);
+        loadLeaderboard();
+    }
+
+    function saveExpertReview() {
+        if (!currentSampleId) return;
+
+        const w1 = document.getElementById("winner-1").value;
+        const w2 = document.getElementById("winner-2").value;
+        const w3 = document.getElementById("winner-3").value;
+        const comment = document.getElementById("review-comment").value.trim();
+
+        if (!w1 || !w2 || !w3) {
+            showToast("Vui lòng chọn đầy đủ xếp hạng Hạng 1, 2 và 3!", true);
+            return;
+        }
+
+        if (w1 === w2 || w1 === w3 || w2 === w3) {
+            showToast("Mô hình được chọn xếp hạng không được trùng nhau!", true);
+            return;
+        }
+
+        let reviews = JSON.parse(localStorage.getItem("expert_reviews") || "[]");
+        let idx = reviews.findIndex(r => r.id === currentSampleId);
+        
+        let reviewItem = {
+            id: currentSampleId,
+            winner_1: w1,
+            winner_2: w2,
+            winner_3: w3,
+            comment: comment,
+            timestamp: new Date().toISOString().replace('T', ' ').substring(0, 19)
+        };
+        
+        if (idx !== -1) {
+            reviews[idx] = reviewItem;
+        } else {
+            reviews.push(reviewItem);
+        }
+        
+        localStorage.setItem("expert_reviews", JSON.stringify(reviews));
+        showToast("Đã lưu xếp hạng của chuyên gia!");
+        loadLeaderboard();
+    }
+
+    // ══════════════════════════════════════════════════════════════════════════════
+    // DATA EXPORT & IMPORT HANDLERS (BACKUP JSON)
+    // ══════════════════════════════════════════════════════════════════════════════
+    
+    function exportLocalStorageData() {
+        let data = {
+            user_ground_truth: JSON.parse(localStorage.getItem("user_ground_truth") || "{}"),
+            expert_reviews: JSON.parse(localStorage.getItem("expert_reviews") || "[]")
+        };
+        
+        let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+        let downloadAnchor = document.createElement('a');
+        downloadAnchor.setAttribute("href", dataStr);
+        downloadAnchor.setAttribute("download", `NLP_Showcase_Backup_${new Date().toISOString().slice(0,10)}.json`);
+        document.body.appendChild(downloadAnchor);
+        downloadAnchor.click();
+        downloadAnchor.remove();
+        showToast("Đã xuất file lưu trữ dữ liệu!");
+    }
+    
+    function importLocalStorageData(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const imported = JSON.parse(e.target.result);
+                if (imported.user_ground_truth) {
+                    localStorage.setItem("user_ground_truth", JSON.stringify(imported.user_ground_truth));
+                }
+                if (imported.expert_reviews) {
+                    localStorage.setItem("expert_reviews", JSON.stringify(imported.expert_reviews));
+                }
+                showToast("Đã nhập dữ liệu lưu trữ thành công!");
+                loadLeaderboard();
+                if (currentSampleId) loadSampleData(currentSampleId);
+            } catch (err) {
+                showToast("File JSON không đúng định dạng hoặc bị lỗi!", true);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    // ══════════════════════════════════════════════════════════════════════════════
+    // HELPERS
+    // ══════════════════════════════════════════════════════════════════════════════
+    
+    function getNumericValue(id) {
+        const val = document.getElementById(id).value;
+        return val !== "" ? parseFloat(val) : null;
+    }
+
+    function getIntegerValue(id) {
+        const val = document.getElementById(id).value;
+        return val !== "" ? parseInt(val) : null;
+    }
+
+    function getFriendlyModelName(key) {
+        const mapping = {
+            "Baseline": "Baseline TextRank",
+            "GPT": "GPT-4o mini API",
+            "Gemini": "Gemini 1.5 Flash",
+            "ViT5": "ViT5 Fine-tuned",
+            "PhoBERT": "PhoBERT Fine-tuned"
+        };
+        return mapping[key] || key;
+    }
+
+    // Tác giả
+    function getFriendlyAuthor(key) {
+        const mapping = {
+            "Baseline": "Bách Nhân",
+            "GPT": "Minh Quân",
+            "Gemini": "Ba Học",
+            "ViT5": "Mai Anh",
+            "PhoBERT": "Hữu Hiếu"
+        };
+        return mapping[key] || "N/A";
+    }
+
+    // Chi phí
+    function getFriendlyCostDisplay(key) {
+        const mapping = {
+            "Baseline": "0đ",
+            "GPT": "~15đ/tin",
+            "Gemini": "~15đ/tin",
+            "ViT5": "0đ (Offline)",
+            "PhoBERT": "0đ (Offline)"
+        };
+        return mapping[key] || "-";
+    }
+
+    function openFormulaModal() {
+        document.getElementById("formula-modal-overlay").classList.add("active");
+    }
+
+    function closeFormulaModal() {
+        document.getElementById("formula-modal-overlay").classList.remove("active");
+    }
+</script>
+
+</body>
+</html>
