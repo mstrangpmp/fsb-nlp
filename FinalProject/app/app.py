@@ -733,5 +733,16 @@ def get_reviews_summary():
         "leaderboard": report
     })
 
+@app.after_request
+def add_header(r):
+    """
+    Thêm headers để vô hiệu hóa cache trình duyệt đối với các API response,
+    đảm bảo dữ liệu mới nhất được nạp lại sau mỗi lần lưu Ground Truth.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    return r
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

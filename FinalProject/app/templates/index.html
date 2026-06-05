@@ -936,7 +936,7 @@
 
     // Tải danh sách 9 căn nhà mẫu
     function loadDropdown() {
-        fetch('/get_test_samples')
+        fetch(`/get_test_samples?t=${Date.now()}`)
             .then(res => res.json())
             .then(data => {
                 const select = document.getElementById("sample-select");
@@ -956,7 +956,7 @@
 
     // Tải bảng xếp hạng trực tuyến
     function loadLeaderboard() {
-        fetch('/get_reviews_summary')
+        fetch(`/get_reviews_summary?t=${Date.now()}`)
             .then(res => res.json())
             .then(data => {
                 const tbody = document.getElementById("leaderboard-body");
@@ -999,7 +999,7 @@
 
     // Tải dữ liệu của căn nhà được chọn
     function loadSampleData(sampleId) {
-        fetch(`/get_sample_data/${sampleId}`)
+        fetch(`/get_sample_data/${sampleId}?t=${Date.now()}`)
             .then(res => res.json())
             .then(data => {
                 // 1. Hiển thị tin thô
