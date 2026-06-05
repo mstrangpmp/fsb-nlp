@@ -706,10 +706,16 @@
     <div class="card gt-section">
         <h2 class="card-title">2. Biên Tập Nhãn Chuẩn (Ground Truth Editor)</h2>
         <div class="gt-grid">
-            <!-- Left GT Column: Description -->
+            <!-- Left GT Column: Title & Description -->
             <div class="form-group" style="display: flex; flex-direction: column; height: 100%;">
-                <label for="gt-desc">Mô tả chuẩn nhãn (Văn bản đích):</label>
-                <textarea id="gt-desc" placeholder="Chuyên gia điền mô tả chuẩn tại đây..." style="flex-grow: 1; min-height: 200px; height: 100%; resize: vertical;"></textarea>
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="gt-title">Tiêu đề chuẩn nhãn (Tiêu đề đích):</label>
+                    <input type="text" id="gt-title" placeholder="Chuyên gia điền tiêu đề chuẩn tại đây...">
+                </div>
+                <div class="form-group" style="display: flex; flex-direction: column; flex-grow: 1; margin-bottom: 0;">
+                    <label for="gt-desc">Mô tả chuẩn nhãn (Văn bản đích):</label>
+                    <textarea id="gt-desc" placeholder="Chuyên gia điền mô tả chuẩn tại đây..." style="flex-grow: 1; min-height: 120px; height: 100%; resize: vertical;"></textarea>
+                </div>
             </div>
             <!-- Right GT Column: 9 Specs -->
             <div>
@@ -1001,6 +1007,7 @@
                 
                 // 2. Điền Ground Truth
                 const gt = data.ground_truth;
+                document.getElementById("gt-title").value = gt.ground_truth_title || "";
                 document.getElementById("gt-desc").value = gt.ground_truth_desc || "";
                 
                 const specs = gt.extracted_specs || {};
@@ -1151,7 +1158,7 @@
     function updateGroundTruth() {
         if (!currentSampleId) return;
 
-        const gtTitle = ""; // Lược bỏ tiêu đề chuẩn, chỉ lấy mô tả và thông số
+        const gtTitle = document.getElementById("gt-title").value.trim();
         const gtDesc = document.getElementById("gt-desc").value.trim();
         
         // Lấy thông số từ form nhập
@@ -1167,6 +1174,10 @@
             phan_loai_hem: document.getElementById("gt-spec-hem").value
         };
 
+        if (!gtTitle) {
+            showToast("Vui lòng điền tiêu đề chuẩn nhãn!", true);
+            return;
+        }
         if (!gtDesc) {
             showToast("Vui lòng điền mô tả chuẩn nhãn để tính điểm từ vựng!", true);
             return;
