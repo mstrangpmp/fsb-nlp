@@ -17,3 +17,17 @@
   - `ground_truth_test.json` – File nhãn chuẩn thật của 9 căn test dùng để đối chiếu hiệu năng (chỉ do Trang nắm giữ).
   - `aggregate_results.py` – Kịch bản Python chấm điểm ROUGE-L và Specs Accuracy tự động.
   - `summary_leaderboard_report.csv` – Bảng xếp hạng hiệu năng tổng hợp của cả 5 mô hình sau khi chạy đánh giá.
+
+## 🔗 Tích hợp hệ thống và Chạy lại (System Integration & Re-running)
+
+- **Vị trí tập dữ liệu thô kiểm thử**:
+  - `FinalProject/01_HuynhTrang_PM/test_dataset.json` (chứa 9 tin kiểm thử cốt lõi đăng ký qua trường `id` / `ID`).
+- **Cách cập nhật dữ liệu đầu vào**:
+  - Nếu có sự thay đổi về nội dung tin đăng thô đầu vào hoặc danh sách 9 căn nhà mẫu trong tập kiểm thử, chỉ cần sửa đổi nội dung tệp `test_dataset.json` này.
+  - **Với Flask App**: Flask app sẽ tự động nạp lại dữ liệu tin đăng thô mới nhất từ tệp này qua API `/get_test_samples` và `/get_sample_data`.
+  - **Với Trang tĩnh (`app/index.html`)**: Chạy generator script để biên dịch dữ liệu mới từ tệp này nhúng vào trang tĩnh:
+    ```bash
+    cd FinalProject/app
+    python generate_static_index.py
+    ```
+

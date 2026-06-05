@@ -11,3 +11,18 @@ Hãy đặt các file sau vào thư mục này khi hoàn thành:
 2. `Nhan_Baseline_performance.json` - File ghi nhận tốc độ và tài nguyên xử lý (Latency/Cost).
 3. `Nhan_Baseline_report.md` - Báo cáo phân tích định tính ít nhất 3 lỗi điển hình của thuật toán.
 4. Source code Python / Notebook huấn luyện và inference.
+
+## 🔗 Tích hợp hệ thống và Chạy lại (System Integration & Re-running)
+
+- **Vị trí tệp bàn giao thực tế để hiển thị trên App**:
+  - predictions JSON: `FinalProject/02_BachNhan_Baseline/TextRank_TFIDF/Nhan_Baseline_predictions.json`
+  - performance JSON: `FinalProject/02_BachNhan_Baseline/TextRank_TFIDF/Nhan_Baseline_performance.json`
+- **Cách cập nhật kết quả dự đoán của mô hình**:
+  - Khi chạy lại mô hình TextRank/TF-IDF và có kết quả dự đoán mới, hãy lưu đè kết quả định dạng JSON vào 2 tệp trên.
+  - **Với Flask App**: Flask app sẽ tự động nạp dữ liệu mới từ các tệp trên và tính lại các chỉ số đối chiếu ngay lập tức.
+  - **Với Trang tĩnh (`app/index.html`)**: Chạy generator script để biên dịch dữ liệu mới nhúng vào trang tĩnh:
+    ```bash
+    cd FinalProject/app
+    python generate_static_index.py
+    ```
+

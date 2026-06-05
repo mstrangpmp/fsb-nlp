@@ -18,7 +18,9 @@ app = Flask(__name__)
 # ══════════════════════════════════════════════════════════════════════════════
 # 1. ĐƯỜNG DẪN DỮ LIỆU GỐC CỦA NHÓM
 # ══════════════════════════════════════════════════════════════════════════════
-BASE_DIR = "d:/LHTBrain/01_PROJECTS/FSB-NLP/FinalProject"
+# Xác định BASE_DIR động để chạy được trên mọi máy sau khi clone
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(CURRENT_DIR)
 PM_DIR = os.path.join(BASE_DIR, "01_HuynhTrang_PM")
 APP_DIR = os.path.join(BASE_DIR, "app")
 

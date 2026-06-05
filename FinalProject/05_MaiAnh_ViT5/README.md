@@ -127,3 +127,18 @@ Dựa theo tài liệu dự án, ViT5 được kỳ vọng đạt:
 3. Latency từ `performance.json`
 4. Phân tích 3 lỗi điển hình bạn quan sát
 5. Đính kèm ảnh `loss_curve.png`
+
+## 🔗 Tích hợp hệ thống và Chạy lại (System Integration & Re-running)
+
+- **Vị trí tệp bàn giao thực tế để hiển thị trên App**:
+  - predictions JSON: `FinalProject/05_MaiAnh_ViT5/ViT5_predictions.json`
+  - performance JSON: `FinalProject/05_MaiAnh_ViT5/ViT5_performance.json`
+- **Cách cập nhật kết quả dự đoán của mô hình**:
+  - Khi chạy lại và download kết quả mới từ Colab, hãy lưu đè kết quả định dạng JSON vào 2 tệp trên (`ViT5_predictions.json` và `ViT5_performance.json`).
+  - **Với Flask App**: Flask app sẽ tự động nạp dữ liệu mới từ các tệp trên và tính lại các chỉ số đối chiếu ngay lập tức.
+  - **Với Trang tĩnh (`app/index.html`)**: Chạy generator script để biên dịch dữ liệu mới nhúng vào trang tĩnh:
+    ```bash
+    cd FinalProject/app
+    python generate_static_index.py
+    ```
+

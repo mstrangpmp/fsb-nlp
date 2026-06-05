@@ -133,3 +133,18 @@
 | Kiến trúc `EncoderDecoderModel` với `vinai/phobert-base` | ✅ |
 | Phân tích 3 lỗi định tính | ✅ |
 | Google Colab Notebook `.ipynb` | ✅ |
+
+## 🔗 Tích hợp hệ thống và Chạy lại (System Integration & Re-running)
+
+- **Vị trí tệp bàn giao thực tế để hiển thị trên App**:
+  - predictions JSON: `FinalProject/06_HuuHieu_PhoBERT/HuuHieu_PhoBERT_predictions1.json`
+  - performance JSON: `FinalProject/06_HuuHieu_PhoBERT/HuuHieu_PhoBERT_performance1.json`
+- **Cách cập nhật kết quả dự đoán của mô hình**:
+  - Khi chạy lại và download kết quả mới từ Colab, hãy lưu đè kết quả định dạng JSON vào 2 tệp trên (`HuuHieu_PhoBERT_predictions1.json` và `HuuHieu_PhoBERT_performance1.json`).
+  - **Với Flask App**: Flask app sẽ tự động nạp dữ liệu mới từ các tệp trên và tính lại các chỉ số đối chiếu ngay lập tức.
+  - **Với Trang tĩnh (`app/index.html`)**: Chạy generator script để biên dịch dữ liệu mới nhúng vào trang tĩnh:
+    ```bash
+    cd FinalProject/app
+    python generate_static_index.py
+    ```
+
