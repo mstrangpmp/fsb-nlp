@@ -1,0 +1,224 @@
+[
+    {
+        "id": "SYS-20264727-938",
+        "latency_seconds": 10.02,
+        "total_tokens": 2777,
+        "estimated_cost_usd": 0.0005988
+    },
+    {
+        "id": "SYS-MP75438B-O8",
+        "latency_seconds": 4.89,
+        "total_tokens": 2443,
+        "estimated_cost_usd": 0.0005424
+    },
+    {
+        "id": "SYS-MP756313-W",
+        "latency_seconds": 5.49,
+        "total_tokens": 2641,
+        "estimated_cost_usd": 0.00056715
+    },
+    {
+        "id": "SYS-MP756P72-9B",
+        "latency_seconds": 5.68,
+        "total_tokens": 2605,
+        "estimated_cost_usd": 0.0005577
+    },
+    {
+        "id": "SYS-MP757WNV-DN",
+        "latency_seconds": 5.69,
+        "total_tokens": 2545,
+        "estimated_cost_usd": 0.00054285
+    },
+    {
+        "id": "SYS-MP758TA8-AN",
+        "latency_seconds": 5.14,
+        "total_tokens": 2666,
+        "estimated_cost_usd": 0.00056685
+    },
+    {
+        "id": "SYS-MP759ESN-94",
+        "latency_seconds": 6.83,
+        "total_tokens": 2579,
+        "estimated_cost_usd": 0.0005591999999999999
+    },
+    {
+        "id": "SYS-MP759ZIK-MM",
+        "latency_seconds": 4.91,
+        "total_tokens": 2400,
+        "estimated_cost_usd": 0.0005157
+    },
+    {
+        "id": "SYS-MP75AKU9-9R",
+        "latency_seconds": 339.99,
+        "total_tokens": 2799,
+        "estimated_cost_usd": 0.0005949
+    },
+    {
+        "id": "SYS-MP75ES0J-9K",
+        "latency_seconds": 6.27,
+        "total_tokens": 2561,
+        "estimated_cost_usd": 0.00055335
+    },
+    {
+        "id": "SYS-MP75GT4Y-GN",
+        "latency_seconds": 5.01,
+        "total_tokens": 2595,
+        "estimated_cost_usd": 0.0005584499999999999
+    },
+    {
+        "id": "SYS-MP75Z7G0-H3",
+        "latency_seconds": 7.18,
+        "total_tokens": 2999,
+        "estimated_cost_usd": 0.00067935
+    },
+    {
+        "id": "SYS-MP75ZR8R-C4",
+        "latency_seconds": 5.2,
+        "total_tokens": 2840,
+        "estimated_cost_usd": 0.0005889
+    },
+    {
+        "id": "SYS-MP760LYQ-AC",
+        "latency_seconds": 6.27,
+        "total_tokens": 2711,
+        "estimated_cost_usd": 0.0005979
+    },
+    {
+        "id": "SYS-MP760YOH-BW",
+        "latency_seconds": 7.36,
+        "total_tokens": 2807,
+        "estimated_cost_usd": 0.0006186
+    },
+    {
+        "id": "SYS-MP761FGI-DF",
+        "latency_seconds": 4.79,
+        "total_tokens": 2697,
+        "estimated_cost_usd": 0.000567
+    },
+    {
+        "id": "SYS-MP762B6J-5",
+        "latency_seconds": 5.34,
+        "total_tokens": 2679,
+        "estimated_cost_usd": 0.0005634
+    },
+    {
+        "id": "SYS-MP7634YK-9F",
+        "latency_seconds": 5.62,
+        "total_tokens": 2605,
+        "estimated_cost_usd": 0.0005500500000000001
+    },
+    {
+        "id": "SYS-MP7635C7-K7",
+        "latency_seconds": 5.32,
+        "total_tokens": 2460,
+        "estimated_cost_usd": 0.0005134499999999999
+    },
+    {
+        "id": "SYS-MP7637OS-RJ",
+        "latency_seconds": 4.81,
+        "total_tokens": 2518,
+        "estimated_cost_usd": 0.00052305
+    },
+    {
+        "id": "SYS-MP764K4E-GE",
+        "latency_seconds": 7.17,
+        "total_tokens": 2816,
+        "estimated_cost_usd": 0.0006478499999999999
+    },
+    {
+        "id": "SYS-MP764L4R-IF",
+        "latency_seconds": 5.02,
+        "total_tokens": 2655,
+        "estimated_cost_usd": 0.0005526
+    },
+    {
+        "id": "SYS-MP764LWN-9X",
+        "latency_seconds": 5.65,
+        "total_tokens": 2547,
+        "estimated_cost_usd": 0.00052335
+    },
+    {
+        "id": "SYS-MP764N6F-B1",
+        "latency_seconds": 6.55,
+        "total_tokens": 2970,
+        "estimated_cost_usd": 0.0006363
+    },
+    {
+        "id": "SYS-MP766HGX-F6",
+        "latency_seconds": 6.58,
+        "total_tokens": 2419,
+        "estimated_cost_usd": 0.0005289
+    },
+    {
+        "id": "SYS-MP766I2E-45",
+        "latency_seconds": 5.85,
+        "total_tokens": 2628,
+        "estimated_cost_usd": 0.0005823
+    },
+    {
+        "id": "SYS-MP766ILH-Q8",
+        "latency_seconds": 5.56,
+        "total_tokens": 2728,
+        "estimated_cost_usd": 0.0005864999999999999
+    },
+    {
+        "id": "SYS-MP766JN2-5",
+        "latency_seconds": 5.32,
+        "total_tokens": 2503,
+        "estimated_cost_usd": 0.00051675
+    },
+    {
+        "id": "SYS-MP766L05-NB",
+        "latency_seconds": 5.21,
+        "total_tokens": 2507,
+        "estimated_cost_usd": 0.000534
+    },
+    {
+        "id": "SYS-MP768E8R-8M",
+        "latency_seconds": 5.58,
+        "total_tokens": 2709,
+        "estimated_cost_usd": 0.0005823
+    },
+    {
+        "id": "SYS-MP768F9D-51",
+        "latency_seconds": 7.91,
+        "total_tokens": 2802,
+        "estimated_cost_usd": 0.00062235
+    },
+    {
+        "id": "SYS-MP768HEI-4N",
+        "latency_seconds": 5.53,
+        "total_tokens": 2538,
+        "estimated_cost_usd": 0.00054495
+    },
+    {
+        "id": "SYS-MP769MZL-CW",
+        "latency_seconds": 5.06,
+        "total_tokens": 2542,
+        "estimated_cost_usd": 0.0005298
+    },
+    {
+        "id": "SYS-MP76BBTD-2W",
+        "latency_seconds": 4.88,
+        "total_tokens": 2404,
+        "estimated_cost_usd": 0.0004933499999999999
+    },
+    {
+        "id": "SYS-MP76BCQC-2X",
+        "latency_seconds": 5.01,
+        "total_tokens": 2634,
+        "estimated_cost_usd": 0.0005499
+    },
+    {
+        "id": "SYS-MP76BDTQ-LY",
+        "latency_seconds": 5.76,
+        "total_tokens": 2647,
+        "estimated_cost_usd": 0.0005653499999999999
+    },
+    {
+        "id": "SYS-MP76BF5N-B",
+        "latency_seconds": 4.64,
+        "total_tokens": 2526,
+        "estimated_cost_usd": 0.0005327999999999999
+    }
+]

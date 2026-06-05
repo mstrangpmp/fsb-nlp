@@ -1,0 +1,15 @@
+Prompt Engineering & Phân Tích Lỗi
+3. Đỗ Trọng Minh Quân: Kỹ Sư Prompting GPT (OpenAI GPT Specialist)
+Mục tiêu hành động
+
+Viết prompt Few-shot và gọi API GPT-4o mini trên 9 căn Test, theo dõi chi phí/tốc độ, phân tích định tính 3 lỗi của GPT và soạn báo cáo gửi Trang.
+Nhiệm vụ cụ thể
+
+Tự nghiên cứu tập Train (51 căn) để tự thiết kế prompt Few-shot tối ưu nhất cho GPT. Lập trình gọi API gpt-4o-mini trên 9 căn Test, đo đạc độ trễ và tính toán chi phí token thực tế. Phân tích định tính 3 lỗi của GPT. 
+Soạn báo cáo gửi Trang.
+
+Đầu Ra Bàn Giao (Output)
+File predictions.json và performance.json của GPT + report.md chứa 3 lỗi phân tích.
+
+Mối Liên Kết Phụ Thuộc
+Nhận tập Test và mẫu Train từ Trang. Bàn giao kết quả và slide cho Trang.

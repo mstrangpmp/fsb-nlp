@@ -1,0 +1,3 @@
+Mô Hình Chạy Thử	ROUGE-L (TB)	BERTScore (TB)	Specs Pres. (TB)	Độ Trễ (Latency)	Chi Phí (Cost/1k)	Trạng Thái
+
+ GPT-4o mini API	76.2%	88.4%	96.0%	1.55 giây	~23,000đ ($Token)	Trễ cao, mất phí
