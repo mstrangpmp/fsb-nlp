@@ -6,8 +6,8 @@
     "predicted_description": "Nơ Trang Long 77.7/112.8 5 5.5 26 27.5 tỷ Bình Lợi Trung Bình Thạnh 25-50 tỷ HĐ Nguyễn Thị Anh Đào_ĐC Thiên Lam  H3GB nguồn Đối tác *AĐ QUẬN BÌNH THẠNHNHÀ MẶT TIỀN NƠ TRANG LONG, PHAN VĂN TRỊ, QUẬN BÌNH THẠNH  NHÀ  SIÊU PHẨM ĐẸP, 3 TẦNG  5,5 X 20,5 CHỈ HƠN 27,5TỶ Nơ Trang Long 77.7/112,8 5 5,5 20,5 27,5 tỷ,phường , Quận Bình Thạnh, 15 đến 30. Gò Vấp, Quận 1, Quận 4, Quận 5+ Nhà gần Chợ Bà Chiểu, trường học, siêu thị , Bách hóa, Khu vui chơi giải trí....+ Chủ cần bán gấp trong tết + Sổ hồng chính chủ, sổ tại gia.",
     "extracted_specs": {
       "duong": "Nơ Trang Long",
-      "phuong": null,
-      "quan": "Bình Thạnh",
+      "phuong": "Phường ",
+      "quan": "Quận 1",
       "gia_ty": 27.5,
       "dien_tich_m2": 77.7,
       "so_tang": 5,
@@ -22,7 +22,7 @@
     "predicted_title": "Quận 3 - Hẻm thông - 12.0 Tỷ",
     "predicted_description": "🚗🏡 HOT QUẬN 3- LÊ VĂN SỸ- NHỈNH 12 TỶ 🌹🌹🌹+ HĐĐT chính chủ, HKĐC. ✅ Vị trí đẹp, trung tâm, con đường thời trang Lê Văn Sỹ. ✅ Sổ đẹp, hoàn công đủ, pháp lý sạch.",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Thời Trang Lê Văn Sỹ",
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 12.0,
@@ -39,7 +39,7 @@
     "predicted_title": "Quận 10 - 11.0m2 (38.7x2.0) - Hẻm xe hơi - 10 tầng - 4.0 Tỷ",
     "predicted_description": "💥 HẺM Ô TÔ ĐỖ CỬA SÁT MẶT TIỀN ĐIỆN BIÊN PHỦ, P11, QUẬN 10 - 38.7M2 NGANG 4M - 4 TẦNG - CHỈ 8.5 TỶ + Kết cấu : gồm 4 tầng BTCT, có 3 phòng ngủ, 4 toilet, sân thượng, + Vị trí trung tâm quận 10, khu kinh doanh sầm uất, đủ tiện ích, thuận tiện đi lại.",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Điện Biên Phủ",
       "phuong": null,
       "quan": "Quận 10",
       "gia_ty": 4.0,
@@ -47,7 +47,7 @@
       "so_tang": 10,
       "mat_tien_m": 38.7,
       "chieu_sau_m": 2.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -56,7 +56,7 @@
     "predicted_title": "NHÀ Quận 3 - Hẻm xe hơi - 5 tầng",
     "predicted_description": "NHÀ 5 TẦNG - HẺM 5M - NGAY CHỢ - DÒNG TIỀN ỔN ĐỊNH THU NHẬP 300TR/ NĂM - CAO THẮNG P3 QUẬN 3 TPHCM - Hẻm thông bàn cờ, xe hơi tới cửa 🌹Ace ks đi hẻm 51 Nguyễn Thiện Thuật vào 50m là tới",
     "extracted_specs": {
-      "duong": "NHÀ",
+      "duong": "Cao Thắng",
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": null,
@@ -81,7 +81,7 @@
       "so_tang": 44,
       "mat_tien_m": 2.0,
       "chieu_sau_m": 100.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -90,7 +90,7 @@
     "predicted_title": "3.0m2 (8.0x4.0) - Hẻm xe hơi - 3 tầng - 3.0 Tỷ",
     "predicted_description": "HIẾM -HẺM XE HƠI ĐỖ CỬA LÊ VĂN SỸ Q3 - NHÀ ĐẸP - TRỆT, 3 LẦU, SÂN THƯỢNG - NỞ HẬU TÀI LỘC - CHỈ NHỈNH 8 TỶ + Kết cấu: 4 tầng BTCT - Trệt, 3 lầu, sân thượng hoàn công đủ. + Sổ sạch, pháp lý chuẩn chỉnh, hoàn công đủ, công chứng mua bán ngay.",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Lê Văn Sỹ",
       "phuong": null,
       "quan": null,
       "gia_ty": 3.0,
@@ -141,8 +141,8 @@
     "predicted_title": "Cách Mạng Tháng 8 Quận 3 - 57.6m2 (4.3x15.0) - Hẻm xe hơi - 2 tầng - 8.0 Tỷ",
     "predicted_description": "Cách Mạng Tháng 8 57.6/65 2 4.3 15 8 tỷ Nhiêu Lộc Quận 3 5-10 tỷ HĐ Vũ Hoàng Giang Thiên Ngọc  H3GB nguồn Hội đồng thẩm định ✅BÁN NHÀ HẺM 210 CÁCH MẠNG THÁNG TÁM – QUẬN 3, XE HƠI ĐẦU CÁCH NHÀ HƠN 10m ➡️Vị trí: Hẻm 210 Cách Mạng Tháng Tám, phường Nhiêu Lộc, Quận 3 gần ngay Ga Đường Sắt Sài Gòn",
     "extracted_specs": {
-      "duong": "Cách Mạng Tháng 8",
-      "phuong": null,
+      "duong": "Sắt Sài Gòn",
+      "phuong": "Phường Nhiêu Lộc",
       "quan": "Quận 3",
       "gia_ty": 8.0,
       "dien_tich_m2": 57.6,
@@ -158,7 +158,7 @@
     "predicted_title": "5.0m2 (2.0x8.0) - Hẻm xe hơi - 38 tầng - 4.0 Tỷ",
     "predicted_description": "🌺5 TẦNG - 38M2 - AN NINH - HẺM XE HƠI- HƠN 8 TỶ💎 _ Kết cấu : Trệt 4 lầu hoàn công đủ. _ Hẻm xe hơi đỗ cửa, cách mặt tiền đường 100m.",
     "extracted_specs": {
-      "duong": null,
+      "duong": "100M",
       "phuong": null,
       "quan": null,
       "gia_ty": 4.0,
@@ -166,7 +166,7 @@
       "so_tang": 38,
       "mat_tien_m": 2.0,
       "chieu_sau_m": 8.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -175,8 +175,8 @@
     "predicted_title": "Phú Nhuận - 5.0m2 (4.0x8.9) - Hẻm xe hơi - 3 tầng - 13.0 Tỷ",
     "predicted_description": "🏡 SIÊU PHẨM NHÀ MỚI HẺM XE HƠI NGAY LÊ VĂN SỸ - 5 TẦNG SÂN THƯỢNG BTCT - 3PN 4WC FULL NỘI THẤT - CHỈ 8.9 TỶ + Vị trí: HẺM VIP Huỳnh Văn Bánh, P.13, Phú Nhuận . + Kết cấu: Trệt, lửng , 3 lầu, sân thượng BTCT.",
     "extracted_specs": {
-      "duong": null,
-      "phuong": null,
+      "duong": "Huỳnh Văn Bánh",
+      "phuong": "Phường 13",
       "quan": "Phú Nhuận",
       "gia_ty": 13.0,
       "dien_tich_m2": 5.0,
@@ -192,8 +192,8 @@
     "predicted_title": "Địa chỉ: Cao Thắng, Phường Quận 10 - Hẻm thông",
     "predicted_description": "Địa chỉ: Cao Thắng, Phường 12, Quận 10 📍Vị trí: Tọa lạc tại khu Cao Thắng – Ba Tháng Hai – Nguyễn Tri Phương, khu vực trung tâm Quận 10 với đầy đủ tiện ích: + Lầu 1 - 2: mỗi tầng 2 phòng ngủ thoáng sáng, có ban công, cửa sổ, 2 WC khép kín.",
     "extracted_specs": {
-      "duong": "Địa chỉ: Cao Thắng, Phường",
-      "phuong": null,
+      "duong": "Cao Thắng",
+      "phuong": "Phường 12",
       "quan": "Quận 10",
       "gia_ty": null,
       "dien_tich_m2": null,
@@ -209,7 +209,7 @@
     "predicted_title": "HẠ Quận 10 - Hẻm thông - 14.58 Tỷ",
     "predicted_description": "HẠ 220tr - Giá mới 14.58 tỷ chốt nhanh Anh chị em ơi •        Ngay trung tâm Quận 10, gần Cao Thắng 📜 Sổ hồng 2026  chính chủ  – pháp lý chuẩn - hoàn công đủ  – công chứng trong ngày",
     "extracted_specs": {
-      "duong": "HẠ",
+      "duong": "Cao Thắng",
       "phuong": null,
       "quan": "Quận 10",
       "gia_ty": 14.58,
@@ -226,7 +226,7 @@
     "predicted_title": "HXH Quận 10 - Hẻm xe hơi - 2 tầng",
     "predicted_description": "HXH 5M ÔTÔ VÀO NHÀ  - KHU HÀ ĐÔ QUẬN 10 - 5 CĂN HỘ MINI (ĐANG CHO THUÊ 65TR/THÁNG)! + Kết cấu: Trệt 2 lầu BTCT chắc chắn, gồm 5 căn hộ mini (mỗi căn hộ gồm: 2PN mỗi phòng ngủ đều có máy lạnh riêng, TC 10PN nhỏ, wc, phòng khách, bếp), trang bị đầy đủ nội thất cao cấp gồm giường tủ, bếp, bàn ghế, ... + Vị trí ngay Hà Đô nổi tiếng nhất quận 10, Trung tâm của Trung tâm.",
     "extracted_specs": {
-      "duong": "HXH",
+      "duong": null,
       "phuong": null,
       "quan": "Quận 10",
       "gia_ty": null,
@@ -243,7 +243,7 @@
     "predicted_title": "Quận 10 - 5.0m2 (1.0x30.0) - Hẻm thông - 6 tầng - 10.0 Tỷ",
     "predicted_description": "💥💥💥NHÀ SIÊU ĐẸP - 5 TẦNG - CĂN GÓC HẺM 6M - CÓ THANG MÁY - 1/ ĐỒNG NAI TRỤC THẲNG CHỈ 30M KHU VỰC HÓT NHẤT TRUNG TÂM QUẬN 10 - CHỈ HƠN 22 TỶ 😍😍😍 📍Đồng Nai - Phường 15 ( P. Hòa Hưng mới) - Quận 10 - Tp.HCM Pháp lý chuẩn - Sổ hồng chính chủ - Công chứng trong ngày - Nhà 1 đời chủ - chủ có hỗ trợ vay NH",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Đồng Nai",
       "phuong": null,
       "quan": "Quận 10",
       "gia_ty": 10.0,
@@ -260,8 +260,8 @@
     "predicted_title": "KHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN Quận 3 - 3.0m2 (2.0x5.0) - Hẻm xe hơi - 36 tầng - 8.0 Tỷ",
     "predicted_description": "KHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN 3 - 36m2 - HẺM XE HƠI THÔNG ĐIỆN BIÊN PHỦ,VÕ THỊ SÁU - 5 TẦNG 8PN ĐANG KINH DOANH SPA - CHỈ 13TY99 TL NHẸ Phạm Ngọc Thạch 36 5 3 12 13,99 tỷ Phường Xuân Hoà Quận 3  HĐ ĐC Tri Phúc - Khối THIÊN ÂN  HH 3% - Nguồn ĐC Tri Phúc Gần Nhà Thờ Tân Định, Dinh Độc Lập, Chợ Tân Định, Công Viên Lê Văn Tám và nhiều khu vực trung tâm.",
     "extracted_specs": {
-      "duong": "KHU HIẾM NHÀ BÁN - PHẠM NGỌC THẠCH QUẬN",
-      "phuong": "Phường Xuân Hoà",
+      "duong": "Phạm Ngọc Thạch",
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 8.0,
       "dien_tich_m2": 3.0,
@@ -277,7 +277,7 @@
     "predicted_title": "Phú Nhuận - 100.0m2 (3.0x18.0) - Mặt tiền - 2 tầng - 1.0 Tỷ",
     "predicted_description": "🎉MẶT TIỀN ĐẶNG VĂN NGỮ PHÚ NHUẬN- GẦN 100M2 - 3 TẦNG 18 TỶ CHÚT🎉 ✅Kết cấu: 1 trệt , lầu , sân thượng giống lửng, 5pn , 3wc ,Nhà mặt tiền Đặng Văn Ngữ đoạn đẹp và sầm uất nhất Phú Nhuận, đang chi thuê kinh doanh Bún Đậu Mắm Tôm ✅ Vị trí :ngay Đặng Văn Ngữ ... , các trục đường lớn, tiện di chuyển khắp nơi, gần chợ , Siu Thị  , trường học...",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Lớn",
       "phuong": null,
       "quan": "Phú Nhuận",
       "gia_ty": 1.0,
@@ -294,7 +294,7 @@
     "predicted_title": "Nhà mới sửa lại , chủ tặng toàn bộ nội thất Quận 3 - Hẻm xe hơi - 2 tầng",
     "predicted_description": "Nhà mới sửa lại , chủ tặng toàn bộ nội thất 100%.Hình nhà mới và video clip anh em cập nhật lại nhé. Bán nhà hẻm xe hơi thông ngay khu vực trung tâm Quận 3, Diện Tích 3x11x 2 Tầng, hoàn công đủ. Pháp lý : sổ hồng hoàn công đủ, nhà mới xoá thế chấp ngân hàng.",
     "extracted_specs": {
-      "duong": "Nhà mới sửa lại , chủ tặng toàn bộ nội thất",
+      "duong": null,
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": null,
@@ -317,9 +317,9 @@
       "gia_ty": null,
       "dien_tich_m2": null,
       "so_tang": 5,
-      "mat_tien_m": 2.97,
-      "chieu_sau_m": 12.0,
-      "phan_loai_hem": "Hẻm thông"
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -328,10 +328,10 @@
     "predicted_title": "Quận 3 - 3.0m2 (40.0x2.0) - Hẻm xe hơi - 10 tầng - 2.0 Tỷ",
     "predicted_description": "🔥[QUẬN 3] NGỘP HXH NGUYỄN THIỆN THUẬT NH ĐỊNH GIÁ 10TỶ - 40M2 - 2TẦNG BTCT - 7.3 TỶ TL ✅ Pháp lý: Sổ hồng riêng, hoàn công đủ đang vay. Ngân hàng định giá 10Tỷ.",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Nguyễn Thiện Thuật",
       "phuong": null,
       "quan": "Quận 3",
-      "gia_ty": 2.0,
+      "gia_ty": 10.0,
       "dien_tich_m2": 3.0,
       "so_tang": 10,
       "mat_tien_m": 40.0,
@@ -362,7 +362,7 @@
     "predicted_title": "SIÊU PHẨM QUẬN Quận 3 - Hẻm thông - 5 tầng",
     "predicted_description": "SIÊU PHẨM QUẬN 3 NGAY CMT8 - NGUYỄN ĐÌNH CHIỂU, KHU HIẾM NHÀ BÁN, HẺM 4M GẦN MẶT TIỀN, NHÀ MỚI 5 TẦNG BTCT 5PN HOÀN CÔNG ĐỦ.🌹🌹🌹 + Vị trí tuyệt đẹp gần mặt tiền thuộc khu VIP nhất nhì Quận 3, tiện ích không thiếu thứ gì xung quanh, đi đâu hay làm gì cũng rất thuận tiện. + Hẻm trước nhà 4m rộng rãi, thông khắp nơi, gần mặt tiền.",
     "extracted_specs": {
-      "duong": "SIÊU PHẨM QUẬN",
+      "duong": "Nguyễn Đình Chiểu",
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": null,
@@ -370,7 +370,7 @@
       "so_tang": 5,
       "mat_tien_m": null,
       "chieu_sau_m": null,
-      "phan_loai_hem": "Hẻm thông"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -379,8 +379,8 @@
     "predicted_title": "PN - Quận 3 - 4.0m2 (8.0x3.0) - Hẻm thông - 3 tầng - 3.4 Tỷ",
     "predicted_description": "PN - 4 WC - KHU TRUNG TÂM QUẬN 3 - KHU DÂN TRÍ CAO - NHỈNH 8 TỶ. • Vị trí :Ngay khu trung tâm Quận 3 DT : 3.4 x 10.5 .Sổ vuông đẹp.Hoàn công đủ.",
     "extracted_specs": {
-      "duong": "PN -",
-      "phuong": null,
+      "duong": null,
+      "phuong": "Phường Hoàn Công Đủ",
       "quan": "Quận 3",
       "gia_ty": 3.4,
       "dien_tich_m2": 4.0,
@@ -396,15 +396,15 @@
     "predicted_title": "BÁN NHÀ QUẬN Quận 3 - 3.0m2 (5.0x9.6) - Hẻm xe hơi - 4 tầng - 629.0 Tỷ",
     "predicted_description": "BÁN NHÀ QUẬN 3 - HẺM THÔNG SUỐT 4M -  CÁCH VÀI CĂN RA MẶT TIỀN ĐƯỜNG LÝ THÁI TỔ - NGUYỄN ĐÌNH CHIỂU - NHÀ 5 TẦNG BTCT KIÊN CỐ HIỆN ĐẠI - HOÀN CÔNG CHUẨN - GIÁ 9.6 TỶ . - Vị trí: nhà toạ lạc trục hẻm 629  Nguyễn Đình Chiểu, P.2, Quận 3. Hẻm trước nhà thông suốt 2 hướng ra mặt tiền Nguyễn Đình Chiểu và ra hẻm xe hơi 120 Lý Thái Tổ, thuận tiện đi lại.",
     "extracted_specs": {
-      "duong": "BÁN NHÀ QUẬN",
-      "phuong": null,
+      "duong": "Nguyễn Đình Chiểu",
+      "phuong": "Phường 2",
       "quan": "Quận 3",
-      "gia_ty": 629.0,
+      "gia_ty": 9.6,
       "dien_tich_m2": 3.0,
       "so_tang": 4,
       "mat_tien_m": 5.0,
       "chieu_sau_m": 9.6,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -419,7 +419,7 @@
       "gia_ty": 16.0,
       "dien_tich_m2": 400.0,
       "so_tang": 9,
-      "mat_tien_m": 21.0,
+      "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm thông"
     }
@@ -430,11 +430,11 @@
     "predicted_title": "Quận 3 - 4.0m2 (4.0x2.0) - Mặt tiền - 3 tầng - 2.0 Tỷ",
     "predicted_description": "Hiếm hiếm Mặt Tiền Kinh Doanh VIP - NGUYỄN THƯỢNG HIỀN PHƯỜNG BÀN CỜ (P.4 CŨ) QUẬN 3 - 4 Tầng BTCT 2PN 2WC Sân Thượng - 4.14m X 4.45m nỡ hậu Công nhận 18.8m2 - Dòng tiền cho thuê kinh doanh 25 triệu/tháng - Hoàn công đầy đủ - CHỈ 7.9TỶ TL - Vị trí : VIP bậc nhất trung tâm Sài Gòn, gần Điện Biên Phủ, 3 Tháng 2, Chợ Vườn Chuối, Nguyễn Đình Chiểu, Cách Mạng Tháng Tám, sát vách Quận 10, Quận 1 - Pháp lý : sổ hồng riêng, hoàn công đầy đủ",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Nguyễn",
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 2.0,
-      "dien_tich_m2": 4.0,
+      "dien_tich_m2": 18.8,
       "so_tang": 3,
       "mat_tien_m": 4.0,
       "chieu_sau_m": 2.0,
@@ -447,8 +447,8 @@
     "predicted_title": "Quận 3 - 3.0m2 (4.0x1.0) - Hẻm thông - 4 tầng - 8.0 Tỷ",
     "predicted_description": "🌹TRUNG TÂM QUẬN 3  – NGUYỄN ĐÌNH CHIỂU NHÀ 4 TẦNG MỚI ĐẸP KHU VỰC VIP PHƯỜNG BÀN CỜ • HẺM 4M SẠCH SẼ 1 TRỤC • CHỈ 8.x Tỷ Nguyễn Đình Chiểu 35/33 5 3.5/5 8 8.68 tỷ Phường 4 Quận 3 6 đến 10 HĐ TP Duy phòng Gia Huy  HH3%, nguồn TP Duy Tầng 5 có sân thượng và phòng chờ — lý tưởng để thư giãn.",
     "extracted_specs": {
-      "duong": null,
-      "phuong": "Phường 4",
+      "duong": "Nguyễn Đình Chiểu",
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 8.0,
       "dien_tich_m2": 3.0,
@@ -472,7 +472,7 @@
       "so_tang": 3,
       "mat_tien_m": 40.0,
       "chieu_sau_m": 2.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -489,7 +489,7 @@
       "so_tang": 8,
       "mat_tien_m": 10.0,
       "chieu_sau_m": 1.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -506,7 +506,7 @@
       "so_tang": 5,
       "mat_tien_m": 3.0,
       "chieu_sau_m": 10.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -515,8 +515,8 @@
     "predicted_title": "Quận 1 - 35.0m2 (3.26x10.8) - Hẻm thông - 3 tầng",
     "predicted_description": "✅ Hẻm nhựa 8m, to như đường lớn, trung tâm Phường Bàn Cờ, đi bộ 200m  qua Quận 1, sát bên Now Zone, Trường Chuyên Lê Hồng Phong, ĐH Sư Phạm, BV Từ Dũ, Chợ Bàn Cờ, Nguyễn Thiện Thuật, Nguyễn Đình Chiểu. ✅Kết cấu: Nhà 4 tầng BTCT gồm 1 trệt, 2 lầu, Phòng sân thượng và sân thượng, DT thực tế 35m2, DTCN 29m2, ngang 3.26m x 10.8m, gồm phòng khách, bếp, 2 phòng ngủ rộng, 3 wc. ✅ Khu vực: Gần siêu thị, chợ, trường học, bệnh viện, tiện ích không thiếu gì, hàng xóm thân thiện,  đã XD cao tầng.",
     "extracted_specs": {
-      "duong": null,
-      "phuong": null,
+      "duong": "Lớn",
+      "phuong": "Phường Bàn Cờ",
       "quan": "Quận 1",
       "gia_ty": null,
       "dien_tich_m2": 35.0,
@@ -532,7 +532,7 @@
     "predicted_title": "TT QUẬN Quận 3 - Hẻm xe máy",
     "predicted_description": "TT QUẬN 3 - CÁCH MẶT TIỀN 1 CĂN - NHÀ 1 ĐỜI CHỦ - BÁN CHIA TÀI SẢN., + Vị trí Sát Mặt tiền, cách mặt tiền chỉ 1 căn, ngay Hoàng Sa, Rạch Bùng Binh, Trương định., + Hẻm rộng Ba gác tránh, Cách mặt tiền 1 căn, Khu dân trí cao, tiện ích không thiếu gì.,",
     "extracted_specs": {
-      "duong": "TT QUẬN",
+      "duong": null,
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": null,
@@ -540,7 +540,7 @@
       "so_tang": null,
       "mat_tien_m": null,
       "chieu_sau_m": null,
-      "phan_loai_hem": "Hẻm xe máy"
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -549,9 +549,9 @@
     "predicted_title": "TRUNG TÂM QUẬN Phú Nhuận - 3.0m2 (2.0x3.0) - Mặt tiền - 4 tầng - 7.8 Tỷ",
     "predicted_description": "TRUNG TÂM QUẬN 3 - HẼM 4M GẦN MẶT TIỀN - NHÀ 2 TẦNG CÓ 3PN - THÍCH HỢP CHO HỘ GĐ HOẶC MUA CHO THUÊ TỐT - CHỈ 7.8 TỶ - Vị trí ngay trung tâm Quận 3, giáp với Hoàng Sa, CMT8 , trục đường tiện ích và thuận tiện qua quận 1,10, Phú Nhuận.... - Ngay nhà hẽm 4M sạch sẽ, cách mặt tiền chỉ 30M, toàn nhà cao tầng xung quanh, khu dân trí, camera...",
     "extracted_specs": {
-      "duong": "TRUNG TÂM QUẬN",
+      "duong": "Tiện Ích Và Thuận Tiện Qua Quận 1",
       "phuong": null,
-      "quan": "Phú Nhuận",
+      "quan": "Quận 3",
       "gia_ty": 7.8,
       "dien_tich_m2": 3.0,
       "so_tang": 4,
@@ -566,7 +566,7 @@
     "predicted_title": "Quận 3 - Hẻm thông - 4 tầng - 10.0 Tỷ",
     "predicted_description": "🔥 Nhà 4 Tầng - 10 Tỷ - Đường Nguyễn Thông, Nhiêu Lộc, Quận 3, Tphcm 📕 Pháp lý: Sổ hồng riêng – bank giữ hộ 💸 Giá chào: 10 tỷ (còn thương lượng)",
     "extracted_specs": {
-      "duong": null,
+      "duong": "Nguyễn Thông",
       "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 10.0,
@@ -586,7 +586,7 @@
       "duong": null,
       "phuong": null,
       "quan": null,
-      "gia_ty": 8.0,
+      "gia_ty": 9.3,
       "dien_tich_m2": 3.0,
       "so_tang": 3,
       "mat_tien_m": 60.5,
@@ -603,7 +603,7 @@
       "duong": null,
       "phuong": null,
       "quan": "Quận 3",
-      "gia_ty": 2.0,
+      "gia_ty": 9.5,
       "dien_tich_m2": 3.0,
       "so_tang": 24,
       "mat_tien_m": 9.5,

@@ -6,13 +6,13 @@
     "predicted_description": "Cách Mạng Tháng Hai Quận 10 chỉ vài phút di chuyển.\n\nKết cấu: Nhà 4 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 1 trệt, lửng, 3 lầu, sân thượng thoáng đãng, có 1 WC. Hiện trạng nhà đẹp, đang khai thác kinh doanh hoặc khai thác dòng tiền tốt.",
     "extracted_specs": {
       "duong": "Cao Thắng",
-      "phuong": "",
+      "phuong": null,
       "quan": "Quận 10",
       "gia_ty": 11.9,
       "dien_tich_m2": 44.7,
       "so_tang": 5,
-      "mat_tien_m": 4.5,
-      "rong_hem_m": 0.0,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -22,15 +22,15 @@
     "predicted_title": "Cao Thắng Quận 10 - 39.0m2 (5.3m ngang) - 4 Tầng - Hẻm xe hơi - 14.58 Tỷ",
     "predicted_description": "Mặt tiền Cao Thắng Quận 10 - 39m2 (4 tầng) - Hẻm xe hơi thông - Ngang lớn - 14.8 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VỰC KINH DOANH SẦM UẤT CAO THẮNG NGUYỄN VĂN TRỖI HẺM XE HƠI THÔNG CHỈ 220 TỶ\n\nVị trí: Hẻm Cao Thắng, Phường 10, Quận10. Vị trí trung tâm sát vách CLB Lan Anh, trường Đại học Huflit, di chuyển sang Quận 1 và Quận 3 chỉ 15 phút.\n\nHẻm: Hẻm rộng 5.3m thông thoáng, xe hơi đỗ tận cửa nhà, cách mặt tiền đường lớn chỉ vài bước chân\n\nKết cấu: Nhà 4 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 3 phòng ngủ, 3 WC, Sân thượng thoáng mát. Nhà mới đẹp, khách mua chỉ cần sơn sửa nhẹ là ở ngay hoặc khai thác kinh doanh được liền.",
     "extracted_specs": {
-      "duong": "Cao Thắng",
-      "phuong": "",
+      "duong": "Lớn Chỉ Vài Bước Chân",
+      "phuong": "Phường 10",
       "quan": "Quận 10",
       "gia_ty": 14.58,
       "dien_tich_m2": 39.0,
       "so_tang": 4,
-      "mat_tien_m": 5.3,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -40,13 +40,13 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 10 - 60m2 (13.5x15.5) - Hẻm xe hơi vào nhà - 65 triệu/tháng (25.000đ)\n\nHẻm: Hẻm rộng rãi, xe hơi đỗ tận cửa nhà, cách mặt hẻm ô tô đỗ chỉ 5m.\n\nKết cấu: Nhà 3 tầng, khung BTCT kiên cố gồm 1 trệt 1 lầu. Thiết kế hiện đại gồm phòng khách, bếp, 4 phòng ngủ, 1 WC, hệ thống nhà bếp hiện đại, có phòng khách và bếp rộng rãi. Nhà mới đẹp, kiến trúc hiện đại. Hiện trạng nhà đẹp, đang khai thác cho thuê dòng tiền tốt.",
     "extracted_specs": {
       "duong": "Cao Thắng",
-      "phuong": "",
+      "phuong": null,
       "quan": "Quận 10",
       "gia_ty": 15.5,
       "dien_tich_m2": 60.0,
       "so_tang": 3,
-      "mat_tien_m": 5.0,
-      "rong_hem_m": 5.0,
+      "mat_tien_m": 13.5,
+      "chieu_sau_m": 15.5,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -57,14 +57,14 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 10 Chỉ hơn 22.8 Tỷ\n\nỞ ngay hoặc Kinh doanh đa ngành nghề.\n\nKết cấu: Nhà 5 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 1 trệt, 1 lửng, 4 lầu, sân thượng thoáng mát. Nhà mới đẹp, khách mua chỉ cần sơn sửa nhẹ là ở ngay hoặc khai thác kinh doanh được liền.\n\nDiện tích: 71.2m2 (4.3x17m), chiều ngang lớn 4.3m bề thế, phom nhà vuông vức cân đối, bố trí không gian cực thoáng.",
     "extracted_specs": {
       "duong": "Đồng Nai",
-      "phuong": "",
+      "phuong": null,
       "quan": "Quận 10",
       "gia_ty": 22.8,
       "dien_tich_m2": 71.2,
       "so_tang": 5,
       "mat_tien_m": 4.3,
-      "rong_hem_m": 6.0,
-      "phan_loai_hem": "Hẻm"
+      "chieu_sau_m": 17.0,
+      "phan_loai_hem": "Hẻm thông"
     }
   },
   {
@@ -74,13 +74,13 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 36m2 (3x12) - Hẻm xe hơi thông - Ngang lớn - 13.99 Tỷ\n\nỞ ngay hoặc Văn phòng KHU HIỆN ĐẠI HẺM XE HƠI THÔNG ĐIỆN BIÊN PHỦ QUẬN 3 HẺm XĂNG TẢI THÔNG CHỈ 13 TỶ\n\nVị trí: Hẻm Phạm Ngọc Thạch, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách Bệnh viện Bình Dân, Nhà hát Hòa Bình, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm xe tải thông thoáng, dòng người qua lại nhộn nhịp ngày đêm, thích hợp mở văn phòng công ty, showroom, phòng khám hoặc kinh doanh đa ngành nghề.\n\nKết cấu: Nhà 5 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 1 trệt, 1 lửng, 4 lầu, sân thượng thoáng mát. Nhà mới đẹp, phong cách hiện đại, tông trắng sáng, làm tòa nhà văn phòng hoặc căn hộ dịch vụ cao cấp.",
     "extracted_specs": {
       "duong": "Phạm Ngọc Thạch",
-      "phuong": "Phường Xuân Hoà",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 13.99,
       "dien_tich_m2": 36.0,
       "so_tang": 5,
       "mat_tien_m": 3.0,
-      "rong_hem_m": 0.0,
+      "chieu_sau_m": 12.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -91,14 +91,14 @@
     "predicted_description": "Huỳnh Công Thạch Phú Nhuận - 98m2 (4.2x18.5) - Hẻm xe tải thông - Ngang lớn - 16 Tỷ\n\nỞ ngay TRUNG TÂM PHÚ NHUẬN LIỀN KỀ TRỤC NGUYỄN VĂN TRỖI HẺM XE TẢI THÔNG CHỈ 2 TỶ\n\nVị trí: Hẻm Đặng Văn Ngữ, Phường 13, Quận Phú Nhuận. Vị trí vàng ngay trung tâm, sát vách CLB Lan Anh, trường Đại học Huflit, di chuyển sang Quận 1 và Sân bay Tân Sơn Nhất chỉ 3 phút.\n\nHẻm: Hẻm rộng 4m thông thoáng, dòng người qua lại nhộn nhịp ngày đêm, thích hợp mở văn phòng công ty, showroom, phòng khám hoặc kinh doanh đa ngành nghề.",
     "extracted_specs": {
       "duong": "Đặng Văn Ngữ",
-      "phuong": "",
-      "quan": "",
+      "phuong": "Phường 13",
+      "quan": "Quận 1",
       "gia_ty": 16.0,
       "dien_tich_m2": 98.0,
       "so_tang": 2,
-      "mat_tien_m": 4.0,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": ""
+      "mat_tien_m": 4.2,
+      "chieu_sau_m": 18.5,
+      "phan_loai_hem": "Hẻm xe tải"
     }
   },
   {
@@ -108,13 +108,13 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 32m2 (3x11x2 Tầng) - Hẻm xe hơi thông - Ngang lớn - 7.8 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VỰC KINH DOANH SẦM UẤT NGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE HƠI THÔNG CHỈ 8.8 TỶ\n\nVị trí: Hẻm Nguyễn Thiện Thuật, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ, tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm nhựa rộng lớn thông thoáng, xe hơi đỗ tận cửa nhà, khách mua chỉ cần sơn sửa nhẹ là ở ngay hoặc khai thác kinh doanh được liền.",
     "extracted_specs": {
       "duong": "Nguyễn Thiện Thuật",
-      "phuong": "",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 7.8,
       "dien_tich_m2": 31.8,
       "so_tang": 2,
       "mat_tien_m": 3.0,
-      "rong_hem_m": 0.0,
+      "chieu_sau_m": 11.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -125,14 +125,14 @@
     "predicted_description": "Cách mặt tiền đường lớn Võ Văn Tần Quận 3 - 36m2 (2.9x12) - Hẻm xe tải thông - 5 Tầng - 7.5 Tỷ\n\nỞ ngay hoặc CHDV TRUNG TÂM QUẬN 3 LIỀN KỀ TRỤC NGUYỄN VĂN TRỖI HẺM XE TẢI THÔNG TẢI CHỈ 8.5 TỶ\n\nVị trí: Hẻm Võ Văn Kiệt, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ và bệnh viện Bình Dân, di chuyển qua Quận 1 và Quận 10 chỉ 3 phút.\n\nHẻm: Hẻm rộng thoáng, sạch sẽ, khu dân trí cao và an ninh tuyệt đối, nhà mới đẹp ở ngay hoặc tặng full nội thất.\n\nKết cấu: Nhà 3 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lửng, 2 lầu, sân thượng gồm 5 phòng ngủ, 4 WC. Hiện trạng nhà đẹp, đang khai thác kinh doanh đa ngành nghề.",
     "extracted_specs": {
       "duong": "Võ Văn Tần",
-      "phuong": "",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 7.5,
       "dien_tich_m2": 25.4,
       "so_tang": 5,
       "mat_tien_m": 2.9,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm"
+      "chieu_sau_m": 12.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -141,15 +141,15 @@
     "predicted_title": "Nguyễn Thiện Thuật Quận 3 - 36.0m2 (3.5m ngang) - 2 Tầng - Hẻm xe hơi - 7.3 Tỷ",
     "predicted_description": "Nguyễn Thiện Thuật Quận 3 - 40m2 (3.5x11) - Hẻm xe hơi thông - Ngang lớn - 7.3 Tỷ\n\nỞ ngay TRUNG TÂM QUẬN 3 LIỀN KỀ CÔNG VIÊN LÊ THỊ RIÊNG HẺM XE HƠI THÔNG CHỈ 8.3 TỶ\n\nVị trí: Hẻm Nguyễn Thiện thuật, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách CLB Lan Anh, kết nối thẳng ra Vòng xoay Dân Chủ, di chuyển qua Quận 1 và Quận 10 chỉ 2 phút.\n\nHẻm: Hẻm ô tô rộng rãi thông thoáng, xe hơi đỗ tận cửa nhà, cách mặt tiền đường lớn Nguyễn Đình Chiểu chỉ hơn 10m, khuôn đất vuông vức từ đầu đến đuôi, không bị lỗi phong thủy hay lộ giới.",
     "extracted_specs": {
-      "duong": "Nguyễn Thiện Thuật",
-      "phuong": "",
+      "duong": "Lớn Nguyễn Đình Chiểu Chỉ Hơn 10M",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 7.3,
       "dien_tich_m2": 36.0,
       "so_tang": 2,
       "mat_tien_m": 3.5,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "chieu_sau_m": 11.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -159,14 +159,14 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 chỉ 3 phút di chuyển.\n\nKết cấu: Nhà 2 tầng, khung BTCT kiên cố, công năng tối ưu gồm phòng khách, bếp, 4 WC. Hiện đang khai thác dòng tiền sẵn sàng khai thác kinh doanh hoặc cho thuê dòng tiền ổn định 30 triệu/tháng.",
     "extracted_specs": {
       "duong": "Võ Văn Tần",
-      "phuong": "",
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 8.2,
       "dien_tich_m2": 43.2,
       "so_tang": 3,
-      "mat_tien_m": 3.6,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": ""
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
+      "phan_loai_hem": "Hẻm thông"
     }
   },
   {
@@ -176,14 +176,14 @@
     "predicted_description": "Huỳnh Văn Bánh Quận 3 - 33m2 (3.2x10) - Hẻm xe tải thông - 4 Tầng - 9.999 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VIP QUẬN 3 HẺM XE TẢI THÔNG CHỈ 9.5 TỶ\n\nVị trí: Hẻm Nguyễn Đình Chiểu, Phường 3, Quận 3. Vị trí đắc địa ngay lõi trung tâm, sát vách Trường Đại học Sư phạm và Bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm rộng 4m rộng rãi, thông khắp nơi, đặc biệt nhà sở hữu 2 mặt hẻm trước sau cực kỳ thông thoáng, nhà mới đẹp, kiến trúc hiện đại gồm phòng khách, bếp, tổng cộng 5 phòng ngủ, 4 WC. Hiện trạng nhà đẹp, đang khai thác kinh doanh hoặc khai thác dòng tiền tốt.\n\nKết cấu: Nhà 3 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lửng, 2 lầu, sân thượng làm tòa nhà văn phòng hoặc căn hộ",
     "extracted_specs": {
       "duong": "Nguyễn Đình Chiểu",
-      "phuong": "Phường Bàn Cờ",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 9.5,
       "dien_tich_m2": 32.0,
       "so_tang": 5,
       "mat_tien_m": 3.2,
-      "rong_hem_m": 4.0,
-      "phan_loai_hem": "Hẻm"
+      "chieu_sau_m": 10.0,
+      "phan_loai_hem": "Hẻm xe tải"
     }
   },
   {
@@ -193,14 +193,14 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 35m2 (3.4x10.5) - Hẻm xe tải đỗ tận cửa nhà - Ngang lớn - 8.9 Tỷ\n\nỞ ngay hoặc Văn phòng KHU TRUNG TÂM QUẬN 3 LIỀN KỀ CÔNG VIÊN LÊ THỊ RIÊNG HẺM XE TẢI ĐỖ CỬA CHỈ 8,9 TỶ\n\nVị trí: Hẻm Cao Thắng, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách Bệnh viện Bình Dân, Nhà hát Hòa Bình, di chuyển sang Quận 1 và Quận 10 chỉ 3 phút.\n\nHẻm: Hẻm rộng thoáng, sạch sẽ, khu dân trí cao và an ninh tuyệt đối.",
     "extracted_specs": {
       "duong": "Cao Thắng",
-      "phuong": "",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 8.9,
       "dien_tich_m2": 35.0,
       "so_tang": 5,
       "mat_tien_m": 3.4,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": ""
+      "chieu_sau_m": 10.5,
+      "phan_loai_hem": "Hẻm xe tải"
     }
   },
   {
@@ -215,8 +215,8 @@
       "gia_ty": 9.3,
       "dien_tich_m2": 23.5,
       "so_tang": 5,
-      "mat_tien_m": 3.0,
-      "rong_hem_m": 0.0,
+      "mat_tien_m": 3.01,
+      "chieu_sau_m": 8.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -226,14 +226,14 @@
     "predicted_title": "nguyễn đình chiểu Quận 3 - 33.5m2 (3.8m ngang) - 4 Tầng - Hẻm xe hơi - 9.0 Tỷ",
     "predicted_description": "Cách hẻm xe hơi thông - Ngang lớn - 9 Tỷ\n\nỞ ngay hoặc Giải quyết cv gia đình hạ chào 400 triệu/tháng.\n\nHẻm xe hơi lý thuyết hẻm thông có lộ giới sắp mở\n\nngang lớn\n\n3.8m x 9m\n\nCực kỳ lý tưởng cho khách mua thuê hoặc khai thác kinh doanh online dòng tiền tốt.",
     "extracted_specs": {
-      "duong": "nguyễn đình chiểu",
-      "phuong": "",
+      "duong": null,
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 9.0,
       "dien_tich_m2": 33.5,
       "so_tang": 4,
       "mat_tien_m": 3.8,
-      "rong_hem_m": 0.0,
+      "chieu_sau_m": 9.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -243,15 +243,15 @@
     "predicted_title": "Nguyễn thượng hiền Quận 3 - 18.8m2 (4.1m ngang) - 3 Tầng - 7.9 Tỷ",
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 30m2 - Hẻm xe tải rộng 4.15m bề thế - Ngang lớn - 7.9 Tỷ - Dòng tiền cho thuê kinh doanh nguyên căn 25 triệu/tháng - Pháp lý sạch, hoàn công đầy đủ, sổ hồng riêng cất két, công chứng ngay. - Vị trí: Hẻm Nguyễn Thượng Hiền, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách CLB Lan Anh, kết nối thẳng ra Vòng xoay Dân Chủ, di chuyển qua Quận 1 và Quận 10 chỉ 2 phút. - Hẻm: Hẻm thông thoáng, sạch sẽ, khu vực dân trí cao và an ninh tuyệt đối, nhà cách mặt tiền đường lớn chỉ vài bước chân. - Kết cấu: Nhà 4 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 2 phòng ngủ, 2 WC, sân thượng thoáng mát. Nhà mới đẹp, kiến trúc hiện đại, dọn vào ở ngay. \"Chìa khóa trao tay\", khách mua chỉ cần sơn sửa nhẹ là ở ngay hoặc khai thác dòng tiền kinh doanh được liền. - Diện tích: 4.25m2 (4.14m x 5m), khuôn đất vuông vức vuông đét, không lỗi phong thủy, phong thủy tốt",
     "extracted_specs": {
-      "duong": "Nguyễn thượng hiền",
-      "phuong": "",
+      "duong": "Lớn Chỉ Vài Bước Chân",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 7.9,
-      "dien_tich_m2": 18.8,
+      "dien_tich_m2": 4.25,
       "so_tang": 3,
-      "mat_tien_m": 4.1,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": ""
+      "mat_tien_m": 4.14,
+      "chieu_sau_m": 5.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -260,15 +260,15 @@
     "predicted_title": "Nguyễn Đình Chiểu Quận 3 - 32.7m2 (4.0m ngang) - 5 Tầng - Hẻm xe hơi - 8.68 Tỷ",
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 33m2 (4.5x8) - Hẻm xe hơi nhỏ đỗ cửa - Ngang lớn - 8.68 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VỰC VIP PHƯỜNG BÀN CỬU NHÀ MẶT TIỀN KINH DOANH NGUYỄN ĐÌNH CHIỂU QUẬN 3 HẺM XE HƠI THÔNG CHỈ 8.5 TỶ\n\nVị trí: Hẻm Nguyễn Đình Chiểu, Phường 4, Quận 3. Vị trí lõi trung tâm sát vách trường Đại học Huflit, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm rộng 4m sạch sẽ, xe hơi đỗ tận cửa nhà, cách mặt tiền đường lớn chỉ vài bước chân.",
     "extracted_specs": {
-      "duong": "Nguyễn Đình Chiểu",
-      "phuong": "Phường 4",
+      "duong": "Lớn Chỉ Vài Bước Chân",
+      "phuong": "Phường Bàn Cửu Nhà Mặt Tiền Kinh Doanh Nguyễn Đình Chiểu Quận 3 Hẻm Xe Hơi Thông Chỉ 8",
       "quan": "Quận 3",
       "gia_ty": 8.68,
       "dien_tich_m2": 32.7,
       "so_tang": 5,
-      "mat_tien_m": 4.0,
-      "rong_hem_m": 4.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "mat_tien_m": 4.5,
+      "chieu_sau_m": 8.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -278,14 +278,14 @@
     "predicted_description": "Cách mặt tiền đường lớn Nguyễn Thiện Thuật Quận 3 - 40m2 (3.5x10) - Hẻm xe hơi vô nhà - Ngang lớn - 9.3 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VIP QUẬN 3 HẺM XE HƠI VÔ NHÀ\n\nKết cấu: Nhà 2 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lầu. Thiết kế hiện đại gồm phòng khách, bếp, 4 phòng ngủ, WC, phòng khách và bếp rộng rãi. Nhà mới đẹp, kiến trúc hiện đại, dọn vào ở ngay.\n\nDiện tích: 40 m2 (2.5m x 10m), chiều ngang lớn 4.000m bề thế, phom nhà vuông vức cân đối, bố trí không gian cực thoáng.",
     "extracted_specs": {
       "duong": "Nguyễn Thiện Thuật",
-      "phuong": "",
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 9.3,
       "dien_tich_m2": 40.0,
       "so_tang": 2,
       "mat_tien_m": 3.5,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "chieu_sau_m": 10.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -294,15 +294,15 @@
     "predicted_title": "Đường số Quận 3 - 30.0m2 (3.0m ngang) - 3 Tầng - Hẻm xe hơi - 8.0 Tỷ",
     "predicted_description": "Cách mặt tiền đường lớn Quận 3 - 30m2 - Hẻm xe hơi đỗ cửa - Ngang lớn - 8 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VỰC KINH DOANH SẦM UẤT NGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE HƠI ĐỖ CỬA CHỈ 8 TỶ\n\nVị trí: Hẻm Số 7, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ, tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm rộng rãi, sạch sẽ, khu vực dân trí cao, yên tĩnh và an ninh tuyệt đối.",
     "extracted_specs": {
-      "duong": "Đường số",
-      "phuong": "",
+      "duong": "Đường",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 8.0,
       "dien_tich_m2": 30.0,
       "so_tang": 3,
-      "mat_tien_m": 3.0,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -311,15 +311,15 @@
     "predicted_title": "Nguyễn Thiện Thuật Quận 3 - 30.1m2 (3.0m ngang) - 5 Tầng - Hẻm xe hơi - 9.5 Tỷ",
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 31m2 (31.1x10.5) - Hẻm xe hơi thông - Ngang lớn - 9.5 Tỷ\n\nỞ ngay hoặc Kinh doanh SẦM UẤT NGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE HƠI THÔNG RA BÀN CỬA CHỈ 8.5 TỶ\n\nVị trí: Hẻm Nguyễn Thiện Thuật, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách chợ Bàn Cờ, tòa nhà văn phòng Thành Đô, di chuyển sang Quận 1 và Quận 10 chỉ 3 phút.\n\nHẻm: Hẻm rộng 6m thông ra đường Nguyễn Thi Thuật, xe hơi đỗ tận cửa nhà, cách mặt tiền đường lớn chỉ vài bước chân\n\nKết cấu: Nhà 5 tầng, khung BTCT kiên cố, thiết kế gồm phòng khách, bếp, 4 phòng ngủ rộng, 4 WC, phòng khách dài thoáng, phòng bếp rộng, phòng ngủ lớn, 4WC, nhà thiết kế cầu thang cuối nhà, chiều ngang lớn 3m cực kỳ bề thế, phom nhà vuông vức cân đối, bố trí không gian cực thoáng.",
     "extracted_specs": {
-      "duong": "Nguyễn Thiện Thuật",
-      "phuong": "",
+      "duong": "Nguyễn Thi Thuật",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 9.5,
       "dien_tich_m2": 30.1,
       "so_tang": 5,
-      "mat_tien_m": 3.0,
-      "rong_hem_m": 6.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "mat_tien_m": 31.1,
+      "chieu_sau_m": 10.5,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -329,14 +329,14 @@
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 chỉ 2 phút di chuyển.\n\nKết cấu: Nhà 4 tầng, khung BTCT kiên cố gồm 1 trệt, 1 lầu. Thiết kế hiện đại gồm phòng khách, bếp, 2 phòng ngủ rộng, 3 WC. Hiện trạng nhà đẹp, đang khai thác cho thuê mặt bằng kinh doanh hoặc CHDV MẶT TIỀN KINH DOANH SẦM UẤT NGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE TẢI THÔNG CHỈ 8.85 TỶ\n\nVị trí: Hẻm Nguyễn Thiện Thuật, Phường 3, Quận 3. Vị trí lõi trung tâm sát vách CLB Lan Anh, kết nối thẳng ra Vòng xoay Dân Chủ, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.",
     "extracted_specs": {
       "duong": "Nguyễn Thiện Thuật",
-      "phuong": "",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 8.85,
       "dien_tich_m2": 28.8,
       "so_tang": 4,
-      "mat_tien_m": 3.3,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm"
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -352,8 +352,8 @@
       "dien_tich_m2": 42.0,
       "so_tang": 3,
       "mat_tien_m": 4.3,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm"
+      "chieu_sau_m": 12.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -362,15 +362,15 @@
     "predicted_title": "rạch bùng binh Quận 3 - 52.0m2 (4.1m ngang) - 2 Tầng - 7.8 Tỷ",
     "predicted_description": "Cách mặt tiền đường lớn Quận 3 chỉ 30m, khu dân trí cao và an ninh tuyệt đối. - Hẻm xe tải rộng thoáng, thông thoáng, sạch sẽ và yên tĩnh. - Kết cấu: Nhà 2 tầng, khung BTCT kiên cố, thiết kế hiện đại gồm 3 phòng ngủ, 2 WC, ban công và giếng trời thoáng mát. Nhà mới đẹp, hiện đang khai thác cho thuê ổn định 3 năm. - Diện tích: 52m2 (4.1x11.5), chiều ngang lớn 4.1m bề thế, phom nhà vuông vức cân đối, bố trí không gian cực thoáng. - Pháp",
     "extracted_specs": {
-      "duong": "rạch bùng binh",
-      "phuong": "Phường 9",
+      "duong": "Lớn Quận 3 Chỉ 30M",
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 7.8,
       "dien_tich_m2": 52.0,
       "so_tang": 2,
       "mat_tien_m": 4.1,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": ""
+      "chieu_sau_m": 11.5,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -380,14 +380,14 @@
     "predicted_description": "Nguyễn Thông Quận 3 - 28m2 (3.6x8) - Hẻm xe chạy thoải mái - 8 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VỰC KINH DOANH SẦM UẤT NGUYỄN THÔNG QUẬN 3 HẺM XE TẢI THÔNG CHỈ 10 TỶ\n\nVị trí: Hẻm Nguyễn Thông, Phường 3, Quận 3. Vị trí đắc địa ngay lõi trung tâm, sát vách Trường Đại học Sư phạm và Bệnh viện An Sinh, di chuyển sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm rộng 4 thông xe hơi rộng rãi, dòng người qua lại nhộn nhịp ngày đêm, thích hợp mở văn phòng công ty, showroom, phòng khám hoặc kinh doanh đa ngành nghề.",
     "extracted_specs": {
       "duong": "Nguyễn Thông",
-      "phuong": "",
+      "phuong": "Phường 3",
       "quan": "Quận 3",
       "gia_ty": 10.0,
       "dien_tich_m2": 28.0,
       "so_tang": 4,
       "mat_tien_m": 3.6,
-      "rong_hem_m": 0.0,
-      "phan_loai_hem": "Hẻm"
+      "chieu_sau_m": 8.0,
+      "phan_loai_hem": "Hẻm xe hơi"
     }
   },
   {
@@ -396,15 +396,15 @@
     "predicted_title": "Cách Mạng Tháng Tám Quận 3 - 60.5m2 (3.0m ngang) - 3 Tầng - Hẻm xe hơi - 9.3 Tỷ",
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 60.5m2 (3.2x20) - Hẻm xe hơi - Ngang lớn - 9.3 Tỷ\n\nỞ ngay hoặc CHDV TRUNG TÂM QUẬN 3 LIỀN KỀ CÔNG VIÊN LÊ THỊ RIÊNG HẺM XE HƠI ĐỖ CỬA CHỈ 8.3 TỶ\n\nVị trí: Hẻm Lê Thị Riêng, Phường 11, Quận 3. Vị trí lõi trung tâm sát vách CLB Lan Anh, kết nối thẳng ra Vòng xoay Dân Chủ, di chuyển qua Quận 1 và Quận 10 chỉ 3 phút.\n\nHẻm: Hẻm thông thoáng, xe hơi đỗ tận cửa nhà, cách mặt tiền đường lớn chỉ 8m, khu dân trí cao và an ninh tuyệt đối.",
     "extracted_specs": {
-      "duong": "Cách Mạng Tháng Tám",
-      "phuong": "",
+      "duong": "Lớn Chỉ 8M",
+      "phuong": "Phường 11",
       "quan": "Quận 3",
       "gia_ty": 9.3,
       "dien_tich_m2": 60.5,
       "so_tang": 3,
-      "mat_tien_m": 3.0,
-      "rong_hem_m": 8.0,
-      "phan_loai_hem": "Hẻm xe hơi"
+      "mat_tien_m": 3.2,
+      "chieu_sau_m": 20.0,
+      "phan_loai_hem": "Mặt tiền"
     }
   },
   {
@@ -413,14 +413,14 @@
     "predicted_title": "Cách Mạng Tháng Tám Quận 3 - 46.0m2 (5.3m ngang) - 4 Tầng - Hẻm xe hơi - 9.5 Tỷ",
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 46m2 (5.3x10) - Hẻm xe hơi tránh chỉ 100m\n\nVị trí đắc địa ngay lõi trung tâm, sát vách CLB Lan Anh, trường Đại học Huflit, di chuyển sang Quận 1 và Quận 10 chỉ 5 phút.\n\nHẻm: Hẻm thông thoáng, xe hơi đỗ tận cửa nhà, cách đường ô tô tránh chỉ 50m, khu vực dân trí cao và an ninh tuyệt đối.",
     "extracted_specs": {
-      "duong": "Cách Mạng Tháng Tám",
-      "phuong": "",
+      "duong": "Ô Tô Tránh Chỉ 50M",
+      "phuong": null,
       "quan": "Quận 3",
       "gia_ty": 9.5,
       "dien_tich_m2": 46.0,
       "so_tang": 4,
       "mat_tien_m": 5.3,
-      "rong_hem_m": 0.0,
+      "chieu_sau_m": 10.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -430,14 +430,14 @@
     "predicted_title": "cách mạng tháng Quận 3 - 42.6m2 (3.0m ngang) - 3 Tầng - Hẻm xe hơi - 7.2 Tỷ",
     "predicted_description": "Cách Mạng Tháng Tám Quận 3 - 463m2 (46.3x15) - Hẻm xe hơi thông - Di chuyển từ Nguyễn Phúc Nguyên sang Quận 1 và Phú Nhuận chỉ 3 phút.\n\nHẻm: Hẻm ô tô thông - Ngang lớn - 7.2 Tỷ\n\nỞ ngay hoặc Kinh doanh KHU VỰC KINH DOANH SẦM UẤT NGUYỄN THIỆN THUẬT QUẬN 3 HẺM XE HƠI TỚI CỬA CHỈ 8.2 TỶ\n\nVị trí: Hẻm Cách Mạng tháng Tám, Phường 10, Quận 3. Vị trí lõi trung tâm sát vách CLB Lan Anh, kết nối thẳng ra Vòng xoay Dân Chủ, di chuyển qua Quận 1, Quận 10 chỉ 2 phút. Hiện trạng nhà đẹp, đang khai thác sử dụng tối đa diện tích sàn (42.3m x 15m), khuôn đất vuông vức từ đầu đến đuôi, không bị lỗi phong thủy hay lộ giới.",
     "extracted_specs": {
-      "duong": "cách mạng tháng",
-      "phuong": "",
+      "duong": null,
+      "phuong": "Phường 10",
       "quan": "Quận 3",
       "gia_ty": 7.2,
       "dien_tich_m2": 42.6,
       "so_tang": 3,
-      "mat_tien_m": 3.0,
-      "rong_hem_m": 0.0,
+      "mat_tien_m": 46.3,
+      "chieu_sau_m": 15.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   }

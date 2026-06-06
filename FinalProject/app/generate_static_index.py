@@ -34,8 +34,8 @@ paths = {
         "perf": os.path.join(BASE_DIR, "04_BaHoc_Gemini/Hoc_Gemini_performance.json")
     },
     "ViT5": {
-        "pred": os.path.join(BASE_DIR, "05_MaiAnh_ViT5/ViT5_predictions.json"),
-        "perf": os.path.join(BASE_DIR, "05_MaiAnh_ViT5/ViT5_performance.json")
+        "pred": os.path.join(BASE_DIR, "05_MaiAnh_ViT5/MaiAnh_ViT5_predictions_v2.json"),
+        "perf": os.path.join(BASE_DIR, "05_MaiAnh_ViT5/MaiAnh_ViT5_performance_v2.json")
     },
     "PhoBERT": {
         "pred": os.path.join(BASE_DIR, "06_HuuHieu_PhoBERT/HuuHieu_PhoBERT_predictions1.json"),

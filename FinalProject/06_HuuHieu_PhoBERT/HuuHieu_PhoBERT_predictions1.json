@@ -12,7 +12,7 @@
       "dien_tich_m2": null,
       "so_tang": 4,
       "mat_tien_m": null,
-      "rong_hem_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -28,8 +28,8 @@
       "gia_ty": 14.58,
       "dien_tich_m2": 39.0,
       "so_tang": 4,
-      "mat_tien_m": 5.32,
-      "rong_hem_m": null,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -46,7 +46,7 @@
       "dien_tich_m2": null,
       "so_tang": 2,
       "mat_tien_m": null,
-      "rong_hem_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -63,7 +63,7 @@
       "dien_tich_m2": 71.2,
       "so_tang": 5,
       "mat_tien_m": 4.3,
-      "rong_hem_m": 17.0,
+      "chieu_sau_m": 17.0,
       "phan_loai_hem": "Hẻm thông"
     }
   },
@@ -80,7 +80,7 @@
       "dien_tich_m2": 36.0,
       "so_tang": 5,
       "mat_tien_m": 3.0,
-      "rong_hem_m": 12.0,
+      "chieu_sau_m": 12.0,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -97,7 +97,7 @@
       "dien_tich_m2": 100.0,
       "so_tang": 3,
       "mat_tien_m": null,
-      "rong_hem_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
     }
   },
@@ -113,8 +113,8 @@
       "gia_ty": 7.8,
       "dien_tich_m2": null,
       "so_tang": 2,
-      "mat_tien_m": 3.0,
-      "rong_hem_m": 11.0,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   },
@@ -130,8 +130,8 @@
       "gia_ty": 7.5,
       "dien_tich_m2": null,
       "so_tang": 2,
-      "mat_tien_m": 2.97,
-      "rong_hem_m": 12.0,
+      "mat_tien_m": null,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
     }
   },
@@ -148,7 +148,7 @@
       "dien_tich_m2": 40.0,
       "so_tang": 2,
       "mat_tien_m": null,
-      "rong_hem_m": 11.0,
+      "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
     }
   }
