@@ -23,7 +23,7 @@ except ImportError:
 MEMBERS = {
     "Baseline TextRank": "Nhan_Baseline",
     "GPT-4o mini API": "Quan_GPT",
-    "Gemini 1.5 Flash API": "Hoc_Gemini",
+    "Gemini 2.5 Flask API": "Hoc_Gemini",
     "ViT5 Fine-tuned": "MaiAnh_ViT5",
     "PhoBERT Fine-tuned": "HuuHieu_PhoBERT"
 }

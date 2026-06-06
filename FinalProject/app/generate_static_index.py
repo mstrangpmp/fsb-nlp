@@ -946,7 +946,7 @@ html_template = """<!DOCTYPE html>
                     <option value="" disabled selected>-- Chọn mô hình thắng giải Nhất --</option>
                     <option value="Baseline">Baseline TextRank</option>
                     <option value="GPT">GPT-4o mini API</option>
-                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="Gemini">Gemini 2.5 Flask API</option>
                     <option value="ViT5">ViT5 Fine-tuned</option>
                     <option value="PhoBERT">PhoBERT Fine-tuned</option>
                 </select>
@@ -957,7 +957,7 @@ html_template = """<!DOCTYPE html>
                     <option value="" disabled selected>-- Chọn mô hình thắng giải Nhì --</option>
                     <option value="Baseline">Baseline TextRank</option>
                     <option value="GPT">GPT-4o mini API</option>
-                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="Gemini">Gemini 2.5 Flask API</option>
                     <option value="ViT5">ViT5 Fine-tuned</option>
                     <option value="PhoBERT">PhoBERT Fine-tuned</option>
                 </select>
@@ -968,7 +968,7 @@ html_template = """<!DOCTYPE html>
                     <option value="" disabled selected>-- Chọn mô hình thắng giải Ba --</option>
                     <option value="Baseline">Baseline TextRank</option>
                     <option value="GPT">GPT-4o mini API</option>
-                    <option value="Gemini">Gemini 1.5 Flash API</option>
+                    <option value="Gemini">Gemini 2.5 Flask API</option>
                     <option value="ViT5">ViT5 Fine-tuned</option>
                     <option value="PhoBERT">PhoBERT Fine-tuned</option>
                 </select>
@@ -1708,7 +1708,7 @@ html_template = """<!DOCTYPE html>
         const mapping = {
             "Baseline": "Baseline TextRank",
             "GPT": "GPT-4o mini API",
-            "Gemini": "Gemini 1.5 Flash",
+            "Gemini": "Gemini 2.5 Flask",
             "ViT5": "ViT5 Fine-tuned",
             "PhoBERT": "PhoBERT Fine-tuned"
         };
