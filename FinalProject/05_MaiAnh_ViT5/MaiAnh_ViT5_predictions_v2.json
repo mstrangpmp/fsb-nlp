@@ -14,6 +14,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Giá và tầng bị sai lệch so với tin gốc (12.5 tỷ vs 11.9 Tỷ)."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt rác nhưng còn sót từ ngữ nội bộ môi giới."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót thông số diện tích sàn và kết cấu chi tiết."
+      }
     }
   },
   {
@@ -31,6 +45,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và diện tích có sự chênh lệch nhỏ so với nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ được rác nhưng vẫn còn văn phong quảng cáo chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: đường, quận, diện tích, tầng."
+      }
     }
   },
   {
@@ -48,6 +76,20 @@
       "mat_tien_m": 13.5,
       "chieu_sau_m": 15.5,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 2,
+        "reason": "Sai lệch giá (15.5 tỷ -> 13.5) và số tầng/căn hộ."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ được rác nhưng văn phong còn lủng củng, thiếu tính chuyên nghiệp."
+      },
+      "specs_preservation": {
+        "score": 2,
+        "reason": "Bỏ sót thông tin căn hộ mini và sai lệch nhiều số liệu cốt lõi."
+      }
     }
   },
   {
@@ -65,6 +107,20 @@
       "mat_tien_m": 4.3,
       "chieu_sau_m": 17.0,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và diện tích được giữ nguyên; thiếu thông tin hợp đồng thuê."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, tự nhiên, loại bỏ hoàn toàn các nội dung rác."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót thông tin hẻm và nguồn gốc chủ nhà ban đầu."
+      }
     }
   },
   {
@@ -82,6 +138,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai tên đường (Cách Mạng Tháng Tám thay vì Phạm Ngọc Thạch)."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Vẫn còn từ ngữ quảng cáo và thiếu tính tự nhiên của văn bản."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: đường, diện tích, tầng, giá."
+      }
     }
   },
   {
@@ -99,6 +169,20 @@
       "mat_tien_m": 4.2,
       "chieu_sau_m": 18.5,
       "phan_loai_hem": "Hẻm xe tải"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Giá và diện tích bị làm tròn/thay đổi so với nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc hơn nhưng vẫn còn văn phong quảng cáo chưa hoàn hảo."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bảo toàn tốt các thông số chính: đường, quận, diện tích và giá."
+      }
     }
   },
   {
@@ -116,6 +200,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 11.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Giá và diện tích có sự mâu thuẫn giữa các phần."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt thông tin rác nhưng còn câu quảng cáo chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bảo toàn hầu hết thông số cốt lõi nhưng thiếu sự nhất quán về giá."
+      }
     }
   },
   {
@@ -133,6 +231,20 @@
       "mat_tien_m": 2.9,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai diện tích (36m2) và nhầm lẫn vị trí hẻm."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Vẫn còn thông tin giao dịch nội bộ của môi giới."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót chi tiết về nguồn gốc (Hội đồng thẩm định)."
+      }
     }
   },
   {
@@ -150,6 +262,20 @@
       "mat_tien_m": 3.5,
       "chieu_sau_m": 11.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai lệch diện tích (40m2 vs 36.0m2) và giá cả chưa nhất quán."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Vẫn còn các cụm từ nội bộ/rác như 'Ở ngay TRUNG TÂM' và thiếu tính tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bảo toàn tốt hầu hết thông số (đường, quận, hẻm) nhưng có sai lệch diện tích."
+      }
     }
   },
   {
@@ -167,6 +293,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai tên đường (Cách Mạng Tháng Tám thay vì Võ Văn Tần)."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mô tả mạch lạc, loại bỏ tốt thông tin rác giao dịch."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót số tầng (1 trệt 3 lầu) và công năng chi tiết."
+      }
     }
   },
   {
@@ -184,6 +324,20 @@
       "mat_tien_m": 3.2,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Hẻm xe tải"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai tên đường (Huỳnh Văn Bánh) và thiếu thông tin nguồn gốc."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mô tả mạch lạc, loại bỏ tốt các nội dung rác giao dịch."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót hoặc thay đổi một số thông số cốt lõi (ví dụ: ngang/dài thực tế)."
+      }
     }
   },
   {
@@ -201,6 +355,20 @@
       "mat_tien_m": 3.4,
       "chieu_sau_m": 10.5,
       "phan_loai_hem": "Hẻm xe tải"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai tên đường (Cách Mạng Tháng Tám thay vì Cao Thắng)."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ rác tốt nhưng vẫn còn câu quảng cáo không cần thiết."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: đường, quận, diện tích, giá."
+      }
     }
   },
   {
@@ -218,6 +386,20 @@
       "mat_tien_m": 3.01,
       "chieu_sau_m": 8.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 2,
+        "reason": "Sai giá (9.3 tỷ vs 9.6 tỷ) và sai địa chỉ/diện tích."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Vẫn còn thông tin nội bộ môi giới và thiếu tính tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 2,
+        "reason": "Bỏ sót hoặc thay đổi các thông số cốt lõi như giá bán thực tế."
+      }
     }
   },
   {
@@ -235,6 +417,20 @@
       "mat_tien_m": 3.8,
       "chieu_sau_m": 9.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giữ nguyên giá và diện tích chính xác; bỏ sót chi tiết 'hạ chào 400tr'."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Tiêu đề rõ ràng, mô tả mạch lạc, loại bỏ hoàn toàn rác tin."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: Quận, đường, diện tích, giá và hẻm."
+      }
     }
   },
   {
@@ -252,6 +448,20 @@
       "mat_tien_m": 4.14,
       "chieu_sau_m": 5.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 2,
+        "reason": "Sai lệch diện tích (30m2 thay vì 18.8m2) và địa chỉ."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc, nhưng còn dùng từ ngữ quảng cáo quá mức, chưa hoàn hảo."
+      },
+      "specs_preservation": {
+        "score": 2,
+        "reason": "Bỏ sót thông số chính (18.8m2) và thay đổi diện tích/địa chỉ."
+      }
     }
   },
   {
@@ -269,6 +479,20 @@
       "mat_tien_m": 4.5,
       "chieu_sau_m": 8.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 2,
+        "reason": "Sai lệch thông số (32.7m2 vs 33m2) và thiếu tính nhất quán."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt rác giao dịch nhưng còn lặp từ và chưa mượt mà."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót thông số quan trọng (ví dụ: kết cấu nhà) và không nhất quán."
+      }
     }
   },
   {
@@ -286,6 +510,20 @@
       "mat_tien_m": 3.5,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai số liệu phòng ngủ (2PN thành 4PN) và ngang nhà (3.5m thành 4m)."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt thông tin rác nhưng văn phong còn lủng củng."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót số phòng ngủ và sai lệch kích thước ngang nhà."
+      }
     }
   },
   {
@@ -303,6 +541,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Thiếu thông tin diện tích và ngang/dài cụ thể từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt rác giao dịch nhưng còn lặp từ và chưa mượt mà."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót thông số diện tích (m2) và kích thước ngang/dài chính xác."
+      }
     }
   },
   {
@@ -320,6 +572,20 @@
       "mat_tien_m": 31.1,
       "chieu_sau_m": 10.5,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Giá và diện tích bị thay đổi (9.5 tỷ -> 8.5 tỷ; 30.1m2 -> 31m2)."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt thông tin rác nhưng còn lặp từ và chưa hoàn toàn tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: Quận, đường, diện tích, tầng, giá."
+      }
     }
   },
   {
@@ -337,6 +603,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai sót: Mô tả rút gọn ghi '1 lầu' thay vì '2 lầu'."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Vẫn còn các cụm từ nội bộ như 'CHDV MẶT TIỀN KINH DOANH SẦM UẤT' và thiếu tính tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót thông số sân thượng/tầng áp mái; mô tả chưa đầy đủ các chi tiết cốt lõi."
+      }
     }
   },
   {
@@ -354,6 +634,20 @@
       "mat_tien_m": 4.3,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai tên đường (Nguyễn Văn Trỗi) và thiếu thông tin căn thứ hai."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót thông số diện tích và tầng của căn thứ hai."
+      }
     }
   },
   {
@@ -371,6 +665,20 @@
       "mat_tien_m": 4.1,
       "chieu_sau_m": 11.5,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc tốt nhưng còn sót cụm 'Pháp' không rõ nghĩa ở cuối mô tả."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: Quận, diện tích, ngang dài và giá bán."
+      }
     }
   },
   {
@@ -388,6 +696,20 @@
       "mat_tien_m": 3.6,
       "chieu_sau_m": 8.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 2,
+        "reason": "Giá và diện tích bị thay đổi (10 tỷ -> 8 tỷ; 3.6x8m giữ nguyên)."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc hơn nhưng vẫn còn câu quảng cáo chung chung."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót thông tin về số tầng và kết cấu nhà (BTCT)."
+      }
     }
   },
   {
@@ -405,6 +727,20 @@
       "mat_tien_m": 3.2,
       "chieu_sau_m": 20.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Thay đổi giá (9.3 tỷ thành 8.3 tỷ) và địa chỉ phụ."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt rác nhưng vẫn còn câu quảng cáo chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: Quận, DT, Giá, Hẻm."
+      }
     }
   },
   {
@@ -422,6 +758,20 @@
       "mat_tien_m": 5.3,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai lệch nhỏ: Hẻm cách chỉ 50m thay vì ~100m."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc tốt nhưng thiếu tính tự nhiên của văn phong bán hàng chuyên nghiệp."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: Địa chỉ, diện tích, tầng và giá."
+      }
     }
   },
   {
@@ -439,6 +789,20 @@
       "mat_tien_m": 46.3,
       "chieu_sau_m": 15.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 1,
+        "reason": "Sai diện tích (463m2) và giá bán (8.2 tỷ), bịa đặt nhiều thông tin."
+      },
+      "coherence_readability": {
+        "score": 2,
+        "reason": "Lủng củng, chứa quá nhiều chi tiết nội bộ và câu văn không tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 1,
+        "reason": "Sai lệch nghiêm trọng diện tích (463m2) và giá bán (8.2 tỷ)."
+      }
     }
   }
 ]

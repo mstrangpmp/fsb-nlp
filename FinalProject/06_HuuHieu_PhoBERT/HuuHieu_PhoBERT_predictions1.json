@@ -14,6 +14,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 2,
+        "reason": "Sai địa chỉ (Quận 1 thay vì Quận 10) và sai thông số kỹ thuật."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ được rác nhưng vẫn còn văn phong quảng cáo chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 2,
+        "reason": "Sai địa chỉ (Quận 1 thay vì Quận 10) và sai thông số diện tích/tầng."
+      }
     }
   },
   {
@@ -31,6 +45,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và diện tích được giữ nguyên; chỉ thay đổi Quận 10 thành Quận 1."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ rác tốt nhưng vẫn còn từ ngữ quảng cáo chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: Cao Thắng, Quận 1, 39m2, 4 tầng, giá."
+      }
     }
   },
   {
@@ -48,6 +76,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai sót nhỏ: Quận 10 thành Quận 1 và thay đổi thông tin hẻm."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Tiêu đề rõ ràng, mô tả mạch lạc, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót nhiều chi tiết quan trọng như số căn hộ và giá thuê."
+      }
     }
   },
   {
@@ -65,6 +107,20 @@
       "mat_tien_m": 4.3,
       "chieu_sau_m": 17.0,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 3,
+        "reason": "Sai địa chỉ (Đồng Nai -> Quận 1) và thay đổi giá trị."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc, loại bỏ được rác nhưng còn dùng từ ngữ quảng cáo hơi lố."
+      },
+      "specs_preservation": {
+        "score": 3,
+        "reason": "Bỏ sót thông tin quan trọng (Quận 10) và thay đổi địa chỉ sai."
+      }
     }
   },
   {
@@ -82,6 +138,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt rác nhưng vẫn còn tiêu đề hơi quảng cáo và thiếu tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: đường, quận, diện tích, tầng, giá."
+      }
     }
   },
   {
@@ -99,6 +169,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và diện tích được rút gọn chính xác từ tin thô."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ rác tốt nhưng vẫn còn văn phong quảng cáo chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bảo toàn đủ các thông số cốt lõi: đường, quận, diện tích và giá."
+      }
     }
   },
   {
@@ -116,6 +200,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Hầu hết số liệu chính xác nhưng thiếu nguồn gốc rõ ràng."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Loại bỏ rác tốt nhưng văn phong còn lủng củng và chưa tự nhiên."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bảo toàn các thông số cốt lõi (đường, quận, giá) khá đầy đủ."
+      }
     }
   },
   {
@@ -133,6 +231,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và tầng bị rút gọn/làm tròn so với thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, loại bỏ hoàn toàn các thông tin giao dịch nội bộ rác."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót chi tiết về hẻm và chỉ giữ lại mặt tiền."
+      }
     }
   },
   {
@@ -150,6 +262,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai sót nhỏ: Diện tích 3.5x11m (38.5m2) bị làm tròn thành 40.0m2."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, loại bỏ hoàn toàn các thông tin nội bộ và rác."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót kích thước ngang x dài ban đầu (3.5m x 11m)."
+      }
     }
   }
 ]

@@ -201,6 +201,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả số liệu và thông tin đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Loại bỏ tốt rác nhưng còn giữ yêu cầu selfie nhận sổ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: địa chỉ, diện tích và giá."
+      }
     }
   },
   {
@@ -218,6 +232,20 @@
       "mat_tien_m": 5.32,
       "chieu_sau_m": 7.5,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin và số liệu đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, loại bỏ hoàn toàn các nội dung rác của môi giới."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Cao Thắng, Q10, 39m2, 4 tầng, ngang lớn và giá bán."
+      }
     }
   },
   {
@@ -235,6 +263,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai sót nhỏ ở việc xác định diện tích (60m2) và thiếu thông tin về hẻm."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn các nội dung rác."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót thông tin về hẻm và không làm rõ nguồn gốc giá bán ban đầu."
+      }
     }
   },
   {
@@ -252,6 +294,20 @@
       "mat_tien_m": 4.3,
       "chieu_sau_m": 17.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả số liệu và thông tin đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn các nội dung rác."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Quận, DT, Ngang x Dài, Số tầng và Giá bán."
+      }
     }
   },
   {
@@ -269,6 +325,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin (giá, diện tích, vị trí) đều chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, văn phong chuyên nghiệp và loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Đường, Quận, Diện tích (3x12), Tầng, Giá bán."
+      }
     }
   },
   {
@@ -286,6 +356,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 24.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và diện tích được rút gọn chính xác nhưng thiếu nguồn gốc giá ban đầu."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn rác tin nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: đường, quận, diện tích, giá và kết cấu."
+      }
     }
   },
   {
@@ -303,6 +387,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 11.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều chính xác và trích xuất trực tiếp từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn nội dung rác."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: đường, quận, diện tích và giá bán."
+      }
     }
   },
   {
@@ -320,6 +418,20 @@
       "mat_tien_m": 2.97,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai sót nhỏ ở diện tích (35.5m2) và giá trị ban đầu."
+      },
+      "coherence_readability": {
+        "score": 3,
+        "reason": "Vẫn giữ lại thông tin giao dịch nội bộ của môi giới."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số cốt lõi: đường, quận, diện tích, giá."
+      }
     }
   },
   {
@@ -337,6 +449,20 @@
       "mat_tien_m": 3.5,
       "chieu_sau_m": 11.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông số và giá trị đều được trích xuất chính xác từ tin thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn nội dung rác của môi giới."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Quận 3, Nguyễn Thiện Thuật, 36m2, 7.3 tỷ."
+      }
     }
   },
   {
@@ -354,6 +480,20 @@
       "mat_tien_m": 3.6,
       "chieu_sau_m": 11.7,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả số liệu và thông tin đều chính xác, khớp với nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, văn phong chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Đường, Q3, Diện tích, Mặt tiền và Giá."
+      }
     }
   },
   {
@@ -371,6 +511,20 @@
       "mat_tien_m": 5.0,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin (địa chỉ, giá, diện tích) đều chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp và loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Quận 3, Nguyễn Đình Chiểu, 32m2, 5 tầng, giá 9.5 tỷ."
+      }
     }
   },
   {
@@ -388,6 +542,20 @@
       "mat_tien_m": 3.4,
       "chieu_sau_m": 10.5,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều chính xác và trích xuất đúng từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: đường, quận, diện tích, tầng và giá."
+      }
     }
   },
   {
@@ -405,6 +573,20 @@
       "mat_tien_m": 3.01,
       "chieu_sau_m": 8.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Giá và diện tích bị thay đổi (9.6 tỷ -> 9.3 tỷ)."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, loại bỏ hoàn toàn các thông tin nội bộ rác."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót chi tiết hẻm (629) và thay đổi giá bán ban đầu."
+      }
     }
   },
   {
@@ -422,6 +604,20 @@
       "mat_tien_m": 4.0,
       "chieu_sau_m": 9.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều được trích xuất chính xác và đầy đủ."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mô tả mạch lạc nhưng còn hơi dài dòng, chưa tối ưu nhất."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: đường, quận, diện tích và giá."
+      }
     }
   },
   {
@@ -439,6 +635,20 @@
       "mat_tien_m": 4.14,
       "chieu_sau_m": 4.45,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin và số liệu đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn các yếu tố rác."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Địa chỉ, Quận, Diện tích, Giá và đặc điểm kinh doanh."
+      }
     }
   },
   {
@@ -456,6 +666,20 @@
       "mat_tien_m": 5.0,
       "chieu_sau_m": 8.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin (địa chỉ, giá, diện tích) đều chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, văn phong chuẩn, loại bỏ hoàn toàn các nội dung rác của môi giới."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Đường, Q3, Diện tích (32.7m2), Hẻm 4m và Giá."
+      }
     }
   },
   {
@@ -473,6 +697,20 @@
       "mat_tien_m": 4.0,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin (địa chỉ, giá, diện tích) đều chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, văn phong chuyên nghiệp và loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Đường, Q3, 40m2, 2PN, 9.3 tỷ."
+      }
     }
   },
   {
@@ -490,6 +728,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Thiếu nguồn gốc rõ ràng cho diện tích và kích thước (30m2/3x10)."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót thông tin về hẻm xe hơi đỗ cửa và nguồn gốc đầu chủ."
+      }
     }
   },
   {
@@ -507,6 +759,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 10.2,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin và số liệu đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 4,
+        "reason": "Mạch lạc, nhưng còn giữ lại lời kêu gọi hành động của môi giới."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: vị trí, diện tích, tầng và giá cả."
+      }
     }
   },
   {
@@ -524,6 +790,20 @@
       "mat_tien_m": 3.26,
       "chieu_sau_m": 10.8,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả số liệu và thông tin đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, loại bỏ hoàn toàn các nội dung giao dịch rác."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Quận 3, Nguyễn Thiện Thuật, diện tích và giá bán."
+      }
     }
   },
   {
@@ -541,6 +821,20 @@
       "mat_tien_m": 4.3,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin (giá, vị trí, diện tích) đều chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp và loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Quận 3, Rạch Bùng Binh, 42m2, 8.8 tỷ."
+      }
     }
   },
   {
@@ -558,6 +852,20 @@
       "mat_tien_m": 4.1,
       "chieu_sau_m": 12.0,
       "phan_loai_hem": "Mặt tiền"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều được trích xuất chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp và loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: Quận 3, hẻm, diện tích, giá cả."
+      }
     }
   },
   {
@@ -575,6 +883,20 @@
       "mat_tien_m": 3.6,
       "chieu_sau_m": 8.0,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 4,
+        "reason": "Sai diện tích (28m2) và thiếu thông tin hẻm."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 4,
+        "reason": "Bỏ sót chi tiết 'Hẻm 4 thông' và không ghi rõ diện tích gốc."
+      }
     }
   },
   {
@@ -592,6 +914,20 @@
       "mat_tien_m": 3.0,
       "chieu_sau_m": 20.0,
       "phan_loai_hem": "Hẻm thông"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều chính xác và trích xuất đúng từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: Q3, 60.5m2, hẻm 8m, 9.3 tỷ."
+      }
     }
   },
   {
@@ -609,6 +945,20 @@
       "mat_tien_m": 5.3,
       "chieu_sau_m": 10.0,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin đều chính xác và trích xuất đầy đủ từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mạch lạc, văn phong chuyên nghiệp, loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ: Quận 3, Cách Mạng Tháng Tám, 46m2, 9.5 tỷ."
+      }
     }
   },
   {
@@ -626,6 +976,20 @@
       "mat_tien_m": null,
       "chieu_sau_m": null,
       "phan_loai_hem": "Hẻm xe hơi"
+    },
+    "llm_evaluation": {
+      "factual_accuracy": {
+        "score": 5,
+        "reason": "Tất cả thông tin (giá, diện tích, địa chỉ) đều chính xác từ nguồn thô."
+      },
+      "coherence_readability": {
+        "score": 5,
+        "reason": "Mô tả mạch lạc, chuyên nghiệp và loại bỏ hoàn toàn rác nội bộ."
+      },
+      "specs_preservation": {
+        "score": 5,
+        "reason": "Bảo toàn đầy đủ các thông số: Q3, Cách Mạng Tháng Tám, diện tích, giá."
+      }
     }
   }
 ]
