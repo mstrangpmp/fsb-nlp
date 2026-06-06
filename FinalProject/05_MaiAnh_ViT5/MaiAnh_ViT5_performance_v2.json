@@ -1,0 +1,64 @@
+{
+  "model_name": "VietAI/vit5-base",
+  "average_latency_seconds": 4.1961,
+  "estimated_cost_vnd_per_1k": 0,
+  "latency_per_sample": [
+    1.9899,
+    4.5668,
+    3.2615,
+    3.2761,
+    4.991,
+    4.5441,
+    5.6495,
+    4.3229,
+    3.9084,
+    2.8726,
+    4.7167,
+    4.3419,
+    4.1946,
+    2.5721,
+    5.5704,
+    4.0669,
+    3.8247,
+    4.6302,
+    5.6993,
+    3.795,
+    5.5123,
+    4.5433,
+    4.0813,
+    4.4322,
+    3.0335,
+    4.7009
+  ],
+  "rouge_l_on_val_2_samples": 46.64,
+  "note": "Val: 2 mau co GT. Test: 26 mau khong co GT — danh gia dinh tinh.",
+  "dataset_info": {
+    "train_samples": 9,
+    "val_samples": 2,
+    "test_samples": 26,
+    "test_has_extracted_specs": false
+  },
+  "training_info": {
+    "final_train_loss": 0.0265,
+    "total_steps": 38
+  },
+  "hyperparameters": {
+    "learning_rate": 0.0001,
+    "batch_size": 2,
+    "grad_accumulation": 4,
+    "effective_batch": 8,
+    "max_input_len": 384,
+    "max_target_len": 256,
+    "beam_size": 4,
+    "length_penalty": 1.2,
+    "no_repeat_ngram": 3,
+    "weight_decay": 0.05,
+    "data_augmentation": true,
+    "seed": 42
+  },
+  "hardware": {
+    "device": "cuda",
+    "gpu_name": "Tesla T4",
+    "gpu_vram_gb": 15.6
+  }
+}
