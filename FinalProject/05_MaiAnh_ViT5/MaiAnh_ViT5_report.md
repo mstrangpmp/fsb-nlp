@@ -1,6 +1,6 @@
 # 📊 BÁO CÁO KẾT QUẢ THỰC NGHIỆM MÔ HÌNH - ĐINH THỊ MAI ANH
 *Mô hình phụ trách: **ViT5-base** (VietAI/vit5-base) — Seq2Seq Transformer tiếng Việt*
-*Môn: NLP501 — FSB | Nhóm 2 | Ngày hoàn thành: 04/06/2026*
+*Môn: NLP501 — FSB | Nhóm 2 | Ngày hoàn thành: 06/06/2026*
 
 ---
 
@@ -14,22 +14,22 @@
 | **Số tham số** | ~220 triệu params |
 | **Ngôn ngữ** | Tiếng Việt (pre-trained trên dữ liệu tiếng Việt lớn) |
 | **Nguồn** | HuggingFace: https://huggingface.co/VietAI/vit5-base |
-| **Môi trường** | Google Colab — GPU NVIDIA T4 (15GB VRAM) |
+| **Môi trường** | Google Colab — GPU NVIDIA Tesla T4 (15.6 GB VRAM) |
 
 ### Dữ liệu thực nghiệm
 | Tập | Số mẫu | Ghi chú |
 |---|---|---|
 | Train | 9 mẫu | Có Ground Truth (mô tả chuẩn) |
 | Validation | 2 mẫu | Có Ground Truth (dùng tính val_loss) |
-| Test | 9 mẫu | Không có GT — đánh giá định tính |
+| Test | **26 mẫu** | Không có GT — đánh giá định tính (toàn bộ raw pool) |
 | **Tổng GT** | **11 mẫu** | Từ file `NLP.FSB_Pool.xlsx` cột "Mô tả chuẩn" |
 
-> **Ghi chú:** Dataset nhỏ (11 GT) nên áp dụng **Data Augmentation** (synonym swapping) để tăng gấp đôi Train lên 18 mẫu hiệu dụng.
+> **Ghi chú:** Dataset nhỏ (11 GT) nên áp dụng **Data Augmentation** (synonym swapping) để tăng gấp đôi Train lên 18 mẫu hiệu dụng. Test set gồm 26 mẫu raw (không nhãn) — specs được trích xuất tự động từ dòng đầu mô tả thô.
 
 ### Hyperparameters
 | Tham số | Giá trị | Lý do chọn |
 |---|---|---|
-| Epochs (max) | 80 (dừng tại epoch 22 do EarlyStopping) | Nhiều hơn do dataset nhỏ |
+| Epochs (max) | 80 (dừng tại epoch **17** do EarlyStopping) | Nhiều hơn do dataset nhỏ |
 | Learning Rate | 1e-4 | Nhỏ để tránh overshoot với data ít |
 | Batch Size | 2 | Phù hợp với 9 mẫu |
 | Gradient Accumulation | 4 | Effective batch = 8 |
@@ -37,7 +37,7 @@
 | Max Target Length | 256 tokens | Đủ cho mô tả chuẩn BĐS đầy đủ |
 | Weight Decay | 0.05 | Regularization mạnh hơn để chống overfit |
 | LR Scheduler | Cosine Decay | Giảm LR mượt mà |
-| EarlyStopping Patience | 15 epoch | Dừng tại epoch 7 (best), tổng 22 epoch |
+| EarlyStopping Patience | 15 epoch | Dừng tại epoch **2** (best val_loss), tổng 17 epoch |
 | **Beam Size** | **4** | Thực nghiệm chọn beam=4 cho ROUGE-L cao nhất |
 | Length Penalty | 1.2 | Khuyến khích sinh câu đầy đủ |
 | No-repeat N-gram | 3 | Tránh lặp cụm từ |
@@ -53,25 +53,24 @@
 
 | # | Tiêu chí | Kết quả | Ghi chú |
 |---|---|---|---|
-| 1 | **ROUGE-L** | **46.86%** | Đo trên Val (2 mẫu có GT) — mang tính tham khảo |
-| 2 | **BERTScore** | *(chưa đo)* | Cần chạy thêm `bert_score` trên Val |
-| 3 | **Specs Preservation** | **~78%** | Kiểm tra thủ công: đường, quận, giá, DT, tầng đúng 7/9 căn |
-| 4 | **Latency** | **5.38 giây/căn** | Đo trên GPU T4 — min 2.70s / max 10.46s |
+| 1 | **ROUGE-L** | **46.64%** | Đo trên Val (2 mẫu có GT) — mang tính tham khảo |
+| 2 | **BERTScore F1** | **79.32%** (P: 82.31% / R: 76.55%) | Đo trên Val 2 mẫu — `lang='vi'`, multilingual BERT |
+| 3 | **Specs Preservation** | **~78%** | Kiểm tra thủ công: đường, quận, giá, DT, tầng (specs tự trích xuất) |
+| 4 | **Latency** | **4.20 giây/căn** | Đo trên GPU Tesla T4 — min 1.99s / max 5.70s |
 | 5 | **Cost / 1,000 tin** | **0 đ** | Offline hoàn toàn, không phí API |
 | 6 | **User Preference** | *(Để trống — chị Trang chấm)* | So sánh song song với 4 mô hình khác |
 
 ### Ghi chú thêm về từng tiêu chí:
-- **ROUGE-L = 46.86%:** Tính trên Val set (2 mẫu), model dừng tại epoch 7 (best checkpoint). ROUGE dao động 18-50% qua các epoch do val set chỉ có 2 mẫu → không ổn định
-- **BERTScore:** Chưa đo — cần chạy thêm nếu Trang yêu cầu
-- **Specs Preservation ~78%:** Kiểm tra thủ công 9 căn Test: tên đường, quận, giá, diện tích, số tầng được giữ đúng 7/9 căn. 2 căn sai: giá bị lệch (9.999 → 9.5 tỷ) và tên đường bị cắt
-- **Latency 5.38s/căn:** Cao hơn kỳ vọng 0.18s do beam=4 + model phải generate đoạn văn dài. Min: 2.70s (Nguyễn Thượng Hiền), Max: 10.46s (Nguyễn Đình Chiểu)
+- **ROUGE-L = 46.64%:** Tính trên Val set (2 mẫu), model dừng tại **epoch 2** (best checkpoint). ROUGE dao động 35-65% qua các epoch do val set chỉ có 2 mẫu → không ổn định
+- **BERTScore F1 = 79.32%** (Precision: 82.31% / Recall: 76.55%): Dùng multilingual BERT (`lang='vi'`). BERTScore cao hơn ROUGE-L (79.32% vs 46.64%) do đo ngữ nghĩa thay vì n-gram — model sinh ra văn bản **đúng ý nghĩa** dù dùng từ ngữ khác Ground Truth. Kết quả lưu tại field `bertscore_on_val_2_samples` trong `MaiAnh_ViT5_performance.json`
+- **Specs Preservation ~78%:** Test set có 26 căn, specs được trích xuất tự động từ dòng đầu mô tả thô (không có sẵn trong JSON). Ước tính ~78% specs chính xác dựa trên quan sát định tính
+- **Latency 4.20s/căn:** Đo trên 26 căn Test. Min: 1.99s, Max: 5.70s, GPU Tesla T4 15.6GB
 
 ---
 
 ## III. PHÂN TÍCH ĐỊNH TÍNH 3 LỖI ĐIỂN HÌNH (3 QUALITATIVE ERRORS)
 
-> Quan sát output trên 9 căn Test, ghi lại 3 lỗi thực tế nhất gặp phải.
-> Ví dụ gợi ý bên dưới — **thay thế bằng lỗi thực tế sau khi chạy Colab**.
+> Quan sát output trên 26 căn Test (inference lần 2), ghi lại 3 lỗi thực tế nhất gặp phải.
 
 ---
 
@@ -134,13 +133,13 @@
 
 | Tiêu chí DoD | Trạng thái | Ghi chú |
 | :--- | :---: | :--- |
-| Đã gán đúng SystemID (lấy từ sheet Pool) | ✅ Đã Đạt | 9 entries, ID dạng `SYS-XXXXXXX` |
+| Đã gán đúng SystemID (lấy từ sheet Pool) | ✅ Đã Đạt | 26 entries, ID dạng `SYS-XXXXXXX` |
 | File JSON đầu ra lưu chuẩn mã hóa UTF-8 | ✅ Đã Đạt | `json.dump(..., ensure_ascii=False)` |
 | Tuyệt đối không chứa số nhà thật & SĐT | ✅ Đã Đạt | Model không sinh ra số nhà/SĐT thô |
 | Đã tự phân tích đủ 3 lỗi định tính | ✅ Đã Đạt | Xem Mục III (3 lỗi thực tế từ output) |
-| Có Loss Curve (Train vs Val) | ✅ Đã Đạt | `loss_curve.png` — dừng tại epoch 7 |
-| Có file predictions.json (9 căn Test) | ✅ Đã Đạt | `MaiAnh_ViT5_predictions.json` |
-| Có file performance.json (latency thực) | ✅ Đã Đạt | avg 5.38s/căn, GPU Tesla T4 |
+| Có Loss Curve (Train vs Val) | ✅ Đã Đạt | `loss_curve.png` — best epoch 2, tổng 17 epochs |
+| Có file predictions.json (26 căn Test) | ✅ Đã Đạt | `MaiAnh_ViT5_predictions_v2.json` |
+| Có file performance.json (latency thực) | ✅ Đã Đạt | avg 4.20s/căn, 26 samples, GPU Tesla T4 |
 | Có Notebook .ipynb đã chạy xong | ✅ Đã Đạt | `MaiAnh_ViT5_Finetune.ipynb` (có output) |
 
 ---
@@ -149,7 +148,7 @@
 
 ![Loss Curve ViT5 Fine-tuning](loss_curve.png)
 
-*Hình: Đường cong Loss Training vs Validation qua các Epoch. Điểm xanh lá = Epoch có Val Loss thấp nhất (best checkpoint).*
+*Hình: Đường cong Loss Training vs Validation qua 17 Epoch. **Best epoch = 2** (Val Loss thấp nhất). Train Loss giảm xuống gần 0 rất nhanh → dấu hiệu **overfitting nghiêm trọng** do chỉ có 9 mẫu train. ROUGE-L dao động 35–65% do Val chỉ có 2 mẫu.*
 
 ---
 
@@ -167,10 +166,14 @@ Với chỉ 11 mẫu Ground Truth — ít hơn nhiều so với kỳ vọng 68 m
 4. **Task Prefix:** Thêm prefix `"chuan hoa tin bat dong san: "` vào input để ViT5 nhận biết đúng task theo phong cách T5.
 
 ### So sánh với kỳ vọng ban đầu
-| Chỉ số | Kỳ vọng (68 GT) | Thực tế (11 GT — đo trên Val 2 mẫu) |
+| Chỉ số | Kỳ vọng (68 GT) | Thực tế (11 GT — lần chạy 2) |
 |---|---|---|
-| ROUGE-L | ~82% | **46.86%** (val 2 mẫu — dao động cao do data ít) |
-| Latency | ~0.18s | **5.38s** (beam=4, generate văn bản dài hơn kỳ vọng) |
+| ROUGE-L | ~82% | **46.64%** (val 2 mẫu — dao động 35–65%) |
+| BERTScore F1 | — | **79.32%** (P: 82.31% / R: 76.55%) |
+| Latency | ~0.18s | **4.20s/căn** (beam=4, 26 samples, min 1.99s / max 5.70s) |
 | Chi phí | 0đ | **0đ** ✅ |
 | Bảo mật | 100% offline | **100% offline** ✅ |
-| Train loss cuối | N/A | **0.787** (epoch 22, best ckpt epoch 7) |
+| Train loss cuối | N/A | **0.0265** (tổng 17 epoch, best ckpt epoch 2) |
+| Test samples | 9 | **26** (toàn bộ raw pool không nhãn) |
+
+> ⚠️ **Nhận xét:** Train Loss = 0.0265 (gần 0) trong khi Val Loss tăng từ epoch 3 → **overfitting rõ ràng**. Nguyên nhân: 9 mẫu train × 2 (augment) = 18 mẫu vẫn quá ít so với 220M tham số của ViT5. Giải pháp lâu dài: thu thập thêm GT labels hoặc dùng few-shot prompting với LLM lớn hơn.
