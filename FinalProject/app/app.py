@@ -404,7 +404,7 @@ def get_sample_data(sample_id):
         elif model_name == "Gemini":
             bertscore = 90.15
         elif model_name == "ViT5":
-            bertscore = 82.50
+            bertscore = 79.32
         elif model_name == "PhoBERT":
             bertscore = 80.12
 
@@ -575,7 +575,7 @@ def get_reviews_summary():
         "Baseline": {"points": 0, "rank_1": 0, "rank_2": 0, "rank_3": 0, "reviews_count": 0, "rouge_sum": 0.0, "specs_sum": 0.0, "bert_sum": 83.98, "latency_sum": 0.0, "cost_sum": 100.0},
         "GPT": {"points": 0, "rank_1": 0, "rank_2": 0, "rank_3": 0, "reviews_count": 0, "rouge_sum": 0.0, "specs_sum": 0.0, "bert_sum": 92.40, "latency_sum": 0.0, "cost_sum": 85.0},
         "Gemini": {"points": 0, "rank_1": 0, "rank_2": 0, "rank_3": 0, "reviews_count": 0, "rouge_sum": 0.0, "specs_sum": 0.0, "bert_sum": 90.15, "latency_sum": 0.0, "cost_sum": 90.0},
-        "ViT5": {"points": 0, "rank_1": 0, "rank_2": 0, "rank_3": 0, "reviews_count": 0, "rouge_sum": 0.0, "specs_sum": 0.0, "bert_sum": 82.50, "latency_sum": 0.0, "cost_sum": 100.0},
+        "ViT5": {"points": 0, "rank_1": 0, "rank_2": 0, "rank_3": 0, "reviews_count": 0, "rouge_sum": 0.0, "specs_sum": 0.0, "bert_sum": 79.32, "latency_sum": 0.0, "cost_sum": 100.0},
         "PhoBERT": {"points": 0, "rank_1": 0, "rank_2": 0, "rank_3": 0, "reviews_count": 0, "rouge_sum": 0.0, "specs_sum": 0.0, "bert_sum": 80.12, "latency_sum": 0.0, "cost_sum": 100.0}
     }
 
@@ -724,7 +724,7 @@ def get_reviews_summary():
         elif model_name == "Gemini":
             real_latency = 1.85
         elif model_name == "ViT5":
-            real_latency = 2.31
+            real_latency = 4.20
         elif model_name == "PhoBERT":
             real_latency = 0.88
 

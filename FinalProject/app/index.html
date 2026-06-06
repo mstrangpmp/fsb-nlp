@@ -1137,7 +1137,7 @@
             "Baseline": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 83.98, latency: 100.0, cost: 100.0 },
             "GPT": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 92.40, latency: 37.8, cost: 85.0 },
             "Gemini": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 90.15, latency: 81.5, cost: 90.0 },
-            "ViT5": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 82.50, latency: 76.9, cost: 100.0 },
+            "ViT5": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 79.32, latency: 58.0, cost: 100.0 },
             "PhoBERT": { points: 0, rank_1: 0, rank_2: 0, rank_3: 0, rouge_sum: 0.0, specs_sum: 0.0, bert: 80.12, latency: 91.2, cost: 100.0 }
         };
         
@@ -1190,7 +1190,7 @@
             if (modelName === "Baseline") realLatency = 0.007;
             else if (modelName === "GPT") realLatency = 6.22;
             else if (modelName === "Gemini") realLatency = 1.85;
-            else if (modelName === "ViT5") realLatency = 2.31;
+            else if (modelName === "ViT5") realLatency = 4.20;
             else if (modelName === "PhoBERT") realLatency = 0.88;
             
             return {
@@ -1291,7 +1291,7 @@
                 let bertscore = 83.98;
                 if (modelName === "GPT") bertscore = 92.40;
                 else if (modelName === "Gemini") bertscore = 90.15;
-                else if (modelName === "ViT5") bertscore = 82.50;
+                else if (modelName === "ViT5") bertscore = 79.32;
                 else if (modelName === "PhoBERT") bertscore = 80.12;
                 
                 activeModelsData[modelName] = {

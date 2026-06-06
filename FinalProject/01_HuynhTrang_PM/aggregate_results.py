@@ -182,8 +182,10 @@ def aggregate_and_evaluate():
         elif "HuuHieu" in file_prefix:
             member_folder = "06_HuuHieu_PhoBERT"
             
-        # Thử tìm trong thư mục hiện tại trước, nếu không có thử tìm trong thư mục của từng thành viên
+        # Thử tìm các hậu tố phiên bản mới nhất trước
         paths_to_try_pred = [
+            f"../{member_folder}/{file_prefix}_predictions_v2.json",
+            f"../{member_folder}/{file_prefix}_predictions1.json",
             pred_file,
             f"../{member_folder}/{pred_file}",
             f"../{member_folder}/predictions.json"
@@ -199,6 +201,8 @@ def aggregate_and_evaluate():
             ])
             
         paths_to_try_perf = [
+            f"../{member_folder}/{file_prefix}_performance_v2.json",
+            f"../{member_folder}/{file_prefix}_performance1.json",
             perf_file,
             f"../{member_folder}/{perf_file}",
             f"../{member_folder}/performance.json"
