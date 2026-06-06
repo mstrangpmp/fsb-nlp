@@ -31,6 +31,12 @@
     4.7009
   ],
   "rouge_l_on_val_2_samples": 46.64,
+  "bertscore_on_val_2_samples": {
+    "f1": 79.32,
+    "precision": 82.31,
+    "recall": 76.55,
+    "lang": "vi"
+  },
   "note": "Val: 2 mau co GT. Test: 26 mau khong co GT — danh gia dinh tinh.",
   "dataset_info": {
     "train_samples": 9,
