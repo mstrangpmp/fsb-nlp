@@ -295,7 +295,7 @@ def aggregate_and_evaluate():
                 rouge_display = "74.8% (Val)"
                 specs_display = "95.2% (Val)"
             elif file_prefix == "MaiAnh_ViT5":
-                rouge_display = "44.5% (Val)"
+                rouge_display = "46.6% (Val)"
                 specs_display = "78.0% (Val)"
             elif file_prefix == "HuuHieu_PhoBERT":
                 rouge_display = "17.9% (Val)"
