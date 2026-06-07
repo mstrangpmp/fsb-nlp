@@ -241,7 +241,60 @@ Nhờ đó, tệp `index.html` sau khi biên dịch có đầy đủ dữ liệu
 
 ---
 
-## 🔮 PHẦN III: PIPELINE HYBRID AI ĐỀ XUẤT CHO CÁC ĐỀ ÁN SAU
+## 🎨 PHẦN III: HƯỚNG DẪN DESIGN SYSTEM, FORMAT & STYLE REUSABILITY
+
+Mục này cung cấp các tiêu chuẩn thiết kế (Design Tokens), bảng mã màu, kiểu chữ, và cách thức cấu hình lại màu sắc để tái sử dụng toàn bộ giao diện Web cũng như hệ thống Slide cho các đề án khác.
+
+### 1. Giao diện Web Showcase (Glassmorphism Dark Theme)
+Giao diện Web sử dụng phong cách **Kính mờ trên nền tối (Glassmorphism)** tạo cảm giác hiện đại, công nghệ cao và cao cấp.
+* **Bảng mã màu chủ đạo (CSS Variables):**
+  * Nền chính (`--bg-color`): `#080B16` (Deep Navy tối màu, tránh dùng đen tuyền `#000` để giữ chiều sâu cho giao diện).
+  * Khung chứa (`--card-bg`): `rgba(13, 18, 36, 0.7)` (Kính mờ màu lam đậm).
+  * Viền khung (`--card-border`): `rgba(255, 255, 255, 0.06)` (Trắng cực mảnh để phản xạ ánh sáng).
+  * Màu nhấn (`--accent-blue`): `#3B82F6` (Xanh hoàng gia tạo điểm nhấn công nghệ).
+  * Màu thông báo/Chỉ số khớp (`--success-color`): `#10B981` (Xanh lục ngọc).
+  * Màu thông báo lệch/Lỗi (`--error-color`): `#EF4444` (Đỏ san hô).
+* **Kiểu chữ (Typography):**
+  * Font tiêu đề: **Outfit** (Web Font từ Google Fonts - tạo sự cá tính, hiện đại và bo tròn tinh tế).
+  * Font nội dung & Bảng biểu: **Inter** (Web Font từ Google Fonts - cực kỳ rõ nét khi hiển thị văn bản mật độ cao).
+* **Mẹo đổi màu nhanh cho Web (Recolor Template):**
+  Để thay đổi tông màu chủ đạo từ **Xanh Lam (Blue/Violet)** sang **Xanh Ngọc/Lục (Emerald)** hoặc **Đỏ Mờ (Rose/Crimson)**, bạn chỉ cần thay đổi các biến CSS `:root` ở đầu tệp `index.html` (dòng 160):
+  ```css
+  /* Ví dụ chuyển sang tông Xanh Lục (Emerald Theme) */
+  :root {
+      --bg-color: #040D0A; /* Tối ngả xanh lục */
+      --card-bg: rgba(6, 20, 16, 0.75);
+      --accent-blue: #10B981; /* Đổi màu nhấn sang Emerald */
+      --accent-blue-hover: #059669;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+  }
+  ```
+
+### 2. Hệ thống Slide Báo Cáo (Premium Dark Presentation)
+Bộ slide của nhóm được thiết kế theo tỷ lệ **16:9 widescreen** với phong cách tối giản, sử dụng card phẳng nổi trên nền tối.
+
+* **Design Palette (Bảng màu Slide):**
+  * **Background (Slide Nền chính):** `#0F172A` (Slate Dark - Xám đá phiến tối) hoặc `#1E293B` (Slate Light).
+  * **Card Container (Khung nội dung):** `#1E293B` hoặc `#334155` (Slate Gray) để làm nổi bật các khối thông tin như sơ đồ phân vai, chiến lược dữ liệu.
+  * **Title Accent (Màu tiêu đề nhấn):** `#FBBF24` (Màu vàng kim/Gold) mang lại cảm giác sang trọng, chuyên nghiệp và có độ tương phản cao trên nền tối.
+  * **Primary Text (Văn bản chính):** `#E2E8F0` (Off-white) - êm dịu cho mắt khi thuyết trình trong phòng tối, tránh dùng trắng tinh `#FFFFFF` gây chói.
+  * **Secondary Accent (Màu nhấn phụ):** `#3B82F6` (Xanh lam) dùng cho các liên kết, mã code, hoặc highlight metrics.
+* **Font chữ tiêu chuẩn trên Slide:**
+  * Tiêu đề chính (Title/Header): **Montserrat** hoặc **Outfit** (Cỡ chữ 24-28pt, Bold, viết hoa).
+  * Thuyết minh & Nội dung (Body/Bullets): **Inter** hoặc **Roboto** (Cỡ chữ 14-16pt, Regular).
+* **Cách lưu trữ và tái sử dụng bộ Slide này:**
+  * **Nhân bản nhanh (Duplicate Template):**
+    Vào tệp Google Slides trực tuyến, nhấn `File > Make a copy > Entire presentation` (Tệp > Tạo bản sao > Toàn bộ bản trình bày) để tạo một bản thiết kế y hệt cho dự án mới.
+  * **Đổi màu hàng loạt theo chủ đề (Theme Color Swap):**
+    Google Slides hỗ trợ thay đổi toàn bộ tông màu của slide chỉ trong 2 click nhờ tính năng **Theme Colors**:
+    1. Vào thanh công cụ: chọn `Slide > Edit Theme` (Trang trình bày > Chỉnh sửa chủ đề).
+    2. Ở góc phải màn hình, chọn tab **Colors** (Màu sắc) để mở bảng màu hệ thống.
+    3. Bạn có thể thay đổi các màu hệ thống (như *Dark 1* thành màu nền mong muốn, *Accent 1* thành màu thương hiệu của dự án mới).
+    4. Toàn bộ các slide, nút bấm, hình khối sử dụng màu hệ thống sẽ tự động cập nhật màu mới đồng loạt mà không bị mất bất kỳ vị trí hay định dạng font chữ nào.
+
+---
+
+## 🔮 PHẦN IV: PIPELINE HYBRID AI ĐỀ XUẤT CHO CÁC ĐỀ ÁN SAU
 Từ các bài học thực tiễn của đề án, quy trình hiệu quả nhất để triển khai các dự án xử lý ngôn ngữ tự nhiên tương lai trong điều kiện tập dữ liệu nhỏ là cấu trúc **Hybrid Pipeline**:
 
 ```mermaid
@@ -255,3 +308,4 @@ flowchart LR
 1. **Giai đoạn khởi đầu (Bootstrap)**: Do việc gán nhãn thủ công rất tốn thời gian, hãy sử dụng các LLM mạnh mẽ (như Gemini 2.5 Flask API hoặc GPT-4o-mini) kết hợp kỹ thuật prompt few-shot có chọn lọc để gán nhãn hàng loạt cho tập tin đăng thô lớn (ví dụ: từ 500 đến 1000 tin).
 2. **Giai đoạn tối ưu hóa (Offline Training)**: Sử dụng chính tập dữ liệu vừa gán nhãn tự động này làm tập huấn luyện (train set) để fine-tune các mô hình Seq2Seq chuyên biệt, nhỏ gọn hơn chạy cục bộ (như ViT5-base hoặc PhoBERT).
 3. **Giai đoạn vận hành (Production)**: Hệ thống cuối cùng sẽ chạy offline 100% trên hạ tầng nội bộ của doanh nghiệp, giúp bảo mật dữ liệu tuyệt đối, tốc độ xử lý tức thời và **chi phí vận hành bằng 0**.
+
