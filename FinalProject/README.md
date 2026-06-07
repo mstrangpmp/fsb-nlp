@@ -122,6 +122,10 @@ python aggregate_results.py
 ```
 Bảng xếp hạng sẽ hiển thị trên console và tự động lưu ra tệp báo cáo tổng hợp [summary_leaderboard_report.csv](file:///d:/LHTBrain/01_PROJECTS/FSB-NLP/FinalProject/01_HuynhTrang_PM/summary_leaderboard_report.csv).
 
+### 4. Hướng Dẫn Kỹ Thuật Chi Tiết (Reusable Skill Guide)
+Để phục vụ tham khảo cho các đề án và dự án môn học sau, xem hướng dẫn chi tiết tại:
+* [GUIDE_LEADERBOARD_SLIDES.md](file:///d:/LHTBrain/01_PROJECTS/FSB-NLP/FinalProject/GUIDE_LEADERBOARD_SLIDES.md) — Chi tiết về cách thiết lập kết nối và tự động hóa cập nhật Google Slides bằng Slides API, xây dựng giao diện so sánh Specs Highlight thông minh, tính toán metrics động, và biên dịch tệp HTML tĩnh offline.
+
 ---
 
 ## 🔮 VI. Bài Học Đúc Kết & Hướng Đi Tương Lai (Hybrid Architecture)
